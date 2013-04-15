@@ -65,8 +65,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 	 * @param node
 	 * @return last inserted node
 	 */
-	private BinaryTreeNode<T> insert(T value, BinaryTreeNode<T> parentNode,
-			BinaryTreeNode<T> node) {
+	private BinaryTreeNode<T> insert(T value, BinaryTreeNode<T> parentNode, BinaryTreeNode<T> node) {
 
 		if (node == null) {
 
@@ -96,12 +95,12 @@ public class BinaryTree<T extends BinaryTreeData> {
 	 */
 	public void search(int key) {
 
-			if (search(key, root) != null) {
-				System.out.println("Turseniq element e: "
-						+ search(key, root).value.getKey() + " " +search(key, root).value.getData());
-			} else {
-				System.out.println("Elementa ne syshtestvuva");
-			}
+		if (search(key, root) != null) {
+			System.out.println("Turseniq element e: " + search(key, root).value.getKey() + " "
+					+ search(key, root).value.getData());
+		} else {
+			System.out.println("Elementa ne syshtestvuva");
+		}
 	}
 
 	/**
@@ -132,7 +131,6 @@ public class BinaryTree<T extends BinaryTreeData> {
 		}
 		return node;
 	}
-	
 
 	/**
 	 * Print elements of the tree wrap method
@@ -140,7 +138,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 	public void printTree() {
 		this.printTree(this.root);
 	}
-	
+
 	/**
 	 * Print elements of the tree sorted
 	 * 

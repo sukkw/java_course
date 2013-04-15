@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.objects;
 import java.util.Random;
 
 /**
- * Fill binary tree with random values and print in on screen
+ * Fill binary tree with random values and print in on screen.
  * 
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
@@ -19,8 +19,7 @@ public class BinaryTreeRun {
 
 		for (int i = 0; i < 20; i++) {
 
-			tree.insert(new BinaryTreeData(randomGenerator.nextInt(30),
-					randomString()));
+			tree.insert(new BinaryTreeData(randomGenerator.nextInt(30), randomString()));
 		}
 
 		// print the tree sorted
@@ -41,8 +40,7 @@ public class BinaryTreeRun {
 			int randomInt = 0;
 			do {
 				randomInt = (int) (Math.random() * (122 - 48)) + 48;
-			} while ((randomInt > 57 && randomInt < 65)
-					|| (randomInt > 90 && randomInt < 97));
+			} while ((randomInt > 57 && randomInt < 65) || (randomInt > 90 && randomInt < 97));
 			char randomChar = (char) randomInt;
 			randomStr += new Character(randomChar).toString();
 		}
