@@ -9,11 +9,31 @@ package com.sirma.itt.javacourse.objects.figures;
  */
 public class Circle extends Ellipse {
 	
+	
+	// class private members
+	private float radius;
+	
 	/**
 	 * Draw circle
 	 */
 	public void draw() {
 		System.out.println("Circle...");
+	}
+
+	/**
+	 * get circle's radius
+	 * @return radius
+	 */
+	public float getRadius() {
+		return radius;
+	}
+
+	/**
+	 * Set circles radius
+	 * @param radius
+	 */
+	public void setRadius(float radius) {
+		this.radius = radius;
 	}
 	
 }
