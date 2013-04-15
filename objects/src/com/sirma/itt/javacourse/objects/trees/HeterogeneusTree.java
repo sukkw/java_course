@@ -1,141 +1,177 @@
 package com.sirma.itt.javacourse.objects.trees;
 
-import java.util.ArrayList;
+import java.lang.reflect.Field;
 
 /**
- * Create heterogeneus tree with generic type of values
+ * Create binary tree
  * 
- * @version 1.1 15 April 2013
+ * @version 1.1 14 April 2013
  * @author Stella Djulgerova
  */
-public class HeterogeneusTree<T> {
+public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 
 	/**
-	 * Create heterogeneus tree node /nested class/
+	 * Create binary tree node /nested class/
 	 * 
 	 * @version 1.1 14 April 2013
 	 * @author Stella Djulgerova
 	 */
-	public static class TreeNode<T> {
+	private static class HeterogeneusTreeNode<T extends HeterogeneusTreeData> {
 
 		// Class private members
 		private T value;
-		private boolean hasParent;
-		private ArrayList<TreeNode<T>> children;
+		private HeterogeneusTreeNode<T> parent;
+		private HeterogeneusTreeNode<T> leftChild;
+		private HeterogeneusTreeNode<T> rightChild;
 
 		/**
-		 * Node constructor
+		 * nodes constructor
 		 * 
 		 * @param value
 		 */
-		public TreeNode(T value) {
-
-			if (value != null) {
-				this.value = value;
-				this.children = new ArrayList<TreeNode<T>>();
-
-			}
+		public HeterogeneusTreeNode(T value) {
+			this.value = value;
+			this.parent = null;
+			this.leftChild = null;
+			this.rightChild = null;
 		}
-
-		/**
-		 * Add child to a node
-		 * 
-		 * @param child
-		 */
-		public void addChild(TreeNode<T> child) {
-
-			if (child != null) {
-
-				if (!child.hasParent) {
-					child.hasParent = true;
-					this.children.add(child);
-				}
-			}
-		}
-
-		/**
-		 * Gets the child of the node at given index
-		 * 
-		 * @param index
-		 * @return the child on index position
-		 */
-		public TreeNode<T> getChild(int index) {
-			return this.children.get(index);
-		}
-
-		/**
-		 * Give number of all children
-		 * 
-		 * @return
-		 */
-		public int getChildrenCount() {
-			return this.children.size();
-		}
-
 	}
 
-	// The root of the tree
-	private TreeNode<T> root;
+	// root of the tree
+	private HeterogeneusTreeNode<T> root;
 
 	/**
-	 * Tree constructor
+	 * Tree default constructor
+	 */
+	public HeterogeneusTree() {
+		this.root = null;
+	}
+
+	/**
+	 * Insert value in the tree wrap method
 	 * 
 	 * @param value
 	 */
-	public HeterogeneusTree(T value) {
+	public void insert(T value) {
 
 		if (value != null) {
-			this.root = new TreeNode<T>(value);
+			this.root = insert(value, null, root);
 		}
 	}
 
 	/**
-	 * Tree constructor
+	 * Insert node in the tree
 	 * 
 	 * @param value
-	 * @param children
+	 * @param parentNode
+	 * @param node
+	 * @return last inserted node
 	 */
-	public HeterogeneusTree(T value, HeterogeneusTree<T>... children) {
+	private HeterogeneusTreeNode<T> insert(T value, HeterogeneusTreeNode<T> parentNode,
+			HeterogeneusTreeNode<T> node) {
 
-		this(value);
+		if (node == null) {
 
-		for (HeterogeneusTree<T> child : children) {
+			node = new HeterogeneusTreeNode<T>(value);
+			node.parent = parentNode;
 
-			this.root.addChild(child.root);
-		}
-	}
+		} else {
 
-	/**
-	 * Print the tree
-	 * 
-	 * @param root
-	 * @param spaces
-	 */
-	private void print(TreeNode<T> root, String spaces) {
+			int compareTo = value.compareTo(node.value);
+			if (compareTo < 0) {
 
-		if (this.root != null) {
+				node.leftChild = insert(value, node, node.leftChild);
 
-			System.out.println(spaces + root.value);
-			TreeNode<T> child = null;
+			} else if (compareTo > 0) {
 
-			for (int i = 0; i < root.getChildrenCount(); i++) {
-
-				child = root.getChild(i);
-				print(child, spaces + "    ");
-
+				node.rightChild = insert(value, node, node.rightChild);
 			}
 
 		}
-
+		return node;
 	}
 
 	/**
-	 * Print tree wrap method
+	 * search in the tree wrap method
+	 * 
+	 * @param value
 	 */
-	public void print() {
+	public void search(int key) {
 
-		this.print(this.root, new String());
-
+		if (search(key, root) != null) {
+			System.out.println("Turseniq element e: " + search(key, root).value.getKey() + " "
+					+ search(key, root).value.getData());
+		} else {
+			System.out.println("Elementa ne syshtestvuva");
+		}
 	}
 
+	/**
+	 * Insert node in the tree
+	 * 
+	 * @param value
+	 * @param parentNode
+	 * @param node
+	 * @return last inserted node
+	 */
+	private HeterogeneusTreeNode<T> search(int key, HeterogeneusTreeNode<T> node) {
+
+		if (node == null) {
+
+			return null;
+
+		} else {
+
+			if (key < node.value.getKey()) {
+
+				return search(key, node.leftChild);
+
+			} else if (key > node.value.getKey()) {
+
+				return search(key, node.rightChild);
+			}
+
+		}
+		return node;
+	}
+
+	/**
+	 * Print elements of the tree wrap method
+	 */
+	public void printTree() {
+		try {
+			this.printTree(this.root);
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Print elements of the tree sorted
+	 * 
+	 * @param node
+	 * @throws IllegalAccessException 
+	 * @throws IllegalArgumentException 
+	 */
+	public void printTree(HeterogeneusTreeNode<T> node) throws IllegalArgumentException, IllegalAccessException {
+
+/*		Object someObject = node;
+		for (Field field : someObject.getClass().getDeclaredFields()) {
+		    field.setAccessible(true); // You might want to set modifier to public first.
+		    Object val = field.get(someObject); 
+		    if (val != null) {
+		        System.out.println(field.getName() + "=" + val);
+		    }
+		}*/
+		
+		if (node != null) {
+			printTree(node.leftChild);
+			System.out.println(node.value.getKey() + "  " + node.value.getData());
+			printTree(node.rightChild);
+		}
+	}
 }
