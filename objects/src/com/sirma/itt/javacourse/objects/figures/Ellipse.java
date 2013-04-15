@@ -6,7 +6,7 @@ package com.sirma.itt.javacourse.objects.figures;
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
  */
-public class Ellipse extends Figure {
+public class Ellipse extends Circle {
 
 	// class private members
 	private float minorSemiAxis;
@@ -16,7 +16,6 @@ public class Ellipse extends Figure {
 	 */
 	public void draw() {
 		System.out.println("Elipse...");
-
 	}
 
 	/**
@@ -35,6 +34,24 @@ public class Ellipse extends Figure {
 	 */
 	public void setMinorSemiAxis(float minorSemiAxis) {
 		this.minorSemiAxis = minorSemiAxis;
+	}
+	
+	/**
+	 * Calculate surface of circle
+	 * 
+	 * @return
+	 */
+	public double surfice() {
+		return 3.14 * this.getRadius() * minorSemiAxis;
+	}
+	
+	/**
+	 * Calculate round of circle
+	 * 
+	 * @return
+	 */
+	public double round() {
+		return 0;
 	}
 
 }

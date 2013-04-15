@@ -1,5 +1,6 @@
 package com.sirma.itt.javacourse.objects.figures;
 
+import java.util.ArrayList;
 
 /**
  * Draw geometric figure polyline
@@ -8,6 +9,12 @@ package com.sirma.itt.javacourse.objects.figures;
  * @author Stella Djulgerova
  */
 public class Polyline extends Figure {
+
+	private final int LINE = 0;
+	private final int ARC = 1;
+
+	ArrayList<Point> projectilePoints;
+	ArrayList<Integer> lineType;
 
 	/**
 	 * draw polyline

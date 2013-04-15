@@ -7,7 +7,7 @@ package com.sirma.itt.javacourse.objects.figures;
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
  */
-public class Circle extends Ellipse {
+public class Circle extends Figure {
 	
 	
 	// class private members
@@ -34,6 +34,24 @@ public class Circle extends Ellipse {
 	 */
 	public void setRadius(float radius) {
 		this.radius = radius;
+	}
+	
+	/**
+	 * Calculate surface of circle
+	 * 
+	 * @return
+	 */
+	public double surfice() {
+		return 3.14 * radius * radius;
+	}
+	
+	/**
+	 * Calculate round of circle
+	 * 
+	 * @return
+	 */
+	public double round() {
+		return 2 * 3.14 * radius;
 	}
 	
 }

@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.sirma.itt.javacourse.objects.figures.Polyline" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/figures/Polyline.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="324" y="241"/>    
+    <position height="-1" width="-1" x="326" y="293"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      

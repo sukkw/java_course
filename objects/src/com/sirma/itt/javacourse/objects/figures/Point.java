@@ -9,7 +9,8 @@ package com.sirma.itt.javacourse.objects.figures;
 public class Point extends Figure {
 
 	// class private members
-	private final int radius = 0;
+	private int xCoord;
+	private int yCoord;
 
 	/**
 	 * Draw point
@@ -19,11 +20,39 @@ public class Point extends Figure {
 	}
 
 	/**
-	 * get circle's radius
+	 * get point x coordinate
 	 * 
-	 * @return radius
+	 * @return
 	 */
-	public float getRadius() {
-		return radius;
+	public int getxCoord() {
+		return xCoord;
 	}
+
+	/**
+	 * set point x coordinate
+	 * 
+	 * @param xCoord
+	 */
+	public void setxCoord(int xCoord) {
+		this.xCoord = xCoord;
+	}
+
+	/**
+	 * get point y coordinate
+	 * 
+	 * @return
+	 */
+	public int getyCoord() {
+		return yCoord;
+	}
+
+	/**
+	 * set point y coordinate
+	 * 
+	 * @param yCoord
+	 */
+	public void setyCoord(int yCoord) {
+		this.yCoord = yCoord;
+	}
+
 }
