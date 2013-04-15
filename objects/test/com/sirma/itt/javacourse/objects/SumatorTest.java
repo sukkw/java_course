@@ -135,6 +135,6 @@ public class SumatorTest {
 	@Test(dataProvider = "validBigDecData")
 	public void sumTest(BigDecimal a, BigDecimal b, BigDecimal valid) {
 		BigDecimal result = sumator.sum(a, b);
-		Assert.assertEquals(result, valid);
+		Assert.assertEquals(result, valid.setScale(3, BigDecimal.ROUND_UP));
 	}
 }
