@@ -4,15 +4,15 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 /**
- * Sumator run class
- * 
+ * Sumator run class.
+ *
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
  */
 public class SumatorRun {
 	/**
 	 * Class main method
-	 * 
+	 *
 	 * @param arr
 	 */
 	public static void main(String[] args) {
@@ -29,6 +29,5 @@ public class SumatorRun {
 		BigDecimal aBigDec = new BigDecimal(234.232323);
 		BigDecimal bBigDec = new BigDecimal(35673.9467334);
 		System.out.println("BigDec " + sumator.sum(aBigDec, bBigDec));
-		
 	}
 }

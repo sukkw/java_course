@@ -6,16 +6,16 @@ import java.math.BigDecimal;
 import com.sirma.itt.javacourse.intro.SumOfStrings;
 
 /**
- * Calculate sum of numbers in different format
- * 
+ * Calculate sum of numbers in different format.
+ *
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
  */
 public class Sumator {
 
 	/**
-	 * Calculate sum of two integer numbers
-	 * 
+	 * Calculate sum of two integer numbers.
+	 *
 	 * @param a
 	 * @param b
 	 * @return sum of the numbers
@@ -26,8 +26,8 @@ public class Sumator {
 	}
 
 	/**
-	 * Calculate sum of of two float numbers
-	 * 
+	 * Calculate sum of of two float numbers.
+	 *
 	 * @param a
 	 * @param b
 	 * @return sum of the numbers
@@ -38,8 +38,8 @@ public class Sumator {
 	}
 
 	/**
-	 * Calculate sum of two strings
-	 * 
+	 * Calculate sum of two strings.
+	 *
 	 * @param a
 	 * @param b
 	 * @return sum of the strings as number
@@ -50,8 +50,8 @@ public class Sumator {
 	}
 
 	/**
-	 * Calculate sum of two BigIntegers
-	 * 
+	 * Calculate sum of two BigIntegers.
+	 *
 	 * @param a
 	 * @param b
 	 * @return sum of the numbers
@@ -62,8 +62,8 @@ public class Sumator {
 	}
 
 	/**
-	 * Calculate sum of two BigDecimal
-	 * 
+	 * Calculate sum of two BigDecimal.
+	 *
 	 * @param a
 	 * @param b
 	 * @return sum of the numbers
