@@ -1,82 +1,101 @@
 package com.sirma.itt.javacourse.objects.store;
 
-/**
- * Abstract class base for all clients in store
- * 
- * @version 1.1 13 April 2013
- * @author Stella Djulgerova
- */
-public abstract class Clients {
+
+public abstract class Person {
 
 	// classs private members
+	private int ID;
 	private String name;
-	private String address;
+	private Address address;
 	private String phone;
 	private String email;
-	
+
 	/**
-	 * Get client name
+	 * get name
+	 * 
 	 * @return
 	 */
 	public String getName() {
 		return name;
 	}
-	
+
 	/**
-	 * Set client name
+	 * set name
+	 * 
 	 * @param name
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	/**
-	 * Get client address
+	 * get address
+	 * 
 	 * @return
 	 */
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
-	
+
 	/**
-	 * Set Client address
+	 * set address
+	 * 
 	 * @param address
 	 */
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
-	
+
 	/**
-	 * Get client phone
+	 * get phone
+	 * 
 	 * @return
 	 */
 	public String getPhone() {
 		return phone;
 	}
-	
+
 	/**
-	 * Set client phone
+	 * set phone
+	 * 
 	 * @param phone
 	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
+
 	/**
-	 * Get client email
+	 * get email
+	 * 
 	 * @return
 	 */
 	public String getEmail() {
 		return email;
 	}
-	
+
 	/**
-	 * Set client email
+	 * set email
+	 * 
 	 * @param email
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
+	/**
+	 * get ID
+	 * @return
+	 */
+	public int getID() {
+		return ID;
+	}
+
+	/**
+	 * set ID
+	 * @param iD
+	 */
+	public void setID(int iD) {
+		ID = iD;
+	}
+
 }

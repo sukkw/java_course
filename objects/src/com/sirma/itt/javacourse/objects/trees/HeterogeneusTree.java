@@ -142,10 +142,8 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 		try {
 			this.printTree(this.root);
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

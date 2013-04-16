@@ -1,21 +1,14 @@
 package com.sirma.itt.javacourse.objects.store;
 
-/**
- * Abstract class base for all products
- * 
- * @version 1.1 13 April 2013
- * @author Stella Djulgerova
- */
-public abstract class Products {
+public class Product {
 
-	// classs private members
+	// class private members
 	private double price;
-	private int size;
 	private String mark;
 	private String model;
 
 	/**
-	 * Get product price
+	 * get Price
 	 * 
 	 * @return
 	 */
@@ -24,7 +17,7 @@ public abstract class Products {
 	}
 
 	/**
-	 * Set product price
+	 * set price
 	 * 
 	 * @param price
 	 */
@@ -33,25 +26,7 @@ public abstract class Products {
 	}
 
 	/**
-	 * Get size
-	 * 
-	 * @return
-	 */
-	public int getSize() {
-		return size;
-	}
-
-	/**
-	 * Set size
-	 * 
-	 * @param size
-	 */
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	/**
-	 * Get mark
+	 * get mark
 	 * 
 	 * @return
 	 */
@@ -60,7 +35,7 @@ public abstract class Products {
 	}
 
 	/**
-	 * Set mark
+	 * set mark
 	 * 
 	 * @param mark
 	 */
@@ -69,7 +44,7 @@ public abstract class Products {
 	}
 
 	/**
-	 * Get model
+	 * get model
 	 * 
 	 * @return
 	 */
@@ -78,7 +53,7 @@ public abstract class Products {
 	}
 
 	/**
-	 * Set model
+	 * set model
 	 * 
 	 * @param model
 	 */
