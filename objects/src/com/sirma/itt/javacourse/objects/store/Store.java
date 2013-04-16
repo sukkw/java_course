@@ -7,15 +7,16 @@ import java.util.ArrayList;
 public class Store {
 
 	// class private members
-	private ArrayList<Employee> employee;
+	private ArrayList<Employee> employees;
 	private ArrayList<Client> clients;
 	private ArrayList<Product> products;
+	private ArrayList<Department> departments;
 	
 	public ArrayList<Employee> getEmployee() {
-		return employee;
+		return employees;
 	}
-	public void setEmployee(ArrayList<Employee> employee) {
-		this.employee = employee;
+	public void setEmployee(ArrayList<Employee> employees) {
+		this.employees = employees;
 	}
 	public ArrayList<Client> getClients() {
 		return clients;

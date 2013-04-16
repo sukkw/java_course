@@ -8,19 +8,20 @@ import java.util.ArrayList;
  * @version 1.1 16 April 2013
  * @author Stella Djulgerova
  */
-public class Client extends Person {
+public class Client extends Person implements iClient {
 	
 	//class private members
 	private ArrayList<Order> order;
 	private int paymentMethod;
 	
+	
 	/**
 	 * allow client to make an order
 	 */
-	public void makeOrder() {
+	public void makeOrde() {
 		
 	}
-	
+
 	/**
 	 * allow client cancel order
 	 */
