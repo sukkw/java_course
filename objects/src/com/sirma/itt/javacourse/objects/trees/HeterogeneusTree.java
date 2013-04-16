@@ -154,23 +154,34 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	 * Print elements of the tree sorted
 	 * 
 	 * @param node
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
 	 */
-	public void printTree(HeterogeneusTreeNode<T> node) throws IllegalArgumentException, IllegalAccessException {
+	public void printTree(HeterogeneusTreeNode<T> node) throws IllegalArgumentException,
+			IllegalAccessException {
 
-/*		Object someObject = node;
-		for (Field field : someObject.getClass().getDeclaredFields()) {
-		    field.setAccessible(true); // You might want to set modifier to public first.
-		    Object val = field.get(someObject); 
-		    if (val != null) {
-		        System.out.println(field.getName() + "=" + val);
-		    }
-		}*/
-		
 		if (node != null) {
+
 			printTree(node.leftChild);
-			System.out.println(node.value.getKey() + "  " + node.value.getData());
+			if (node.value.getData() instanceof HeterogeneusTreeData) {
+
+				//try to get object fields with reflection
+				Object someObject = node.value.getData();
+				System.out.print(" Object type");
+				for (Field field : someObject.getClass().getDeclaredFields()) {
+					//Set modifier to public.
+					field.setAccessible(true); 
+					Object val = field.get(someObject);
+					if (val != null) {
+						System.out.print(" " + val);
+					}
+				}
+
+				System.out.println();
+			} else {
+				System.out.println(" Simple type " + node.value.getKey() + "  "
+						+ node.value.getData());
+			}
 			printTree(node.rightChild);
 		}
 	}
