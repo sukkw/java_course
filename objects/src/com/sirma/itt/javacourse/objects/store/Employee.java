@@ -24,7 +24,7 @@ public class Employee extends Person {
 
 	/**
 	 * set salary
-	 * 
+	 *
 	 * @param salary
 	 */
 	public void setSalary(double salary) {
@@ -32,7 +32,7 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * get employee's department
+	 * get employee's department.
 	 * @return
 	 */
 	public Department getDepartment() {
@@ -40,7 +40,7 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * set employee's department
+	 * set employee's department.
 	 * @param department
 	 */
 	public void setDepartment(Department department) {
@@ -48,7 +48,7 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * get employee's position
+	 * get employee's position.
 	 * @return
 	 */
 	public Position getPosition() {
@@ -56,7 +56,7 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * set employee's position
+	 * set employee's position.
 	 * @param position
 	 */
 	public void setPosition(Position position) {
