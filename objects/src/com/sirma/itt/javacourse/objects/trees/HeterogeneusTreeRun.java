@@ -31,11 +31,11 @@ public class HeterogeneusTreeRun {
 		}
 
 		tree.insert(new HeterogeneusTreeData(32, 9));
-		tree.insert(new HeterogeneusTreeData(31, new HeterogeneusTreeData(1,5)));
+		tree.insert(new HeterogeneusTreeData(31, new HeterogeneusTreeData(1, 5)));
 		tree.insert(new HeterogeneusTreeData(38, 4.6755));
 		tree.insert(new HeterogeneusTreeData(36, true));
 		tree.insert(new HeterogeneusTreeData(29, 2.4f));
-		
+
 		// print the tree sorted
 		tree.printTree();
 

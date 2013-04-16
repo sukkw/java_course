@@ -165,12 +165,12 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 			printTree(node.leftChild);
 			if (node.value.getData() instanceof HeterogeneusTreeData) {
 
-				//try to get object fields with reflection
+				// try to get object fields with reflection
 				Object someObject = node.value.getData();
-				System.out.print(" Object type");
+				System.out.print(" Object type " + node.value.getKey());
 				for (Field field : someObject.getClass().getDeclaredFields()) {
-					//Set modifier to public.
-					field.setAccessible(true); 
+					// Set modifier to public.
+					field.setAccessible(true);
 					Object val = field.get(someObject);
 					if (val != null) {
 						System.out.print(" " + val);
