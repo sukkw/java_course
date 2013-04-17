@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.objects.figures;
 public class Arc extends Circle {
 
 	// class private members
-	private int angle;
+	private int angleBetweenRadius;
 
 	/**
 	 * Drow an arc
@@ -23,8 +23,8 @@ public class Arc extends Circle {
 	 *
 	 * @return
 	 */
-	public int getAngle() {
-		return angle;
+	public int getAngleBetweenRadius() {
+		return angleBetweenRadius;
 	}
 
 	/**
@@ -32,12 +32,12 @@ public class Arc extends Circle {
 	 *
 	 * @param angle
 	 */
-	public void setAngle(int angle) {
-		this.angle = angle;
+	public void setAngleBetweenRadius(int angleBetweenRadius) {
+		this.angleBetweenRadius = angleBetweenRadius;
 	}
 
 	public double length() {
-		return (angle / 360) * 2 * 3.14 * this.getRadius();
+		return (angleBetweenRadius / 360) * 2 * 3.14 * this.getRadius();
 	}
 
 }

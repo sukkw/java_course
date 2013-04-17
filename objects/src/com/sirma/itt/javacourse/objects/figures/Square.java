@@ -9,8 +9,8 @@ package com.sirma.itt.javacourse.objects.figures;
 public class Square extends Figure {
 
 	// class private members
-	private double a;
-	private int angleA;
+	private double sideA;
+	private int	angleA = 90;
 
 	/**
 	 * Draw square
@@ -24,7 +24,7 @@ public class Square extends Figure {
 	 * @return
 	 */
 	public double surface() {
-		return a * a;
+		return sideA * sideA;
 	}
 
 	/**
@@ -32,23 +32,23 @@ public class Square extends Figure {
 	 * @return
 	 */
 	public double round() {
-		return 4 * a;
+		return 4 * sideA;
 	}
 
 	/**
 	 * get side a
 	 * @return
 	 */
-	public double getA() {
-		return a;
+	public double getSideA() {
+		return sideA;
 	}
 
 	/**
 	 * set side a
 	 * @param a
 	 */
-	public void setA(double a) {
-		this.a = a;
+	public void setSideA(double sideA) {
+		this.sideA = sideA;
 	}
 
 	/**

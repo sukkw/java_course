@@ -17,7 +17,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	 * @version 1.1 14 April 2013
 	 * @author Stella Djulgerova
 	 */
-	public static class TreeNode<T extends HomogeneusTreeData> {
+	static class TreeNode<T extends HomogeneusTreeData> {
 
 		// Class private members
 		private T value;
@@ -65,7 +65,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 		}
 
 		/**
-		 * Give number of all children
+		 * Give number of all children.
 		 * 
 		 * @return
 		 */
@@ -79,7 +79,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	private TreeNode<T> root;
 
 	/**
-	 * Tree constructor
+	 * Tree constructor.
 	 * 
 	 * @param value
 	 */
@@ -91,7 +91,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	}
 
 	/**
-	 * Tree constructor
+	 * Tree constructor.
 	 * 
 	 * @param value
 	 * @param children

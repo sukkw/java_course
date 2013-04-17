@@ -13,7 +13,7 @@ public class Polyline extends Figure {
 	private final int LINE = 0;
 	private final int ARC = 1;
 
-	ArrayList<Point> projectilePoints;
+	ArrayList<Point> points;
 	ArrayList<Integer> lineType;
 
 	/**
@@ -24,4 +24,35 @@ public class Polyline extends Figure {
 
 	}
 
+	/**
+	 * get all points
+	 * @return
+	 */
+	public ArrayList<Point> getPoints() {
+		return points;
+	}
+
+	/**
+	 * set points
+	 * @param points
+	 */
+	public void setPoints(ArrayList<Point> points) {
+		this.points = points;
+	}
+
+	/**
+	 * get all connection lines
+	 * @return
+	 */
+	public ArrayList<Integer> getLineType() {
+		return lineType;
+	}
+
+	/**
+	 * set connection type line
+	 * @param lineType
+	 */
+	public void setLineType(ArrayList<Integer> lineType) {
+		this.lineType = lineType;
+	}
 }

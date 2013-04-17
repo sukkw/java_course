@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.objects.figures;
 public class Rectangle extends Square {
 
 	// class private members
-	private double b;
+	private double sideB;
 
 	/**
 	 * Draw rectangle
@@ -24,7 +24,7 @@ public class Rectangle extends Square {
 	 * @return
 	 */
 	public double surfice() {
-		return this.getA() * b;
+		return this.getSideA() * sideB;
 	}
 
 	/**
@@ -33,7 +33,7 @@ public class Rectangle extends Square {
 	 * @return
 	 */
 	public double round() {
-		return (2 * this.getA()) + (2 * b);
+		return (2 * this.getSideA()) + (2 * sideB);
 	}
 
 	/**
@@ -41,8 +41,8 @@ public class Rectangle extends Square {
 	 * 
 	 * @return
 	 */
-	public double getB() {
-		return b;
+	public double getSideB() {
+		return sideB;
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class Rectangle extends Square {
 	 * 
 	 * @param b
 	 */
-	public void setB(double b) {
-		this.b = b;
+	public void setSideB(double sideB) {
+		this.sideB = sideB;
 	}
 }

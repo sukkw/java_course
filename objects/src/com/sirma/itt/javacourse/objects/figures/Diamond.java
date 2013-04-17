@@ -10,7 +10,7 @@ public class Diamond extends Square {
 
 	// class private members
 	private int angleB;
-	private double h;
+	private double hight;
 
 	/**
 	 * Draw diamond
@@ -26,7 +26,7 @@ public class Diamond extends Square {
 	 * @return
 	 */
 	public double surface() {
-		return this.getA() * h;
+		return this.getSideA() * hight;
 	}
 
 	/**
@@ -52,8 +52,8 @@ public class Diamond extends Square {
 	 * 
 	 * @return
 	 */
-	public double getH() {
-		return h;
+	public double getHight() {
+		return hight;
 	}
 
 	/**
@@ -61,8 +61,8 @@ public class Diamond extends Square {
 	 * 
 	 * @param h
 	 */
-	public void setH(double h) {
-		this.h = h;
+	public void setHight(double hight) {
+		this.hight = hight;
 	}
 
 }

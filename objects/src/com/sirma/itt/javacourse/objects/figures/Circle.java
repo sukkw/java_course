@@ -14,7 +14,7 @@ public class Circle extends Figure {
 	private float radius;
 	
 	/**
-	 * Draw circle
+	 * Draw circle.
 	 */
 	public void draw() {
 		System.out.println("Circle...");

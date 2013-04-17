@@ -11,7 +11,7 @@ package com.sirma.itt.javacourse.objects.figures;
 public class Parallelogram extends Diamond {
 
 	//class private members 
-	private double b;
+	private double sideB;
 	
 	/**
 	 * Draw parallelogram
@@ -25,16 +25,16 @@ public class Parallelogram extends Diamond {
 	 * get side b
 	 * @return
 	 */
-	public double getB() {
-		return b;
+	public double getSideB() {
+		return sideB;
 	}
 
 	/**
 	 * set side b
 	 * @param b
 	 */
-	public void setB(double b) {
-		this.b = b;
+	public void setB(double sideB) {
+		this.sideB = sideB;
 	}
 	
 	/**
@@ -43,6 +43,6 @@ public class Parallelogram extends Diamond {
 	 * @return
 	 */
 	public double round() {
-		return (2 * this.getA()) + (2 * b);
+		return (2 * this.getSideA()) + (2 * sideB);
 	}
 }

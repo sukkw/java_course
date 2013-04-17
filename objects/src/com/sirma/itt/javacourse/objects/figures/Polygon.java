@@ -9,8 +9,8 @@ package com.sirma.itt.javacourse.objects.figures;
 public class Polygon extends Parallelogram {
 
 	// class private members
-	private double c;
-	private double d;
+	private double sideC;
+	private double sideD;
 	private double angleC;
 	private double angleD;
 
@@ -27,8 +27,8 @@ public class Polygon extends Parallelogram {
 	 * 
 	 * @return
 	 */
-	public double getC() {
-		return c;
+	public double getSideC() {
+		return sideC;
 	}
 
 	/**
@@ -36,8 +36,8 @@ public class Polygon extends Parallelogram {
 	 * 
 	 * @param c
 	 */
-	public void setC(double c) {
-		this.c = c;
+	public void setSideC(double sideC) {
+		this.sideC = sideC;
 	}
 
 	/**
@@ -45,8 +45,8 @@ public class Polygon extends Parallelogram {
 	 * 
 	 * @return
 	 */
-	public double getD() {
-		return d;
+	public double getSideD() {
+		return sideD;
 	}
 
 	/**
@@ -54,8 +54,8 @@ public class Polygon extends Parallelogram {
 	 * 
 	 * @param d
 	 */
-	public void setD(double d) {
-		this.d = d;
+	public void setSideD(double sideD) {
+		this.sideD = sideD;
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class Polygon extends Parallelogram {
 	 * @return
 	 */
 	public double round() {
-		return (this.getA() + this.getB() + c + d);
+		return (this.getSideA() + this.getSideB() + sideC + sideD);
 	}
 	
 	/**

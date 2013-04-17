@@ -33,11 +33,6 @@ public class FigureRun {
 		
 		if(figure != null) {
 			figure.draw();
-			Rectangle rect = new Rectangle();
-			rect.setA(12);
-			rect.setB(1);
-			
-			System.out.println("A = " + rect.getA() +  " B = " + rect.getB());
 		} else {
 			System.out.print("Invalid number");
 		}
