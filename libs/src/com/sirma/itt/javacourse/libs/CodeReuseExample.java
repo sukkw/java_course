@@ -9,7 +9,7 @@ import com.sirma.itt.javacourse.intro.QuickSort;
 /**
  * Reusability of code example
  * 
- * @version 1.1 08 April 2013
+ * @version 1.1 17 April 2013
  * @author Stella Djulgerova
  */
 public class CodeReuseExample {
