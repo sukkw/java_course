@@ -93,14 +93,17 @@ public class BinaryTree<T extends BinaryTreeData> {
 	 * 
 	 * @param value
 	 */
-	public void search(int key) {
+	public String search(int key) {
 
+		String searchedData;
 		if (search(key, root) != null) {
-			System.out.println("Turseniq element e: " + search(key, root).value.getKey() + " "
-					+ search(key, root).value.getData());
+			searchedData = "Turseniq element e: " + search(key, root).value.getKey() + " "
+					+ search(key, root).value.getData();
 		} else {
-			System.out.println("Elementa ne syshtestvuva");
+			searchedData = "Elementa ne syshtestvuva";
 		}
+		
+		return searchedData;
 	}
 
 	/**

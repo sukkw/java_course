@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16" started-at="2013-04-17T12:36:55Z" finished-at="2013-04-17T12:36:55Z">
+  <suite name="Default suite" duration-ms="15" started-at="2013-04-17T20:26:06Z" finished-at="2013-04-17T20:26:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16" started-at="2013-04-17T12:36:55Z" finished-at="2013-04-17T12:36:55Z">
+    <test name="Default test" duration-ms="15" started-at="2013-04-17T20:26:06Z" finished-at="2013-04-17T20:26:06Z">
+      <class name="com.sirma.itt.javacourse.objects.HomogeneusTreeTest">
+        <test-method status="PASS" signature="printTree()[pri:0, instance:com.sirma.itt.javacourse.objects.HomogeneusTreeTest@1291453]" name="printTree" duration-ms="15" started-at="2013-04-17T22:26:06Z" finished-at="2013-04-17T22:26:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printTree -->
+      </class> <!-- com.sirma.itt.javacourse.objects.HomogeneusTreeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

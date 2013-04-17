@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.objects.trees;
 import java.lang.reflect.Field;
 
 /**
- * Create binary tree.
+ * Create heterogeneus tree.
  * 
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
@@ -96,14 +96,17 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	 * 
 	 * @param value
 	 */
-	public void search(int key) {
+	public String search(int key) {
 
+		String searchedData;
 		if (search(key, root) != null) {
-			System.out.println("Turseniq element e: " + search(key, root).value.getKey() + " "
-					+ search(key, root).value.getData());
+			searchedData = "Turseniq element e: " + search(key, root).value.getKey() + " "
+					+ search(key, root).value.getData();
 		} else {
-			System.out.println("Elementa ne syshtestvuva");
+			searchedData = "Elementa ne syshtestvuva";
 		}
+		
+		return searchedData;
 	}
 
 	/**

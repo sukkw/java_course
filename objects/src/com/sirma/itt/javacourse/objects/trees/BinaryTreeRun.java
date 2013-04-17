@@ -26,6 +26,6 @@ public class BinaryTreeRun {
 		tree.printTree();
 
 		// search in tree by given key value
-		tree.search(12);
+		System.out.println(tree.search(12));
 	}
 }

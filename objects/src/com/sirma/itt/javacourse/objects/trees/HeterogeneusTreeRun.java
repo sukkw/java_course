@@ -19,7 +19,7 @@ public class HeterogeneusTreeRun {
 	 */
 	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
 
-		// Create the tree from the sample
+		// Create the tree
 		HeterogeneusTree<HeterogeneusTreeData> tree = new HeterogeneusTree<HeterogeneusTreeData>();
 
 		// call java class Random to generate numbers

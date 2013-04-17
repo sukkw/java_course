@@ -5,9 +5,7 @@
     <classes>
       <class name="com.sirma.itt.javacourse.objects.BinaryTreeTest">
         <methods>
-          <include name="search" invocation-numbers="0 1 2"/>
-          <include name="printTree" invocation-numbers="0 1 2"/>
-          <include name="insert" invocation-numbers="0 1 2"/>
+          <include name="search" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.sirma.itt.javacourse.objects.BinaryTreeTest -->
     </classes>
