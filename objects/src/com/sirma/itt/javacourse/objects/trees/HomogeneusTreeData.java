@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.trees;
 
 /**
- * Data used to fill homogeneus tree nodes
+ * Data used to fill homogeneus tree nodes.
  * 
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
@@ -13,7 +13,7 @@ public class HomogeneusTreeData {
 	private String data;
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 * 
 	 * @param key
 	 * @param data
@@ -24,7 +24,7 @@ public class HomogeneusTreeData {
 	}
 
 	/**
-	 * get key value
+	 * Get key value.
 	 * 
 	 * @return
 	 */
@@ -33,7 +33,7 @@ public class HomogeneusTreeData {
 	}
 
 	/**
-	 * Set key value
+	 * Set key value.
 	 * 
 	 * @param key
 	 */
@@ -42,7 +42,7 @@ public class HomogeneusTreeData {
 	}
 
 	/**
-	 * Get data value
+	 * Get data value.
 	 * 
 	 * @return
 	 */
@@ -51,7 +51,7 @@ public class HomogeneusTreeData {
 	}
 
 	/**
-	 * Set data value
+	 * Set data value.
 	 * 
 	 * @param data
 	 */

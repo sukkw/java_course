@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sirma.itt.javacourse.objects.SumatorTest">
+      <class name="com.sirma.itt.javacourse.objects.BinaryTreeTest">
         <methods>
-          <include name="sumTest" invocation-numbers="0 1"/>
+          <include name="search" invocation-numbers="0 1 2"/>
+          <include name="printTree" invocation-numbers="0 1 2"/>
+          <include name="insert" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- com.sirma.itt.javacourse.objects.SumatorTest -->
+      </class> <!-- com.sirma.itt.javacourse.objects.BinaryTreeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

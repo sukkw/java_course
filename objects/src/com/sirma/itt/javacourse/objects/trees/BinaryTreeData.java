@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.trees;
 
 /**
- * Data used to fill binary tree nodes
+ * Data used to fill binary tree nodes.
  * 
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
@@ -13,7 +13,7 @@ public class BinaryTreeData implements Comparable<BinaryTreeData> {
 	private String data;
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 * 
 	 * @param key
 	 * @param data
@@ -24,7 +24,7 @@ public class BinaryTreeData implements Comparable<BinaryTreeData> {
 	}
 
 	/**
-	 * get key value
+	 * Get key value.
 	 * 
 	 * @return
 	 */
@@ -33,7 +33,7 @@ public class BinaryTreeData implements Comparable<BinaryTreeData> {
 	}
 
 	/**
-	 * Set key value
+	 * Set key value.
 	 * 
 	 * @param key
 	 */
@@ -42,7 +42,7 @@ public class BinaryTreeData implements Comparable<BinaryTreeData> {
 	}
 
 	/**
-	 * Get data value
+	 * Get data value.
 	 * 
 	 * @return
 	 */
@@ -51,7 +51,7 @@ public class BinaryTreeData implements Comparable<BinaryTreeData> {
 	}
 
 	/**
-	 * Set data value
+	 * Set data value.
 	 * 
 	 * @param data
 	 */
@@ -60,8 +60,7 @@ public class BinaryTreeData implements Comparable<BinaryTreeData> {
 	}
 
 	/**
-	 * Compare value of two keys
-	 * 
+	 * Compare value of two keys.
 	 */
 	public int compareTo(BinaryTreeData other) {
 		return new Integer(this.key).compareTo(other.key);

@@ -2,9 +2,8 @@ package com.sirma.itt.javacourse.objects.trees;
 
 import java.util.ArrayList;
 
-
 /**
- * Create homogeneus tree with generic type of values
+ * Create homogeneus tree with generic type of values.
  * 
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
@@ -12,12 +11,12 @@ import java.util.ArrayList;
 public class HomogeneusTree<T extends HomogeneusTreeData> {
 
 	/**
-	 * Create homogeneus tree node /nested class/
+	 * Create homogeneus tree node /nested class/.
 	 * 
 	 * @version 1.1 14 April 2013
 	 * @author Stella Djulgerova
 	 */
-	static class TreeNode<T extends HomogeneusTreeData> {
+	public static class TreeNode<T extends HomogeneusTreeData> {
 
 		// Class private members
 		private T value;
@@ -25,7 +24,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 		private ArrayList<TreeNode<T>> children;
 
 		/**
-		 * Node constructor
+		 * Node constructor.
 		 * 
 		 * @param value
 		 */
@@ -39,7 +38,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 		}
 
 		/**
-		 * Add child to a node
+		 * Add child to a node.
 		 * 
 		 * @param child
 		 */
@@ -55,7 +54,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 		}
 
 		/**
-		 * Gets the child of the node at given index
+		 * Gets the child of the node at given index.
 		 * 
 		 * @param index
 		 * @return the child on index position
@@ -107,7 +106,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	}
 
 	/**
-	 * Print the tree
+	 * Print the tree.
 	 * 
 	 * @param root
 	 * @param spaces
@@ -116,7 +115,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 
 		if (this.root != null) {
 
-			System.out.println(spaces + root.value.getKey() + "  " +root.value.getData());
+			System.out.println(spaces + root.value.getKey() + "  " + root.value.getData());
 			TreeNode<T> child = null;
 
 			for (int i = 0; i < root.getChildrenCount(); i++) {
@@ -131,7 +130,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	}
 
 	/**
-	 * Print tree wrap method
+	 * Print tree wrap method.
 	 */
 	public void print() {
 

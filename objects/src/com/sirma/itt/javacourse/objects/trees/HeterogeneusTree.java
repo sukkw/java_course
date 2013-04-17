@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.objects.trees;
 import java.lang.reflect.Field;
 
 /**
- * Create binary tree
+ * Create binary tree.
  * 
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
 public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 
 	/**
-	 * Create binary tree node /nested class/
+	 * Create binary tree node /nested class/.
 	 * 
 	 * @version 1.1 14 April 2013
 	 * @author Stella Djulgerova
@@ -25,7 +25,7 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 		private HeterogeneusTreeNode<T> rightChild;
 
 		/**
-		 * nodes constructor
+		 * Nodes constructor.
 		 * 
 		 * @param value
 		 */
@@ -41,14 +41,14 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	private HeterogeneusTreeNode<T> root;
 
 	/**
-	 * Tree default constructor
+	 * Tree default constructor.
 	 */
 	public HeterogeneusTree() {
 		this.root = null;
 	}
 
 	/**
-	 * Insert value in the tree wrap method
+	 * Insert value in the tree wrap method.
 	 * 
 	 * @param value
 	 */
@@ -60,7 +60,7 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	}
 
 	/**
-	 * Insert node in the tree
+	 * Insert node in the tree.
 	 * 
 	 * @param value
 	 * @param parentNode
@@ -92,7 +92,7 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	}
 
 	/**
-	 * search in the tree wrap method
+	 * search in the tree wrap method.
 	 * 
 	 * @param value
 	 */
@@ -107,7 +107,7 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	}
 
 	/**
-	 * Insert node in the tree
+	 * Insert node in the tree.
 	 * 
 	 * @param value
 	 * @param parentNode
@@ -136,7 +136,7 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	}
 
 	/**
-	 * Print elements of the tree wrap method
+	 * Print elements of the tree wrap method.
 	 */
 	public void printTree() {
 		try {
@@ -149,13 +149,13 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	}
 
 	/**
-	 * Print elements of the tree sorted
+	 * Print elements of the tree sorted.
 	 * 
 	 * @param node
 	 * @throws IllegalAccessException
 	 * @throws IllegalArgumentException
 	 */
-	public void printTree(HeterogeneusTreeNode<T> node) throws IllegalArgumentException,
+	private void printTree(HeterogeneusTreeNode<T> node) throws IllegalArgumentException,
 			IllegalAccessException {
 
 		if (node != null) {
@@ -164,12 +164,12 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 			if (node.value.getData() instanceof HeterogeneusTreeData) {
 
 				// try to get object fields with reflection
-				Object someObject = node.value.getData();
+				Object obj = node.value.getData();
 				System.out.print(" Object type " + node.value.getKey());
-				for (Field field : someObject.getClass().getDeclaredFields()) {
+				for (Field field : obj.getClass().getDeclaredFields()) {
 					// Set modifier to public.
 					field.setAccessible(true);
-					Object val = field.get(someObject);
+					Object val = field.get(obj);
 					if (val != null) {
 						System.out.print(" " + val);
 					}

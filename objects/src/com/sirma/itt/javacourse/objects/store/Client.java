@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @version 1.1 16 April 2013
  * @author Stella Djulgerova
  */
-public class Client extends Person implements iClient {
+public class Client extends Person implements ClientImpl {
 	
 	//class private members
 	private ArrayList<Order> order;

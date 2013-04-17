@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.objects.trees;
 import com.sirma.itt.javacourse.objects.trees.HomogeneusTree.TreeNode;
 
 /**
- * Fill homogeneus tree with random values and print it on screen
+ * Fill homogeneus tree with random values and print it on screen.
  * 
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
@@ -11,7 +11,7 @@ import com.sirma.itt.javacourse.objects.trees.HomogeneusTree.TreeNode;
 public class HomogeneusTreeRun {
 	
 	/**
-	 * Class main method
+	 * Class main method.
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class HomogeneusTreeRun {
 		//fill tree with data
         HomogeneusTree<HomogeneusTreeData> tree = new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(7, "Stella"),
 
-                        new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(19, "Stella"),
+                        new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(19, "Eli"),
 
                                     new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(1, "Ani")),
 

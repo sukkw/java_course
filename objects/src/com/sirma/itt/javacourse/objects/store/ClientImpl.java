@@ -1,6 +1,6 @@
 package com.sirma.itt.javacourse.objects.store;
 
-public interface iClient {
+public interface ClientImpl {
 
 	public void makeOrde();
 	public void cancelOrder();

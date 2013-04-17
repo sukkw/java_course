@@ -1,9 +1,7 @@
 package com.sirma.itt.javacourse.objects.trees;
 
-import java.lang.reflect.Field;
-
 /**
- * Create binary tree
+ * Create binary tree.
  * 
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
@@ -25,7 +23,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 		private BinaryTreeNode<T> rightChild;
 
 		/**
-		 * nodes constructor
+		 * nodes constructor.
 		 * 
 		 * @param value
 		 */
@@ -41,14 +39,14 @@ public class BinaryTree<T extends BinaryTreeData> {
 	private BinaryTreeNode<T> root;
 
 	/**
-	 * Tree default constructor
+	 * Tree default constructor.
 	 */
 	public BinaryTree() {
 		this.root = null;
 	}
 
 	/**
-	 * Insert value in the tree wrap method
+	 * Insert value in the tree wrap method.
 	 * 
 	 * @param value
 	 */
@@ -60,7 +58,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 	}
 
 	/**
-	 * Insert node in the tree
+	 * Insert node in the tree.
 	 * 
 	 * @param value
 	 * @param parentNode
@@ -91,7 +89,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 	}
 
 	/**
-	 * search in the tree wrap method
+	 * search in the tree wrap method.
 	 * 
 	 * @param value
 	 */
@@ -106,7 +104,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 	}
 
 	/**
-	 * Insert node in the tree
+	 * Insert node in the tree.
 	 * 
 	 * @param value
 	 * @param parentNode
@@ -135,14 +133,14 @@ public class BinaryTree<T extends BinaryTreeData> {
 	}
 
 	/**
-	 * Print elements of the tree wrap method
+	 * Print elements of the tree wrap method.
 	 */
 	public void printTree() {
 		this.printTree(this.root);
 	}
 
 	/**
-	 * Print elements of the tree sorted
+	 * Print elements of the tree sorted.
 	 * 
 	 * @param node
 	 */

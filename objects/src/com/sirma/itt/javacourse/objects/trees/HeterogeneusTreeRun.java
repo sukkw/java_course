@@ -27,7 +27,7 @@ public class HeterogeneusTreeRun {
 
 		for (int i = 0; i < 10; i++) {
 
-			tree.insert(new HeterogeneusTreeData(randomGenerator.nextInt(20), "S" + i));
+			tree.insert(new HeterogeneusTreeData(randomGenerator.nextInt(20), "String " + i));
 		}
 
 		tree.insert(new HeterogeneusTreeData(32, 9));
