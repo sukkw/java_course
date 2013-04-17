@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="com.sirma.itt.javacourse.objects.store.Address" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/Address.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="351" width="171" x="372" y="410"/>    
+    <position height="-1" width="-1" x="788" y="204"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.sirma.itt.javacourse.objects.store.Client" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/Client.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="185" x="583" y="410"/>    
+    <position height="207" width="185" x="389" y="410"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <interface id="3" language="java" name="com.sirma.itt.javacourse.objects.store.ClientImpl" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/ClientImpl.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="171" x="707" y="801"/>    
+    <position height="99" width="171" x="728" y="801"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -30,7 +30,7 @@
   </interface>  
   <class id="4" language="java" name="com.sirma.itt.javacourse.objects.store.Department" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/Department.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="171" x="41" y="801"/>    
+    <position height="189" width="171" x="62" y="801"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="com.sirma.itt.javacourse.objects.store.Employee" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/Employee.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="182" x="150" y="410"/>    
+    <position height="207" width="182" x="167" y="410"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="com.sirma.itt.javacourse.objects.store.Order" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/Order.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="423" width="204" x="463" y="801"/>    
+    <position height="423" width="204" x="484" y="801"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="com.sirma.itt.javacourse.objects.store.OrderItem" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/OrderItem.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="297" width="171" x="463" y="1264"/>    
+    <position height="297" width="171" x="263" y="1264"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="com.sirma.itt.javacourse.objects.store.Person" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/Person.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="333" width="171" x="372" y="37"/>    
+    <position height="333" width="171" x="389" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="com.sirma.itt.javacourse.objects.store.Position" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/Position.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="171" x="252" y="801"/>    
+    <position height="225" width="171" x="273" y="801"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -84,63 +84,68 @@
   </class>  
   <class id="10" language="java" name="com.sirma.itt.javacourse.objects.store.Product" project="objects" 
     file="/objects/src/com/sirma/itt/javacourse/objects/store/Product.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="171" x="463" y="1601"/>    
+    <position height="243" width="171" x="41" y="1601"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <association id="11">    
+  <class id="11" language="java" name="com.sirma.itt.javacourse.objects.store.Store" project="objects" 
+    file="/objects/src/com/sirma/itt/javacourse/objects/store/Store.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="221" x="62" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association id="12">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="12" name="address"/>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
+      <attribute id="13" name="address"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="14">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="15" name="department"/>      
-      <multiplicity id="16" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="17">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
-  </realization>  
-  <association id="18">    
+  <generalization id="15">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="16">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="19" name="product"/>      
-      <multiplicity id="20" minimum="0" maximum="1"/>    
+      <attribute id="17" name="product"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="21">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <association id="22">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="23" name="order"/>      
-      <multiplicity id="24" minimum="0" maximum="2147483647"/>    
+  <association id="19">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="20" name="employees"/>      
+      <multiplicity id="21" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="25">    
+  <association id="22">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="23" name="clients"/>      
+      <multiplicity id="24" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="25">    
     <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
+    <end type="TARGET" refId="3"/>  
+  </realization>  
   <association id="26">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="27" name="position"/>      
+      <attribute id="27" name="department"/>      
       <multiplicity id="28" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="29">    
@@ -149,6 +154,46 @@
       <multiplicity id="31" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="33" name="order"/>      
+      <multiplicity id="34" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="35">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="36" name="position"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="39">    
+    <bendpoint x="31" y="410"/>    
+    <bendpoint x="31" y="801"/>    
+    <bendpoint x="31" y="1264"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="40" name="products"/>      
+      <multiplicity id="41" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="42">    
+    <bendpoint x="71" y="410"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="43" name="departments"/>      
+      <multiplicity id="44" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
