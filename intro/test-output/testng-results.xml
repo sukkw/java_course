@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="47" started-at="2013-04-18T00:01:10Z" finished-at="2013-04-18T00:01:10Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="47" started-at="2013-04-18T00:01:10Z" finished-at="2013-04-18T00:01:10Z">
+      <class name="com.sirma.itt.javacourse.intro.SumOfStringsTest">
+        <test-method status="PASS" signature="calculateTast(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.SumOfStringsTest@1de5d00]" name="calculateTast" duration-ms="15" started-at="2013-04-18T02:01:10Z" data-provider="validData" finished-at="2013-04-18T02:01:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9999]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8888]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[18887]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateTast -->
+        <test-method status="PASS" signature="calculateTast(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.SumOfStringsTest@1de5d00]" name="calculateTast" duration-ms="0" started-at="2013-04-18T02:01:10Z" data-provider="validData" finished-at="2013-04-18T02:01:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[34567]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1256478]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1291045]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateTast -->
+        <test-method status="PASS" signature="calculateTast(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.SumOfStringsTest@1de5d00]" name="calculateTast" duration-ms="0" started-at="2013-04-18T02:01:10Z" data-provider="validData" finished-at="2013-04-18T02:01:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[74]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[74]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateTast -->
+      </class> <!-- com.sirma.itt.javacourse.intro.SumOfStringsTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
