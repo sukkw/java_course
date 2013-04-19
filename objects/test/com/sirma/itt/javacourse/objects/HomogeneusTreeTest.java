@@ -1,6 +1,5 @@
 package com.sirma.itt.javacourse.objects;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.sirma.itt.javacourse.objects.trees.HomogeneusTree;
