@@ -7,7 +7,10 @@ package com.sirma.itt.javacourse.intro;
  * @author Stella Djulgerova
  */
 public class HangRun {
+
 	/**
+	 * main method
+	 * 
 	 * @param arr
 	 */
 	public static void main(String[] arr) {

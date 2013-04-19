@@ -2,6 +2,12 @@ package com.sirma.itt.javacourse.intro;
 
 import java.util.Random;
 
+/**
+ * helper class with common functions
+ * 
+ * @version 1.1 08 April 2013
+ * @author Stella Djulgerova
+ */
 public class Helper {
 	/**
 	 * Load random values in array with size of 5 elements

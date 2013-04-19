@@ -7,6 +7,11 @@ package com.sirma.itt.javacourse.intro;
  * @author Stella Djulgerova
  */
 public class QuickSortRun {
+	
+	/**
+	 * main method
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		int[] array = Helper.loadAray();
 

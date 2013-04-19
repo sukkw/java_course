@@ -7,7 +7,10 @@ package com.sirma.itt.javacourse.intro;
  * @author Stella Djulgerova
  */
 public class RandomStringRun {
+
 	/**
+	 * main method
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
