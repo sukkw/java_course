@@ -45,6 +45,7 @@ public class Hang {
 				rightcount++;
 				count++;
 			} else {
+				System.out.println(tempWord);
 				count++;
 			}
 
