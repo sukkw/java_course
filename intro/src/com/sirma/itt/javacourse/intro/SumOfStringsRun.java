@@ -16,6 +16,6 @@ public class SumOfStringsRun {
 	 */
 	public static void main(String[] args) {
 		SumOfStrings sum = new SumOfStrings();
-		System.out.println(sum.calculate("997", "77"));
+		System.out.println(sum.calculate("234", "77"));
 	}
 }
