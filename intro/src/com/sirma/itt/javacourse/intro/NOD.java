@@ -9,10 +9,10 @@ package com.sirma.itt.javacourse.intro;
 public class NOD {
 
 	/**
-	 * calculate greatest common divider of two numbers.
+	 * Calculate greatest common divider of two numbers.
 	 * 
-	 * @param firstNumber
-	 * @param secondNumber
+	 * @param firstNumber - first number for calculation
+	 * @param secondNumber - second number for calculation
 	 * @return greatest common divider of two numbers
 	 */
 	public int nod(int firstNumber, int secondNumber) {
@@ -30,10 +30,10 @@ public class NOD {
 	}
 
 	/**
-	 * calculate lowest common multiple of two numbers.
+	 * Calculate lowest common multiple of two numbers.
 	 * 
-	 * @param firstNumber
-	 * @param secondNumber
+	 * @param firstNumber - first number for calculation
+	 * @param secondNumber - second number for calculation
 	 * @return lowest common multiple of two numbers
 	 */
 	public int nok(int firstNumber, int secondNumber) {

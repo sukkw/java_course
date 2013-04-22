@@ -11,16 +11,20 @@ public class SumOfStrings {
 	/**
 	 * Calculate value of two strings as number.
 	 * 
-	 * @param firstString
-	 * @param secondString
+	 * @param firstString - number
+	 * @param secondString - number to be added to firstString
 	 * @return sum of firstString and secondString
 	 */
 	public String calculate(String firstString, String secondString) {
 
+		//keep last digit as char
 		char ldcFirstString;
 		char ldcSecoundString;
+		
+		// keep last digit as integer
 		int ldiFirstString;
 		int ldiSecoundString;
+		
 		int transfer = 0;
 		int tempSum;
 		String sumAsString = "";
@@ -42,10 +46,13 @@ public class SumOfStrings {
 			} else {
 				ldcSecoundString = '0';
 			}
-
+			
+			
+			Character.getNumericValue(ldcFirstString);
+			
 			// convert the char values to integer
-			ldiFirstString = Integer.parseInt(ldcFirstString + "");
-			ldiSecoundString = Integer.parseInt(ldcSecoundString + "");
+			ldiFirstString = Character.getNumericValue(ldcFirstString);
+			ldiSecoundString = Character.getNumericValue(ldcFirstString);
 
 			// calculate the sum as integer value and add transfer
 			tempSum = ldiFirstString + ldiSecoundString + transfer;

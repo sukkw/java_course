@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * weight center of array run class.
+ * Weight center of array run class.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova

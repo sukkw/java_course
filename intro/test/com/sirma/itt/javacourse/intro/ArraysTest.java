@@ -17,7 +17,7 @@ public class ArraysTest {
 	/**
 	 * Data used for sum tests.
 	 * 
-	 * @return
+	 * @return object with data used for sum test
 	 */
 	@DataProvider
 	public Object[][] validSumData() {
@@ -26,9 +26,9 @@ public class ArraysTest {
 	}
 
 	/**
-	 * Data used for min element tests.
+	 * Data used for minimal element tests.
 	 * 
-	 * @return
+	 * @return object with data used for find minimal element test
 	 */
 	@DataProvider
 	public Object[][] validMinData() {
@@ -39,8 +39,8 @@ public class ArraysTest {
 	/**
 	 * Test for sum method.
 	 * 
-	 * @param array
-	 * @param valid
+	 * @param array - array to find sum
+	 * @param valid - sum of all elements
 	 */
 	@Test(dataProvider = "validSumData")
 	public void sumTest(Integer[] array, int valid) {
@@ -59,8 +59,8 @@ public class ArraysTest {
 	/**
 	 * Test for find min element method.
 	 * 
-	 * @param array
-	 * @param valid
+	 * @param array - array to find minimal element
+	 * @param valid - the value of minimal element
 	 */
 	@Test(dataProvider = "validMinData")
 	public void minTest(Integer[] array, int valid) {

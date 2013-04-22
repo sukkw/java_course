@@ -17,7 +17,7 @@ public class ArrayReverseTest {
 	/**
 	 * Data used for tests.
 	 * 
-	 * @return
+	 * @return object with data used for test cases
 	 */
 	@DataProvider
 	private Object[][] validData() {
@@ -30,8 +30,8 @@ public class ArrayReverseTest {
 	/**
 	 * Test method reverse.
 	 * 
-	 * @param array
-	 * @param valid
+	 * @param array - array to be reversed
+	 * @param valid - correct reversed array
 	 */
 	@Test(dataProvider = "validData")
 	public void reverseTest(Integer[] array, Integer[] valid) {

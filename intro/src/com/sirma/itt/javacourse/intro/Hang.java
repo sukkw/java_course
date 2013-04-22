@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.intro;
 import java.io.*;
 
 /**
- * hangman game.
+ * Hangman game.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
@@ -12,6 +12,8 @@ public class Hang {
 
 	/**
 	 * Start the game.
+	 * 
+	 * @param word the hidden word which player must find
 	 */
 	public void start(String word) {
 
@@ -59,7 +61,7 @@ public class Hang {
 	}
 
 	/**
-	 * read character from console.
+	 * Read character from console.
 	 * 
 	 * @return character entered by user
 	 */
@@ -79,9 +81,9 @@ public class Hang {
 	/**
 	 * Replace a char in the temporary word with correct letter.
 	 * 
-	 * @param s
-	 * @param pos
-	 * @param c
+	 * @param str - temporary word
+	 * @param pos - position where the match occurred.
+	 * @param ch - entered char
 	 * @return
 	 */
 	public String replaceCharAt(String str, int pos, char ch) {

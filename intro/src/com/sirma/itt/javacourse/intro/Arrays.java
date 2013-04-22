@@ -11,7 +11,7 @@ public class Arrays {
 	/**
 	 * Calculate sum of all elements in array and print the result.
 	 * 
-	 * @param array
+	 * @param array - array to find sum
 	 * @return sum of all elements in array
 	 */
 	public int sumArray(int[] array) {
@@ -26,7 +26,7 @@ public class Arrays {
 	/**
 	 * find the value of minimal element in array.
 	 * 
-	 * @param array
+	 * @param array - array to find minimal element
 	 * @return minimal element in array
 	 */
 	public int getMinElement(int[] array) {

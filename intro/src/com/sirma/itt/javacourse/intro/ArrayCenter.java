@@ -9,10 +9,10 @@ package com.sirma.itt.javacourse.intro;
 public class ArrayCenter {
 
 	/**
-	 * find the element which is the weight center of array.
+	 * Find the element which is the weight center of array.
 	 * 
-	 * @param array
-	 * @return position and value of weight center element
+	 * @param array - array to find weight center
+	 * @return the value of weight center element
 	 */
 	public int center(int[] array) {
 		int i;

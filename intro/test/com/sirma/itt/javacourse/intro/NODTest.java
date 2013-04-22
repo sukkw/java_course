@@ -16,7 +16,7 @@ public class NODTest {
 	/**
 	 * Data used for NOD tests.
 	 * 
-	 * @return
+	 * @return object with data used for nod test
 	 */
 	@DataProvider
 	public Object[][] validNODData() {
@@ -26,7 +26,7 @@ public class NODTest {
 	/**
 	 * Data used for NOK tests.
 	 * 
-	 * @return
+	 * @return object with data used for nok test
 	 */
 	@DataProvider
 	public Object[][] validNOKData() {
@@ -36,9 +36,9 @@ public class NODTest {
 	/**
 	 * Test for NOD.
 	 * 
-	 * @param firstNum
-	 * @param secondNum
-	 * @param valid
+	 * @param firstNum - first number for calculation
+	 * @param secondNum - second number for calculation
+	 * @param valid - correct value for NOD of firstNum and secondNum
 	 */
 	@Test(dataProvider = "validNODData")
 	public void nodTest(int firstNum, int secondNum, int valid) {
@@ -49,9 +49,9 @@ public class NODTest {
 	/**
 	 * Test for NOK.
 	 * 
-	 * @param firstNum
-	 * @param secondNum
-	 * @param valid
+	 * @param firstNum - first number for calculation
+	 * @param secondNum - second number for calculation
+	 * @param valid - correct value for NOK of firstNum and secondNum
 	 */
 	@Test(dataProvider = "validNOKData")
 	public void nokTest(int firstNum, int secondNum, int valid) {

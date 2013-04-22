@@ -9,9 +9,9 @@ package com.sirma.itt.javacourse.intro;
 public class ArrayReverse {
 
 	/**
-	 * reverse the elements.
+	 * Reverse the elements.
 	 * 
-	 * @param array
+	 * @param array - array to be reversed
 	 * @return reversed array
 	 */
 	public int[] reverse(int[] array) {

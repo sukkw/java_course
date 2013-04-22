@@ -17,7 +17,7 @@ public class HangTest {
 	/**
 	 * Data used for tests.
 	 * 
-	 * @return
+	 * @return object with data used for sum test
 	 */
 	@DataProvider
 	public Object[][] validData() {
@@ -27,10 +27,10 @@ public class HangTest {
 	/**
 	 * Test for char replace method.
 	 * 
-	 * @param str
-	 * @param pos
-	 * @param ch
-	 * @param valid
+	 * @param str - string where to replace
+	 * @param pos - position in string
+	 * @param ch - char to be replace
+	 * @param valid - string with correct replaced value
 	 */
 	@Test(dataProvider = "validData")
 	public void replaceCharTest(String str, int pos, char ch, String valid) {

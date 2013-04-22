@@ -17,7 +17,7 @@ public class ArrayCenterTest {
 	/**
 	 * Data used for tests.
 	 * 
-	 * @return
+	 * @return object with data used for test cases
 	 */
 	@DataProvider
 	private Object[][] validData() {
@@ -28,8 +28,8 @@ public class ArrayCenterTest {
 	/**
 	 * Test calculation method.
 	 * 
-	 * @param array
-	 * @param valid
+	 * @param array - array to find sum
+	 * @param valid - correct sum of all elements
 	 */
 	@Test(dataProvider = "validData")
 	public void calculateTast(Integer[] array, int valid) {

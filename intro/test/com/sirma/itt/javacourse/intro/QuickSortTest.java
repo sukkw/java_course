@@ -19,7 +19,7 @@ public class QuickSortTest {
 	/**
 	 * Data used for tests.
 	 * 
-	 * @return
+	 * @return object with data used for tests
 	 */
 	@DataProvider
 	private Object[][] validData() {
@@ -32,8 +32,8 @@ public class QuickSortTest {
 	/**
 	 * Test for quick sort method.
 	 * 
-	 * @param array
-	 * @param valid
+	 * @param array - array to be sort
+	 * @param valid - correct sorted array
 	 */
 	@Test(dataProvider = "validData")
 	public void testSort(Integer[] array, Integer[] valid) {

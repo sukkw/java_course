@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.intro;
 import java.util.Random;
 
 /**
- * helper class with common functions.
+ * Helper class with common functions.
  * 
  * @version 1.1 08 April 2013
  * @author Stella Djulgerova
@@ -33,9 +33,9 @@ public class Helper {
 	}
 
 	/**
-	 * print all elements of array.
+	 * Print all elements of array.
 	 * 
-	 * @param array
+	 * @param array - array to be print.
 	 */
 	public static void printArray(int[] array) {
 		for (int i = 0; i < array.length; i++) {

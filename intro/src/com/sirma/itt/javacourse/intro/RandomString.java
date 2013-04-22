@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * generate random string.
+ * Generate random string.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
@@ -9,11 +9,11 @@ package com.sirma.itt.javacourse.intro;
 public class RandomString {
 
 	/**
-	 * generate random string.
+	 * Generate random string.
 	 * 
-	 * @param stringLength
-	 * @param minValue
-	 * @param maxValue
+	 * @param stringLength - length of the string to be generated
+	 * @param minValue - minimal value of allowed chars in string (ASCII)
+	 * @param maxValue - maximal value of allowed chars in string (ASCII)
 	 */
 	public String random(int stringLength, int minValue, int maxValue) {
 		String randomStr = "";
@@ -24,7 +24,7 @@ public class RandomString {
 				randomInt = (int) (Math.random() * (maxValue - minValue)) + minValue;
 			} while ((randomInt > 57 && randomInt < 65) || (randomInt > 90 && randomInt < 97));
 			char randomChar = (char) randomInt;
-			randomStr += new Character(randomChar).toString();
+			randomStr += randomChar;
 		}
 
 		return randomStr;

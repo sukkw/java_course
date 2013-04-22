@@ -17,7 +17,7 @@ public class SumOfStringsTest {
 	/**
 	 * Data used for tests.
 	 * 
-	 * @return
+	 * @return object with data used for tests
 	 */
 	@DataProvider
 	public Object[][] validData() {
@@ -28,9 +28,9 @@ public class SumOfStringsTest {
 	/**
 	 * Test calculate method.
 	 * 
-	 * @param firstString
-	 * @param secondString
-	 * @param valid
+	 * @param firstString - big number
+	 * @param secondString - number to be added to firstString
+	 * @param valid - correct sum of firstString and secondString
 	 */
 	@Test(dataProvider = "validData")
 	public void calculateTast(String firstString, String secondString, String valid) {
