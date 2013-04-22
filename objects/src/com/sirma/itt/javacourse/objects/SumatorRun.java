@@ -5,15 +5,16 @@ import java.math.BigInteger;
 
 /**
  * Sumator run class.
- *
+ * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
  */
 public class SumatorRun {
+
 	/**
-	 * Class main method
-	 *
-	 * @param arr
+	 * Class main method.
+	 * 
+	 * @param args
 	 */
 	public static void main(String[] args) {
 

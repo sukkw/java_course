@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.intro;
 public class Arrays {
 
 	/**
-	 * Calculate sum of all elements in array and print the result
+	 * Calculate sum of all elements in array and print the result.
 	 * 
 	 * @param array
 	 * @return sum of all elements in array
@@ -24,7 +24,7 @@ public class Arrays {
 	}
 
 	/**
-	 * find the value of minimal element in array
+	 * find the value of minimal element in array.
 	 * 
 	 * @param array
 	 * @return minimal element in array

@@ -1,14 +1,15 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * generate random string
+ * generate random string.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
  */
 public class RandomString {
+
 	/**
-	 * generate random string
+	 * generate random string.
 	 * 
 	 * @param stringLength
 	 * @param minValue

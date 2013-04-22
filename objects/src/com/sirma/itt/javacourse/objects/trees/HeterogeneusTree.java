@@ -92,7 +92,7 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	}
 
 	/**
-	 * search in the tree wrap method.
+	 * Search in the tree wrap method.
 	 * 
 	 * @param value
 	 */
@@ -105,7 +105,7 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 		} else {
 			searchedData = "Elementa ne syshtestvuva";
 		}
-		
+
 		return searchedData;
 	}
 

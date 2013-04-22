@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.figures;
 
 /**
- * Draw geometric figure ellipse
+ * Draw geometric figure ellipse.
  * 
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
@@ -12,14 +12,14 @@ public class Ellipse extends Circle {
 	private float minorSemiAxis;
 
 	/**
-	 * Drow ellipse
+	 * Drow ellipse.
 	 */
 	public void draw() {
 		System.out.println("Elipse...");
 	}
 
 	/**
-	 * get ellipse minor SemiAxis
+	 * Get ellipse minor SemiAxis.
 	 * 
 	 * @return
 	 */
@@ -28,25 +28,25 @@ public class Ellipse extends Circle {
 	}
 
 	/**
-	 * set ellipse minorSemiAxis
+	 * Set ellipse minorSemiAxis.
 	 * 
 	 * @param minorSemiAxis
 	 */
 	public void setMinorSemiAxis(float minorSemiAxis) {
 		this.minorSemiAxis = minorSemiAxis;
 	}
-	
+
 	/**
-	 * Calculate surface of circle
+	 * Calculate surface of ellipse.
 	 * 
 	 * @return
 	 */
 	public double surfice() {
 		return 3.14 * this.getRadius() * minorSemiAxis;
 	}
-	
+
 	/**
-	 * Calculate round of circle
+	 * Calculate round of ellipse.
 	 * 
 	 * @return
 	 */

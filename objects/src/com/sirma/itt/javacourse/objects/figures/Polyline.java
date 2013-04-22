@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.objects.figures;
 import java.util.ArrayList;
 
 /**
- * Draw geometric figure polyline
+ * Draw geometric figure polyline.
  * 
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
@@ -17,7 +17,7 @@ public class Polyline extends Figure {
 	ArrayList<Integer> lineType;
 
 	/**
-	 * draw polyline
+	 * draw polyline.
 	 */
 	public void draw() {
 		System.out.println("Point...");
@@ -25,7 +25,8 @@ public class Polyline extends Figure {
 	}
 
 	/**
-	 * get all points
+	 * Get all points.
+	 * 
 	 * @return
 	 */
 	public ArrayList<Point> getPoints() {
@@ -33,7 +34,8 @@ public class Polyline extends Figure {
 	}
 
 	/**
-	 * set points
+	 * Set points.
+	 * 
 	 * @param points
 	 */
 	public void setPoints(ArrayList<Point> points) {
@@ -41,7 +43,8 @@ public class Polyline extends Figure {
 	}
 
 	/**
-	 * get all connection lines
+	 * Get all connection lines.
+	 * 
 	 * @return
 	 */
 	public ArrayList<Integer> getLineType() {
@@ -49,7 +52,8 @@ public class Polyline extends Figure {
 	}
 
 	/**
-	 * set connection type line
+	 * Set connection type line.
+	 * 
 	 * @param lineType
 	 */
 	public void setLineType(ArrayList<Integer> lineType) {

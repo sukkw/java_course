@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.figures;
 
 /**
- * Draw geometric figure point
+ * Draw geometric figure point.
  * 
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
@@ -13,14 +13,14 @@ public class Point extends Figure {
 	private int yCoord;
 
 	/**
-	 * Draw point
+	 * Draw point.
 	 */
 	public void draw() {
 		System.out.println("Point...");
 	}
 
 	/**
-	 * get point x coordinate
+	 * Get point x coordinate.
 	 * 
 	 * @return
 	 */
@@ -29,7 +29,7 @@ public class Point extends Figure {
 	}
 
 	/**
-	 * set point x coordinate
+	 * Set point x coordinate.
 	 * 
 	 * @param xCoord
 	 */
@@ -38,7 +38,7 @@ public class Point extends Figure {
 	}
 
 	/**
-	 * get point y coordinate
+	 * Get point y coordinate.
 	 * 
 	 * @return
 	 */
@@ -47,7 +47,7 @@ public class Point extends Figure {
 	}
 
 	/**
-	 * set point y coordinate
+	 * Set point y coordinate.
 	 * 
 	 * @param yCoord
 	 */

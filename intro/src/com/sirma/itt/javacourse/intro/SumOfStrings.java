@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * Sum two numbers when present the digits as string
+ * Sum two numbers when present the digits as string.
  * 
  * @version 1.1 08 April 2013
  * @author Stella Djulgerova
@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.intro;
 public class SumOfStrings {
 
 	/**
-	 * Calculate value of two strings as number
+	 * Calculate value of two strings as number.
 	 * 
 	 * @param firstString
 	 * @param secondString
@@ -17,8 +17,10 @@ public class SumOfStrings {
 	 */
 	public String calculate(String firstString, String secondString) {
 
-		char ldcFirstString, ldcSecoundString;
-		int ldiFirstString, ldiSecoundString;
+		char ldcFirstString;
+		char ldcSecoundString;
+		int ldiFirstString;
+		int ldiSecoundString;
 		int transfer = 0;
 		int tempSum;
 		String sumAsString = "";

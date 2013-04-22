@@ -5,27 +5,29 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- * Test class for sum of two strings methods
+ * Test class for sum of two strings methods.
  * 
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
  */
 public class SumOfStringsTest {
-	
-	SumOfStrings str = new SumOfStrings();
-	
+
+	private SumOfStrings str = new SumOfStrings();
+
 	/**
-	 * Data used for tests
+	 * Data used for tests.
+	 * 
 	 * @return
 	 */
 	@DataProvider
 	public Object[][] validData() {
-		return new Object[][] { { "9999", "8888", "18887" }, 
-				{ "34567", "1256478", "1291045" }, { "74", "0", "74" } };
+		return new Object[][] { { "9999", "8888", "18887" }, { "34567", "1256478", "1291045" },
+				{ "74", "0", "74" } };
 	}
 
 	/**
-	 * Test calculate method
+	 * Test calculate method.
+	 * 
 	 * @param firstString
 	 * @param secondString
 	 * @param valid

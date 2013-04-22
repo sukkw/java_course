@@ -9,6 +9,12 @@ import java.util.Random;
  * @author Stella Djulgerova
  */
 public class BinaryTreeRun {
+	
+	/**
+	 * Class main method
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		// Create the tree

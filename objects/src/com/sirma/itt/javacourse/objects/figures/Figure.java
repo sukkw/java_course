@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.figures;
 
 /**
- * Abstract class base for all geometric figures
+ * Abstract class base for all geometric figures.
  * 
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.objects.figures;
 public abstract class Figure {
 
 	/**
-	 * Draw figure
+	 * Draw figure.
 	 */
 	public abstract void draw();
 }

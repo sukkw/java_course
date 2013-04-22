@@ -1,5 +1,11 @@
 package com.sirma.itt.javacourse.objects.store;
 
+/**
+ * Keep information for products in store.
+ * 
+ * @version 1.1 16 April 2013
+ * @author Stella Djulgerova
+ */
 public class Product {
 
 	// class private members
@@ -8,7 +14,7 @@ public class Product {
 	private String model;
 
 	/**
-	 * get Price
+	 * Get Price.
 	 * 
 	 * @return
 	 */
@@ -17,7 +23,7 @@ public class Product {
 	}
 
 	/**
-	 * set price
+	 * Set price.
 	 * 
 	 * @param price
 	 */
@@ -26,7 +32,7 @@ public class Product {
 	}
 
 	/**
-	 * get mark
+	 * Get mark.
 	 * 
 	 * @return
 	 */
@@ -35,7 +41,7 @@ public class Product {
 	}
 
 	/**
-	 * set mark
+	 * Set mark.
 	 * 
 	 * @param mark
 	 */
@@ -44,7 +50,7 @@ public class Product {
 	}
 
 	/**
-	 * get model
+	 * Get model.
 	 * 
 	 * @return
 	 */
@@ -53,7 +59,7 @@ public class Product {
 	}
 
 	/**
-	 * set model
+	 * Set model.
 	 * 
 	 * @param model
 	 */

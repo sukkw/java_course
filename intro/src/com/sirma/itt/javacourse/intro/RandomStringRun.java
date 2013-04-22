@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * generate random string run class
+ * generate random string run class.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.intro;
 public class RandomStringRun {
 
 	/**
-	 * main method
+	 * Main method.
 	 * 
 	 * @param args
 	 */

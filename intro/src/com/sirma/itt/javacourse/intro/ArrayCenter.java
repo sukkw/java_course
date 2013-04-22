@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * Find the weight center of array
+ * Find the weight center of array.
  * 
  * @version 1.1 08 April 2013
  * @author Stella Djulgerova
@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.intro;
 public class ArrayCenter {
 
 	/**
-	 * find the element which is the weight center of array
+	 * find the element which is the weight center of array.
 	 * 
 	 * @param array
 	 * @return position and value of weight center element

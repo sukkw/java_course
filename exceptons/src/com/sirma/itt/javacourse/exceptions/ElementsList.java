@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.exceptions;
 import java.util.Scanner;
 
 /**
- * Add, delete and print array alements
+ * Add, delete and print array elements.
  * 
  * @version 1.1 20 April 2013
  * @author Stella Djulgerova
@@ -14,7 +14,7 @@ public class ElementsList {
 	private Object[] elements;
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 * 
 	 * @param elements
 	 */
@@ -23,7 +23,7 @@ public class ElementsList {
 	}
 
 	/**
-	 * Add element into array
+	 * Add element into array.
 	 * 
 	 * @param obj
 	 */
@@ -47,7 +47,7 @@ public class ElementsList {
 	}
 
 	/**
-	 * Remove element from array
+	 * Remove element from array.
 	 */
 	public void remove() {
 		int index = 0;
@@ -72,7 +72,7 @@ public class ElementsList {
 	}
 
 	/**
-	 * Print all array elements
+	 * Print all array elements.
 	 * 
 	 * @param elements
 	 */
@@ -94,10 +94,9 @@ public class ElementsList {
 	}
 
 	/**
-	 * Read string from console
+	 * Read string from console and do action.
 	 * 
 	 * @return
-	 * 
 	 * @return
 	 */
 	public void read() {
@@ -110,18 +109,20 @@ public class ElementsList {
 
 			switch (str) {
 
-			case "A":
-				add("test");
-				break;
-			case "D":
-				remove();
-				break;
-			case "P":
-				printAllElements();
-				break;
-			case "E":
-				checker = false;
-				break;
+				case "A":
+					add("test");
+					break;
+				case "D":
+					remove();
+					break;
+				case "P":
+					printAllElements();
+					break;
+				case "E":
+					checker = false;
+					break;
+				default:
+					break;
 			}
 		} while (checker);
 	}

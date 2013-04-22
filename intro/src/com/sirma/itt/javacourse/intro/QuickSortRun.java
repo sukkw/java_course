@@ -1,15 +1,16 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * Run QuickSort algorithm
+ * Run QuickSort algorithm.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
  */
 public class QuickSortRun {
-	
+
 	/**
-	 * main method
+	 * Main method.
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {

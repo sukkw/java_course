@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * Reverse the elements of array
+ * Reverse the elements of array.
  * 
  * @version 1.1 08 April 2013
  * @author Stella Djulgerova
@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.intro;
 public class ArrayReverse {
 
 	/**
-	 * reverse the elements
+	 * reverse the elements.
 	 * 
 	 * @param array
 	 * @return reversed array

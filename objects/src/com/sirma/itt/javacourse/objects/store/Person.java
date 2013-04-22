@@ -1,9 +1,14 @@
 package com.sirma.itt.javacourse.objects.store;
 
-
+/**
+ * represent information for person.
+ * 
+ * @version 1.1 16 April 2013
+ * @author Stella Djulgerova
+ */
 public abstract class Person {
 
-	// classs private members
+	// class private members
 	private int ID;
 	private String name;
 	private Address address;
@@ -11,7 +16,7 @@ public abstract class Person {
 	private String email;
 
 	/**
-	 * get name
+	 * Get name.
 	 * 
 	 * @return
 	 */
@@ -20,7 +25,7 @@ public abstract class Person {
 	}
 
 	/**
-	 * set name
+	 * Set name.
 	 * 
 	 * @param name
 	 */
@@ -29,7 +34,7 @@ public abstract class Person {
 	}
 
 	/**
-	 * get address
+	 * Get address.
 	 * 
 	 * @return
 	 */
@@ -38,7 +43,7 @@ public abstract class Person {
 	}
 
 	/**
-	 * set address
+	 * Set address.
 	 * 
 	 * @param address
 	 */
@@ -47,7 +52,7 @@ public abstract class Person {
 	}
 
 	/**
-	 * get phone
+	 * Get phone.
 	 * 
 	 * @return
 	 */
@@ -56,7 +61,7 @@ public abstract class Person {
 	}
 
 	/**
-	 * set phone
+	 * Set phone.
 	 * 
 	 * @param phone
 	 */
@@ -65,7 +70,7 @@ public abstract class Person {
 	}
 
 	/**
-	 * get email
+	 * Get e-mail.
 	 * 
 	 * @return
 	 */
@@ -74,7 +79,7 @@ public abstract class Person {
 	}
 
 	/**
-	 * set email
+	 * Set e-mail.
 	 * 
 	 * @param email
 	 */
@@ -83,7 +88,8 @@ public abstract class Person {
 	}
 
 	/**
-	 * get ID
+	 * Get ID.
+	 * 
 	 * @return
 	 */
 	public int getID() {
@@ -91,7 +97,8 @@ public abstract class Person {
 	}
 
 	/**
-	 * set ID
+	 * Set ID.
+	 * 
 	 * @param iD
 	 */
 	public void setID(int iD) {

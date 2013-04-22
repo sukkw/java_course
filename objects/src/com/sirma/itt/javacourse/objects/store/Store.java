@@ -2,6 +2,12 @@ package com.sirma.itt.javacourse.objects.store;
 
 import java.util.ArrayList;
 
+/**
+ * Represents store.
+ * 
+ * @version 1.1 16 April 2013
+ * @author Stella Djulgerova
+ */
 public class Store {
 
 	// class private members
@@ -11,7 +17,8 @@ public class Store {
 	private ArrayList<Department> departments;
 
 	/**
-	 * get Emoployees
+	 * Get emoployees.
+	 * 
 	 * @return
 	 */
 	public ArrayList<Employee> getEmployee() {
@@ -19,7 +26,8 @@ public class Store {
 	}
 
 	/**
-	 * Set employees
+	 * Set employees.
+	 * 
 	 * @param employees
 	 */
 	public void setEmployee(ArrayList<Employee> employees) {
@@ -27,7 +35,8 @@ public class Store {
 	}
 
 	/**
-	 * get clients
+	 * Get clients.
+	 * 
 	 * @return
 	 */
 	public ArrayList<Client> getClients() {
@@ -35,7 +44,8 @@ public class Store {
 	}
 
 	/**
-	 * set clients
+	 * Set clients.
+	 * 
 	 * @param clients
 	 */
 	public void setClients(ArrayList<Client> clients) {
@@ -43,7 +53,8 @@ public class Store {
 	}
 
 	/**
-	 * get products
+	 * Get products.
+	 * 
 	 * @return
 	 */
 	public ArrayList<Product> getProducts() {
@@ -51,7 +62,8 @@ public class Store {
 	}
 
 	/**
-	 * set products
+	 * Set products.
+	 * 
 	 * @param products
 	 */
 	public void setProducts(ArrayList<Product> products) {

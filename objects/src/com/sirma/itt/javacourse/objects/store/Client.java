@@ -3,62 +3,65 @@ package com.sirma.itt.javacourse.objects.store;
 import java.util.ArrayList;
 
 /**
- * Keep information for clients
+ * Keep information for clients.
  * 
  * @version 1.1 16 April 2013
  * @author Stella Djulgerova
  */
 public class Client extends Person implements ClientImpl {
-	
-	//class private members
+
+	// class private members
 	private ArrayList<Order> order;
 	private int paymentMethod;
-	
-	
+
 	/**
-	 * allow client to make an order
+	 * Allow client to make an order.
 	 */
 	public void makeOrde() {
-		
+
 	}
 
 	/**
-	 * allow client cancel order
+	 * Allow client cancel order.
 	 */
 	public void cancelOrder() {
-		
+
 	}
-	
+
 	/**
-	 * get orders
+	 * Get orders.
+	 * 
 	 * @return
 	 */
 	public ArrayList<Order> getOrder() {
 		return order;
 	}
-	
+
 	/**
-	 * set orders
+	 * Set orders.
+	 * 
 	 * @param order
 	 */
 	public void setOrder(ArrayList<Order> order) {
 		this.order = order;
 	}
-	
+
 	/**
-	 * get payment method
+	 * Get payment method.
+	 * 
 	 * @return
 	 */
 	public int getPaymentMethod() {
 		return paymentMethod;
 	}
-	
+
 	/**
-	 * set payment method
+	 * Set payment method.
+	 * 
 	 * @param paymentMethod
 	 */
 	public void setPaymentMethod(int paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
-	
+
 }

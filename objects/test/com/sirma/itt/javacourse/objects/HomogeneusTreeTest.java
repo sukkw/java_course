@@ -6,7 +6,7 @@ import com.sirma.itt.javacourse.objects.trees.HomogeneusTree;
 import com.sirma.itt.javacourse.objects.trees.HomogeneusTreeData;
 
 /**
- * Test class for homogeneus tree methods
+ * Test class for homogeneus tree methods.
  * 
  * @version 1.1 18 April 2013
  * @author Stella Djulgerova
@@ -14,7 +14,7 @@ import com.sirma.itt.javacourse.objects.trees.HomogeneusTreeData;
 public class HomogeneusTreeTest {
 
 	/**
-	 * Test method print
+	 * Test method print.
 	 * 
 	 * @param inputData
 	 * @param valid

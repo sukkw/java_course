@@ -8,7 +8,7 @@ import com.sirma.itt.javacourse.objects.trees.HeterogeneusTree;
 import com.sirma.itt.javacourse.objects.trees.HeterogeneusTreeData;
 
 /**
- * Test class for heterogeneust tree methods
+ * Test class for heterogeneust tree methods.
  * 
  * @version 1.1 18 April 2013
  * @author Stella Djulgerova
@@ -19,19 +19,16 @@ public class HeterogeneusTreeTest {
 	HeterogeneusTree<HeterogeneusTreeData> tree = new HeterogeneusTree<HeterogeneusTreeData>();
 
 	/**
-	 * Data used for tests
+	 * Data used for tests.
 	 * 
 	 * @return test data and valid data
 	 */
 	@DataProvider
 	private Object[][] validData() {
 		return new Object[][] { {
-				new HeterogeneusTreeData[] {
-						new HeterogeneusTreeData(19, "String1 "),
-						new HeterogeneusTreeData(35, 8),
-						new HeterogeneusTreeData(11, 2.76564),
-						new HeterogeneusTreeData(7, true),
-						new HeterogeneusTreeData(16, 2.6f),
+				new HeterogeneusTreeData[] { new HeterogeneusTreeData(19, "String1 "),
+						new HeterogeneusTreeData(35, 8), new HeterogeneusTreeData(11, 2.76564),
+						new HeterogeneusTreeData(7, true), new HeterogeneusTreeData(16, 2.6f),
 						new HeterogeneusTreeData(23, "String2"),
 						new HeterogeneusTreeData(13, new HeterogeneusTreeData(1, 5)),
 						new HeterogeneusTreeData(17, "String3") },
@@ -39,7 +36,7 @@ public class HeterogeneusTreeTest {
 	}
 
 	/**
-	 * Test method search
+	 * Test method search.
 	 * 
 	 * @param inputData
 	 * @param valid
@@ -53,7 +50,7 @@ public class HeterogeneusTreeTest {
 	}
 
 	/**
-	 * Test method insert
+	 * Test method insert.
 	 * 
 	 * @param inputData
 	 * @param valid
@@ -67,7 +64,7 @@ public class HeterogeneusTreeTest {
 	}
 
 	/**
-	 * Test method print
+	 * Test method print.
 	 * 
 	 * @param inputData
 	 * @param valid
@@ -83,7 +80,7 @@ public class HeterogeneusTreeTest {
 	}
 
 	/**
-	 * Load test data
+	 * Load test data.
 	 * 
 	 * @param inputData
 	 * @param valid

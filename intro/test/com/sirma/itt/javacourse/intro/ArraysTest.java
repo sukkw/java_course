@@ -5,17 +5,18 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- * Test class for array methods
+ * Test class for array methods.
  * 
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
  */
 public class ArraysTest {
 
-	Arrays testArray = new Arrays();
+	private Arrays testArray = new Arrays();
 
 	/**
-	 * Data used for sum tests
+	 * Data used for sum tests.
+	 * 
 	 * @return
 	 */
 	@DataProvider
@@ -25,7 +26,8 @@ public class ArraysTest {
 	}
 
 	/**
-	 * Data used for min element tests
+	 * Data used for min element tests.
+	 * 
 	 * @return
 	 */
 	@DataProvider
@@ -35,7 +37,8 @@ public class ArraysTest {
 	}
 
 	/**
-	 * Test for sum method
+	 * Test for sum method.
+	 * 
 	 * @param array
 	 * @param valid
 	 */
@@ -54,7 +57,8 @@ public class ArraysTest {
 	}
 
 	/**
-	 * Test for find min element method
+	 * Test for find min element method.
+	 * 
 	 * @param array
 	 * @param valid
 	 */

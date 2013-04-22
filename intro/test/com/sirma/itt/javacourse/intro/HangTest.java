@@ -5,17 +5,17 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- * Test class for hangman game
+ * Test class for hangman game.
  * 
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
  */
 public class HangTest {
 
-	Hang hangTest = new Hang();
+	private Hang hangTest = new Hang();
 
 	/**
-	 * Data used for tests
+	 * Data used for tests.
 	 * 
 	 * @return
 	 */
@@ -25,7 +25,7 @@ public class HangTest {
 	}
 
 	/**
-	 * Test for char replace method
+	 * Test for char replace method.
 	 * 
 	 * @param str
 	 * @param pos

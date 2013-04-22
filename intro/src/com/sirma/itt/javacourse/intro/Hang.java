@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.intro;
 import java.io.*;
 
 /**
- * hangman game
+ * hangman game.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
@@ -11,15 +11,15 @@ import java.io.*;
 public class Hang {
 
 	/**
-	 * Start the game
+	 * Start the game.
 	 */
 	public void start(String word) {
 
 		String tempWord = "";
-		for(int i=0; i<word.length(); i++) {
+		for (int i = 0; i < word.length(); i++) {
 			tempWord += "-";
 		}
-		
+
 		// Max allowed tries are 5
 		final int ERROR_COUNTER = 5;
 
@@ -59,7 +59,7 @@ public class Hang {
 	}
 
 	/**
-	 * read character from console
+	 * read character from console.
 	 * 
 	 * @return character entered by user
 	 */
@@ -77,7 +77,7 @@ public class Hang {
 	}
 
 	/**
-	 * Replace a char in the temporary word with correct letter
+	 * Replace a char in the temporary word with correct letter.
 	 * 
 	 * @param s
 	 * @param pos

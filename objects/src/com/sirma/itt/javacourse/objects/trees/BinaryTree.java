@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.objects.trees;
 public class BinaryTree<T extends BinaryTreeData> {
 
 	/**
-	 * Create binary tree node /nested class/
+	 * Create binary tree node /nested class/.
 	 * 
 	 * @version 1.1 14 April 2013
 	 * @author Stella Djulgerova
@@ -23,7 +23,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 		private BinaryTreeNode<T> rightChild;
 
 		/**
-		 * nodes constructor.
+		 * Nodes constructor.
 		 * 
 		 * @param value
 		 */
@@ -89,7 +89,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 	}
 
 	/**
-	 * search in the tree wrap method.
+	 * Search in the tree wrap method.
 	 * 
 	 * @param value
 	 */
@@ -102,7 +102,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 		} else {
 			searchedData = "Elementa ne syshtestvuva";
 		}
-		
+
 		return searchedData;
 	}
 

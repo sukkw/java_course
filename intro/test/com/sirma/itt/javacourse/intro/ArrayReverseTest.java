@@ -5,17 +5,17 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- * Test class for reverse array methods
+ * Test class for reverse array methods.
  * 
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
  */
 public class ArrayReverseTest {
 
-	ArrayReverse reverseTest = new ArrayReverse();
+	private ArrayReverse reverseTest = new ArrayReverse();
 
 	/**
-	 * Data used for tests
+	 * Data used for tests.
 	 * 
 	 * @return
 	 */
@@ -28,13 +28,13 @@ public class ArrayReverseTest {
 	}
 
 	/**
-	 * Test method reverse
+	 * Test method reverse.
 	 * 
 	 * @param array
 	 * @param valid
 	 */
 	@Test(dataProvider = "validData")
-	public void reverseTast(Integer[] array, Integer[] valid) {
+	public void reverseTest(Integer[] array, Integer[] valid) {
 
 		// change from array of Integers to array of int.
 		// TestNG works only with objects
@@ -55,9 +55,6 @@ public class ArrayReverseTest {
 		System.out.println();
 
 		int[] result = reverseTest.reverse(arr);
-		Assert.assertEquals(result, valid);
-		arr = null;
-		result = reverseTest.reverse(arr);
 		Assert.assertEquals(result, valid);
 	}
 }

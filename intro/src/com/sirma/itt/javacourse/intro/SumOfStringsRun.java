@@ -1,8 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
-
 /**
- * Sum of strings run class
+ * Sum of strings run class.
  * 
  * @version 1.1 08 April 2013
  * @author Stella Djulgerova
@@ -10,7 +9,7 @@ package com.sirma.itt.javacourse.intro;
 public class SumOfStringsRun {
 
 	/**
-	 * main method
+	 * Main method.
 	 * 
 	 * @param args
 	 */

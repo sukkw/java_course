@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class ConsoleReader {
 
 	/**
-	 * Check entered string for valid data
+	 * Check entered string for valid data.
 	 * 
 	 * @param str
 	 * @return
@@ -40,7 +40,7 @@ public class ConsoleReader {
 	}
 
 	/**
-	 * Check if number is between 0 and 100
+	 * Check if number is between 0 and 100.
 	 * 
 	 * @param str
 	 * @throws OutOfBoundException
@@ -53,7 +53,7 @@ public class ConsoleReader {
 	}
 
 	/**
-	 * Read string from console
+	 * Read string from console.
 	 * 
 	 * @return
 	 */

@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.figures;
 
 /**
- * Draw geometric figure diamond
+ * Draw geometric figure diamond.
  * 
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
@@ -13,7 +13,7 @@ public class Diamond extends Square {
 	private double hight;
 
 	/**
-	 * Draw diamond
+	 * Draw diamond.
 	 */
 	public void draw() {
 		System.out.println("Diamond...");
@@ -21,7 +21,7 @@ public class Diamond extends Square {
 	}
 
 	/**
-	 * Calculate surface of square
+	 * Calculate surface of square.
 	 * 
 	 * @return
 	 */
@@ -30,7 +30,7 @@ public class Diamond extends Square {
 	}
 
 	/**
-	 * Get angle b
+	 * Get angle b.
 	 * 
 	 * @return
 	 */
@@ -39,7 +39,7 @@ public class Diamond extends Square {
 	}
 
 	/**
-	 * Set angle b
+	 * Set angle b.
 	 * 
 	 * @param angle
 	 */
@@ -48,7 +48,7 @@ public class Diamond extends Square {
 	}
 
 	/**
-	 * get height to the side
+	 * Get height to the side.
 	 * 
 	 * @return
 	 */
@@ -57,7 +57,7 @@ public class Diamond extends Square {
 	}
 
 	/**
-	 * Set height to the side
+	 * Set height to the side.
 	 * 
 	 * @param h
 	 */

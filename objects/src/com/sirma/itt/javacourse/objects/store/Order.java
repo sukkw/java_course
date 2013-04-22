@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Keep information for orders
+ * Keep information for orders.
  * 
  * @version 1.1 16 April 2013
  * @author Stella Djulgerova
@@ -20,21 +20,21 @@ public class Order {
 	private int number;
 
 	/**
-	 * add item to order
+	 * Add item to order.
 	 */
 	public void addItem() {
 
 	}
 
 	/**
-	 * delete item from order
+	 * Delete item from order.
 	 */
 	public void deleteItem() {
 
 	}
 
 	/**
-	 * get order id
+	 * Get order id.
 	 * 
 	 * @return
 	 */
@@ -43,7 +43,7 @@ public class Order {
 	}
 
 	/**
-	 * set order id
+	 * Set order id.
 	 * 
 	 * @param iD
 	 */
@@ -52,7 +52,7 @@ public class Order {
 	}
 
 	/**
-	 * get client id
+	 * Get client id.
 	 * 
 	 * @return
 	 */
@@ -61,7 +61,7 @@ public class Order {
 	}
 
 	/**
-	 * set client ID
+	 * Set client ID.
 	 * 
 	 * @param clientID
 	 */
@@ -70,7 +70,7 @@ public class Order {
 	}
 
 	/**
-	 * get items
+	 * Get items.
 	 * 
 	 * @return
 	 */
@@ -79,7 +79,7 @@ public class Order {
 	}
 
 	/**
-	 * set items
+	 * Set items.
 	 * 
 	 * @param order
 	 */
@@ -88,7 +88,7 @@ public class Order {
 	}
 
 	/**
-	 * get order date
+	 * Get order date.
 	 * 
 	 * @return
 	 */
@@ -97,7 +97,7 @@ public class Order {
 	}
 
 	/**
-	 * set order date
+	 * Set order date.
 	 * 
 	 * @param date
 	 */
@@ -106,7 +106,8 @@ public class Order {
 	}
 
 	/**
-	 * get Order status
+	 * Get Order status.
+	 * 
 	 * @return
 	 */
 	public int getStatus() {
@@ -114,7 +115,8 @@ public class Order {
 	}
 
 	/**
-	 * set order status
+	 * Set order status.
+	 * 
 	 * @param status
 	 */
 	public void setStatus(int status) {
@@ -122,7 +124,8 @@ public class Order {
 	}
 
 	/**
-	 * get order number
+	 * Get order number.
+	 * 
 	 * @return
 	 */
 	public int getNumber() {
@@ -130,7 +133,8 @@ public class Order {
 	}
 
 	/**
-	 * set order number
+	 * Set order number.
+	 * 
 	 * @param number
 	 */
 	public void setNumber(int number) {

@@ -3,14 +3,15 @@ package com.sirma.itt.javacourse.intro;
 import java.util.Random;
 
 /**
- * Calculate greatest common divider and lowest common multiple of two numbers run class
+ * Calculate greatest common divider and lowest common multiple of two numbers run class.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
  */
 public class NODRun {
+
 	/**
-	 * Class main method
+	 * Class main method.
 	 * 
 	 * @param arr
 	 */

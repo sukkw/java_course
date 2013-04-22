@@ -2,75 +2,60 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47" started-at="2013-04-18T00:01:10Z" finished-at="2013-04-18T00:01:10Z">
+  <suite name="Default suite" duration-ms="62" started-at="2013-04-22T08:19:32Z" finished-at="2013-04-22T08:19:32Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47" started-at="2013-04-18T00:01:10Z" finished-at="2013-04-18T00:01:10Z">
-      <class name="com.sirma.itt.javacourse.intro.SumOfStringsTest">
-        <test-method status="PASS" signature="calculateTast(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.SumOfStringsTest@1de5d00]" name="calculateTast" duration-ms="15" started-at="2013-04-18T02:01:10Z" data-provider="validData" finished-at="2013-04-18T02:01:10Z">
+    <test name="Default test" duration-ms="62" started-at="2013-04-22T08:19:32Z" finished-at="2013-04-22T08:19:32Z">
+      <class name="com.sirma.itt.javacourse.intro.ArrayReverseTest">
+        <test-method status="PASS" signature="reverseTast([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1e68ce4]" name="reverseTast" duration-ms="15" started-at="2013-04-22T11:19:32Z" data-provider="validData" finished-at="2013-04-22T11:19:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[9999]]>
+                <![CDATA[[Ljava.lang.Integer;@1783d33]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[8888]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[18887]]>
+                <![CDATA[[Ljava.lang.Integer;@fa1b85]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- calculateTast -->
-        <test-method status="PASS" signature="calculateTast(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.SumOfStringsTest@1de5d00]" name="calculateTast" duration-ms="0" started-at="2013-04-18T02:01:10Z" data-provider="validData" finished-at="2013-04-18T02:01:10Z">
+        </test-method> <!-- reverseTast -->
+        <test-method status="PASS" signature="reverseTast([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1e68ce4]" name="reverseTast" duration-ms="0" started-at="2013-04-22T11:19:32Z" data-provider="validData" finished-at="2013-04-22T11:19:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[34567]]>
+                <![CDATA[[Ljava.lang.Integer;@24cdc7]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1256478]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[1291045]]>
+                <![CDATA[[Ljava.lang.Integer;@41e2aa]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- calculateTast -->
-        <test-method status="PASS" signature="calculateTast(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.SumOfStringsTest@1de5d00]" name="calculateTast" duration-ms="0" started-at="2013-04-18T02:01:10Z" data-provider="validData" finished-at="2013-04-18T02:01:10Z">
+        </test-method> <!-- reverseTast -->
+        <test-method status="PASS" signature="reverseTast([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1e68ce4]" name="reverseTast" duration-ms="0" started-at="2013-04-22T11:19:32Z" data-provider="validData" finished-at="2013-04-22T11:19:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[74]]>
+                <![CDATA[[Ljava.lang.Integer;@1881149]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[74]]>
+                <![CDATA[[Ljava.lang.Integer;@2709da]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- calculateTast -->
-      </class> <!-- com.sirma.itt.javacourse.intro.SumOfStringsTest -->
+        </test-method> <!-- reverseTast -->
+      </class> <!-- com.sirma.itt.javacourse.intro.ArrayReverseTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

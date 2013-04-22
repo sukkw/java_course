@@ -5,17 +5,18 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- * Test class for weight center array
+ * Test class for weight center array.
  * 
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
  */
 public class ArrayCenterTest {
 
-	ArrayCenter testArray = new ArrayCenter();
+	private ArrayCenter testArray = new ArrayCenter();
 
 	/**
-	 * Data used for tests
+	 * Data used for tests.
+	 * 
 	 * @return
 	 */
 	@DataProvider
@@ -25,7 +26,7 @@ public class ArrayCenterTest {
 	}
 
 	/**
-	 * Test calculation method
+	 * Test calculation method.
 	 * 
 	 * @param array
 	 * @param valid

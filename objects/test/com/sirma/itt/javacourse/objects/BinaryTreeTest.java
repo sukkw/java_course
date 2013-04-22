@@ -8,7 +8,7 @@ import com.sirma.itt.javacourse.objects.trees.BinaryTree;
 import com.sirma.itt.javacourse.objects.trees.BinaryTreeData;
 
 /**
- * Test class for binary tree methods
+ * Test class for binary tree methods.
  * 
  * @version 1.1 17 April 2013
  * @author Stella Djulgerova
@@ -19,7 +19,7 @@ public class BinaryTreeTest {
 	BinaryTree<BinaryTreeData> tree = new BinaryTree<BinaryTreeData>();
 
 	/**
-	 * Data used for tests
+	 * Data used for tests.
 	 * 
 	 * @return test data and valid data
 	 */
@@ -27,18 +27,15 @@ public class BinaryTreeTest {
 	private Object[][] validData() {
 		return new Object[][] { {
 				new BinaryTreeData[] { new BinaryTreeData(19, "String1 "),
-						new BinaryTreeData(35, "String2"),
-						new BinaryTreeData(11, "String3"),
-						new BinaryTreeData(7, "String4"),
-						new BinaryTreeData(16, "String5"),
-						new BinaryTreeData(23, "String6"),
-						new BinaryTreeData(13, "String7"),
+						new BinaryTreeData(35, "String2"), new BinaryTreeData(11, "String3"),
+						new BinaryTreeData(7, "String4"), new BinaryTreeData(16, "String5"),
+						new BinaryTreeData(23, "String6"), new BinaryTreeData(13, "String7"),
 						new BinaryTreeData(17, "String8") },
 				new String("Turseniq element e: 11 String3") } };
 	}
 
 	/**
-	 * Test method search
+	 * Test method search.
 	 * 
 	 * @param inputData
 	 * @param valid
@@ -52,7 +49,7 @@ public class BinaryTreeTest {
 	}
 
 	/**
-	 * Test method insert
+	 * Test method insert.
 	 * 
 	 * @param inputData
 	 * @param valid
@@ -66,7 +63,7 @@ public class BinaryTreeTest {
 	}
 
 	/**
-	 * Test method print
+	 * Test method print.
 	 * 
 	 * @param inputData
 	 * @param valid
@@ -82,7 +79,7 @@ public class BinaryTreeTest {
 	}
 
 	/**
-	 * Load test data
+	 * Load test data.
 	 * 
 	 * @param inputData
 	 * @param valid

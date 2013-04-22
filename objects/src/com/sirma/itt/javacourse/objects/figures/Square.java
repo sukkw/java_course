@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.figures;
 
 /**
- * Draw geometric figure square
+ * Draw geometric figure square.
  * 
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
@@ -10,17 +10,18 @@ public class Square extends Figure {
 
 	// class private members
 	private double sideA;
-	private int	angleA = 90;
+	private int angleA = 90;
 
 	/**
-	 * Draw square
+	 * Draw square.
 	 */
 	public void draw() {
 		System.out.println("Square...");
 	}
 
 	/**
-	 * Calculate surface of square
+	 * Calculate surface of square.
+	 * 
 	 * @return
 	 */
 	public double surface() {
@@ -28,7 +29,8 @@ public class Square extends Figure {
 	}
 
 	/**
-	 * Calculate round of square
+	 * Calculate round of square.
+	 * 
 	 * @return
 	 */
 	public double round() {
@@ -36,7 +38,8 @@ public class Square extends Figure {
 	}
 
 	/**
-	 * get side a
+	 * Get side a.
+	 * 
 	 * @return
 	 */
 	public double getSideA() {
@@ -44,7 +47,8 @@ public class Square extends Figure {
 	}
 
 	/**
-	 * set side a
+	 * Set side a.
+	 * 
 	 * @param a
 	 */
 	public void setSideA(double sideA) {
@@ -52,7 +56,8 @@ public class Square extends Figure {
 	}
 
 	/**
-	 * get angle (90)
+	 * Get angle (90).
+	 * 
 	 * @return
 	 */
 	public int getAngleA() {
@@ -60,7 +65,8 @@ public class Square extends Figure {
 	}
 
 	/**
-	 * set angle (90)
+	 * Set angle (90).
+	 * 
 	 * @param angleA
 	 */
 	public void setAngleA(int angleA) {

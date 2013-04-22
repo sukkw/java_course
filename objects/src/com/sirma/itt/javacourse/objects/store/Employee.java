@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.store;
 
 /**
- * Keep information for employees
+ * Keep information for employees.
  * 
  * @version 1.1 16 April 2013
  * @author Stella Djulgerova
@@ -14,7 +14,7 @@ public class Employee extends Person {
 	private double salary;
 
 	/**
-	 * get salary
+	 * Get salary.
 	 * 
 	 * @return
 	 */
@@ -23,8 +23,8 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * set salary
-	 *
+	 * Set salary.
+	 * 
 	 * @param salary
 	 */
 	public void setSalary(double salary) {
@@ -32,7 +32,8 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * get employee's department.
+	 * Get employee's department.
+	 * 
 	 * @return
 	 */
 	public Department getDepartment() {
@@ -40,7 +41,8 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * set employee's department.
+	 * Set employee's department.
+	 * 
 	 * @param department
 	 */
 	public void setDepartment(Department department) {
@@ -48,7 +50,8 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * get employee's position.
+	 * Get employee's position.
+	 * 
 	 * @return
 	 */
 	public Position getPosition() {
@@ -56,7 +59,8 @@ public class Employee extends Person {
 	}
 
 	/**
-	 * set employee's position.
+	 * Set employee's position.
+	 * 
 	 * @param position
 	 */
 	public void setPosition(Position position) {

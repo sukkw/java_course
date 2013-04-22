@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- * Test class for sum of different data types
+ * Test class for sum of different data types.
  * 
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
@@ -18,7 +18,7 @@ public class SumatorTest {
 	Sumator sumator = new Sumator();
 
 	/**
-	 * Data used for int tests
+	 * Data used for int tests.
 	 * 
 	 * @return
 	 */
@@ -28,7 +28,7 @@ public class SumatorTest {
 	}
 
 	/**
-	 * Data used for float tests
+	 * Data used for float tests.
 	 * 
 	 * @return
 	 */
@@ -39,7 +39,7 @@ public class SumatorTest {
 	}
 
 	/**
-	 * Data used for string tests
+	 * Data used for string tests.
 	 * 
 	 * @return
 	 */
@@ -50,7 +50,7 @@ public class SumatorTest {
 	}
 
 	/**
-	 * Data used for BigInteger tests
+	 * Data used for BigInteger tests.
 	 * 
 	 * @return
 	 */
@@ -62,7 +62,7 @@ public class SumatorTest {
 	}
 
 	/**
-	 * Data used for BigDecimal tests
+	 * Data used for BigDecimal tests.
 	 * 
 	 * @return
 	 */
@@ -74,7 +74,7 @@ public class SumatorTest {
 	}
 
 	/**
-	 * Test for int calculation
+	 * Test for int calculation.
 	 * 
 	 * @param firstNum
 	 * @param secondNum
@@ -85,9 +85,9 @@ public class SumatorTest {
 		int result = sumator.sum(a, b);
 		Assert.assertEquals(result, valid);
 	}
-	
+
 	/**
-	 * Test for float calculation
+	 * Test for float calculation.
 	 * 
 	 * @param firstNum
 	 * @param secondNum
@@ -98,9 +98,9 @@ public class SumatorTest {
 		float result = sumator.sum(a, b);
 		Assert.assertEquals(result, valid);
 	}
-	
+
 	/**
-	 * Test for String calculation
+	 * Test for String calculation.
 	 * 
 	 * @param firstNum
 	 * @param secondNum
@@ -111,9 +111,9 @@ public class SumatorTest {
 		String result = sumator.sum(a, b);
 		Assert.assertEquals(result, valid);
 	}
-	
+
 	/**
-	 * Test for BigInteger calculation
+	 * Test for BigInteger calculation.
 	 * 
 	 * @param firstNum
 	 * @param secondNum
@@ -124,9 +124,9 @@ public class SumatorTest {
 		BigInteger result = sumator.sum(a, b);
 		Assert.assertEquals(result, valid);
 	}
-	
+
 	/**
-	 * Test for BigDecimal calculation
+	 * Test for BigDecimal calculation.
 	 * 
 	 * @param firstNum
 	 * @param secondNum

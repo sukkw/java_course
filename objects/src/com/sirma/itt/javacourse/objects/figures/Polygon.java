@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.figures;
 
 /**
- * Draw geometric figure polygon
+ * Draw geometric figure polygon.
  * 
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
@@ -15,7 +15,7 @@ public class Polygon extends Parallelogram {
 	private double angleD;
 
 	/**
-	 * Draw polygon
+	 * Draw polygon.
 	 */
 	public void draw() {
 		System.out.println("Polygon...");
@@ -23,7 +23,7 @@ public class Polygon extends Parallelogram {
 	}
 
 	/**
-	 * get side c
+	 * Get side c.
 	 * 
 	 * @return
 	 */
@@ -32,7 +32,7 @@ public class Polygon extends Parallelogram {
 	}
 
 	/**
-	 * set side c
+	 * Set side c.
 	 * 
 	 * @param c
 	 */
@@ -41,7 +41,7 @@ public class Polygon extends Parallelogram {
 	}
 
 	/**
-	 * get side d
+	 * Get side d.
 	 * 
 	 * @return
 	 */
@@ -50,7 +50,7 @@ public class Polygon extends Parallelogram {
 	}
 
 	/**
-	 * Set side d
+	 * Set side d.
 	 * 
 	 * @param d
 	 */
@@ -59,7 +59,7 @@ public class Polygon extends Parallelogram {
 	}
 
 	/**
-	 * get angle c
+	 * Get angle c.
 	 * 
 	 * @return
 	 */
@@ -68,16 +68,16 @@ public class Polygon extends Parallelogram {
 	}
 
 	/**
-	 * set angle c
+	 * Set angle c.
 	 * 
 	 * @param angleC
 	 */
 	public void setAngleC(double angleC) {
 		this.angleC = angleC;
 	}
-	
+
 	/**
-	 * get angle d
+	 * Get angle d.
 	 * 
 	 * @return
 	 */
@@ -86,25 +86,25 @@ public class Polygon extends Parallelogram {
 	}
 
 	/**
-	 * set angle d
+	 * Set angle d.
 	 * 
 	 * @param angleD
 	 */
 	public void setAngleD(double angleD) {
 		this.angleD = angleD;
 	}
-	
+
 	/**
-	 * Calculate round of polygon
+	 * Calculate round of polygon.
 	 * 
 	 * @return
 	 */
 	public double round() {
 		return (this.getSideA() + this.getSideB() + sideC + sideD);
 	}
-	
+
 	/**
-	 * Calculate surface of polygon
+	 * Calculate surface of polygon.
 	 * 
 	 * @return
 	 */

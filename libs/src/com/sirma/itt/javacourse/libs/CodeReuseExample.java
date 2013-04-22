@@ -7,7 +7,7 @@ import com.sirma.itt.javacourse.intro.Helper;
 import com.sirma.itt.javacourse.intro.QuickSort;
 
 /**
- * Reusability of code example
+ * Reusability of code example.
  * 
  * @version 1.1 17 April 2013
  * @author Stella Djulgerova
@@ -15,7 +15,7 @@ import com.sirma.itt.javacourse.intro.QuickSort;
 public class CodeReuseExample {
 
 	/**
-	 * class main method
+	 * Class main method.
 	 * 
 	 * @param args
 	 */

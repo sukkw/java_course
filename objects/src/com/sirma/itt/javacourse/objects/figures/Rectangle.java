@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.figures;
 
 /**
- * Draw geometric figure rectangle
+ * Draw geometric figure rectangle.
  * 
  * @version 1.1 13 April 2013
  * @author Stella Djulgerova
@@ -12,14 +12,14 @@ public class Rectangle extends Square {
 	private double sideB;
 
 	/**
-	 * Draw rectangle
+	 * Draw rectangle.
 	 */
 	public void draw() {
 		System.out.println("Rectangle...");
 	}
 
 	/**
-	 * Calculate surface of rectangle
+	 * Calculate surface of rectangle.
 	 * 
 	 * @return
 	 */
@@ -28,7 +28,7 @@ public class Rectangle extends Square {
 	}
 
 	/**
-	 * Calculate round of rectangle
+	 * Calculate round of rectangle.
 	 * 
 	 * @return
 	 */
@@ -37,7 +37,7 @@ public class Rectangle extends Square {
 	}
 
 	/**
-	 * get side b
+	 * Get side b.
 	 * 
 	 * @return
 	 */
@@ -46,7 +46,7 @@ public class Rectangle extends Square {
 	}
 
 	/**
-	 * set side b
+	 * Set side b.
 	 * 
 	 * @param b
 	 */

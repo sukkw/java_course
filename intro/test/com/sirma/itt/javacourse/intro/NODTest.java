@@ -4,17 +4,17 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 /**
- * Test class for find nod and nok
+ * Test class for find nod and nok.
  * 
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
  */
 public class NODTest {
 
-	NOD nod = new NOD();
+	private NOD nod = new NOD();
 
 	/**
-	 * Data used for NOD tests
+	 * Data used for NOD tests.
 	 * 
 	 * @return
 	 */
@@ -24,7 +24,7 @@ public class NODTest {
 	}
 
 	/**
-	 * Data used for NOK tests
+	 * Data used for NOK tests.
 	 * 
 	 * @return
 	 */
@@ -34,7 +34,7 @@ public class NODTest {
 	}
 
 	/**
-	 * Test for NOD
+	 * Test for NOD.
 	 * 
 	 * @param firstNum
 	 * @param secondNum
@@ -47,7 +47,7 @@ public class NODTest {
 	}
 
 	/**
-	 * Test for NOK
+	 * Test for NOK.
 	 * 
 	 * @param firstNum
 	 * @param secondNum

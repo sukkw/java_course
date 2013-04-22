@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * Calculate greatest common divider and lowest common multiple of two numbers
+ * Calculate greatest common divider and lowest common multiple of two numbers.
  * 
  * @version 1.1 08 April 2013
  * @author Stella Djulgerova
@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.intro;
 public class NOD {
 
 	/**
-	 * calculate greatest common divider of two numbers
+	 * calculate greatest common divider of two numbers.
 	 * 
 	 * @param firstNumber
 	 * @param secondNumber
@@ -30,7 +30,7 @@ public class NOD {
 	}
 
 	/**
-	 * calculate lowest common multiple of two numbers
+	 * calculate lowest common multiple of two numbers.
 	 * 
 	 * @param firstNumber
 	 * @param secondNumber

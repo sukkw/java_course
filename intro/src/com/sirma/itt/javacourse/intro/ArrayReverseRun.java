@@ -1,14 +1,15 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * Reverse the elements of array run class
+ * Reverse the elements of array run class.
  * 
  * @version 1.1 09 April 2013
  * @author Stella Djulgerova
  */
 public class ArrayReverseRun {
+
 	/**
-	 * Class main method
+	 * Class main method.
 	 * 
 	 * @param arr
 	 */

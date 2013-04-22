@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.store;
 
 /**
- * Keep address information
+ * Keep address information.
  * 
  * @version 1.1 16 April 2013
  * @author Stella Djulgerova
@@ -13,11 +13,10 @@ public class Address {
 	private String street;
 	private String city;
 	private String postalCode;
-	private String Country;	
+	private String Country;
 
-	
 	/**
-	 * get street
+	 * Get street.
 	 * 
 	 * @return
 	 */
@@ -26,7 +25,7 @@ public class Address {
 	}
 
 	/**
-	 * set street
+	 * Set street.
 	 * 
 	 * @param street
 	 */
@@ -35,7 +34,7 @@ public class Address {
 	}
 
 	/**
-	 * Get city
+	 * Get city.
 	 * 
 	 * @return
 	 */
@@ -44,7 +43,7 @@ public class Address {
 	}
 
 	/**
-	 * set city
+	 * Set city.
 	 * 
 	 * @param city
 	 */
@@ -53,7 +52,7 @@ public class Address {
 	}
 
 	/**
-	 * get post code
+	 * Get post code.
 	 * 
 	 * @return
 	 */
@@ -62,7 +61,7 @@ public class Address {
 	}
 
 	/**
-	 * set post code
+	 * Set post code.
 	 * 
 	 * @param postalCode
 	 */
@@ -71,7 +70,7 @@ public class Address {
 	}
 
 	/**
-	 * get country
+	 * Get country.
 	 * 
 	 * @return
 	 */
@@ -80,7 +79,7 @@ public class Address {
 	}
 
 	/**
-	 * set country
+	 * Set country.
 	 * 
 	 * @param country
 	 */
@@ -89,7 +88,7 @@ public class Address {
 	}
 
 	/**
-	 * get ID
+	 * Get ID.
 	 * 
 	 * @return
 	 */
@@ -98,7 +97,7 @@ public class Address {
 	}
 
 	/**
-	 * set ID
+	 * Set ID.
 	 * 
 	 * @param iD
 	 */

@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.store;
 
 /**
- * Keep information for order items
+ * Keep information for order items.
  * 
  * @version 1.1 16 April 2013
  * @author Stella Djulgerova
@@ -15,7 +15,7 @@ public class OrderItem {
 	private int qty;
 
 	/**
-	 * get itemorder price
+	 * Get itemorder price.
 	 * 
 	 * @return
 	 */
@@ -24,7 +24,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * get ID
+	 * Get ID.
 	 * 
 	 * @return
 	 */
@@ -33,7 +33,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * set ID
+	 * Set ID.
 	 * 
 	 * @param iD
 	 */
@@ -42,7 +42,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * get order ID
+	 * Get order ID.
 	 * 
 	 * @return
 	 */
@@ -51,7 +51,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * set order ID
+	 * Set order ID.
 	 * 
 	 * @param orderID
 	 */
@@ -60,7 +60,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * get product
+	 * Get product.
 	 * 
 	 * @return
 	 */
@@ -69,7 +69,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * set product
+	 * Set product.
 	 * 
 	 * @param product
 	 */
@@ -78,7 +78,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * get quantity
+	 * Get quantity.
 	 * 
 	 * @return
 	 */
@@ -87,7 +87,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * set quantity
+	 * Set quantity.
 	 * 
 	 * @param qty
 	 */

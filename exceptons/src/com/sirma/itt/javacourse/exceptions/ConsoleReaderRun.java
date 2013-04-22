@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.exceptions;
 
 /**
- * ConsoleReader run class
+ * ConsoleReader run class.
  * 
  * @version 1.1 20 April 2013
  * @author Stella Djulgerova
@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.exceptions;
 public class ConsoleReaderRun {
 
 	/**
-	 * main method
+	 * Main method.
 	 * 
 	 * @param args
 	 */

@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * sort array using QuickSort algorithm
+ * sort array using QuickSort algorithm.
  * 
  * @version 1.1 08 April 2013
  * @author Stella Djulgerova
@@ -9,7 +9,7 @@ package com.sirma.itt.javacourse.intro;
 public class QuickSort {
 
 	/**
-	 * sort an array
+	 * sort an array.
 	 * 
 	 * @param array
 	 * @param leftIndex

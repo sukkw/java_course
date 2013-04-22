@@ -5,19 +5,19 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- * Test class for quick sort
+ * Test class for quick sort.
  * 
  * @version 1.1 10 April 2013
  * @author Stella Djulgerova
  */
 public class QuickSortTest {
 
-	int leftIndex = 0;
-	int rightIndex = 4;
-	QuickSort testSort = new QuickSort();
+	private int leftIndex = 0;
+	private int rightIndex = 4;
+	private QuickSort testSort = new QuickSort();
 
 	/**
-	 * Data used for tests
+	 * Data used for tests.
 	 * 
 	 * @return
 	 */
@@ -30,7 +30,7 @@ public class QuickSortTest {
 	}
 
 	/**
-	 * Test for quick sort method
+	 * Test for quick sort method.
 	 * 
 	 * @param array
 	 * @param valid

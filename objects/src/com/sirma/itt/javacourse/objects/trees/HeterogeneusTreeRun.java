@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.objects.trees;
 import java.util.Random;
 
 /**
- * Fill heterogeneus tree with random values and print it on screen
+ * Fill heterogeneus tree with random values and print it on screen.
  * 
  * @version 1.1 15 April 2013
  * @author Stella Djulgerova
@@ -11,7 +11,7 @@ import java.util.Random;
 public class HeterogeneusTreeRun {
 
 	/**
-	 * Class main method
+	 * Class main method.
 	 * 
 	 * @param args
 	 * @throws IllegalAccessException

@@ -7,8 +7,9 @@ package com.sirma.itt.javacourse.intro;
  * @author Stella Djulgerova
  */
 public class ArraysRun {
+
 	/**
-	 * Class main method
+	 * Class main method.
 	 * 
 	 * @param arr
 	 */
