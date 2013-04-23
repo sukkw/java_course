@@ -1,7 +1,5 @@
 package com.sirma.itt.javacourse.objects.trees;
 
-import com.sirma.itt.javacourse.objects.trees.HomogeneusTree.TreeNode;
-
 /**
  * Fill homogeneus tree with random values and print it on screen.
  * 
@@ -16,30 +14,54 @@ public class HomogeneusTreeRun {
 	 */
 	public static void main(String[] args) {
 
-		//fill tree with data
-        HomogeneusTree<HomogeneusTreeData> tree = new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(7, "Stella"),
+		//fill tree with  string data
+        HomogeneusTree<String> stringTree = new HomogeneusTree<String>("Stella",
 
-                        new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(19, "Eli"),
+                        new HomogeneusTree<String>("Eli",
 
-                                    new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(1, "Ani")),
+                                    new HomogeneusTree<String>("Ani"),
 
-                                    new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(12, "Stefan")),
+                                    new HomogeneusTree<String>("Stefan"),
 
-                                    new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(31, "Ivan"))),
+                                    new HomogeneusTree<String>("Ivan")),
 
-                        new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(21, "Mariana")),
+                        new HomogeneusTree<String>("Mariana"),
 
-                        new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(14, "Oleg"),
+                        new HomogeneusTree<String>( "Oleg",
 
-                                    new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(23, "Todor")),
+                                    new HomogeneusTree<String>("Todor"),
 
-                                    new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(6, "Neli"),
-                                    		new HomogeneusTree<HomogeneusTreeData>(new HomogeneusTreeData(4, "Marin"))))
+                                    new HomogeneusTree<String>("Neli",
+                                    		new HomogeneusTree<String>("Marin")))
+
+            );
+        
+		//fill tree with integer data
+        HomogeneusTree<Integer> intTree = new HomogeneusTree<Integer>(23,
+
+                        new HomogeneusTree<Integer>(5,
+
+                                    new HomogeneusTree<Integer>(18),
+
+                                    new HomogeneusTree<Integer>(44),
+
+                                    new HomogeneusTree<Integer>(23)),
+
+                        new HomogeneusTree<Integer>(2),
+
+                        new HomogeneusTree<Integer>(34,
+
+                                    new HomogeneusTree<Integer>(33),
+
+                                    new HomogeneusTree<Integer>(16,
+                                    		new HomogeneusTree<Integer>(8)))
 
             );
 		
         //print tree
-        tree.print();
+        stringTree.print();
+        intTree.print();
 
-  }
+
+}
 }

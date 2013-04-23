@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.sirma.itt.javacourse.objects.trees.BinaryTree;
-import com.sirma.itt.javacourse.objects.trees.BinaryTreeData;
+import com.sirma.itt.javacourse.objects.trees.BinaryTree.BinaryTreeNode;
 
 /**
  * Test class for binary tree methods.
@@ -16,7 +16,7 @@ import com.sirma.itt.javacourse.objects.trees.BinaryTreeData;
 public class BinaryTreeTest {
 
 	// Create the tree from the sample
-	BinaryTree<BinaryTreeData> tree = new BinaryTree<BinaryTreeData>();
+	BinaryTree<String> tree = new BinaryTree<String>();
 
 	/**
 	 * Data used for tests.
@@ -26,50 +26,46 @@ public class BinaryTreeTest {
 	@DataProvider
 	private Object[][] validData() {
 		return new Object[][] { {
-				new BinaryTreeData[] { new BinaryTreeData(19, "String1 "),
-						new BinaryTreeData(35, "String2"), new BinaryTreeData(11, "String3"),
-						new BinaryTreeData(7, "String4"), new BinaryTreeData(16, "String5"),
-						new BinaryTreeData(23, "String6"), new BinaryTreeData(13, "String7"),
-						new BinaryTreeData(17, "String8") },
-				new String("Turseniq element e: 11 String3") } };
+				new String[] { "String1 ", "String2", "String3", "String4", "String5", "String6",
+						"String7", "String8" }, "String8" } };
 	}
 
 	/**
 	 * Test method search.
 	 * 
-	 * @param inputData
-	 * @param valid
+	 * @param inputData - elements of tree
+	 * @param valid - searched element
 	 */
 	@Test(dataProvider = "validData")
-	public void search(BinaryTreeData[] inputData, String valid) {
+	public void search(String[] inputData, String valid) {
 
 		// print the tree sorted
-		String result = tree.search(11);
-		Assert.assertEquals(result, valid);
+		BinaryTreeNode result = tree.search("String8");
+		Assert.assertEquals(result.value, valid);
 	}
 
 	/**
 	 * Test method insert.
 	 * 
-	 * @param inputData
-	 * @param valid
+	 * @param inputData - elements of tree
+	 * @param valid - correct value
 	 */
 	@Test(dataProvider = "validData")
-	public void insert(BinaryTreeData[] inputData, String valid) {
+	public void insert(String[] inputData, String valid) {
 
 		// insert into tree
-		tree.insert(new BinaryTreeData(40, "String8"));
+		tree.insert("String9");
 
 	}
 
 	/**
 	 * Test method print.
 	 * 
-	 * @param inputData
-	 * @param valid
+	 * @param inputData - elements of tree
+	 * @param valid - correct value
 	 */
 	@Test(dataProvider = "validData")
-	public void printTree(BinaryTreeData[] inputData, String valid) {
+	public void printTree(String[] inputData, String valid) {
 
 		// load tree data
 		load(inputData);
@@ -81,12 +77,11 @@ public class BinaryTreeTest {
 	/**
 	 * Load test data.
 	 * 
-	 * @param inputData
-	 * @param valid
+	 * @param inputData - elements of tree
 	 */
-	public void load(BinaryTreeData[] inputData) {
+	public void load(String[] inputData) {
 
-		for (BinaryTreeData obj : inputData) {
+		for (String obj : inputData) {
 			tree.insert(obj);
 		}
 	}

@@ -10,11 +10,12 @@ import java.util.ArrayList;
  */
 public class Polyline extends Figure {
 
+	// class private members
 	private final int LINE = 0;
 	private final int ARC = 1;
 
-	ArrayList<Point> points;
-	ArrayList<Integer> lineType;
+	private ArrayList<Point> points;
+	private ArrayList<Integer> lineType;
 
 	/**
 	 * draw polyline.
@@ -27,7 +28,7 @@ public class Polyline extends Figure {
 	/**
 	 * Get all points.
 	 * 
-	 * @return
+	 * @return all angles in polyline represented as points
 	 */
 	public ArrayList<Point> getPoints() {
 		return points;
@@ -45,7 +46,7 @@ public class Polyline extends Figure {
 	/**
 	 * Get all connection lines.
 	 * 
-	 * @return
+	 * @return all lines between polyline angles
 	 */
 	public ArrayList<Integer> getLineType() {
 		return lineType;

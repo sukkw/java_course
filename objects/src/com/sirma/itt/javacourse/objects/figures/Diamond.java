@@ -23,7 +23,7 @@ public class Diamond extends Square {
 	/**
 	 * Calculate surface of square.
 	 * 
-	 * @return
+	 * @return surface of square
 	 */
 	public double surface() {
 		return this.getSideA() * hight;
@@ -32,7 +32,7 @@ public class Diamond extends Square {
 	/**
 	 * Get angle b.
 	 * 
-	 * @return
+	 * @return value of angle b
 	 */
 	public int getAngleB() {
 		return angleB;
@@ -41,7 +41,7 @@ public class Diamond extends Square {
 	/**
 	 * Set angle b.
 	 * 
-	 * @param angle
+	 * @param angleB angle b value
 	 */
 	public void setAngleB(int angleB) {
 		this.angleB = angleB;
@@ -50,7 +50,7 @@ public class Diamond extends Square {
 	/**
 	 * Get height to the side.
 	 * 
-	 * @return
+	 * @return height of diamond
 	 */
 	public double getHight() {
 		return hight;
@@ -59,7 +59,7 @@ public class Diamond extends Square {
 	/**
 	 * Set height to the side.
 	 * 
-	 * @param h
+	 * @param hight height of diamond
 	 */
 	public void setHight(double hight) {
 		this.hight = hight;

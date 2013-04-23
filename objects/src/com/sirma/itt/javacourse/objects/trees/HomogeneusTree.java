@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
  */
-public class HomogeneusTree<T extends HomogeneusTreeData> {
+public class HomogeneusTree<T> {
 
 	/**
 	 * Create homogeneus tree node /nested class/.
@@ -16,7 +16,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	 * @version 1.1 14 April 2013
 	 * @author Stella Djulgerova
 	 */
-	public static class TreeNode<T extends HomogeneusTreeData> {
+	public static class TreeNode<T> {
 
 		// Class private members
 		private T value;
@@ -26,7 +26,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 		/**
 		 * Node constructor.
 		 * 
-		 * @param value
+		 * @param value - the value of node
 		 */
 		public TreeNode(T value) {
 
@@ -40,7 +40,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 		/**
 		 * Add child to a node.
 		 * 
-		 * @param child
+		 * @param child - node to be add to the tree
 		 */
 		public void addChild(TreeNode<T> child) {
 
@@ -56,7 +56,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 		/**
 		 * Gets the child of the node at given index.
 		 * 
-		 * @param index
+		 * @param index - position in tree
 		 * @return the child on index position
 		 */
 		public TreeNode<T> getChild(int index) {
@@ -66,7 +66,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 		/**
 		 * Give number of all children.
 		 * 
-		 * @return
+		 * @return number of children
 		 */
 		public int getChildrenCount() {
 			return this.children.size();
@@ -80,7 +80,7 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	/**
 	 * Tree constructor.
 	 * 
-	 * @param value
+	 * @param value - value to be added
 	 */
 	public HomogeneusTree(T value) {
 
@@ -92,8 +92,8 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	/**
 	 * Tree constructor.
 	 * 
-	 * @param value
-	 * @param children
+	 * @param value - value to be added
+	 * @param children - list with node children
 	 */
 	public HomogeneusTree(T value, HomogeneusTree<T>... children) {
 
@@ -108,34 +108,28 @@ public class HomogeneusTree<T extends HomogeneusTreeData> {
 	/**
 	 * Print the tree.
 	 * 
-	 * @param root
-	 * @param spaces
+	 * @param root - tree root node
+	 * @param spaces - free spaces for better preview on screen
 	 */
 	private void print(TreeNode<T> root, String spaces) {
 
 		if (this.root != null) {
 
-			System.out.println(spaces + root.value.getKey() + "  " + root.value.getData());
+			System.out.println(spaces + root.value);
 			TreeNode<T> child = null;
 
 			for (int i = 0; i < root.getChildrenCount(); i++) {
-
 				child = root.getChild(i);
 				print(child, spaces + "    ");
-
 			}
-
 		}
-
 	}
 
 	/**
-	 * Print tree wrap method.
+	 * Print tree (wrap method).
 	 */
 	public void print() {
-
 		this.print(this.root, new String());
-
 	}
 
 }

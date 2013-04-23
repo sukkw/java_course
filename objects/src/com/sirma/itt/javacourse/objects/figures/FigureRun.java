@@ -22,6 +22,7 @@ public class FigureRun {
 		FigureFactory figureFactory = new FigureFactory();
 		Figure figure = null;
 
+		// user enter a value to chose which figure to be drawn
 		userInput = new Scanner(System.in);
 		String figureType = "";
 		System.out.println("Enter value between 0 and 9");

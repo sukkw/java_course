@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.objects.store;
 
 /**
- * represent information for person.
+ * Represent information for person.
  * 
  * @version 1.1 16 April 2013
  * @author Stella Djulgerova
@@ -18,7 +18,7 @@ public abstract class Person {
 	/**
 	 * Get name.
 	 * 
-	 * @return
+	 * @return name
 	 */
 	public String getName() {
 		return name;
@@ -36,7 +36,7 @@ public abstract class Person {
 	/**
 	 * Get address.
 	 * 
-	 * @return
+	 * @return address
 	 */
 	public Address getAddress() {
 		return address;
@@ -54,7 +54,7 @@ public abstract class Person {
 	/**
 	 * Get phone.
 	 * 
-	 * @return
+	 * @return phone number
 	 */
 	public String getPhone() {
 		return phone;
@@ -63,7 +63,7 @@ public abstract class Person {
 	/**
 	 * Set phone.
 	 * 
-	 * @param phone
+	 * @param phone - phone number
 	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
@@ -72,7 +72,7 @@ public abstract class Person {
 	/**
 	 * Get e-mail.
 	 * 
-	 * @return
+	 * @return e-mail
 	 */
 	public String getEmail() {
 		return email;
@@ -90,7 +90,7 @@ public abstract class Person {
 	/**
 	 * Get ID.
 	 * 
-	 * @return
+	 * @return ID
 	 */
 	public int getID() {
 		return ID;
@@ -99,7 +99,7 @@ public abstract class Person {
 	/**
 	 * Set ID.
 	 * 
-	 * @param iD
+	 * @param ID
 	 */
 	public void setID(int iD) {
 		ID = iD;

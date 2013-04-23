@@ -22,16 +22,15 @@ public class Parallelogram extends Diamond {
 	/**
 	 * Get side b.
 	 * 
-	 * @return
+	 * @return side b length
 	 */
 	public double getSideB() {
 		return sideB;
 	}
 
 	/**
-	 * Set side b.
 	 * 
-	 * @param b
+	 * @param sideB side b length
 	 */
 	public void setB(double sideB) {
 		this.sideB = sideB;
@@ -40,7 +39,7 @@ public class Parallelogram extends Diamond {
 	/**
 	 * Calculate round of parallelogram.
 	 * 
-	 * @return
+	 * @return round of parallelogram
 	 */
 	public double round() {
 		return (2 * this.getSideA()) + (2 * sideB);

@@ -36,7 +36,7 @@ public class Order {
 	/**
 	 * Get order id.
 	 * 
-	 * @return
+	 * @return ID
 	 */
 	public int getID() {
 		return ID;
@@ -45,7 +45,7 @@ public class Order {
 	/**
 	 * Set order id.
 	 * 
-	 * @param iD
+	 * @param ID
 	 */
 	public void setID(int iD) {
 		ID = iD;
@@ -54,7 +54,7 @@ public class Order {
 	/**
 	 * Get client id.
 	 * 
-	 * @return
+	 * @return client ID
 	 */
 	public int getClientID() {
 		return clientID;
@@ -72,7 +72,7 @@ public class Order {
 	/**
 	 * Get items.
 	 * 
-	 * @return
+	 * @return all items in order
 	 */
 	public ArrayList<OrderItem> getOrder() {
 		return order;
@@ -90,7 +90,7 @@ public class Order {
 	/**
 	 * Get order date.
 	 * 
-	 * @return
+	 * @return date when order is made
 	 */
 	public Date getDate() {
 		return date;
@@ -108,7 +108,7 @@ public class Order {
 	/**
 	 * Get Order status.
 	 * 
-	 * @return
+	 * @return order status
 	 */
 	public int getStatus() {
 		return status;
@@ -126,7 +126,7 @@ public class Order {
 	/**
 	 * Get order number.
 	 * 
-	 * @return
+	 * @return order number
 	 */
 	public int getNumber() {
 		return number;

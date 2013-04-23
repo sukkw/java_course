@@ -9,29 +9,35 @@ import java.util.Random;
  * @author Stella Djulgerova
  */
 public class BinaryTreeRun {
-	
-	/**
-	 * Class main method
-	 * 
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
-		// Create the tree
-		BinaryTree<BinaryTreeData> tree = new BinaryTree<BinaryTreeData>();
+		// Create string tree
+		BinaryTree<String> stringTree = new BinaryTree<String>();
 
 		// call java class Random to generate numbers
 		Random randomGenerator = new Random();
 
 		for (int i = 0; i < 20; i++) {
-
-			tree.insert(new BinaryTreeData(randomGenerator.nextInt(30), "String " + i));
+			stringTree.insert("String" + randomGenerator.nextInt(25));
 		}
 
 		// print the tree sorted
-		tree.printTree();
+		stringTree.printTree();
 
-		// search in tree by given key value
-		System.out.println(tree.search(12));
+		// search in tree by given value
+		stringTree.search("String3");
+
+		// Create integer tree
+		BinaryTree<Integer> intTree = new BinaryTree<Integer>();
+
+		for (int i = 0; i < 20; i++) {
+			intTree.insert(randomGenerator.nextInt(25));
+		}
+
+		// print the tree sorted
+		intTree.printTree();
+
+		// search in tree by given value
+		intTree.search(12);
 	}
 }

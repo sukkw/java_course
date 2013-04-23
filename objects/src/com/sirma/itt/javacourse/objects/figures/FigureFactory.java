@@ -11,8 +11,8 @@ public class FigureFactory {
 	/**
 	 * Create geometric figure of different type.
 	 * 
-	 * @param newFigure
-	 * @return
+	 * @param newFigure - value between 0 and 10 
+	 * @return figure type
 	 */
 	public Figure makeFigure(String newFigure) {
 

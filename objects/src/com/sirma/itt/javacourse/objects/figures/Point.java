@@ -22,7 +22,7 @@ public class Point extends Figure {
 	/**
 	 * Get point x coordinate.
 	 * 
-	 * @return
+	 * @return x coordinate of point
 	 */
 	public int getxCoord() {
 		return xCoord;
@@ -31,7 +31,7 @@ public class Point extends Figure {
 	/**
 	 * Set point x coordinate.
 	 * 
-	 * @param xCoord
+	 * @param xCoord - x coordinate value
 	 */
 	public void setxCoord(int xCoord) {
 		this.xCoord = xCoord;
@@ -40,7 +40,7 @@ public class Point extends Figure {
 	/**
 	 * Get point y coordinate.
 	 * 
-	 * @return
+	 * @return y coordinate of point
 	 */
 	public int getyCoord() {
 		return yCoord;
@@ -49,7 +49,7 @@ public class Point extends Figure {
 	/**
 	 * Set point y coordinate.
 	 * 
-	 * @param yCoord
+	 * @param yCoord - y coordinate value
 	 */
 	public void setyCoord(int yCoord) {
 		this.yCoord = yCoord;

@@ -16,7 +16,7 @@ public class Employee extends Person {
 	/**
 	 * Get salary.
 	 * 
-	 * @return
+	 * @return employee salary
 	 */
 	public double getSalary() {
 		return salary;
@@ -34,7 +34,7 @@ public class Employee extends Person {
 	/**
 	 * Get employee's department.
 	 * 
-	 * @return
+	 * @return employee's department
 	 */
 	public Department getDepartment() {
 		return department;
@@ -52,7 +52,7 @@ public class Employee extends Person {
 	/**
 	 * Get employee's position.
 	 * 
-	 * @return
+	 * @return employee's position
 	 */
 	public Position getPosition() {
 		return position;

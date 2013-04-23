@@ -15,7 +15,7 @@ public class Department {
 	/**
 	 * Get ID.
 	 * 
-	 * @return
+	 * @return ID
 	 */
 	public int getID() {
 		return ID;
@@ -24,7 +24,7 @@ public class Department {
 	/**
 	 * Set ID.
 	 * 
-	 * @param iD
+	 * @param ID
 	 */
 	public void setID(int iD) {
 		ID = iD;
@@ -33,7 +33,7 @@ public class Department {
 	/**
 	 * Get department name.
 	 * 
-	 * @return
+	 * @return department name
 	 */
 	public String getName() {
 		return name;
@@ -42,7 +42,7 @@ public class Department {
 	/**
 	 * Set department name.
 	 * 
-	 * @param name
+	 * @param name - department name
 	 */
 	public void setName(String name) {
 		this.name = name;

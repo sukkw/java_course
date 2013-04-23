@@ -22,7 +22,7 @@ public class Square extends Figure {
 	/**
 	 * Calculate surface of square.
 	 * 
-	 * @return
+	 * @return surface of square
 	 */
 	public double surface() {
 		return sideA * sideA;
@@ -31,7 +31,7 @@ public class Square extends Figure {
 	/**
 	 * Calculate round of square.
 	 * 
-	 * @return
+	 * @return round of square
 	 */
 	public double round() {
 		return 4 * sideA;
@@ -40,7 +40,7 @@ public class Square extends Figure {
 	/**
 	 * Get side a.
 	 * 
-	 * @return
+	 * @return side a length
 	 */
 	public double getSideA() {
 		return sideA;
@@ -49,7 +49,7 @@ public class Square extends Figure {
 	/**
 	 * Set side a.
 	 * 
-	 * @param a
+	 * @param sideA - side a length
 	 */
 	public void setSideA(double sideA) {
 		this.sideA = sideA;
@@ -58,7 +58,7 @@ public class Square extends Figure {
 	/**
 	 * Get angle (90).
 	 * 
-	 * @return
+	 * @return square angle (90)
 	 */
 	public int getAngleA() {
 		return angleA;
@@ -67,7 +67,7 @@ public class Square extends Figure {
 	/**
 	 * Set angle (90).
 	 * 
-	 * @param angleA
+	 * @param angleA - square angle (90)
 	 */
 	public void setAngleA(int angleA) {
 		this.angleA = angleA;

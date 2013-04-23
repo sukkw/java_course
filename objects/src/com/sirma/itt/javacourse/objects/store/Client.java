@@ -31,7 +31,7 @@ public class Client extends Person implements ClientImpl {
 	/**
 	 * Get orders.
 	 * 
-	 * @return
+	 * @return all orders of a client
 	 */
 	public ArrayList<Order> getOrder() {
 		return order;
@@ -49,7 +49,7 @@ public class Client extends Person implements ClientImpl {
 	/**
 	 * Get payment method.
 	 * 
-	 * @return
+	 * @return client payment method
 	 */
 	public int getPaymentMethod() {
 		return paymentMethod;

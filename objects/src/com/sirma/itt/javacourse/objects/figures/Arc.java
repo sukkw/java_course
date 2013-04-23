@@ -12,7 +12,7 @@ public class Arc extends Circle {
 	private int angleBetweenRadius;
 
 	/**
-	 * Drow an arc.
+	 * Draw an arc.
 	 */
 	public void draw() {
 		System.out.println("Arc...");
@@ -21,7 +21,7 @@ public class Arc extends Circle {
 	/**
 	 * Get angle between radius.
 	 * 
-	 * @return
+	 * @return angle value
 	 */
 	public int getAngleBetweenRadius() {
 		return angleBetweenRadius;
@@ -30,7 +30,7 @@ public class Arc extends Circle {
 	/**
 	 * Set angle between radius.
 	 * 
-	 * @param angle
+	 * @param angleBetweenRadius - angle between radius in arc
 	 */
 	public void setAngleBetweenRadius(int angleBetweenRadius) {
 		this.angleBetweenRadius = angleBetweenRadius;
@@ -39,7 +39,7 @@ public class Arc extends Circle {
 	/**
 	 * Get arc length.
 	 * 
-	 * @return
+	 * @return the length of arc
 	 */
 	public double length() {
 		return (angleBetweenRadius / 360) * 2 * 3.14 * this.getRadius();

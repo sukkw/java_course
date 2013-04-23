@@ -18,7 +18,7 @@ public class Address {
 	/**
 	 * Get street.
 	 * 
-	 * @return
+	 * @return street
 	 */
 	public String getStreet() {
 		return street;
@@ -36,7 +36,7 @@ public class Address {
 	/**
 	 * Get city.
 	 * 
-	 * @return
+	 * @return city
 	 */
 	public String getCity() {
 		return city;
@@ -54,7 +54,7 @@ public class Address {
 	/**
 	 * Get post code.
 	 * 
-	 * @return
+	 * @return post code
 	 */
 	public String getPostalCode() {
 		return postalCode;
@@ -63,7 +63,7 @@ public class Address {
 	/**
 	 * Set post code.
 	 * 
-	 * @param postalCode
+	 * @param post code
 	 */
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
@@ -72,7 +72,7 @@ public class Address {
 	/**
 	 * Get country.
 	 * 
-	 * @return
+	 * @return country
 	 */
 	public String getCountry() {
 		return Country;
@@ -90,7 +90,7 @@ public class Address {
 	/**
 	 * Get ID.
 	 * 
-	 * @return
+	 * @return ID
 	 */
 	public int getID() {
 		return ID;

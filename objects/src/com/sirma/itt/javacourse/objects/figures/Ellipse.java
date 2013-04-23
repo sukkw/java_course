@@ -21,7 +21,7 @@ public class Ellipse extends Circle {
 	/**
 	 * Get ellipse minor SemiAxis.
 	 * 
-	 * @return
+	 * @return minor SemiAxis
 	 */
 	public float getMinorSemiAxis() {
 		return minorSemiAxis;
@@ -39,7 +39,7 @@ public class Ellipse extends Circle {
 	/**
 	 * Calculate surface of ellipse.
 	 * 
-	 * @return
+	 * @return surface of ellipse
 	 */
 	public double surfice() {
 		return 3.14 * this.getRadius() * minorSemiAxis;
@@ -48,7 +48,7 @@ public class Ellipse extends Circle {
 	/**
 	 * Calculate round of ellipse.
 	 * 
-	 * @return
+	 * @return round of ellipse
 	 */
 	public double round() {
 		return 0;

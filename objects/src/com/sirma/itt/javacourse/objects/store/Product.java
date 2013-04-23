@@ -16,7 +16,7 @@ public class Product {
 	/**
 	 * Get Price.
 	 * 
-	 * @return
+	 * @return product price
 	 */
 	public double getPrice() {
 		return price;
@@ -34,7 +34,7 @@ public class Product {
 	/**
 	 * Get mark.
 	 * 
-	 * @return
+	 * @return product mark
 	 */
 	public String getMark() {
 		return mark;
@@ -52,7 +52,7 @@ public class Product {
 	/**
 	 * Get model.
 	 * 
-	 * @return
+	 * @return product model
 	 */
 	public String getModel() {
 		return model;

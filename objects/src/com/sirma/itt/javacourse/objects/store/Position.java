@@ -25,7 +25,7 @@ public class Position {
 	/**
 	 * Set ID.
 	 * 
-	 * @param iD
+	 * @param ID
 	 */
 	public void setID(int iD) {
 		ID = iD;
@@ -34,7 +34,7 @@ public class Position {
 	/**
 	 * Get employee's position.
 	 * 
-	 * @return
+	 * @return employee's position
 	 */
 	public String getPosition() {
 		return position;
@@ -52,7 +52,7 @@ public class Position {
 	/**
 	 * Check is employee at full time or not.
 	 * 
-	 * @return
+	 * @return employee work type
 	 */
 	public int getFullTime() {
 		return fullTime;

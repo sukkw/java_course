@@ -25,7 +25,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Get side c.
 	 * 
-	 * @return
+	 * @return side c length
 	 */
 	public double getSideC() {
 		return sideC;
@@ -34,7 +34,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Set side c.
 	 * 
-	 * @param c
+	 * @param sideC - side c length
 	 */
 	public void setSideC(double sideC) {
 		this.sideC = sideC;
@@ -43,7 +43,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Get side d.
 	 * 
-	 * @return
+	 * @return side d length
 	 */
 	public double getSideD() {
 		return sideD;
@@ -52,7 +52,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Set side d.
 	 * 
-	 * @param d
+	 * @param sideD - side d length
 	 */
 	public void setSideD(double sideD) {
 		this.sideD = sideD;
@@ -61,7 +61,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Get angle c.
 	 * 
-	 * @return
+	 * @return angle c value
 	 */
 	public double getAngleC() {
 		return angleC;
@@ -70,7 +70,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Set angle c.
 	 * 
-	 * @param angleC
+	 * @param angleC - angle c value
 	 */
 	public void setAngleC(double angleC) {
 		this.angleC = angleC;
@@ -79,7 +79,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Get angle d.
 	 * 
-	 * @return
+	 * @return angle d value
 	 */
 	public double getAngleD() {
 		return angleD;
@@ -88,7 +88,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Set angle d.
 	 * 
-	 * @param angleD
+	 * @param angleD - angle d value
 	 */
 	public void setAngleD(double angleD) {
 		this.angleD = angleD;
@@ -97,7 +97,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Calculate round of polygon.
 	 * 
-	 * @return
+	 * @return round of polygon
 	 */
 	public double round() {
 		return (this.getSideA() + this.getSideB() + sideC + sideD);
@@ -106,7 +106,7 @@ public class Polygon extends Parallelogram {
 	/**
 	 * Calculate surface of polygon.
 	 * 
-	 * @return
+	 * @return surface of polygon
 	 */
 	public double surface() {
 		return 0;

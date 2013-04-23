@@ -15,9 +15,9 @@ public class OrderItem {
 	private int qty;
 
 	/**
-	 * Get itemorder price.
+	 * Get item order price.
 	 * 
-	 * @return
+	 * @return price of order item
 	 */
 	public double getPrice() {
 		return qty * product.getPrice();
@@ -26,7 +26,7 @@ public class OrderItem {
 	/**
 	 * Get ID.
 	 * 
-	 * @return
+	 * @return item ID
 	 */
 	public int getID() {
 		return ID;
@@ -35,7 +35,7 @@ public class OrderItem {
 	/**
 	 * Set ID.
 	 * 
-	 * @param iD
+	 * @param item ID
 	 */
 	public void setID(int iD) {
 		ID = iD;
@@ -44,7 +44,7 @@ public class OrderItem {
 	/**
 	 * Get order ID.
 	 * 
-	 * @return
+	 * @return order ID
 	 */
 	public int getOrderID() {
 		return orderID;
@@ -62,7 +62,7 @@ public class OrderItem {
 	/**
 	 * Get product.
 	 * 
-	 * @return
+	 * @return product
 	 */
 	public Product getProduct() {
 		return product;
@@ -80,7 +80,7 @@ public class OrderItem {
 	/**
 	 * Get quantity.
 	 * 
-	 * @return
+	 * @return quantity
 	 */
 	public int getQty() {
 		return qty;

@@ -39,7 +39,7 @@ public class Circle extends Figure {
 	/**
 	 * Calculate surface of circle.
 	 * 
-	 * @return
+	 * @return surface of circle
 	 */
 	public double surfice() {
 		return 3.14 * radius * radius;
@@ -48,7 +48,7 @@ public class Circle extends Figure {
 	/**
 	 * Calculate round of circle.
 	 * 
-	 * @return
+	 * @return round of circle
 	 */
 	public double round() {
 		return 2 * 3.14 * radius;

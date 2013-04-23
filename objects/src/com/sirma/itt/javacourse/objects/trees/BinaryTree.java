@@ -6,18 +6,19 @@ package com.sirma.itt.javacourse.objects.trees;
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
  */
-public class BinaryTree<T extends BinaryTreeData> {
+public class BinaryTree<T extends Comparable<T>> {
 
 	/**
-	 * Create binary tree node /nested class/.
+	 * Create binary tree node /nested class/
 	 * 
 	 * @version 1.1 14 April 2013
 	 * @author Stella Djulgerova
 	 */
-	private static class BinaryTreeNode<T extends BinaryTreeData> {
+	public static class BinaryTreeNode<T extends Comparable<T>> implements
+			Comparable<BinaryTreeNode<T>> {
 
 		// Class private members
-		private T value;
+		public T value;
 		private BinaryTreeNode<T> parent;
 		private BinaryTreeNode<T> leftChild;
 		private BinaryTreeNode<T> rightChild;
@@ -25,7 +26,7 @@ public class BinaryTree<T extends BinaryTreeData> {
 		/**
 		 * Nodes constructor.
 		 * 
-		 * @param value
+		 * @param value - node value
 		 */
 		public BinaryTreeNode(T value) {
 			this.value = value;
@@ -33,6 +34,12 @@ public class BinaryTree<T extends BinaryTreeData> {
 			this.leftChild = null;
 			this.rightChild = null;
 		}
+
+		@Override
+		public int compareTo(BinaryTreeNode<T> nodeValue) {
+			return this.value.compareTo(nodeValue.value);
+		}
+		
 	}
 
 	// root of the tree
@@ -46,12 +53,11 @@ public class BinaryTree<T extends BinaryTreeData> {
 	}
 
 	/**
-	 * Insert value in the tree wrap method.
+	 * Insert value in the tree (wrap method).
 	 * 
-	 * @param value
+	 * @param value - value to be inserted
 	 */
 	public void insert(T value) {
-
 		if (value != null) {
 			this.root = insert(value, null, root);
 		}
@@ -60,77 +66,52 @@ public class BinaryTree<T extends BinaryTreeData> {
 	/**
 	 * Insert node in the tree.
 	 * 
-	 * @param value
-	 * @param parentNode
-	 * @param node
+	 * @param value - value to be inserted
+	 * @param parentNode - the parent of node
+	 * @param node - current node
 	 * @return last inserted node
 	 */
 	private BinaryTreeNode<T> insert(T value, BinaryTreeNode<T> parentNode, BinaryTreeNode<T> node) {
 
 		if (node == null) {
-
 			node = new BinaryTreeNode<T>(value);
 			node.parent = parentNode;
-
 		} else {
-
 			int compareTo = value.compareTo(node.value);
 			if (compareTo < 0) {
-
 				node.leftChild = insert(value, node, node.leftChild);
-
 			} else if (compareTo > 0) {
-
 				node.rightChild = insert(value, node, node.rightChild);
 			}
-
 		}
 		return node;
 	}
 
 	/**
-	 * Search in the tree wrap method.
+	 * Finds a given value in the tree and returns the node.
 	 * 
-	 * @param value
+	 * @param value - the value to be found.
+	 * @return the found node or null if not found.
 	 */
-	public String search(int key) {
+	public BinaryTreeNode<T> search(T value) {
 
-		String searchedData;
-		if (search(key, root) != null) {
-			searchedData = "Turseniq element e: " + search(key, root).value.getKey() + " "
-					+ search(key, root).value.getData();
-		} else {
-			searchedData = "Elementa ne syshtestvuva";
+		BinaryTreeNode<T> node = this.root;
+
+		while (node != null) {
+			int compareTo = value.compareTo(node.value);
+			if (compareTo < 0) {
+				node = node.leftChild;
+			} else if (compareTo > 0) {
+				node = node.rightChild;
+			} else {
+				break;
+			}
 		}
 
-		return searchedData;
-	}
-
-	/**
-	 * Insert node in the tree.
-	 * 
-	 * @param value
-	 * @param parentNode
-	 * @param node
-	 * @return last inserted node
-	 */
-	private BinaryTreeNode<T> search(int key, BinaryTreeNode<T> node) {
-
-		if (node == null) {
-
-			return null;
-
+		if (node != null) {
+			System.out.println("Turseniq element e: " + node.value);
 		} else {
-
-			if (key < node.value.getKey()) {
-
-				return search(key, node.leftChild);
-
-			} else if (key > node.value.getKey()) {
-
-				return search(key, node.rightChild);
-			}
-
+			System.out.println("Elementa ne syshtestvuva");
 		}
 		return node;
 	}
@@ -145,14 +126,15 @@ public class BinaryTree<T extends BinaryTreeData> {
 	/**
 	 * Print elements of the tree sorted.
 	 * 
-	 * @param node
+	 * @param node - tree node (root at beginning)
 	 */
 	public void printTree(BinaryTreeNode<T> node) {
 
 		if (node != null) {
 			printTree(node.leftChild);
-			System.out.println(node.value.getKey() + "  " + node.value.getData());
+			System.out.println(node.value);
 			printTree(node.rightChild);
 		}
 	}
+
 }

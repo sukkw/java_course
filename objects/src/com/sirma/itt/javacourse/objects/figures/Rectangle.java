@@ -21,7 +21,7 @@ public class Rectangle extends Square {
 	/**
 	 * Calculate surface of rectangle.
 	 * 
-	 * @return
+	 * @return surface of rectangle
 	 */
 	public double surfice() {
 		return this.getSideA() * sideB;
@@ -30,7 +30,7 @@ public class Rectangle extends Square {
 	/**
 	 * Calculate round of rectangle.
 	 * 
-	 * @return
+	 * @return round of rectangle
 	 */
 	public double round() {
 		return (2 * this.getSideA()) + (2 * sideB);
@@ -39,7 +39,7 @@ public class Rectangle extends Square {
 	/**
 	 * Get side b.
 	 * 
-	 * @return
+	 * @return side b length
 	 */
 	public double getSideB() {
 		return sideB;
@@ -48,7 +48,7 @@ public class Rectangle extends Square {
 	/**
 	 * Set side b.
 	 * 
-	 * @param b
+	 * @param sideB - side b length
 	 */
 	public void setSideB(double sideB) {
 		this.sideB = sideB;

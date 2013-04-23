@@ -1,7 +1,5 @@
 package com.sirma.itt.javacourse.objects.trees;
 
-import java.lang.reflect.Field;
-
 /**
  * Create heterogeneus tree.
  * 
@@ -16,10 +14,10 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	 * @version 1.1 14 April 2013
 	 * @author Stella Djulgerova
 	 */
-	private static class HeterogeneusTreeNode<T extends HeterogeneusTreeData> {
+	public static class HeterogeneusTreeNode<T extends HeterogeneusTreeData> {
 
 		// Class private members
-		private T value;
+		public T value;
 		private HeterogeneusTreeNode<T> parent;
 		private HeterogeneusTreeNode<T> leftChild;
 		private HeterogeneusTreeNode<T> rightChild;
@@ -27,7 +25,7 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 		/**
 		 * Nodes constructor.
 		 * 
-		 * @param value
+		 * @param value - value of node
 		 */
 		public HeterogeneusTreeNode(T value) {
 			this.value = value;
@@ -50,10 +48,9 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	/**
 	 * Insert value in the tree wrap method.
 	 * 
-	 * @param value
+	 * @param value - value of node
 	 */
 	public void insert(T value) {
-
 		if (value != null) {
 			this.root = insert(value, null, root);
 		}
@@ -62,78 +59,54 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	/**
 	 * Insert node in the tree.
 	 * 
-	 * @param value
-	 * @param parentNode
-	 * @param node
+	 * @param value - value to be added
+	 * @param parentNode - parent node
+	 * @param node - current node
 	 * @return last inserted node
 	 */
 	private HeterogeneusTreeNode<T> insert(T value, HeterogeneusTreeNode<T> parentNode,
 			HeterogeneusTreeNode<T> node) {
 
 		if (node == null) {
-
 			node = new HeterogeneusTreeNode<T>(value);
 			node.parent = parentNode;
-
 		} else {
 
 			int compareTo = value.compareTo(node.value);
 			if (compareTo < 0) {
-
 				node.leftChild = insert(value, node, node.leftChild);
-
 			} else if (compareTo > 0) {
-
 				node.rightChild = insert(value, node, node.rightChild);
 			}
-
 		}
 		return node;
 	}
-
+	
 	/**
-	 * Search in the tree wrap method.
+	 * Finds a given value in the tree and returns the node.
 	 * 
-	 * @param value
+	 * @param value - the value to be found.
+	 * @return the found node or null if not found.
 	 */
-	public String search(int key) {
+	public HeterogeneusTreeNode<T> search(T value) {
 
-		String searchedData;
-		if (search(key, root) != null) {
-			searchedData = "Turseniq element e: " + search(key, root).value.getKey() + " "
-					+ search(key, root).value.getData();
-		} else {
-			searchedData = "Elementa ne syshtestvuva";
+		HeterogeneusTreeNode<T> node = this.root;
+
+		while (node != null) {
+			int compareTo = value.compareTo(node.value.getData());
+			if (compareTo < 0) {
+				node = node.leftChild;
+			} else if (compareTo > 0) {
+				node = node.rightChild;
+			} else {
+				break;
+			}
 		}
 
-		return searchedData;
-	}
-
-	/**
-	 * Insert node in the tree.
-	 * 
-	 * @param value
-	 * @param parentNode
-	 * @param node
-	 * @return last inserted node
-	 */
-	private HeterogeneusTreeNode<T> search(int key, HeterogeneusTreeNode<T> node) {
-
-		if (node == null) {
-
-			return null;
-
+		if (node != null) {
+			System.out.println("Turseniq element e: " + node.value.getData());
 		} else {
-
-			if (key < node.value.getKey()) {
-
-				return search(key, node.leftChild);
-
-			} else if (key > node.value.getKey()) {
-
-				return search(key, node.rightChild);
-			}
-
+			System.out.println("Elementa ne syshtestvuva");
 		}
 		return node;
 	}
@@ -142,47 +115,19 @@ public class HeterogeneusTree<T extends HeterogeneusTreeData> {
 	 * Print elements of the tree wrap method.
 	 */
 	public void printTree() {
-		try {
 			this.printTree(this.root);
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
 	}
 
 	/**
 	 * Print elements of the tree sorted.
 	 * 
-	 * @param node
-	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
+	 * @param node - current node (root at beginning of print)
 	 */
-	private void printTree(HeterogeneusTreeNode<T> node) throws IllegalArgumentException,
-			IllegalAccessException {
+	private void printTree(HeterogeneusTreeNode<T> node) {
 
 		if (node != null) {
-
 			printTree(node.leftChild);
-			if (node.value.getData() instanceof HeterogeneusTreeData) {
-
-				// try to get object fields with reflection
-				Object obj = node.value.getData();
-				System.out.print(" Object type " + node.value.getKey());
-				for (Field field : obj.getClass().getDeclaredFields()) {
-					// Set modifier to public.
-					field.setAccessible(true);
-					Object val = field.get(obj);
-					if (val != null) {
-						System.out.print(" " + val);
-					}
-				}
-
-				System.out.println();
-			} else {
-				System.out.println(" Simple type " + node.value.getKey() + "  "
-						+ node.value.getData());
-			}
+			System.out.println(node.value.getData());
 			printTree(node.rightChild);
 		}
 	}

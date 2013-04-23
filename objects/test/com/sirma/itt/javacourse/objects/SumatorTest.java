@@ -20,7 +20,7 @@ public class SumatorTest {
 	/**
 	 * Data used for int tests.
 	 * 
-	 * @return
+	 * @return object with data used for integer sum tests
 	 */
 	@DataProvider
 	public Object[][] validIntData() {
@@ -30,7 +30,7 @@ public class SumatorTest {
 	/**
 	 * Data used for float tests.
 	 * 
-	 * @return
+	 * @return object with data used for float sum tests
 	 */
 	@DataProvider
 	public Object[][] validFloatData() {
@@ -41,7 +41,7 @@ public class SumatorTest {
 	/**
 	 * Data used for string tests.
 	 * 
-	 * @return
+	 * @return object with data used for string sum tests
 	 */
 	@DataProvider
 	public Object[][] validStringData() {
@@ -52,7 +52,7 @@ public class SumatorTest {
 	/**
 	 * Data used for BigInteger tests.
 	 * 
-	 * @return
+	 * @return object with data used for big integer sum tests
 	 */
 	@DataProvider
 	public Object[][] validBigIntData() {
@@ -64,7 +64,7 @@ public class SumatorTest {
 	/**
 	 * Data used for BigDecimal tests.
 	 * 
-	 * @return
+	 * @return object with data used for big decimal sum tests
 	 */
 	@DataProvider
 	public Object[][] validBigDecData() {
@@ -76,9 +76,9 @@ public class SumatorTest {
 	/**
 	 * Test for int calculation.
 	 * 
-	 * @param firstNum
-	 * @param secondNum
-	 * @param valid
+	 * @param firstNum - first integer number to sum
+	 * @param secondNum - second integer number to sum
+	 * @param valid - correct sum of firstNum and secondNum
 	 */
 	@Test(dataProvider = "validIntData")
 	public void sumTest(int a, int b, int valid) {
@@ -89,9 +89,9 @@ public class SumatorTest {
 	/**
 	 * Test for float calculation.
 	 * 
-	 * @param firstNum
-	 * @param secondNum
-	 * @param valid
+	 * @param firstNum - first float number to sum
+	 * @param secondNum - second float number to sum
+	 * @param valid - correct sum of firstNum and secondNum
 	 */
 	@Test(dataProvider = "validFloatData")
 	public void sumTest(float a, float b, float valid) {
@@ -102,9 +102,9 @@ public class SumatorTest {
 	/**
 	 * Test for String calculation.
 	 * 
-	 * @param firstNum
-	 * @param secondNum
-	 * @param valid
+	 * @param firstNum - first string number to sum
+	 * @param secondNum - second string number to sum
+	 * @param valid - correct sum of firstNum and secondNum
 	 */
 	@Test(dataProvider = "validStringData")
 	public void sumTest(String a, String b, String valid) {
@@ -115,9 +115,9 @@ public class SumatorTest {
 	/**
 	 * Test for BigInteger calculation.
 	 * 
-	 * @param firstNum
-	 * @param secondNum
-	 * @param valid
+	 * @param firstNum - first big integer number to sum
+	 * @param secondNum - second big integer number to sum
+	 * @param valid - correct sum of firstNum and secondNum
 	 */
 	@Test(dataProvider = "validBigIntData")
 	public void sumTest(BigInteger a, BigInteger b, BigInteger valid) {
@@ -128,9 +128,9 @@ public class SumatorTest {
 	/**
 	 * Test for BigDecimal calculation.
 	 * 
-	 * @param firstNum
-	 * @param secondNum
-	 * @param valid
+	 * @param firstNum - first big decimal number to sum
+	 * @param secondNum - second big decimal number to sum
+	 * @param valid - correct sum of firstNum and secondNum
 	 */
 	@Test(dataProvider = "validBigDecData")
 	public void sumTest(BigDecimal a, BigDecimal b, BigDecimal valid) {
