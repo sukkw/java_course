@@ -6,11 +6,11 @@ package com.sirma.itt.javacourse.objects.trees;
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
  */
-public class BinaryTreeData implements Comparable<BinaryTreeData> {
+public class BinaryTreeData<D> implements Comparable<BinaryTreeData> {
 
 	// class private members
 	private int key;
-	private String data;
+	private D data;
 
 	/**
 	 * Constructor.
@@ -63,6 +63,6 @@ public class BinaryTreeData implements Comparable<BinaryTreeData> {
 	 * Compare value of two keys.
 	 */
 	public int compareTo(BinaryTreeData other) {
-		return new Integer(this.key).compareTo(other.key);
+		return data.compareTo(other.data);
 	}
 }
