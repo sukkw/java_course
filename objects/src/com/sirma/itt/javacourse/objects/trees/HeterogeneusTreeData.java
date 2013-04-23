@@ -6,17 +6,17 @@ package com.sirma.itt.javacourse.objects.trees;
  * @version 1.1 14 April 2013
  * @author Stella Djulgerova
  */
-public class HeterogeneusTreeData implements Comparable {
+public class HeterogeneusTreeData<T> implements Comparable<T> {
 
 	// class private members
-	private Object data;
+	private T data;
 
 	/**
 	 * Constructor.
 	 * 
 	 * @param data - value to be added (can be Integer, String, Double etc..)
 	 */
-	public HeterogeneusTreeData(Object data) {
+	public HeterogeneusTreeData(T data) {
 		this.data = data;
 	}
 
@@ -31,7 +31,7 @@ public class HeterogeneusTreeData implements Comparable {
 
 
 	@Override
-	public int compareTo(Object o) {
-		return new String(this.data.toString()).compareTo(o.toString());
+	public int compareTo(T dataToCompare) {
+		return new String(this.data.toString()).compareTo(dataToCompare.toString());
 	}
 }
