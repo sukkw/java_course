@@ -40,7 +40,7 @@ public class ArraysTest {
 	 * Test for sum method.
 	 * 
 	 * @param array - array to find sum
-	 * @param valid - sum of all elements
+	 * @param valid - correct sum of all elements
 	 */
 	@Test(dataProvider = "validSumData")
 	public void sumTest(Integer[] array, int valid) {
@@ -57,10 +57,10 @@ public class ArraysTest {
 	}
 
 	/**
-	 * Test for find min element method.
+	 * Test for find minimal element method.
 	 * 
 	 * @param array - array to find minimal element
-	 * @param valid - the value of minimal element
+	 * @param valid - correct value of minimal element
 	 */
 	@Test(dataProvider = "validMinData")
 	public void minTest(Integer[] array, int valid) {

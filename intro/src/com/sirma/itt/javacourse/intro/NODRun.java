@@ -16,6 +16,7 @@ public class NODRun {
 	 * @param arr
 	 */
 	public static void main(String[] arr) {
+		
 		// call java class Random to generate numbers
 		Random randomGenerator = new Random();
 

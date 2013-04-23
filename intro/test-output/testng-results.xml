@@ -2,60 +2,60 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="62" started-at="2013-04-22T08:19:32Z" finished-at="2013-04-22T08:19:32Z">
+  <suite name="Default suite" duration-ms="47" started-at="2013-04-23T08:30:09Z" finished-at="2013-04-23T08:30:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="62" started-at="2013-04-22T08:19:32Z" finished-at="2013-04-22T08:19:32Z">
-      <class name="com.sirma.itt.javacourse.intro.ArrayReverseTest">
-        <test-method status="PASS" signature="reverseTast([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1e68ce4]" name="reverseTast" duration-ms="15" started-at="2013-04-22T11:19:32Z" data-provider="validData" finished-at="2013-04-22T11:19:32Z">
+    <test name="Default test" duration-ms="47" started-at="2013-04-23T08:30:09Z" finished-at="2013-04-23T08:30:09Z">
+      <class name="com.sirma.itt.javacourse.intro.QuickSortTest">
+        <test-method status="PASS" signature="testSort([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.QuickSortTest@26f144]" name="testSort" duration-ms="15" started-at="2013-04-23T11:30:09Z" data-provider="validData" finished-at="2013-04-23T11:30:09Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@1783d33]]>
+                <![CDATA[[Ljava.lang.Integer;@126172f]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@fa1b85]]>
+                <![CDATA[[Ljava.lang.Integer;@1bc2e06]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reverseTast -->
-        <test-method status="PASS" signature="reverseTast([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1e68ce4]" name="reverseTast" duration-ms="0" started-at="2013-04-22T11:19:32Z" data-provider="validData" finished-at="2013-04-22T11:19:32Z">
+        </test-method> <!-- testSort -->
+        <test-method status="PASS" signature="testSort([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.QuickSortTest@26f144]" name="testSort" duration-ms="16" started-at="2013-04-23T11:30:09Z" data-provider="validData" finished-at="2013-04-23T11:30:09Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@24cdc7]]>
+                <![CDATA[[Ljava.lang.Integer;@17193fc]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@41e2aa]]>
+                <![CDATA[[Ljava.lang.Integer;@1aa8b42]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reverseTast -->
-        <test-method status="PASS" signature="reverseTast([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1e68ce4]" name="reverseTast" duration-ms="0" started-at="2013-04-22T11:19:32Z" data-provider="validData" finished-at="2013-04-22T11:19:32Z">
+        </test-method> <!-- testSort -->
+        <test-method status="PASS" signature="testSort([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.QuickSortTest@26f144]" name="testSort" duration-ms="0" started-at="2013-04-23T11:30:09Z" data-provider="validData" finished-at="2013-04-23T11:30:09Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@1881149]]>
+                <![CDATA[[Ljava.lang.Integer;@19cc1e3]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@2709da]]>
+                <![CDATA[[Ljava.lang.Integer;@7d5b6e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reverseTast -->
-      </class> <!-- com.sirma.itt.javacourse.intro.ArrayReverseTest -->
+        </test-method> <!-- testSort -->
+      </class> <!-- com.sirma.itt.javacourse.intro.QuickSortTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

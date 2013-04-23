@@ -15,6 +15,6 @@ public class SumOfStringsRun {
 	 */
 	public static void main(String[] args) {
 		SumOfStrings sum = new SumOfStrings();
-		System.out.println(sum.calculate("238", "77"));
+		System.out.println(sum.calculate("54353423845345", "457545364377"));
 	}
 }

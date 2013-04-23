@@ -11,7 +11,7 @@ public class SumOfStrings {
 	/**
 	 * Calculate value of two strings as number.
 	 * 
-	 * @param firstString - number
+	 * @param firstString - big number
 	 * @param secondString - number to be added to firstString
 	 * @return sum of firstString and secondString
 	 */

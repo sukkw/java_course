@@ -20,9 +20,13 @@ public class RandomString {
 
 		for (int i = 0; i < stringLength; i++) {
 			int randomInt = 0;
+			
+			//repeat while we get allowed symbol
 			do {
 				randomInt = (int) (Math.random() * (maxValue - minValue)) + minValue;
 			} while ((randomInt > 57 && randomInt < 65) || (randomInt > 90 && randomInt < 97));
+			
+			// convert to char and add to string
 			char randomChar = (char) randomInt;
 			randomStr += randomChar;
 		}

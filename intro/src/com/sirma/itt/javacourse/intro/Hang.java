@@ -13,10 +13,11 @@ public class Hang {
 	/**
 	 * Start the game.
 	 * 
-	 * @param word the hidden word which player must find
+	 * @param word - the hidden word which player must find
 	 */
 	public void start(String word) {
 
+		//generate temporary word visible to player
 		String tempWord = "";
 		for (int i = 0; i < word.length(); i++) {
 			tempWord += "-";
@@ -28,7 +29,7 @@ public class Hang {
 		char enterdChar;
 
 		int count = 0;
-		int rightcount = 0;
+		int rightCount = 0;
 
 		System.out.println(tempWord + " Vuvedete bukva");
 
@@ -44,14 +45,14 @@ public class Hang {
 			}
 			if (match) {
 				System.out.println(tempWord);
-				rightcount++;
+				rightCount++;
 				count++;
 			} else {
 				System.out.println(tempWord);
 				count++;
 			}
 
-		} while (rightcount < word.length() && count < ERROR_COUNTER);
+		} while (rightCount < word.length() && count < ERROR_COUNTER);
 
 		if (word.equalsIgnoreCase(tempWord)) {
 			System.out.println("Dumata e vqrna.");
