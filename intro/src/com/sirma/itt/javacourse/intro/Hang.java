@@ -46,7 +46,6 @@ public class Hang {
 			if (match) {
 				System.out.println(tempWord);
 				rightCount++;
-				count++;
 			} else {
 				System.out.println(tempWord);
 				count++;
