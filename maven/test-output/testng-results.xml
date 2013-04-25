@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="47" started-at="2013-04-25T09:32:42Z" finished-at="2013-04-25T09:32:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="47" started-at="2013-04-25T09:32:42Z" finished-at="2013-04-25T09:32:42Z">
+      <class name="com.sirma.itt.javacourse.maven.ArrayCenterTest">
+        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.maven.ArrayCenterTest@189346e]" name="calculateTast" duration-ms="16" started-at="2013-04-25T12:32:42Z" data-provider="validData" finished-at="2013-04-25T12:32:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Integer;@1fdbe17]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateTast -->
+        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.maven.ArrayCenterTest@189346e]" name="calculateTast" duration-ms="0" started-at="2013-04-25T12:32:42Z" data-provider="validData" finished-at="2013-04-25T12:32:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Integer;@129aa21]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateTast -->
+        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.maven.ArrayCenterTest@189346e]" name="calculateTast" duration-ms="0" started-at="2013-04-25T12:32:42Z" data-provider="validData" finished-at="2013-04-25T12:32:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Integer;@1cb1278]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculateTast -->
+      </class> <!-- com.sirma.itt.javacourse.maven.ArrayCenterTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

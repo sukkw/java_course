@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47" started-at="2013-04-23T08:30:09Z" finished-at="2013-04-23T08:30:09Z">
+  <suite name="Default suite" duration-ms="63" started-at="2013-04-25T09:32:26Z" finished-at="2013-04-25T09:32:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47" started-at="2013-04-23T08:30:09Z" finished-at="2013-04-23T08:30:09Z">
-      <class name="com.sirma.itt.javacourse.intro.QuickSortTest">
-        <test-method status="PASS" signature="testSort([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.QuickSortTest@26f144]" name="testSort" duration-ms="15" started-at="2013-04-23T11:30:09Z" data-provider="validData" finished-at="2013-04-23T11:30:09Z">
+    <test name="Default test" duration-ms="63" started-at="2013-04-25T09:32:26Z" finished-at="2013-04-25T09:32:26Z">
+      <class name="com.sirma.itt.javacourse.intro.ArrayCenterTest">
+        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayCenterTest@26f144]" name="calculateTast" duration-ms="15" started-at="2013-04-25T12:32:26Z" data-provider="validData" finished-at="2013-04-25T12:32:26Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@126172f]]>
+                <![CDATA[[Ljava.lang.Integer;@1bc2e06]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@1bc2e06]]>
+                <![CDATA[4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSort -->
-        <test-method status="PASS" signature="testSort([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.QuickSortTest@26f144]" name="testSort" duration-ms="16" started-at="2013-04-23T11:30:09Z" data-provider="validData" finished-at="2013-04-23T11:30:09Z">
+        </test-method> <!-- calculateTast -->
+        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayCenterTest@26f144]" name="calculateTast" duration-ms="0" started-at="2013-04-25T12:32:26Z" data-provider="validData" finished-at="2013-04-25T12:32:26Z">
           <params>
             <param index="0">
               <value>
@@ -32,30 +32,30 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@1aa8b42]]>
+                <![CDATA[9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSort -->
-        <test-method status="PASS" signature="testSort([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.QuickSortTest@26f144]" name="testSort" duration-ms="0" started-at="2013-04-23T11:30:09Z" data-provider="validData" finished-at="2013-04-23T11:30:09Z">
+        </test-method> <!-- calculateTast -->
+        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayCenterTest@26f144]" name="calculateTast" duration-ms="0" started-at="2013-04-25T12:32:26Z" data-provider="validData" finished-at="2013-04-25T12:32:26Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@19cc1e3]]>
+                <![CDATA[[Ljava.lang.Integer;@1aa8b42]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@7d5b6e]]>
+                <![CDATA[2]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSort -->
-      </class> <!-- com.sirma.itt.javacourse.intro.QuickSortTest -->
+        </test-method> <!-- calculateTast -->
+      </class> <!-- com.sirma.itt.javacourse.intro.ArrayCenterTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

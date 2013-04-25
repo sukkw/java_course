@@ -19,7 +19,7 @@ public class SumOfStrings {
 
 		//keep last digit as char
 		char ldcFirstString;
-		char ldcSecoundString;
+		char ldcSecondString;
 		
 		// keep last digit as integer
 		int ldiFirstString;
@@ -41,10 +41,10 @@ public class SumOfStrings {
 
 			if (secondString.length() > 0) {
 				// save the last char and take the remaining substring
-				ldcSecoundString = secondString.charAt(secondString.length() - 1);
+				ldcSecondString = secondString.charAt(secondString.length() - 1);
 				secondString = secondString.substring(0, secondString.length() - 1);
 			} else {
-				ldcSecoundString = '0';
+				ldcSecondString = '0';
 			}
 			
 			
@@ -52,7 +52,7 @@ public class SumOfStrings {
 			
 			// convert the char values to integer
 			ldiFirstString = Character.getNumericValue(ldcFirstString);
-			ldiSecoundString = Character.getNumericValue(ldcFirstString);
+			ldiSecoundString = Character.getNumericValue(ldcSecondString);
 
 			// calculate the sum as integer value and add transfer
 			tempSum = ldiFirstString + ldiSecoundString + transfer;
