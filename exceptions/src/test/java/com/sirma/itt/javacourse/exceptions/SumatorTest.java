@@ -33,7 +33,7 @@ public class SumatorTest {
 	 */
 	@Test(dataProvider = "validData")
 	public void calculate(String firstString, String secondString, String valid) {
-		//String result = sumator.calculate(firstString, secondString);
-		//Assert.assertEquals(result, valid);
+		String result = sumator.calculate(firstString, secondString);
+		Assert.assertEquals(result, valid);
 	}
 }
