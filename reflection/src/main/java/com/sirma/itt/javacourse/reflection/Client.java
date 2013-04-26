@@ -15,16 +15,17 @@ public class Client extends Person implements ClientImpl {
 	/**
 	 * Class default constructor
 	 */
-	public void client() {
+	public Client() {
+		System.out.println("Client is created");
 	}
 	
 	/**
 	 * Constructor. Create client with given name
 	 * @param name - the name of the client
 	 */
-	public void client(int paymentMethod, String name) {
+	public Client(String name) {
 		this.setName(name);
-		System.out.println("Client name is " + name + " payment " + paymentMethod);
+		System.out.println("Client is created with name " + name);
 	}
 
 	/**
@@ -64,6 +65,7 @@ public class Client extends Person implements ClientImpl {
 	 * @return value of the order
 	 */
 	private double calculateOrderVal() {
+		System.out.println("Access to private method calculateOrderVal()");
 		return 56.5;
 	}
 	
@@ -71,8 +73,9 @@ public class Client extends Person implements ClientImpl {
 	 * Calculate value of client order
 	 * @return value of the order
 	 */
-	private String orderInfo(int clientID, String clientNumber) {
-		return "Access to private method " + clientID + "  " + clientNumber;
+	private int orderInfo(int clientID, String clientNumber) {
+		System.out.println("Access to private method " + clientID + "  " + clientNumber);
+		return clientID;
 	}
 
 }
