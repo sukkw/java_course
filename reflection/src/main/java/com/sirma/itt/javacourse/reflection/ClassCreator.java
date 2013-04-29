@@ -41,7 +41,7 @@ public class ClassCreator {
 	}
 
 	/**
-	 * Create class instance
+	 * Create class instance.
 	 * 
 	 * @param classToReflect - class to be instantiated
 	 * @param params - class constructor parameters (or null)

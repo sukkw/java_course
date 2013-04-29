@@ -13,7 +13,7 @@ public class Client extends Person implements ClientImpl {
 	public String clientNumber;
 	
 	/**
-	 * Class default constructor
+	 * Class default constructor.
 	 */
 	public Client() {
 		System.out.println("Client is created");
@@ -61,7 +61,7 @@ public class Client extends Person implements ClientImpl {
 	}
 	
 	/**
-	 * Calculate value of client order
+	 * Calculate value of client order.
 	 * @return value of the order
 	 */
 	private double calculateOrderVal() {
@@ -70,7 +70,7 @@ public class Client extends Person implements ClientImpl {
 	}
 	
 	/**
-	 * Calculate value of client order
+	 * Calculate value of client order.
 	 * @return value of the order
 	 */
 	private int orderInfo(int clientID, String clientNumber) {
