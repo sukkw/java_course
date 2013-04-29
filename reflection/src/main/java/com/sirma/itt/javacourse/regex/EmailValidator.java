@@ -16,15 +16,11 @@ public class EmailValidator {
 	private Pattern pattern;
 	private Matcher matcher;
 	
-	// valid email regular expression pattern
-	private final String EMAIL_PATTERN = 
-		"[A-Za-z]+([A-Za-z0-9-.])+@[A-Za-z]+([A-Za-z0-9-.])+(.[A-Za-z]{2,})";
- 
 	/**
 	 * Class default constructor.
 	 */
-	public EmailValidator() {
-		pattern = Pattern.compile(EMAIL_PATTERN);
+	public EmailValidator(String regExPattern) {
+		pattern = Pattern.compile(regExPattern);
 	}
  
 	/**

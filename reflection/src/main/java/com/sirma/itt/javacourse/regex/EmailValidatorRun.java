@@ -18,7 +18,11 @@ public class EmailValidatorRun {
 	public static void main(String[] args) {
 		try {
 
-			EmailValidator validator = new EmailValidator();
+			// valid email regular expression pattern
+			String regExPattern = 
+				"[A-Za-z]+([A-Za-z0-9-.])+@[A-Za-z]+([A-Za-z0-9-.])+(.[A-Za-z]{2,})";
+		 
+			EmailValidator validator = new EmailValidator(regExPattern);
 
 			String email = "te.s99st.t-s.@dsda.sdss.sdasd.dd";
 

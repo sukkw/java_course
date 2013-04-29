@@ -18,7 +18,7 @@ public class ClassCreator {
 	 * @param params - class constructor parameters (or null)
 	 * @param values - value for each parameter (or null)
 	 */
-	public void createInstance(String className, Class[] params, Object[] values) {
+	public void makeInstance(String className, Class[] params, Object[] values) {
 
 		// try to get class from name
 		Class classToReflect = null;
@@ -28,7 +28,7 @@ public class ClassCreator {
 			e.printStackTrace();
 		}
 		
-		instance(classToReflect, params, values);
+		makeInstance(classToReflect, params, values);
 		
 		System.out.println("Class: " + classToReflect.getName());
 		System.out.println("Extends: " + classToReflect.getSuperclass());
@@ -48,12 +48,12 @@ public class ClassCreator {
 	 * @param values - value for each parameter (or null)
 	 * @return class instance
 	 */
-	public Object instance(Class classToReflect, Class[] params, Object[] values) {
+	public Object makeInstance(Class classToReflect, Class[] params, Object[] values) {
 		Constructor constructor = null;
-		Object classParamInstance = null;
+		Object classInstance = null;
 		try {
 			constructor = classToReflect.getConstructor(params);
-			classParamInstance = constructor.newInstance(values);
+			classInstance = constructor.newInstance(values);
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
@@ -68,6 +68,6 @@ public class ClassCreator {
 			e.printStackTrace();
 		}
 		
-		return classParamInstance;
+		return classInstance;
 	}
 }

@@ -34,7 +34,7 @@ public class IBANFormatter {
 		
 		Matcher regexMatcher = pattern.matcher(stringToFormat);
 		while (regexMatcher.find()) {
-			stringToFormat = stringToFormat.replaceAll(regexMatcher.group(), regexMatcher.group().replaceAll(REPLACE_PATTERN, "---"));
+			stringToFormat = stringToFormat.replaceAll(regexMatcher.group(), regexMatcher.group().replaceAll(REPLACE_PATTERN, "****"));
 		}
 		return stringToFormat;
 	}

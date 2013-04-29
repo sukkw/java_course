@@ -29,7 +29,8 @@ public class IBANFormatterRun {
 					+ "<iban>AL47 2121 1009 0000 0002 3569 8741</iban>\n"
 					+ "<iban>AZ21 NABZ 0000 0000 1370 1000 1944</iban>\n"
 					+ "<iban>BG80 BNBG 9661 1020 3456 76</iban>\n"
-					+ "<iban>BG80 BNBG 9661 1020 3456 7878</iban>\n" + "</bankAccounts>";
+					+ "<iban>BG80 BNBG 9661 1020 3456 7878</iban>\n" 
+					+ "</bankAccounts>";
 
 			// regular expression pattern
 			String regExPattern = "<iban>(BG[0-9]{2}\\s*[A-Z]{4}\\s*[0-9]{4}\\s*[0-9]{4}\\s*[0-9]{4}\\s*[0-9]{2})</iban>";

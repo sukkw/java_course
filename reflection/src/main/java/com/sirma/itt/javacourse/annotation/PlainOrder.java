@@ -16,10 +16,8 @@ public class PlainOrder {
 	 * 
 	 * @return - array with ordered instances
 	 */
-	public Object[] orderInstances() {
-		Plane[] instances = { new Bomber(), new Airliner(), new Fighter(),
-				new TransportAircraft() };
-		
+	public Plane[] orderInstances(Plane[] instances) {
+
 		try {
 			Arrays.sort(instances, PlaneAnnotationComparator);
 		} catch (NullPointerException e) {

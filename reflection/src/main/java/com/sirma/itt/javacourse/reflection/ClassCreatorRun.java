@@ -21,6 +21,6 @@ public class ClassCreatorRun {
 		//params = new Class[] {String.class };
 		//values = new Object[] { "Stella" };
 		 
-		classCreator.createInstance(className, params, values);
+		classCreator.makeInstance(className, params, values);
 	}
 }

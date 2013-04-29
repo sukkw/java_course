@@ -13,7 +13,11 @@ public class PlainOrderRun {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		Plane[] instances = { new Bomber(), new Airliner(), new Fighter(),
+				new TransportAircraft() };
+		
 		PlainOrder plainOrder = new PlainOrder();
-		plainOrder.orderInstances();
+		plainOrder.orderInstances(instances);
 	}
 }

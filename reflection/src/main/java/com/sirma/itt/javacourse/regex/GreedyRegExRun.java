@@ -11,17 +11,17 @@ import java.util.regex.PatternSyntaxException;
 public class GreedyRegExRun {
 
 	/**
-	 * Class main method
+	 * Class main method.
 	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
 		// string for format
-		String stringToFormat = "<x><b></b><x>Hello world</x>" + "<b>sdfsdf</b><x>Good "
-				+ "morning</x><x>69</x><x>sdfsdfsdf</x>" + "</x>";
-
-		String out = "<x><b></b><x/>" + "<b>sdfsdf</b><x/><x/><x/>" + "</x>";
+		String stringToFormat = "<x><b></b><x>Hello world</x>" 
+				+ "<b>sdfsdf</b><x>Good "
+				+ "morning</x><x>69</x><x>sdfsdfsdf</x>" 
+				+ "</x>";
 
 		// regular expression pattern
 		// String greedyRegEx = "(<x>).*?(</x>)";
@@ -30,8 +30,7 @@ public class GreedyRegExRun {
 		try {
 			GreedyRegEx greedy = new GreedyRegEx(negatedRegEx);
 			stringToFormat = greedy.format(stringToFormat);
-
-			// System.out.println(stringToFormat);
+			System.out.println(stringToFormat);
 		} catch (PatternSyntaxException e) {
 			System.out.println("Error in reg ex pattern");
 		}

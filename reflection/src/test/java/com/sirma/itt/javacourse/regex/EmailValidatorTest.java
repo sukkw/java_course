@@ -12,7 +12,10 @@ import org.testng.annotations.DataProvider;
  */
 public class EmailValidatorTest {
 
-	private EmailValidator emailValidator = new EmailValidator();
+	// class private members
+	private String regExPattern = 
+			"[A-Za-z]+([A-Za-z0-9-.])+@[A-Za-z]+([A-Za-z0-9-.])+(.[A-Za-z]{2,})";
+	private EmailValidator emailValidator = new EmailValidator(regExPattern);
 
 	/**
 	 * Data used for tests.
@@ -40,9 +43,9 @@ public class EmailValidatorTest {
 	}
 
 	/**
-	 * Test validate method with valid data
+	 * Test validate method with valid data.
 	 * 
-	 * @param Emails - e-mails to be tested
+	 * @param emails - e-mails to be tested
 	 */
 	@Test(dataProvider = "ValidEmailData")
 	public void ValidEmailTest(String[] emails) {
@@ -56,9 +59,9 @@ public class EmailValidatorTest {
 	}
 
 	/**
-	 * Test validate method with invalid data
+	 * Test validate method with invalid data.
 	 * 
-	 * @param Emails - e-mails to be tested
+	 * @param emails - e-mails to be tested
 	 */
 	@Test(dataProvider = "InvalidEmailData")
 	public void InValidEmailTest(String[] emails) {

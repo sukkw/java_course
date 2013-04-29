@@ -30,7 +30,7 @@ public class PrivateMembersAccess {
 			e.printStackTrace();
 		}
 
-		Object instance = creator.instance(classToReflect, params, values);
+		Object instance = creator.makeInstance(classToReflect, params, values);
 
 		System.out.println();
 		manipulator.getFieldsInfo(instance);
