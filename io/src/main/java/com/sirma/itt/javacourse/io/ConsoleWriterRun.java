@@ -18,11 +18,12 @@ public class ConsoleWriterRun {
 	public static void main(String[] args) {
 
 		ConsoleWriter writer = new ConsoleWriter();
-		
+
 		try {
-			writer.read();
-		} catch (IOException e) {
-			System.out.println(" IO error ");
+			writer.writeToFile();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }

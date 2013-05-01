@@ -85,8 +85,7 @@ public class ConsoleReader {
 		do {
 			Scanner input = new Scanner(System.in);
 			String enteredValue;
-			System.out
-					.println("S(tring) / I(nteger) / C(har) / F(loat) / E(xit)");
+			System.out.println("S(tring) / I(nteger) / C(har) / F(loat) / E(xit)");
 			enteredValue = input.nextLine();
 
 			switch (enteredValue) {
