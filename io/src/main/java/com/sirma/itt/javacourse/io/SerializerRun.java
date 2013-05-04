@@ -12,17 +12,25 @@ public class SerializerRun {
 
 	/**
 	 * Class main method
+	 * 
 	 * @param args
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		
-		DataClass object = new DataClass("XX-Lg-675P", 156.90, 3452);
-		object.setQty(12);
-		object.setAvailable(true);
-		
+
+		DataClass serializedObject = new DataClass("XX-Lg-675P", 156.90, 3452);
+		serializedObject.setQty(12);
+		serializedObject.setAvailable(true);
+
 		Serializer serializer = new Serializer();
-		serializer.saveObject("serialize.ser", object);
-		serializer.getObject("serialize.ser");
+		serializer.saveObject("serialize.ser", serializedObject);
+		DataClass deserializedObject = (DataClass) serializer.getObject("serialize.ser");
+
+		System.out.println("Deserialized DataClass: ");
+		System.out.println("Name: " + deserializedObject.getName());
+		System.out.println("Number: " + deserializedObject.getNumber());
+		System.out.println("Value: " + deserializedObject.getValue());
+		System.out.println("Quantity: " + deserializedObject.getQty());
+		System.out.println("Available: " + deserializedObject.isAvailable());
 	}
 }

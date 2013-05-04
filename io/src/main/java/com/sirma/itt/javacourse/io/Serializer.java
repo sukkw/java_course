@@ -42,12 +42,12 @@ public class Serializer {
 	 */
 	public Object getObject(String path) throws IOException {
 		
-		DataClass object = null;
+		Object object = null;
 	      try
 	      {
 	         FileInputStream fileIn = new FileInputStream(path);
 	         ObjectInputStream in = new ObjectInputStream(fileIn);
-	         object = (DataClass) in.readObject();
+	         object = (Object) in.readObject();
 	         in.close();
 	         fileIn.close();
 	      }catch(IOException i)
@@ -56,19 +56,9 @@ public class Serializer {
 	         return null;
 	      }catch(ClassNotFoundException c)
 	      {
-	         System.out.println("DataClass not found.");
+	         System.out.println("Class not found.");
 	         return null;
 	      }
-	      
-	      System.out.println("Deserialized DataClass: ");
-	      System.out.println("Name: " + object.getName());
-	      System.out.println("Number: " + object.getNumber());
-	      System.out.println("Value: " + object.getValue());
-	      System.out.println("Quantity: " + object.getQty());
-	      System.out.println("Available: " + object.isAvailable());
-	      
-		return path;
-		
+		return object;
 	}
-	
 }
