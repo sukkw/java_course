@@ -38,7 +38,7 @@ public class DataClass implements Serializable {
 	}
 
 	/**
-	 * Set item name
+	 * Set item name.
 	 * @param name - item name
 	 */
 	public void setName(String name) {
@@ -62,7 +62,7 @@ public class DataClass implements Serializable {
 	}
 
 	/**
-	 * Get item number
+	 * Get item number.
 	 * @return - item number
 	 */
 	public int getNumber() {
@@ -70,7 +70,7 @@ public class DataClass implements Serializable {
 	}
 
 	/**
-	 * Set item number
+	 * Set item number.
 	 * @param number - item number
 	 */
 	public void setNumber(int number) {
@@ -86,7 +86,7 @@ public class DataClass implements Serializable {
 	}
 
 	/**
-	 * Set item quantity
+	 * Set item quantity.
 	 * @param qty - quantity
 	 */
 	public void setQty(int qty) {
@@ -102,7 +102,7 @@ public class DataClass implements Serializable {
 	}
 
 	/**
-	 * Set is item available or not
+	 * Set is item available or not.
 	 * @param isAvailable - true or false
 	 */
 	public void setAvailable(boolean isAvailable) {

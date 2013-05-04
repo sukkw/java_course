@@ -11,14 +11,14 @@ import java.util.Scanner;
 public class ConsoleReader {
 
 	/**
-	 * Make private constructor don't allow instance to be made
+	 * Make private constructor don't allow instance to be made.
 	 */
 	private ConsoleReader() {
 
 	}
 
 	/**
-	 * Read string from console
+	 * Read string from console.
 	 * @param enteredValue - string entered by user
 	 * @return string entered by user
 	 */
@@ -29,7 +29,7 @@ public class ConsoleReader {
 	}
 
 	/**
-	 * Read integer from console
+	 * Read integer from console.
 	 * @param enteredValue - string entered by user
 	 * @return - string entered by user converted in int
 	 */
@@ -45,7 +45,7 @@ public class ConsoleReader {
 	}
 
 	/**
-	 * Read char from console
+	 * Read char from console.
 	 * @param enteredValue
 	 * @return
 	 */
@@ -62,7 +62,7 @@ public class ConsoleReader {
 	}
 
 	/**
-	 * Read float from console
+	 * Read float from console.
 	 * @param enteredValue - string entered by user
 	 * @return - string entered by user converted in float
 	 */
