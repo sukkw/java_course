@@ -21,6 +21,7 @@ public class ConsoleReader {
 		do {
 			try {
 				for (int i = 0; i < str.length(); i++) {
+					// make it use charactr...
 					Integer.parseInt(str.charAt(i) + "");
 				}
 				outOfBoundCheck(str);
