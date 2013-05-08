@@ -40,7 +40,7 @@ public class Serializer {
 	 * @return - deserialized object
 	 * @throws IOException
 	 */
-	public Object getObject(String path) throws IOException {
+	public Object getObject(String path) {
 
 		Object object = null;
 		try {

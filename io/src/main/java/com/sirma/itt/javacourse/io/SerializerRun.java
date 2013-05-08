@@ -16,7 +16,7 @@ public class SerializerRun {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 
 		DataClass serializedObject = new DataClass("XX-Lg-675P", 156.90, 3452);
 		serializedObject.setQty(12);
