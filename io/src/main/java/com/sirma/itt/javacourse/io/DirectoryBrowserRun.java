@@ -15,6 +15,6 @@ public class DirectoryBrowserRun {
 	public static void main(String[] args) {
 		
 		DirectoryBrowser browser = new DirectoryBrowser();
-		browser.listContent("C:\\Users\\Eli\\git\\io");
+		browser.listContent("C:\\Documents and Settings\\sdjulgerova\\git");
 	}
 }

@@ -10,7 +10,7 @@ public class TransferObjectRun {
 	public static void main(String[] args) {
 
 		try {
-			InputStream in = new FileInputStream("test.txt");
+			InputStream in = new FileInputStream("testFile.txt");
 			OutputStream out = System.out;
 			TransferObject transfer = new TransferObject(in, out);
 			transfer.transfer(15, 4);

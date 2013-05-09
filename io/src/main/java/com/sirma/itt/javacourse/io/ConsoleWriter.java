@@ -30,7 +30,7 @@ public class ConsoleWriter {
 	 */
 	public void writeToFile() {
 
-		System.out.println("Enter path and file name: ");
+		System.out.println("Enter path to the file : ");
 		String fileName = input.nextLine() + ".txt";
 
 		if (!createFile(fileName)) {

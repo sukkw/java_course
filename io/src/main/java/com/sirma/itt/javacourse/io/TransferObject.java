@@ -35,7 +35,7 @@ public class TransferObject {
 		in.read(buffer);
         out.write(buffer, offset, numberOfBytes);
 
-		return 0;
+		return numberOfBytes;
 		
 	}
 }

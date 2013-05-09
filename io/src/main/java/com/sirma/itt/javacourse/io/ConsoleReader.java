@@ -10,6 +10,8 @@ import java.util.Scanner;
  */
 public class ConsoleReader {
 
+	private static Scanner input = new Scanner(System.in);
+	
 	/**
 	 * Make private constructor don't allow instance to be made.
 	 */
@@ -19,25 +21,25 @@ public class ConsoleReader {
 
 	/**
 	 * Read string from console.
-	 * @param enteredValue - string entered by user
 	 * @return string entered by user
 	 */
-	private static String readString(String enteredValue) {
-		System.out.println(enteredValue);
-		return enteredValue;
-
+	public static String readString() {
+		System.out.println("Enter string: ");
+		String enteredString = input.next();
+		return enteredString;
 	}
 
 	/**
 	 * Read integer from console.
-	 * @param enteredValue - string entered by user
-	 * @return - string entered by user converted in int
+	 * @return - string entered by user converted to integer
 	 */
-	private static int readInt(String enteredValue) {
+	public static int readInt() {
+		
+		System.out.println("Enter integer value: ");
 		int intValue = 0;
+		
 		try {
-			intValue = Integer.parseInt(enteredValue);
-			System.out.println(intValue);
+			intValue = Integer.parseInt(input.next());
 		} catch (NumberFormatException e) {
 			System.out.println("Invalid integer format");
 		}
@@ -46,31 +48,32 @@ public class ConsoleReader {
 
 	/**
 	 * Read char from console.
-	 * @param enteredValue
-	 * @return
+	 * @return - char entered by user
 	 */
-	private static char readChar(String enteredValue) {
-		char charValue = 0;
-		if (enteredValue.length() == 1) {
-			charValue = enteredValue.charAt(0);
-			System.out.println(charValue);
-
+	public static char readChar() {
+		
+		System.out.println("Enter char: ");
+		String enteredString = input.next();
+		char enteredChar = 0;
+		
+		if (enteredString.length() == 1) {
+			enteredChar = enteredString.charAt(0);
 		} else {
 			System.out.println("Invalid char format");
 		}
-		return charValue;
+		return enteredChar;
 	}
 
 	/**
 	 * Read float from console.
-	 * @param enteredValue - string entered by user
 	 * @return - string entered by user converted in float
 	 */
-	private static float readFloat(String enteredValue) {
+	public static float readFloat() {
+		System.out.println("Enter double value: ");
+		
 		float floatValue = 0;
 		try {
-			floatValue = Float.parseFloat(enteredValue);
-			System.out.println(floatValue);
+			floatValue = Float.parseFloat(input.next());
 		} catch (NumberFormatException e) {
 			System.out.println("Invalid float format");
 		}
@@ -83,32 +86,23 @@ public class ConsoleReader {
 	public static void read() {
 		boolean checker = true;
 		do {
-			Scanner input = new Scanner(System.in);
 			String enteredValue;
 			System.out.println("S(tring) / I(nteger) / C(har) / F(loat) / E(xit)");
-			enteredValue = input.nextLine();
+			enteredValue = input.next();
 
 			switch (enteredValue) {
 
 			case "S":
-				System.out.println("Enter string: ");
-				enteredValue = input.nextLine();
-				readString(enteredValue);
+				System.out.println("You entered: " + readString());
 				break;
 			case "I":
-				System.out.println("Enter integer value: ");
-				enteredValue = input.next();
-				readInt(enteredValue);
+				System.out.println("You entered: " + readInt());
 				break;
 			case "C":
-				System.out.println("Enter char: ");
-				enteredValue = input.next();
-				readChar(enteredValue);
+				System.out.println("You entered: " + readChar());
 				break;
 			case "F":
-				System.out.println("Enter double value: ");
-				enteredValue = input.next();
-				readFloat(enteredValue);
+				System.out.println("You entered: " + readFloat());
 				break;
 			case "E":
 				checker = false;

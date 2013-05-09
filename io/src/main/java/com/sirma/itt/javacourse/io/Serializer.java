@@ -28,7 +28,7 @@ public class Serializer {
 			out.writeObject(object);
 			out.close();
 			fileOut.close();
-		} catch (IOException i) {
+		} catch (IOException e) {
 			System.out.println("File can not be created. Please try again");
 		}
 	}

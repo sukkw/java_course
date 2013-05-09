@@ -11,8 +11,6 @@ import org.testng.annotations.Test;
  * @author Stella Djulgerova
  */
 public class ConsoleReaderTest {
-
-	Class reflectionClass = ConsoleReader.class;
 	
 	/**
 	 * Data used for tests.
@@ -21,7 +19,7 @@ public class ConsoleReaderTest {
 	 */
 	@DataProvider
 	public Object[][] validData() {
-		return new Object[][] { { "70", "70"}};
+		return new Object[][] { {80}};
 	}
 
 	/**7
@@ -31,8 +29,8 @@ public class ConsoleReaderTest {
 	 * @param valid - correct string
 	 */
 	@Test(dataProvider = "validData")
-	public void validate(String string, String valid) {
-		ConsoleReader.read();
-		//Assert.assertEquals(result, valid);
+	public void validate(int valid) {
+		int enteredInt = ConsoleReader.readInt();
+		Assert.assertEquals(enteredInt, valid);
 	}
 }

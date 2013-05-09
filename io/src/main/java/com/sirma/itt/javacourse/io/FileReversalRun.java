@@ -15,30 +15,12 @@ public class FileReversalRun {
 
 		FileReversal fileReversal = new FileReversal();
 		try {
-			fileReversal.reverse("test.txt");
+			fileReversal.reverse("testFile.txt");
 		}
 		catch (IOException e) {
 			System.out.println("Invalid path or file");
 		} catch (InvalidPathException e) {
 			System.out.println("Invalid path or file");
 		}
-
-		/*
-		 * public static void main(String args[]) { StringBuffer buffer = new
-		 * StringBuffer("Game Plan"); buffer.reverse();
-		 * System.out.println(buffer); }
-		 */
-
-		/*
-		 * private String readFile( String file ) throws IOException {
-		 * BufferedReader reader = new BufferedReader( new FileReader (file));
-		 * String line = null; StringBuilder stringBuilder = new
-		 * StringBuilder(); String ls = System.getProperty("line.separator");
-		 * 
-		 * while( ( line = reader.readLine() ) != null ) { stringBuilder.append(
-		 * line ); stringBuilder.append( ls ); }
-		 * 
-		 * return stringBuilder.toString(); }
-		 */
 	}
 }
