@@ -1,5 +1,6 @@
 package com.sirma.itt.javacourse.exceptions;
 
+
 /**
  * ConsoleReader run class.
  * 
@@ -17,8 +18,14 @@ public class ConsoleReaderRun {
 
 		ConsoleReader reader = new ConsoleReader();
 
-		String enteredValue = reader.read();
-
-		System.out.println("Chisloto koeto vuvedohte e: " + enteredValue);
+		try {
+			reader.read();
+		} catch (NumberFormatException e) {
+			System.out.println("Invalid format");
+		} catch (OutOfBoundException e) {
+			System.out.println("Value is out of range!");
+		}catch (Exception e) {
+			System.out.println("Error in value....");
+		}
 	}
 }

@@ -1,5 +1,8 @@
 package com.sirma.itt.javacourse.exceptions;
 
+import java.util.EmptyStackException;
+import java.util.Scanner;
+
 /**
  * Elements list run class.
  * 
@@ -9,14 +12,47 @@ package com.sirma.itt.javacourse.exceptions;
 public class ElementsListRun {
 
 	/**
-	 * Main method.
+	 * Class main method
 	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
-		Object[] elements = new Object[5];
-		ElementsList elList = new ElementsList(elements);
-		elList.read();
+		ElementsList list = new ElementsList();
+		boolean checker = true;
+
+		do {
+			Scanner input = new Scanner(System.in);
+			String str;
+			System.out.print("A(dd) / D(elete) / E(xit)");
+			str = input.next();
+
+			switch (str) {
+
+			case "A":
+				try {
+					list.add("test");
+					list.printAllElements();
+				} catch (FullListException e) {
+					System.out.println("You can't add more elements!");
+				}
+				break;
+
+			case "D":
+				try {
+					list.remove();
+					list.printAllElements();
+				} catch (EmptyStackException e) {
+					System.out.println("You can't remove from empty list!");
+				}
+				break;
+
+			case "E":
+				checker = false;
+				break;
+			default:
+				break;
+			}
+		} while (checker);
 	}
 }

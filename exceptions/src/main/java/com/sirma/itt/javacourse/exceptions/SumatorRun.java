@@ -20,6 +20,12 @@ public class SumatorRun {
 		String firstNumber = sumator.read();
 		String secondNumber = sumator.read();
 
-		System.out.println("Sbora na chislata e: " + sumator.calculate(firstNumber, secondNumber));
+		try {
+			System.out.println("Sum of numbers is: "
+					+ sumator.calculate(firstNumber, secondNumber));
+		} catch (NumberFormatException e) {
+			System.out.println("Invalid format. Please enter only digits");
+		}
+
 	}
 }

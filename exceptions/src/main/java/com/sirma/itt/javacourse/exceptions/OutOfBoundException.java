@@ -8,25 +8,13 @@ package com.sirma.itt.javacourse.exceptions;
  */
 public class OutOfBoundException extends Exception {
 
-	// class private members
-	private final String error;
+	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Constructor.
-	 * 
-	 * @param error - error to be shown if exception occurs
-	 */
-	public OutOfBoundException(String error) {
-		super(error);
-		this.error = error;
-	}
-
-	/**
-	 * Get error message.
-	 * 
-	 * @return error massage
-	 */
-	public String getError() {
-		return error;
+    /**
+     * Constructor.
+     * @param message - exception information
+     */
+	public OutOfBoundException(String message) {
+		super(message);
 	}
 }

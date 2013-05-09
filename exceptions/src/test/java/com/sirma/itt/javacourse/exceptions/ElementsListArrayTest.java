@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  * @version 1.1 25 April 2013
  * @author Stella Djulgerova
  */
-public class ElementsListTest {
+public class ElementsListArrayTest {
 
 	/**
 	 * Data used for add element tests.
@@ -47,7 +47,7 @@ public class ElementsListTest {
 	 */
 	@Test(dataProvider = "validAddData")
 	public void add(Object[] elList, Object elToAdd, Object[] valid) {
-		ElementsList list = new ElementsList(elList);
+		ElementsListArray list = new ElementsListArray(elList);
 		Object[] result = list.add(elToAdd);
 		Assert.assertEquals(result, valid);
 	}
@@ -60,7 +60,7 @@ public class ElementsListTest {
 	 */
 	@Test(dataProvider = "validRemoveData")
 	public void remove(Object[] elList, Object[] valid) {
-		ElementsList list = new ElementsList(elList);
+		ElementsListArray list = new ElementsListArray(elList);
 		Object[] result = list.remove();
 		Assert.assertEquals(result, valid);
 	}

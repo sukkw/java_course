@@ -11,60 +11,34 @@ import java.util.Scanner;
 public class ConsoleReader {
 
 	/**
-	 * Check entered string for valid data.
+	 * Read numbers between 0 and 100 from console. If number is not
+	 * in range throws OutOfBoundException
 	 * 
-	 * @param str - string to be validate
-	 * @return string with number in correct interval
+	 * @return - entered value
+	 * @throws NumberFormatException
+	 * @throws OutOfBoundException
 	 */
-	public String validate(String str) {
-		boolean checker = false;
-		do {
-			try {
-				for (int i = 0; i < str.length(); i++) {
-					Integer.parseInt(str.charAt(i) + "");
-				}
-				outOfBoundCheck(str);
-				checker = true;
-			} catch (IllegalArgumentException e) {
-				System.out.println("Nevalidna stojnost!");
-				Scanner input = new Scanner(System.in);
-				str = read();
-			} catch (OutOfBoundException e) {
-				System.out.println(e.getError());
-				Scanner input = new Scanner(System.in);
-				str = read();
-			}
-		} while (!checker);
+	public String read() throws NumberFormatException, OutOfBoundException {
 
-		return str;
-	}
-
-	/**
-	 * Check if number is between 0 and 100.
-	 * 
-	 * @param str - string to be checked
-	 * @throws OutOfBoundException - custom exception. Throw if number is less than 0 or bigger than 100
-	 */
-	public void outOfBoundCheck(String str) throws OutOfBoundException {
-		if (Integer.parseInt(str) < 0 || Integer.parseInt(str) > 100) {
-			throw new OutOfBoundException("Nevalidna stojnost!");
-		}
-
-	}
-
-	/**
-	 * Read string from console.
-	 * 
-	 * @return entered string
-	 */
-	public String read() {
-
-		String str;
+		String enteredStr;
+		String repeat = "y";
+		int strToInt;
 		Scanner input = new Scanner(System.in);
 
-		System.out.print("Vuvedete chislo ot 0 do 100: ");
-		str = input.next();
+		do {
 
-		return validate(str);
+			System.out.print("Enter number from 0 to 100: ");
+			enteredStr = input.next();
+			strToInt = Integer.parseInt(enteredStr);
+
+			if (strToInt < 0 || strToInt > 100) {
+				throw new OutOfBoundException("Value is out of range!");
+			}
+
+			System.out.println("Continue (y/n) ?");
+			repeat = input.next();
+		} while (!"n".equals(repeat));
+
+		return enteredStr;
 	}
 }

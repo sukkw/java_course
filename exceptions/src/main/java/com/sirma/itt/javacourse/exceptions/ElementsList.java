@@ -1,128 +1,111 @@
 package com.sirma.itt.javacourse.exceptions;
 
-import java.util.Scanner;
+import java.util.EmptyStackException;
 
 /**
- * Add, delete and print array elements.
+ * Create elements list. Add and remove elements. If list is empty or full.
+ * throws exception
  * 
  * @version 1.1 25 April 2013
  * @author Stella Djulgerova
  */
 public class ElementsList {
 
-	// class private members
-	private Object[] elements;
+	// inner class
+	private static class TypeStack {
+
+		public Object data;
+		public TypeStack previous;
+		static int count = 0;
+	}
+
+	private TypeStack top;
+	private int count = TypeStack.count;
+	static int SIZE = 5;
 
 	/**
-	 * Constructor.
+	 * Check if the stack is empty.
 	 * 
-	 * @param elements - array of elements
+	 * @return true if it is empty
 	 */
-	public ElementsList(Object[] elements) {
-		this.elements = elements;
+	private boolean isEmpty() {
+		return top == null;
 	}
 
 	/**
-	 * Add element into array.
+	 * Check if stack is full.
 	 * 
-	 * @param obj - element to be added
-	 * @return array with new inserted element
+	 * @return true if stack is empty or not full
 	 */
-	public Object[] add(Object obj) {
-		int index = elements.length + 1;
-		for (int i = 0; i < elements.length; i++) {
-			if (elements[i] == null) {
-				index = i;
-				break;
-			}
+	public boolean notFull() {
+
+		if (isEmpty()) {
+			return true;
+		} else if (count < SIZE) {
+			return true;
 		}
 
-		// check if array is full
-		try {
-			elements[index] = obj;
-			System.out.println("Dobavqneto e uspeshno!");
-		} catch (ArrayIndexOutOfBoundsException exc) {
-			System.out.println("Dobavqneto e nevuzmojno!");
-		}
-		return elements;
+		return false;
 	}
 
 	/**
-	 * Remove element from array.
+	 * Insert elements on the top of the stack.
 	 * 
-	 * @return array after last element is deleted
+	 * @param obj - object to be inserted.
+	 * @throws FullListException
 	 */
-	public Object[] remove() {
-		int index = 0;
-		if (elements[elements.length - 1] != null) {
-			index = elements.length - 1;
+	public void add(Object obj) throws FullListException {
+
+		TypeStack newStack = new TypeStack();
+
+		if (notFull()) {
+			count++;
+			newStack.data = obj;
+			newStack.previous = top;
+			top = newStack;
 		} else {
-			for (int i = 0; i < elements.length; i++) {
-				if (elements[i] == null) {
-					index = i - 1;
-					break;
-				}
-			}
+			throw new FullListException(
+					"You can't add more elements!");
 		}
-
-		// check if array is empty
-		try {
-			elements[index] = null;
-			System.out.println("Iztrivaneto e uspeshno!");
-		} catch (ArrayIndexOutOfBoundsException exc) {
-			System.out.println("Iztrivaneto e nevuzmojno!");
-		}
-		return elements;
 	}
 
 	/**
-	 * Print all array elements.
+	 * Remove element from the top of the stack if not empty.
+	 * 
+	 * @return removed element
+	 */
+	public Object remove() throws EmptyStackException {
+
+		if (isEmpty()) {
+			throw new EmptyStackException();
+		}
+		TypeStack newstack = top;
+		top = top.previous; 
+		count--;
+		return newstack.data;
+	}
+
+	/**
+	 * printAllElements wrap method.
 	 */
 	public void printAllElements() {
-
-		// if first element is empty return
-		if (elements[0] == null) {
-			System.out.println("Masiva e prazen");
+		if (isEmpty()) {
+			System.out.println("empty");
 			return;
 		}
-
-		// print all elements on screen
-		for (Object ele : elements) {
-			if (ele != null) {
-				System.out.println(ele);
-			}
-		}
-
+		printAllElements(top);
 	}
 
 	/**
-	 * Read string from console and do action.
+	 * Prints all element of the list.
+	 * 
+	 * @param obj -  top of the list
 	 */
-	public void read() {
-		boolean checker = true;
-		do {
-			Scanner input = new Scanner(System.in);
-			String str;
-			System.out.print("A(dd) / D(elete) / P(rint) / E(xit)");
-			str = input.next();
-
-			switch (str) {
-
-				case "A":
-					add("test");
-					break;
-				case "D":
-					remove();
-					break;
-				case "P":
-					printAllElements();
-					break;
-				case "E":
-					checker = false;
-					break;
-				default:
-					break;
-			}
-		} while (checker);
+	private void printAllElements(TypeStack obj) {
+		TypeStack curr = obj;
+		if (curr != null) {
+			System.out.println(curr.data);
+			printAllElements(curr.previous);
+		}
 	}
 }
