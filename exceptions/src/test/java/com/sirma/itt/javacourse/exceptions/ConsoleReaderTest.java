@@ -31,7 +31,13 @@ public class ConsoleReaderTest {
 	 */
 	@Test(dataProvider = "validData")
 	public void validate(String string, String valid) {
-		//String result = reader.read(string);
-		//Assert.assertEquals(result, valid);
+		try {
+			String result = reader.read();
+			Assert.assertEquals(result, valid);
+		} catch (NumberFormatException e) {
+			System.out.println("Invalid format");
+		} catch (OutOfBoundException e) {
+			System.out.println("Value is out of range!");
+		}
 	}
 }

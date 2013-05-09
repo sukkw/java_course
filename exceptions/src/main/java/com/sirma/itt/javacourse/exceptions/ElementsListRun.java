@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class ElementsListRun {
 
 	/**
-	 * Class main method
+	 * Class main method.
 	 * 
 	 * @param args
 	 */

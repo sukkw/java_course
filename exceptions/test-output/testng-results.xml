@@ -2,33 +2,28 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="46" started-at="2013-04-25T10:48:30Z" finished-at="2013-04-25T10:48:30Z">
+  <suite name="Default suite" duration-ms="6156" started-at="2013-05-09T05:36:31Z" finished-at="2013-05-09T05:36:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="46" started-at="2013-04-25T10:48:30Z" finished-at="2013-04-25T10:48:30Z">
-      <class name="com.sirma.itt.javacourse.exceptions.ElementsListTest">
-        <test-method status="PASS" signature="add([Ljava.lang.Object;, java.lang.Object, [Ljava.lang.Object;)[pri:0, instance:com.sirma.itt.javacourse.exceptions.ElementsListTest@331dd0]" name="add" duration-ms="15" started-at="2013-04-25T13:48:30Z" data-provider="validData" finished-at="2013-04-25T13:48:30Z">
+    <test name="Default test" duration-ms="6156" started-at="2013-05-09T05:36:31Z" finished-at="2013-05-09T05:36:37Z">
+      <class name="com.sirma.itt.javacourse.exceptions.ConsoleReaderTest">
+        <test-method status="PASS" signature="validate(java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.exceptions.ConsoleReaderTest@d52411]" name="validate" duration-ms="6140" started-at="2013-05-09T08:36:31Z" data-provider="validData" finished-at="2013-05-09T08:36:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@f7d5a6]]>
+                <![CDATA[70]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@eba9b0]]>
+                <![CDATA[70]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- add -->
-      </class> <!-- com.sirma.itt.javacourse.exceptions.ElementsListTest -->
+        </test-method> <!-- validate -->
+      </class> <!-- com.sirma.itt.javacourse.exceptions.ConsoleReaderTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

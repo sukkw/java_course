@@ -2,6 +2,8 @@ package com.sirma.itt.javacourse.exceptions;
 
 import java.util.Scanner;
 
+import com.sirma.itt.javacourse.intro.SumOfStrings;
+
 /**
  * Calculate sum of two numbers when present the digits as string.
  * 

@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.exceptions;
 
 /**
- * Create new exception if a list is full
+ * Create new exception if a list is full.
  * 
  * @version 1.1 25 April 2013
  * @author Stella Djulgerova

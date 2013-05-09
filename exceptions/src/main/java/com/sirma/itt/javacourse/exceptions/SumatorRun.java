@@ -26,6 +26,5 @@ public class SumatorRun {
 		} catch (NumberFormatException e) {
 			System.out.println("Invalid format. Please enter only digits");
 		}
-
 	}
 }
