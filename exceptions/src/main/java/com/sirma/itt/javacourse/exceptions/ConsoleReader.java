@@ -19,7 +19,6 @@ public class ConsoleReader {
 	 * @throws OutOfBoundException
 	 */
 	public String read() throws NumberFormatException, OutOfBoundException {
-
 		String enteredStr;
 		String repeat = "y";
 		int strToInt;
