@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sirma.itt.javacourse.collections.ExceptionManagerTest">
+      <class name="com.sirma.itt.javacourse.collections.PageBeanTest">
         <methods>
-          <include name="feelTestDate"/>
-          <include name="testGetMessages" invocation-numbers="0"/>
+          <include name="testPrevious" invocation-numbers="0"/>
+          <include name="fillTestDate"/>
         </methods>
-      </class> <!-- com.sirma.itt.javacourse.collections.ExceptionManagerTest -->
+      </class> <!-- com.sirma.itt.javacourse.collections.PageBeanTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

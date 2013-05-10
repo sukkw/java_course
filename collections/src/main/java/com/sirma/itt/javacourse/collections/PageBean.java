@@ -15,6 +15,7 @@ public class PageBean {
 	// class private members
 	private int pageSize;
 	private List<String> textLines = new ArrayList<String>();
+	private List<String> list = new ArrayList<String>();
 	private int currentPage;
 
 	/**
@@ -47,7 +48,7 @@ public class PageBean {
 	/**
 	 * Print element from next page on screen.
 	 */
-	public void next() {
+	public List<String> next() {
 
 		if(hasNext()) {
 			currentPage = getCurrentPageNumber() + 1;
@@ -58,30 +59,30 @@ public class PageBean {
 				endPosition = textLines.size();
 			}
 			
-			for(int i=startPosition; i<endPosition; i++) {
-				System.out.println(textLines.get(i));
-			}
+			list = textLines.subList(startPosition, endPosition);
 		} else {
-			System.out.println("You are on the last page. Can not navigate to next!");
+			System.out.println(" >>> You are on the last page. Can not navigate to next!");
+			System.out.println();
 		}
+		return list;
 	}
 
 	/**
 	 * Print elements from previous page on screen.
 	 */
-	public void previous() {
+	public List<String> previous() {
 
 		if(hasPrevious()) {
 			currentPage = getCurrentPageNumber() - 1;
 			int startPosition = getCurrentPageNumber() * pageSize;
 			int endPosition = (getCurrentPageNumber() * pageSize) + pageSize;
 			
-			for(int i=startPosition; i<endPosition; i++) {
-				System.out.println(textLines.get(i));
-			}
+			list = textLines.subList(startPosition, endPosition);
 		} else {
-			System.out.println("You are on the first page. Can not navigate to previous!");
+			System.out.println(" >>> You are on the first page. Can not navigate to previous!");
+			System.out.println();
 		}
+		return list;
 	}
 
 	/**
@@ -114,22 +115,18 @@ public class PageBean {
 	/**
 	 * Get all elements from first page and print it on the screen.
 	 */
-	public void firstPage() {
+	public List<String> firstPage() {
 		currentPage = 0;
-		for(int i=0; i<pageSize; i++) {
-			System.out.println(textLines.get(i));
-		}
+		return list = textLines.subList(0, pageSize);
 	}
 
 	/**
 	 * Get all elements from last page and print it on the screen.
 	 */
-	public void lastPage() {
+	public List<String> lastPage() {
 		int startPosition = pagesCount() * pageSize;
-		for(int i=startPosition; i<textLines.size(); i++) {
-			System.out.println(textLines.get(i));
-		}
 		currentPage = pagesCount();
+		return list = textLines.subList(startPosition, textLines.size());
 	}
 
 	/**
@@ -139,5 +136,4 @@ public class PageBean {
 	public int getCurrentPageNumber() {
 		return currentPage;
 	}
-
 }

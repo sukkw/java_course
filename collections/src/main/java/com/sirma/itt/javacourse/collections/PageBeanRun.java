@@ -38,7 +38,7 @@ public class PageBeanRun {
 		}
 
 		PageBean pages = new PageBean(10, lines);
-		pages.firstPage();
+		print(pages.firstPage());
 		
 		do {
 			System.out.println(" 1-First / 2-Next / 3-Previous / 4-Last / 5-Exit");
@@ -47,21 +47,31 @@ public class PageBeanRun {
 			switch (repeat) {
 
 				case "1":
-					pages.firstPage();
+					print(pages.firstPage());
 					break;
 				case "2":
-					pages.next();
+					print(pages.next());
 					break;
 				case "3":
-					pages.previous();
+					print(pages.previous());
 					break;
 				case "4":
-					pages.lastPage();
+					print(pages.lastPage());
 					break;
 				default:
 					break;
 			}
 
 		} while (!"5".equals(repeat));
+	}
+	
+	/**
+	 * Print page on the screen.
+	 * @param string - List with strings to be print
+	 */
+	public static void print(List<String> string) {
+		for(int i=0; i<string.size(); i++) {
+			System.out.println(string.get(i));
+		}
 	}
 }

@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47" started-at="2013-05-10T11:21:40Z" finished-at="2013-05-10T11:21:40Z">
+  <suite name="Default suite" duration-ms="63" started-at="2013-05-10T12:18:26Z" finished-at="2013-05-10T12:18:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47" started-at="2013-05-10T11:21:40Z" finished-at="2013-05-10T11:21:40Z">
+    <test name="Default test" duration-ms="63" started-at="2013-05-10T12:18:26Z" finished-at="2013-05-10T12:18:26Z">
       <class name="com.sirma.itt.javacourse.collections.PageBeanTest">
-        <test-method status="PASS" signature="fillTestDate()[pri:0, instance:com.sirma.itt.javacourse.collections.PageBeanTest@d13e3e]" name="fillTestDate" is-config="true" duration-ms="16" started-at="2013-05-10T14:21:40Z" finished-at="2013-05-10T14:21:40Z">
+        <test-method status="PASS" signature="fillTestDate()[pri:0, instance:com.sirma.itt.javacourse.collections.PageBeanTest@6f558a]" name="fillTestDate" is-config="true" duration-ms="16" started-at="2013-05-10T15:18:26Z" finished-at="2013-05-10T15:18:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillTestDate -->
-        <test-method status="PASS" signature="testGetMessages(int)[pri:0, instance:com.sirma.itt.javacourse.collections.PageBeanTest@d13e3e]" name="testGetMessages" duration-ms="15" started-at="2013-05-10T14:21:40Z" data-provider="validMessagesData" finished-at="2013-05-10T14:21:40Z">
+        <test-method status="PASS" signature="testFirstPage(java.util.List)[pri:0, instance:com.sirma.itt.javacourse.collections.PageBeanTest@6f558a]" name="testFirstPage" duration-ms="15" started-at="2013-05-10T15:18:26Z" data-provider="validFPData" finished-at="2013-05-10T15:18:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Line1, Line2, Line3]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFirstPage -->
+        <test-method status="PASS" signature="testGetMessages(int)[pri:0, instance:com.sirma.itt.javacourse.collections.PageBeanTest@6f558a]" name="testGetMessages" duration-ms="0" started-at="2013-05-10T15:18:26Z" data-provider="validData" finished-at="2013-05-10T15:18:26Z">
           <params>
             <param index="0">
               <value>
@@ -22,6 +33,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetMessages -->
+        <test-method status="PASS" signature="testPrevious(java.util.List)[pri:0, instance:com.sirma.itt.javacourse.collections.PageBeanTest@6f558a]" name="testPrevious" duration-ms="0" started-at="2013-05-10T15:18:26Z" data-provider="validPPData" finished-at="2013-05-10T15:18:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Line7, Line8, Line9]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPrevious -->
+        <test-method status="PASS" signature="testNext(java.util.List)[pri:0, instance:com.sirma.itt.javacourse.collections.PageBeanTest@6f558a]" name="testNext" duration-ms="0" started-at="2013-05-10T15:18:26Z" data-provider="validNPData" finished-at="2013-05-10T15:18:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Line10, Line11, Line12]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNext -->
+        <test-method status="PASS" signature="testLastPage(java.util.List)[pri:0, instance:com.sirma.itt.javacourse.collections.PageBeanTest@6f558a]" name="testLastPage" duration-ms="0" started-at="2013-05-10T15:18:26Z" data-provider="validLPData" finished-at="2013-05-10T15:18:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Line16, Line17]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLastPage -->
       </class> <!-- com.sirma.itt.javacourse.collections.PageBeanTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
