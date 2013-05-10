@@ -1,6 +1,7 @@
 package com.sirma.itt.javacourse.io;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -11,9 +12,9 @@ public class TransferObjectRun {
 
 		try {
 			InputStream in = new FileInputStream("testFile.txt");
-			OutputStream out = System.out;
+			OutputStream out = new FileOutputStream("testTransfer.txt");
 			TransferObject transfer = new TransferObject(in, out);
-			transfer.transfer(15, 4);
+			transfer.transfer(12, 7);
 		} catch (IOException e) {
 			System.out.println("Can not transfer bytes");
 		} catch (IndexOutOfBoundsException e) {

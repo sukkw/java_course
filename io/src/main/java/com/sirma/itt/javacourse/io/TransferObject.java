@@ -32,10 +32,17 @@ public class TransferObject {
 		
 		byte[] buffer = new byte[BUFFER_SIZE];
 		
-		in.read(buffer);
+		int count = in.read(buffer);
         out.write(buffer, offset, numberOfBytes);
-
-		return numberOfBytes;
+        
+        System.out.println("Data in input buffer: ");
+        System.out.write(buffer,0, count);
+        
+        System.out.println();
+        
+        System.out.println("Data transfered: ");
+        System.out.write(buffer, offset, numberOfBytes);
+		return count;
 		
 	}
 }

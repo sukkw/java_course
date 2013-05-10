@@ -13,24 +13,86 @@ import org.testng.annotations.Test;
 public class ConsoleReaderTest {
 	
 	/**
-	 * Data used for tests.
+	 * Data used for strings tests.
 	 * 
-	 * @return object with data used for tests
+	 * @return object with data used for string tests
 	 */
 	@DataProvider
-	public Object[][] validData() {
-		return new Object[][] { {80}};
+	public Object[][] validStringData() {
+		return new Object[][] { {"test"}};
+	}
+	
+	/**
+	 * Data used for integer tests.
+	 * 
+	 * @return object with data used for integers tests
+	 */
+	@DataProvider
+	public Object[][] validIntData() {
+		return new Object[][] { {12}};
+	}
+	
+	/**
+	 * Data used for float tests.
+	 * 
+	 * @return object with data used for float tests
+	 */
+	@DataProvider
+	public Object[][] validFloatData() {
+		return new Object[][] { {8.56f}};
+	}
+	
+	/**
+	 * Data used for char tests.
+	 * 
+	 * @return object with data used for char tests
+	 */
+	@DataProvider
+	public Object[][] validCharData() {
+		return new Object[][] { {'a'}};
 	}
 
-	/**7
-	 * Test calculate method.
+	/**
+	 * Test read string method.
 	 * 
-	 * @param string - string for validation
 	 * @param valid - correct string
 	 */
-	@Test(dataProvider = "validData")
-	public void validate(int valid) {
+	@Test(dataProvider = "validStringData")
+	public void testReadString(String valid) {
+		String enteredString = ConsoleReader.readString();
+		Assert.assertEquals(enteredString, valid);
+	}
+	
+	/**
+	 * Test read integer method.
+	 * 
+	 * @param valid - correct digit
+	 */
+	@Test(dataProvider = "validIntData")
+	public void testReadInt(int valid) {
 		int enteredInt = ConsoleReader.readInt();
 		Assert.assertEquals(enteredInt, valid);
+	}
+	
+	/**
+	 * Test read float method.
+	 * 
+	 * @param valid - correct float value
+	 */
+	@Test(dataProvider = "validFloatData")
+	public void testReadFloat(float valid) {
+		float enteredFloat = ConsoleReader.readFloat();
+		Assert.assertEquals(enteredFloat, valid);
+	}
+	
+	/**
+	 * Test read char method.
+	 * 
+	 * @param valid - correct char
+	 */
+	@Test(dataProvider = "validCharData")
+	public void validate(char valid) {
+		char enteredChar = ConsoleReader.readChar();
+		Assert.assertEquals(enteredChar, valid);
 	}
 }
