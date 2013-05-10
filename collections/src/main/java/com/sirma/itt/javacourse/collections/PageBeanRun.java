@@ -38,7 +38,6 @@ public class PageBeanRun {
 		}
 
 		PageBean pages = new PageBean(10, lines);
-		System.out.println(pages.pagesCount());
 		pages.firstPage();
 		
 		do {

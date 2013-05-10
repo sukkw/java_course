@@ -5,7 +5,8 @@ import java.util.Hashtable;
 import java.util.List;
 
 /**
- * Two dices are thrown. All different combinations are saved in hashTable and statistic is built.
+ * Two dices are thrown. 
+ * All different combinations are saved in hashTable and statistic is built.
  * 
  * @version 1.1 09 May 2013
  * @author Stella Djulgerova

@@ -68,7 +68,7 @@ public class ExceptionsMessageManager {
 				return;
 			}
 			
-			message = ((message != null) ? (message += separator + stringToAdd)
+			message = ((message != "") ? (message += separator + stringToAdd)
 					: (message = stringToAdd));
 		} else { 
 			throw new InvalidValueException("There's no such exception in the table!");
@@ -85,7 +85,7 @@ public class ExceptionsMessageManager {
 		if(this.message.equals("")) {
 			return "No exceprions in message";
 		} else {
-			return this.message.substring(0, message.length() - 1);
+			return message;
 		}
 	}
 
