@@ -1,18 +1,28 @@
 package com.sirma.itt.javacourse.collections;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Search in HashMap for different type of exception. 
+ * If exception is found make string called "message". 
+ * String is concatenation of different exception.
+ * 
+ * @version 1.1 09 May 2013
+ * @author Stella Djulgerova
+ */
 public class ExceptionsMessageManager {
 
+	// class private members
 	private Map<String, String> exceptions = new HashMap<String, String>();
 	private String message = "";
 	private final static String separator = "|";
 
 	/**
 	 * Constructor.
+	 * 
 	 * @param exceptions - map containing all possible exceptions
 	 */
 	public ExceptionsMessageManager(Map<String, String> exceptions) {
@@ -20,49 +30,50 @@ public class ExceptionsMessageManager {
 	}
 
 	/**
-	 * Add exception to the message string. Map is search by value
+	 * Add exception to the message string. Map is searched by value.
+	 * If not such value is found throws exception.
+	 * 
 	 * @param mess - searched value
+	 * @throws InvalidValueException 
 	 */
-	public void addExceptionMessage(String mess) {
-		String stringToAdd = "";
+	public void addExceptionMessage(String mess) throws InvalidValueException {
 
-		for(String value : exceptions.values()) {
-			if (value.equals(mess)) {
-				stringToAdd =  value;
-				break;
-			}
+		if (!notInString(mess)) {
+			return;
 		}
-		
-		if(!notInString(stringToAdd)) return;
-		
-		if (!stringToAdd.equals("")) {
-			message +=  stringToAdd + separator;
+
+		if (exceptions.containsValue(mess)) {
+
+			message = ((message != "") ? (message += separator + mess)
+					: (message = mess));
 		} else {
-			System.out.println("There's no such exception in map");
+			 throw new InvalidValueException("There's no such exception in the table!");
 		}
 	}
 
 	/**
 	 * Add exception to the message string. Map is search by key.
-	 * @param messageCode - searched code 
+	 * If not such key is found throws exception.
+	 * 
+	 * @param messageCode - searched code
+	 * @throws InvalidValueException 
 	 */
-	public void addExceptionMessageUsingCode(String messageCode) {
+	public void addExceptionMessageUsingCode(String messageCode) throws InvalidValueException {
 		String stringToAdd = "";
-		
-		for(String value : exceptions.keySet()) {
-			if (value.equals(messageCode)) {
-				stringToAdd = exceptions.get(value);
-				break;
+
+		if (exceptions.containsKey(messageCode)) {
+			stringToAdd = exceptions.get(messageCode);
+			
+			if (!notInString(stringToAdd)) {
+				return;
 			}
+			
+			message = ((message != null) ? (message += separator + stringToAdd)
+					: (message = stringToAdd));
+		} else { 
+			throw new InvalidValueException("There's no such exception in the table!");
 		}
-		
-		if(!notInString(stringToAdd)) return;
-		
-		if (!stringToAdd.equals("")) {
-			message +=  stringToAdd + separator;
-		} else {
-			System.out.println("There's no such exception in map");
-		}
+
 	}
 
 	/**
@@ -71,29 +82,35 @@ public class ExceptionsMessageManager {
 	 * @return message combination
 	 */
 	public String getMessage() {
-		return this.message.substring(0, message.length()-1);
+		if(this.message.equals("")) {
+			return "No exceprions in message";
+		} else {
+			return this.message.substring(0, message.length() - 1);
+		}
 	}
 
 	/**
 	 * Split string and return all values as collection of strings.
+	 * 
 	 * @param messagesCombination - message to be split
 	 * @return - collection of strings
 	 */
 	public static Collection<String> getMessages(String messagesCombination) {
-		Collection<String> elements = new ArrayList<String>();
+		
 		String[] separatedMessages = messagesCombination.split("\\" + separator);
-
-		for (int i = 0; i < separatedMessages.length; i++) {
-			elements.add(separatedMessages[i]);
-			System.out.println(separatedMessages[i]);
-		}
+		Collection<String> elements = Arrays.asList(separatedMessages);
 		
 		return elements;
 	}
-	
+
+	/**
+	 * Check if the exception is already in combination string.
+	 * @param mess - string to be checked
+	 * @return true if exception is already added, false if not.
+	 */
 	public boolean notInString(String mess) {
-		
-		for(String value : getMessages(message)) {
+
+		for (String value : getMessages(message)) {
 			if (value.equals(mess)) {
 				return false;
 			}

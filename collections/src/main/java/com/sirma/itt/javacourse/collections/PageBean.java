@@ -36,9 +36,9 @@ public class PageBean {
 
 		int pagesCount;
 		if (textLines.size() % pageSize == 0) {
-			pagesCount = textLines.size() / pageSize;
+			pagesCount = (textLines.size() / pageSize) - 1;
 		} else {
-			pagesCount = (textLines.size() / pageSize) + 1;
+			pagesCount = (textLines.size() / pageSize);
 		}
 
 		return pagesCount;
@@ -48,17 +48,21 @@ public class PageBean {
 	 * Print element from next page on screen.
 	 */
 	public void next() {
-		
-		currentPage = getCurrentPageNumber() + 1;
-		int startPosition = getCurrentPageNumber() * pageSize;
-		int endPosition = (getCurrentPageNumber() * pageSize) + pageSize;
-		
-		if(endPosition > textLines.size() ) {
-			endPosition = textLines.size();
-			currentPage = getCurrentPageNumber() - 1;
-		}
-		for(int i=startPosition; i<endPosition; i++) {
-			System.out.println(textLines.get(i));
+
+		if(hasNext()) {
+			currentPage = getCurrentPageNumber() + 1;
+			int startPosition = getCurrentPageNumber() * pageSize;
+			int endPosition = (getCurrentPageNumber() * pageSize) + pageSize;
+			
+			if(endPosition > textLines.size() ) {
+				endPosition = textLines.size();
+			}
+			
+			for(int i=startPosition; i<endPosition; i++) {
+				System.out.println(textLines.get(i));
+			}
+		} else {
+			System.out.println("You are on the last page. Can not navigate to next!");
 		}
 	}
 
@@ -76,7 +80,7 @@ public class PageBean {
 				System.out.println(textLines.get(i));
 			}
 		} else {
-			System.out.println("Can not navigate to previous page!");
+			System.out.println("You are on the first page. Can not navigate to previous!");
 		}
 	}
 
@@ -87,7 +91,7 @@ public class PageBean {
 	 */
 	public boolean hasNext() {
 
-		if (getCurrentPageNumber() < pagesCount()) {
+		if (getCurrentPageNumber()  < pagesCount()) {
 			return true;
 		} else {
 			return false;
@@ -121,11 +125,11 @@ public class PageBean {
 	 * Get all elements from last page and print it on the screen.
 	 */
 	public void lastPage() {
-		int startPosition = (pagesCount()-1) * pageSize;
+		int startPosition = pagesCount() * pageSize;
 		for(int i=startPosition; i<textLines.size(); i++) {
 			System.out.println(textLines.get(i));
 		}
-		currentPage = pagesCount()-1;
+		currentPage = pagesCount();
 	}
 
 	/**
