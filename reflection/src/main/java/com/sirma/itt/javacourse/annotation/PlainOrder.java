@@ -21,7 +21,8 @@ public class PlainOrder {
 		try {
 			Arrays.sort(instances, PlaneAnnotationComparator);
 		} catch (NullPointerException e) {
-			System.out.println("No annotation available");
+			System.out.println("Some of the instances you" +
+					" try to compare have no PlaneAnnotation");
 			return null;
 		}
 

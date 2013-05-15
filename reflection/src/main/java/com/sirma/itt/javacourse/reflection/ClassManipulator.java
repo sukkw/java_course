@@ -42,12 +42,15 @@ public class ClassManipulator {
 			getModifier(field.getModifiers());
 			System.out.println("Parameter type: " + field.getType());
 			System.out.println("Parameter name: " + field.getName());
-
-			// set access to field true and get value
-			field.setAccessible(true);
 			Object value = null;
+			
 			try {
+				// set access to field true and get value
+				field.setAccessible(true);
 				value = field.get(classInstance);
+				
+				// set access to false and protect field
+				field.setAccessible(false);
 			} catch (IllegalArgumentException e) {
 				e.printStackTrace();
 			} catch (IllegalAccessException e) {

@@ -62,6 +62,7 @@ public class PrivateMembersAccess {
 			method = classToReflect.getDeclaredMethod(name, params);
 			method.setAccessible(true);
 			method.invoke(instance, values);
+			method.setAccessible(false);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
