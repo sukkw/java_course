@@ -52,9 +52,9 @@ public class ElementsList {
 	 * Insert elements on the top of the stack.
 	 * 
 	 * @param obj - object to be inserted.
-	 * @throws FullListException
+	 * @throws ListException
 	 */
-	public void add(Object obj) throws FullListException {
+	public void add(Object obj) throws ListException {
 
 		TypeStack newStack = new TypeStack();
 
@@ -64,7 +64,7 @@ public class ElementsList {
 			newStack.previous = top;
 			top = newStack;
 		} else {
-			throw new FullListException(
+			throw new ListException(
 					"You can't add more elements!");
 		}
 	}

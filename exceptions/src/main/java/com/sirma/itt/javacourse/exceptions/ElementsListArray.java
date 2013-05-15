@@ -12,6 +12,7 @@ public class ElementsListArray {
 
 	// class private members
 	private Object[] elements;
+	private int last;
 
 	/**
 	 * Constructor.
@@ -20,6 +21,7 @@ public class ElementsListArray {
 	 */
 	public ElementsListArray(Object[] elements) {
 		this.elements = elements;
+		this.last = 0;
 	}
 
 	/**
@@ -27,23 +29,18 @@ public class ElementsListArray {
 	 * 
 	 * @param obj - element to be added
 	 * @return array with new inserted element
+	 * @throws ListException 
 	 */
-	public Object[] add(Object obj) {
-		int index = elements.length + 1;
-		for (int i = 0; i < elements.length; i++) {
-			if (elements[i] == null) {
-				index = i;
-				break;
-			}
+	public Object[] add(Object obj) throws ListException {
+		
+		if(elements.length <= last) {
+			throw new ListException("Dobavqneto e nevuzmojno!");
 		}
+		
+		elements[last] = obj;
+		last++;
+		System.out.println("Dobavqneto e uspeshno!");
 
-		// check if array is full
-		try {
-			elements[index] = obj;
-			System.out.println("Dobavqneto e uspeshno!");
-		} catch (ArrayIndexOutOfBoundsException exc) {
-			System.out.println("Dobavqneto e nevuzmojno!");
-		}
 		return elements;
 	}
 
@@ -51,27 +48,18 @@ public class ElementsListArray {
 	 * Remove element from array.
 	 * 
 	 * @return array after last element is deleted
+	 * @throws ListException 
 	 */
-	public Object[] remove() {
-		int index = 0;
-		if (elements[elements.length - 1] != null) {
-			index = elements.length - 1;
-		} else {
-			for (int i = 0; i < elements.length; i++) {
-				if (elements[i] == null) {
-					index = i - 1;
-					break;
-				}
-			}
+	public Object[] remove() throws ListException {
+		
+		if(last <= 0) {
+			throw new ListException("Iztrivaneto e nevuzmojno!");
 		}
 
-		// check if array is empty
-		try {
-			elements[index] = null;
-			System.out.println("Iztrivaneto e uspeshno!");
-		} catch (ArrayIndexOutOfBoundsException exc) {
-			System.out.println("Iztrivaneto e nevuzmojno!");
-		}
+		last--;
+		elements[last] = null;	
+		System.out.println("Iztrivaneto e uspeshno!");
+		
 		return elements;
 	}
 
@@ -109,10 +97,18 @@ public class ElementsListArray {
 			switch (str) {
 
 				case "A":
-					add("test");
+					try {
+						add("test");
+					} catch (ListException e) {
+						e.printStackTrace();
+					}
 					break;
 				case "D":
-					remove();
+					try {
+						remove();
+					} catch (ListException e) {
+						e.printStackTrace();
+					}
 					break;
 				case "P":
 					printAllElements();

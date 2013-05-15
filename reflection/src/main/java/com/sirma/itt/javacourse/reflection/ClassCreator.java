@@ -48,6 +48,7 @@ public class ClassCreator {
 	 * @param values - value for each parameter (or null)
 	 * @return class instance
 	 */
+	@SuppressWarnings("unchecked")
 	public Object makeInstance(Class classToReflect, Class[] params, Object[] values) {
 		Constructor constructor = null;
 		Object classInstance = null;

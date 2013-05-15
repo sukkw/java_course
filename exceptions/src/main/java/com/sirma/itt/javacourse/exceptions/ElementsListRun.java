@@ -33,7 +33,7 @@ public class ElementsListRun {
 				try {
 					list.add("test");
 					list.printAllElements();
-				} catch (FullListException e) {
+				} catch (ListException e) {
 					System.out.println("You can't add more elements!");
 				}
 				break;

@@ -48,8 +48,13 @@ public class ElementsListArrayTest {
 	@Test(dataProvider = "validAddData")
 	public void add(Object[] elList, Object elToAdd, Object[] valid) {
 		ElementsListArray list = new ElementsListArray(elList);
-		Object[] result = list.add(elToAdd);
-		Assert.assertEquals(result, valid);
+		Object[] result;
+		try {
+			result = list.add(elToAdd);
+			Assert.assertEquals(result, valid);
+		} catch (ListException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -61,7 +66,12 @@ public class ElementsListArrayTest {
 	@Test(dataProvider = "validRemoveData")
 	public void remove(Object[] elList, Object[] valid) {
 		ElementsListArray list = new ElementsListArray(elList);
-		Object[] result = list.remove();
-		Assert.assertEquals(result, valid);
+		Object[] result;
+		try {
+			result = list.remove();
+			Assert.assertEquals(result, valid);
+		} catch (ListException e) {
+			e.printStackTrace();
+		}
 	}
 }

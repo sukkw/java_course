@@ -45,7 +45,6 @@ public class PlainOrder {
 		 * @return - result after comparison
 		 */
 		public int compare(Plane firstInstance, Plane secondInstance) {
-
 			Class fiClass = firstInstance.getClass();
 			PlaneAnnotation fiAnnotation = (PlaneAnnotation) fiClass
 					.getAnnotation(PlaneAnnotation.class);
