@@ -17,6 +17,8 @@ public class DataClass implements Serializable {
 	private int number;
 	private int qty;
 	private boolean isAvailable;
+	private transient String transTest = "just test transient";
+	private static String staticTest = "just test static";
 	
 	/**
 	 * Class constructor.
