@@ -1,4 +1,4 @@
-package com.sirma.itt.javacourse.patterns;
+package com.sirma.itt.javacourse.singleton;
 
 /**
  * Singleton design pattern run class.
