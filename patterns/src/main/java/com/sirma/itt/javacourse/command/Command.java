@@ -8,5 +8,5 @@ package com.sirma.itt.javacourse.command;
  */
 public interface Command {
 	
-	public void execute(int firstNumber, int secondNumber);
+	public void execute();
 }
