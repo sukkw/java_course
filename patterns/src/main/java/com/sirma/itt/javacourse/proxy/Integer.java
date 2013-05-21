@@ -13,7 +13,7 @@ public class Integer implements IntegerTmpl {
 	private int result;
 
 	/**
-	 * Add two BigIntegers.
+	 * Add two Integers.
 	 */
 	public int add(int firstNumber, int secondNumber) {
 		result = firstNumber + secondNumber;
@@ -21,7 +21,7 @@ public class Integer implements IntegerTmpl {
 	}
 
 	/**
-	 * Subtracts two BigIntegers.
+	 * Subtracts two Integers.
 	 */
 	public int subtract(int firstNumber, int secondNumber) {
 		result = firstNumber - secondNumber;
@@ -29,7 +29,7 @@ public class Integer implements IntegerTmpl {
 	}
 
 	/**
-	 * Multiplies two BigIntegers.
+	 * Multiplies two Integers.
 	 */
 	public int multy(int firstNumber, int secondNumber) {
 		result = firstNumber * secondNumber;
@@ -37,7 +37,7 @@ public class Integer implements IntegerTmpl {
 	}
 	
 	/**
-	 * Multiplies two BigIntegers.
+	 * Multiplies two Integers.
 	 */
 	public int divide(int firstNumber, int secondNumber) {
 		result = firstNumber / secondNumber;

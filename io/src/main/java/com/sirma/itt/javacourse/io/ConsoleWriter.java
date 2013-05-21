@@ -45,29 +45,7 @@ public class ConsoleWriter {
 			System.out.println("Can not write data! please try again.");
 		}
 	}
-
-	/**
-	 * Read text from console.
-	 * 
-	 * @return - list with entered lines
-	 */
-	private List<String> readText() {
-
-		String textLine;
-		List<String> lines = new ArrayList<String>();
-
-		System.out.println("Enter lines of text.");
-		System.out.println("Enter '.' to quit.");
-
-		do {
-			textLine = input.nextLine();
-			lines.add(textLine);
-		} while (!textLine.equals("."));
-
-		lines.remove(lines.size() - 1);
-		return lines;
-	}
-
+	
 	/**
 	 * Create file.
 	 * 
@@ -90,6 +68,28 @@ public class ConsoleWriter {
 			System.out.println("Wrong path please try again.");
 		}
 		return isCreated;
+	}
+
+	/**
+	 * Read text from console.
+	 * 
+	 * @return - list with entered lines
+	 */
+	private List<String> readText() {
+
+		String textLine;
+		List<String> lines = new ArrayList<String>();
+
+		System.out.println("Enter lines of text.");
+		System.out.println("Enter '.' to quit.");
+
+		do {
+			textLine = input.nextLine();
+			lines.add(textLine);
+		} while (!textLine.equals("."));
+
+		lines.remove(lines.size() - 1);
+		return lines;
 	}
 
 	/**

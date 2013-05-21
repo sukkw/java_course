@@ -22,7 +22,7 @@ public class IntegerProxy implements IntegerTmpl {
 	}
 	
 	/**
-	 * Adds two BigIntegers using Integer class object.
+	 * Adds two integers using Integer class object.
 	 */
 	public int add(int firstNumber, int secondNumber) {
 		result = integer.add(firstNumber, secondNumber);
@@ -30,7 +30,7 @@ public class IntegerProxy implements IntegerTmpl {
 	}
 	
 	/**
-	 * Subtracts two BigIntegers using Integer class object.
+	 * Subtracts two integers using Integer class object.
 	 */
 	public int subtract(int firstNumber, int secondNumber) {
 		result = integer.subtract(firstNumber, secondNumber);
@@ -38,7 +38,7 @@ public class IntegerProxy implements IntegerTmpl {
 	}
 
 	/**
-	 * Multiplies two BigIntegers using Integer class object.
+	 * Multiplies two integers using Integer class object.
 	 */
 	public int multy(int firstNumber, int secondNumber) {
 		result = integer.multy(firstNumber, secondNumber);
@@ -46,7 +46,7 @@ public class IntegerProxy implements IntegerTmpl {
 	}
 	
 	/**
-	 * Divide two BigIntegers using Integer class object.
+	 * Divide two integers using Integer class object.
 	 */
 	public int divide(int firstNumber, int secondNumber) {
 		result = integer.divide(firstNumber, secondNumber);
@@ -54,8 +54,7 @@ public class IntegerProxy implements IntegerTmpl {
 	}
 	
 	/**
-	 * Invokes the showResults method from the original class
-	 * Integer.
+	 * Invokes print method from the original class Integer.
 	 */
 	public void print() {
 		integer.print();

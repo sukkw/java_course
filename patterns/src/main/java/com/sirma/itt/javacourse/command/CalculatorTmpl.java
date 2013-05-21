@@ -1,5 +1,11 @@
 package com.sirma.itt.javacourse.command;
 
+/**
+ * Calculator interface. Defines different math operations.
+ * 
+ * @version 1.1 20 May 2013
+ * @author Stella Djulgerova
+ */
 public interface CalculatorTmpl {
 	
 	public int add(int firstNumber, int secondNumber);
