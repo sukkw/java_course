@@ -2,7 +2,13 @@ package com.sirma.itt.javacourse.observer;
 
 import java.util.Scanner;
 
-public class ObserverRun {
+/**
+ * Observer design pattern run class.
+ * 
+ * @version 1.1 22 May 2013
+ * @author Stella Djulgerova
+ */
+public class TVObserverRun {
 
 	/**
 	 * Class main method.
@@ -22,8 +28,9 @@ public class ObserverRun {
 			switch (ch) {
 
 			case "1":
-				System.out.println("Model: ");
-				store.add(input.nextLine(), new TV(input.nextLine()));
+				System.out.println("Mark: ");
+				mark = input.nextLine();
+				store.add(mark, new TV(mark));
 				break;
 			case "2":
 				System.out.println("Model: ");

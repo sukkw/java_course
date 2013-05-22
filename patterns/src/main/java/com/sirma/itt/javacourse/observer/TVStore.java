@@ -5,67 +5,73 @@ import java.util.Hashtable;
 import java.util.Observable;
 import java.util.Vector;
 
+/**
+ * TV store class. Add new product in store. 
+ * Remove product if it's sold out and print all
+ * available for sell products.
+ * 
+ * @version 1.1 22 May 2013
+ * @author Stella Djulgerova
+ */
 public class TVStore extends Observable {
 
+	// class private members
 	private Hashtable inStock;
 	
+	/**
+	 * Constructor. Register observer.
+	 */
 	public TVStore() {
-		this.addObserver(new StockObserver());
+		this.addObserver(new TVObserver());
 		inStock = new Hashtable();
 	}
 	
 	/**
 	 * Add new product in the store and notifies the observer.
-	 * @param model		product id.
+	 * @param model	product id.
 	 * @param tv  product.
 	 */
-	public void add(String model, TV tv) {
-		if(inStock.containsKey(model)) {
-			Vector v = (Vector)inStock.get(model);
+	public void add(String mark, TV tv) {
+		if(inStock.containsKey(mark)) {
+			Vector v = (Vector)inStock.get(mark);
 			v.addElement(tv);
 		} else {
 			Vector pieces = new Vector();
 			pieces.addElement(tv);
-			inStock.put(model, pieces);
+			inStock.put(mark, pieces);
 		}
 		setChanged();
-		notifyObservers(model);
+		notifyObservers(mark);
 	}
 	
 	/**
 	 * Sell product and notifies the observer.
 	 * @param model product id.
 	 */
-	public void sell(String model) {
+	public void sell(String mark) {
 		TV sold = null;
-		if(inStock.containsKey(model)) {
-			Vector pieces = (Vector) inStock.get(model);
+		if(inStock.containsKey(mark)) {
+			Vector pieces = (Vector) inStock.get(mark);
 			sold = (TV) pieces.remove(pieces.size()-1);
-			System.out.println("Sold TV " + sold.hashCode());
+			System.out.println("Sold TV " + sold.getMark());
 			if(pieces.isEmpty())	
-				inStock.remove(model);
+				inStock.remove(mark);
 			setChanged();
 			notifyObservers(sold);
 		} else {
-			System.out.println("Acquired Model "+model+" is out of order!");
+			System.out.println("TV " + mark + " is out of order!");
 		}
-	}
-	
-	/**
-	 * @return The number of goods.
-	 */
-	public int getPresence() {
-		return inStock.size();
 	}
 	
 	/**
 	 * Prints out the availability of the store.
 	 */
 	public void showStock() {
+		Vector pieces;
 		for (Enumeration e = inStock.keys(); e.hasMoreElements();) {
 			String id = (String) e.nextElement();
-			System.out.println("Model#"+id);
+			pieces = (Vector) inStock.get(id);
+			System.out.println(" TV " + id + " pices " + pieces.size());
 		}
 	}
-
 }

@@ -9,7 +9,6 @@ package com.sirma.itt.javacourse.observer;
 public class TV {
 	
 	private String mark;
-	private String model;
 	private int price;
 	
 	/**
@@ -49,21 +48,5 @@ public class TV {
 	 */
 	public void setMark(String mark) {
 		this.mark = mark;
-	}
-
-	/**
-	 * Get the model.
-	 * @return model
-	 */
-	public String getModel() {
-		return model;
-	}
-
-	/**
-	 * Set the model.
-	 * @return model
-	 */
-	public void setModel(String model) {
-		this.model = model;
 	}
 }
