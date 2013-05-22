@@ -20,7 +20,7 @@ import java.util.List;
 public class FileReversal {
 
 	// class private members
-	private final static Charset ENCODING = StandardCharsets.UTF_8;
+	private final static Charset ENCODING = StandardCharsets.US_ASCII;
 
 	/**
 	 * Reverse content of text file
@@ -39,11 +39,10 @@ public class FileReversal {
 			
 			while ((line = reader.readLine()) != null) {
 				buffer.append(line);
-				lines.add(buffer.reverse().toString());
-				buffer.delete(0, buffer.length());
+				buffer.append("\n");
 			}
-			
-			Collections.reverse(lines);
+			buffer = buffer.reverse();
+			lines.add(buffer.substring(1, buffer.length()));
 			writer.writeBufferedText(lines, fileName);
 		}
 		

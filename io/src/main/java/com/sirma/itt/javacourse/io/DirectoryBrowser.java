@@ -16,6 +16,12 @@ public class DirectoryBrowser {
 	 */
 	public void listContent(String path) {
 
+		// prevent from null pointer exception
+		if(path == null) {
+			System.out.println("Invalid file path!!");
+			return;
+		}
+		
 		File dir = new File(path);
 		String[] subDirName = dir.list();
 		File[] subDir = dir.listFiles();

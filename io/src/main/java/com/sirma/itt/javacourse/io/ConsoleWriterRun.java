@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.io;
 
+import java.util.Scanner;
+
 /**
  * FileWriter run class.
  * 
@@ -16,6 +18,10 @@ public class ConsoleWriterRun {
 	public static void main(String[] args) {
 
 		ConsoleWriter writer = new ConsoleWriter();
-		writer.writeToFile();
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter path to the file : ");
+		String fileName = input.nextLine() + ".txt";
+		writer.writeToFile(fileName);
 	}
 }

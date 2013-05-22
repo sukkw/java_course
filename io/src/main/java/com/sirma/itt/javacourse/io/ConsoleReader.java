@@ -1,5 +1,6 @@
 package com.sirma.itt.javacourse.io;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -25,7 +26,7 @@ public class ConsoleReader {
 	 */
 	public static String readString() {
 		System.out.println("Enter string: ");
-		String enteredString = input.next();
+		String enteredString = input();
 		return enteredString;
 	}
 
@@ -39,7 +40,7 @@ public class ConsoleReader {
 		int intValue = 0;
 		
 		try {
-			intValue = Integer.parseInt(input.next());
+			intValue = Integer.parseInt(input());
 		} catch (NumberFormatException e) {
 			System.out.println("Invalid integer format");
 		}
@@ -53,7 +54,7 @@ public class ConsoleReader {
 	public static char readChar() {
 		
 		System.out.println("Enter char: ");
-		String enteredString = input.next();
+		String enteredString = input();
 		char enteredChar = 0;
 		
 		if (enteredString.length() == 1) {
@@ -73,7 +74,7 @@ public class ConsoleReader {
 		
 		float floatValue = 0;
 		try {
-			floatValue = Float.parseFloat(input.next());
+			floatValue = Float.parseFloat(input());
 		} catch (NumberFormatException e) {
 			System.out.println("Invalid float format");
 		}
@@ -88,7 +89,7 @@ public class ConsoleReader {
 		do {
 			String enteredValue;
 			System.out.println("S(tring) / I(nteger) / C(har) / F(loat) / E(xit)");
-			enteredValue = input.next();
+			enteredValue = input();
 
 			switch (enteredValue) {
 
@@ -111,5 +112,17 @@ public class ConsoleReader {
 				break;
 			}
 		} while (checker);
+	}
+	
+	private static String input() {
+		
+		String s = null;
+		try {
+			s = input.next();
+		} catch(NoSuchElementException e) {
+			System.out.println("Scanner is closed !!");
+			System.exit(0);
+		}
+		return s;
 	}
 }

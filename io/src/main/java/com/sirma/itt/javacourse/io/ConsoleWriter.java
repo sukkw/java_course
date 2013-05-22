@@ -28,10 +28,7 @@ public class ConsoleWriter {
 	 * Read lines of text from console and write it to file.
 	 * 
 	 */
-	public void writeToFile() {
-
-		System.out.println("Enter path to the file : ");
-		String fileName = input.nextLine() + ".txt";
+	public void writeToFile(String fileName) {
 
 		if (!createFile(fileName)) {
 			return;
@@ -113,7 +110,7 @@ public class ConsoleWriter {
 			throws IOException {
 		Path path = Paths.get(fileName);
 		try (BufferedWriter writer = Files.newBufferedWriter(path, ENCODING)) {
-			for (String line : lines) {
+ 			for (String line : lines) {
 				writer.write(line);
 				writer.newLine();
 			}

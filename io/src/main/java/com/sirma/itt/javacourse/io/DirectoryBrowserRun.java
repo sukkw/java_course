@@ -15,6 +15,11 @@ public class DirectoryBrowserRun {
 	public static void main(String[] args) {
 		
 		DirectoryBrowser browser = new DirectoryBrowser();
-		browser.listContent("C:\\Documents and Settings\\sdjulgerova\\git");
+		DirectoryBrowserRecursion recBrowser = new DirectoryBrowserRecursion();
+		String path = "C:\\Documents and Settings\\sdjulgerova\\git";
+		
+		//browser.listContent(path);
+		//recBrowser.listContent(null);
+		recBrowser.listContent(path);
 	}
 }

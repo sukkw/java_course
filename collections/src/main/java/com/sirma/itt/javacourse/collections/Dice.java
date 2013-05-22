@@ -38,13 +38,12 @@ public class Dice {
 
 			if (statisticTable.containsKey(combinationKey)) {
 				positionsList = statisticTable.get(combinationKey);
-				positionsList.add(i);
-				statisticTable.put(combinationKey, positionsList);
 			} else {
 				List<Integer> positionList = new ArrayList<Integer>();
-				positionList.add(i);
-				statisticTable.put(combinationKey, positionList);
 			}
+			
+			positionsList.add(i);
+			statisticTable.put(combinationKey, positionsList);
 		}
 	}
 

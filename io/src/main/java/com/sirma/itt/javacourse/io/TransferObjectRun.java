@@ -13,7 +13,7 @@ public class TransferObjectRun {
 		try {
 			InputStream in = new FileInputStream("testFile.txt");
 			OutputStream out = new FileOutputStream("testTransfer.txt");
-			TransferObject transfer = new TransferObject(in, out);
+			TransferObject transfer = new TransferObject(null, out);
 			transfer.transfer(12, 7);
 		} catch (IOException e) {
 			System.out.println("Can not transfer bytes");
