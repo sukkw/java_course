@@ -43,7 +43,7 @@ public class TransferObject {
 		
 		try {	
 			while(( ch = in.read()) != -1 ) {	
-				if((count >= start)&&(count<=stop)) {
+				if((count >= start)&&(count <= stop)) {
 					out.write(ch);				
 					writtenBytes++;
 				}

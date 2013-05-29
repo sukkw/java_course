@@ -73,7 +73,6 @@ public class ExceptionsMessageManager {
 		} else { 
 			throw new InvalidValueException("There's no such exception in the table!");
 		}
-
 	}
 
 	/**
@@ -82,8 +81,8 @@ public class ExceptionsMessageManager {
 	 * @return message combination
 	 */
 	public String getMessage() {
-		if(this.message.equals("")) {
-			return "No exceprions in message";
+		if("".equals(message)) {
+			return "No exceptions in message";
 		} else {
 			return message;
 		}

@@ -15,7 +15,44 @@ public class ConsoleReaderRun {
 	 */
 	public static void main(String[] args) {
 
-		// call class static method read
-		ConsoleReader.read();
+		boolean checker = true;
+		do {
+			String enteredValue;
+			System.out.println("S(tring) / I(nteger) / C(har) / F(loat) / E(xit)");
+			enteredValue = ConsoleReader.input();
+
+			switch (enteredValue) {
+
+			case "S":
+				System.out.println("Enter string: ");
+				System.out.println("You entered: " + ConsoleReader.readString());
+				break;
+			case "I":
+				System.out.println("Enter integer value: ");
+				try {
+					System.out.println("You entered: " + ConsoleReader.readInt());
+				} catch (NumberFormatException e) {
+					System.out.println("Invalid integer format");
+				}
+				break;
+			case "C":
+				System.out.println("Enter char: ");
+				System.out.println("You entered: " + ConsoleReader.readChar());
+				break;
+			case "F":
+				System.out.println("Enter double value: ");
+				try {
+					System.out.println("You entered: " + ConsoleReader.readFloat());
+				} catch (NumberFormatException e) {
+					System.out.println("Invalid float format");
+				}
+				break;
+			case "E":
+				checker = false;
+				break;
+			default:
+				break;
+			}
+		} while (checker);
 	}
 }

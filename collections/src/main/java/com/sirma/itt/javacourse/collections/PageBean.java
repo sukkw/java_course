@@ -60,9 +60,6 @@ public class PageBean {
 			}
 			
 			list = textLines.subList(startPosition, endPosition);
-		} else {
-			System.out.println(" >>> You are on the last page. Can not navigate to next!");
-			System.out.println();
 		}
 		return list;
 	}
@@ -78,9 +75,6 @@ public class PageBean {
 			int endPosition = (getCurrentPageNumber() * pageSize) + pageSize;
 			
 			list = textLines.subList(startPosition, endPosition);
-		} else {
-			System.out.println(" >>> You are on the first page. Can not navigate to previous!");
-			System.out.println();
 		}
 		return list;
 	}

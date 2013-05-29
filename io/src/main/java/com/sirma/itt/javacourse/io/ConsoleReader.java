@@ -17,7 +17,6 @@ public class ConsoleReader {
 	 * Make private constructor don't allow instance to be made.
 	 */
 	private ConsoleReader() {
-
 	}
 
 	/**
@@ -25,7 +24,6 @@ public class ConsoleReader {
 	 * @return string entered by user
 	 */
 	public static String readString() {
-		System.out.println("Enter string: ");
 		String enteredString = input();
 		return enteredString;
 	}
@@ -34,17 +32,8 @@ public class ConsoleReader {
 	 * Read integer from console.
 	 * @return - string entered by user converted to integer
 	 */
-	public static int readInt() {
-		
-		System.out.println("Enter integer value: ");
-		int intValue = 0;
-		
-		try {
-			intValue = Integer.parseInt(input());
-		} catch (NumberFormatException e) {
-			System.out.println("Invalid integer format");
-		}
-		return intValue;
+	public static int readInt() throws NumberFormatException {
+		return Integer.parseInt(input());
 	}
 
 	/**
@@ -53,7 +42,6 @@ public class ConsoleReader {
 	 */
 	public static char readChar() {
 		
-		System.out.println("Enter char: ");
 		String enteredString = input();
 		char enteredChar = 0;
 		
@@ -69,52 +57,15 @@ public class ConsoleReader {
 	 * Read float from console.
 	 * @return - string entered by user converted in float
 	 */
-	public static float readFloat() {
-		System.out.println("Enter double value: ");
-		
-		float floatValue = 0;
-		try {
-			floatValue = Float.parseFloat(input());
-		} catch (NumberFormatException e) {
-			System.out.println("Invalid float format");
-		}
-		return floatValue;
-	}
-
-	/**
-	 * Read string from console and do action.
-	 */
-	public static void read() {
-		boolean checker = true;
-		do {
-			String enteredValue;
-			System.out.println("S(tring) / I(nteger) / C(har) / F(loat) / E(xit)");
-			enteredValue = input();
-
-			switch (enteredValue) {
-
-			case "S":
-				System.out.println("You entered: " + readString());
-				break;
-			case "I":
-				System.out.println("You entered: " + readInt());
-				break;
-			case "C":
-				System.out.println("You entered: " + readChar());
-				break;
-			case "F":
-				System.out.println("You entered: " + readFloat());
-				break;
-			case "E":
-				checker = false;
-				break;
-			default:
-				break;
-			}
-		} while (checker);
+	public static float readFloat() throws NumberFormatException {
+		return Float.parseFloat(input());
 	}
 	
-	private static String input() {
+	/**
+	 * Read information from console.
+	 * @return entered line
+	 */
+	public static String input() {
 		
 		String s = null;
 		try {
