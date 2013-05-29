@@ -9,18 +9,15 @@ package com.sirma.itt.javacourse.command;
 public class Divide implements Command {
 
 	// class private members
-	CalculatorTmpl calculator;
 	int firstNumber;
 	int secondNumber;
 	
 	/**
 	 * Constructor.
-	 * @param calculator - calculator object
 	 * @param firstNumber - first operand
 	 * @param secondNumber - second operand
 	 */
-	public Divide(CalculatorTmpl calculator, int firstNumber, int secondNumber){
-		this.calculator = calculator;
+	public Divide(int firstNumber, int secondNumber){
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
 	}
@@ -29,7 +26,10 @@ public class Divide implements Command {
 	 * Call calculator method divide.
 	 */
 	public void execute() {
-		calculator.divide(firstNumber, secondNumber);
-		calculator.print();
+		if(secondNumber != 0) {
+			System.out.println("Result: " + (firstNumber / secondNumber));
+		} else {
+			System.out.println("Error: Division by zero" );
+		}
 	}
 }

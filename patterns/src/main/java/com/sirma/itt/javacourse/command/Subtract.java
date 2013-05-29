@@ -9,18 +9,15 @@ package com.sirma.itt.javacourse.command;
 public class Subtract implements Command {
 
 	// class private members
-	CalculatorTmpl calculator;
 	int firstNumber;
 	int secondNumber;
 	
 	/**
 	 * Constructor.
-	 * @param calculator - calculator object
 	 * @param firstNumber - first operand
 	 * @param secondNumber - second operand
 	 */
-	public Subtract(CalculatorTmpl calculator, int firstNumber, int secondNumber){
-		this.calculator = calculator;
+	public Subtract(int firstNumber, int secondNumber){
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
 	}
@@ -29,7 +26,6 @@ public class Subtract implements Command {
 	 * Call calculator method subtract.
 	 */
 	public void execute() {
-		calculator.subtract(firstNumber, secondNumber);
-		calculator.print();
+		System.out.println("Result: " + (firstNumber - secondNumber));
 	}
 }

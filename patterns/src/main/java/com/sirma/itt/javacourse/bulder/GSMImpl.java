@@ -6,7 +6,7 @@ package com.sirma.itt.javacourse.bulder;
  * @version 1.1 16 May 2013
  * @author Stella Djulgerova
  */
-public interface GSMConstruction {
+public interface GSMImpl {
 
 	public void setScreenResolution(String resolution);
 	public void setCamera(float megapixels);

@@ -31,7 +31,7 @@ public class Pool {
 	 */
 	private void createPool() {
 		DataClass data;
-		instancesList = new ArrayList(maxInstancesInPool);
+		instancesList = new ArrayList<DataClass>(maxInstancesInPool);
 		for (int i = 0; i < maxInstancesInPool; i++) {
 			data = new DataClass();
 			instancesList.add(data);

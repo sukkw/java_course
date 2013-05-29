@@ -15,7 +15,6 @@ public class Calculator {
 	private Scanner in;
 	private int firstNumber;
 	private int secondNumber;
-	private CalculatorTmpl calculator;
 	private char operator;
 	
 	/**
@@ -24,7 +23,6 @@ public class Calculator {
 	public Calculator() {
 		in = new Scanner(System.in);
 		invoker = new CalculatorInvoker();
-		calculator = new CalculatorReciver();
 	}
 	
 	/**
@@ -60,19 +58,19 @@ public class Calculator {
 	private void callCommand() {
 		switch (operator) {
 		case '+' : 
-			invoker.calculate(new Add(calculator, firstNumber, secondNumber));
+			invoker.calculate(new Add(firstNumber, secondNumber));
 			break;
 		case '-' :
-			invoker.calculate(new Subtract(calculator, firstNumber, secondNumber));
+			invoker.calculate(new Subtract(firstNumber, secondNumber));
 			break;
 		case '*' :
-			invoker.calculate(new Multiply(calculator, firstNumber, secondNumber));
+			invoker.calculate(new Multiply(firstNumber, secondNumber));
 			break;
 		case '/' :
-			invoker.calculate(new Divide(calculator, firstNumber, secondNumber));
+			invoker.calculate(new Divide(firstNumber, secondNumber));
 			break;
 		case '^' :
-			invoker.calculate(new Pow(calculator, firstNumber, secondNumber));
+			invoker.calculate(new Pow(firstNumber, secondNumber));
 			break;
 		default : System.out.println("Wrong operator!");
 		}

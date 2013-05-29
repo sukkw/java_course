@@ -6,11 +6,11 @@ package com.sirma.itt.javacourse.bulder;
  * @version 1.1 16 May 2013
  * @author Stella Djulgerova
  */
-public class GSM implements GSMConstruction {
+public class GSM implements GSMImpl {
 
 	// class private members
-	private String ScreenResolution;
-	private float CamMegapixels;
+	private String screenResolution;
+	private float camMegapixels;
 	private String javaSupport;
 	private String interfaces;
 	private String radio;
@@ -21,7 +21,7 @@ public class GSM implements GSMConstruction {
 	 * @return screen resolution
 	 */
 	public String getScreenResolution() {
-		return ScreenResolution;
+		return screenResolution;
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class GSM implements GSMConstruction {
 	 * @param resolution - screen resolution
 	 */
 	public void setScreenResolution(String resolution) {
-		ScreenResolution = resolution;
+		screenResolution = resolution;
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class GSM implements GSMConstruction {
 	 * @return camera megapixels
 	 */
 	public float getCamMegapixels() {
-		return CamMegapixels;
+		return camMegapixels;
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class GSM implements GSMConstruction {
 	 * @param megapixels - camera megapixels
 	 */
 	public void setCamera(float megapixels) {
-		CamMegapixels = megapixels;
+		camMegapixels = megapixels;
 	}
 
 	/**

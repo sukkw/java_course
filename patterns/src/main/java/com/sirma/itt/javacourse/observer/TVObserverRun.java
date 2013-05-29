@@ -30,7 +30,7 @@ public class TVObserverRun {
 			case "1":
 				System.out.println("Mark: ");
 				mark = input.nextLine();
-				store.add(mark, new TV(mark));
+				store.add(mark);
 				break;
 			case "2":
 				System.out.println("Model: ");

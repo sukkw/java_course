@@ -16,14 +16,14 @@ import java.util.Vector;
 public class TVStore extends Observable {
 
 	// class private members
-	private Hashtable inStock;
+	private Hashtable<String, Vector<TV>> inStock;
 	
 	/**
 	 * Constructor. Register observer.
 	 */
 	public TVStore() {
 		this.addObserver(new TVObserver());
-		inStock = new Hashtable();
+		inStock = new Hashtable<String, Vector<TV>>();
 	}
 	
 	/**
@@ -31,14 +31,14 @@ public class TVStore extends Observable {
 	 * @param model	product id.
 	 * @param tv  product.
 	 */
-	public void add(String mark, TV tv) {
+	public void add(String mark) {
 		if(inStock.containsKey(mark)) {
-			Vector v = (Vector)inStock.get(mark);
-			v.addElement(tv);
+			Vector<TV> v = inStock.get(mark);
+			v.addElement(new TV(mark));
 		} else {
-			Vector pieces = new Vector();
-			pieces.addElement(tv);
-			inStock.put(mark, pieces);
+			Vector<TV> v = new Vector<TV>();
+			v.addElement(new TV(mark));
+			inStock.put(mark, v);
 		}
 		setChanged();
 		notifyObservers(mark);
@@ -51,8 +51,8 @@ public class TVStore extends Observable {
 	public void sell(String mark) {
 		TV sold = null;
 		if(inStock.containsKey(mark)) {
-			Vector pieces = (Vector) inStock.get(mark);
-			sold = (TV) pieces.remove(pieces.size()-1);
+			Vector<TV> pieces = inStock.get(mark);
+			sold = pieces.remove(pieces.size()-1);
 			System.out.println("Sold TV " + sold.getMark());
 			if(pieces.isEmpty())	
 				inStock.remove(mark);
@@ -67,10 +67,10 @@ public class TVStore extends Observable {
 	 * Prints out the availability of the store.
 	 */
 	public void showStock() {
-		Vector pieces;
-		for (Enumeration e = inStock.keys(); e.hasMoreElements();) {
-			String id = (String) e.nextElement();
-			pieces = (Vector) inStock.get(id);
+		Vector<TV> pieces;
+		for (Enumeration<String> e = inStock.keys(); e.hasMoreElements();) {
+			String id = e.nextElement();
+			pieces = inStock.get(id);
 			System.out.println(" TV " + id + " pices " + pieces.size());
 		}
 	}

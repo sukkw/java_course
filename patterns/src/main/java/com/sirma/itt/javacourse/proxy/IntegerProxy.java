@@ -8,7 +8,7 @@ import java.math.BigInteger;
  * @version 1.1 20 May 2013
  * @author Stella Djulgerova
  */
-public class IntegerProxy implements IntegerTmpl {
+public class IntegerProxy implements IntegerImpl {
 
 	// class private members
 	private Integer integer;

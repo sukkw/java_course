@@ -29,10 +29,8 @@ public class TVObserver implements Observer {
 		System.out.println("Observer is notified... ");
 		if (obs instanceof TVStore) {
 			if(arg instanceof TV) {	
-				System.out.println("TV....");
 				soldOut.add((TV) arg);
 			} else {	
-				System.out.println("In stock....");
 				soldOut.remove((String) arg);
 			}	
 		}

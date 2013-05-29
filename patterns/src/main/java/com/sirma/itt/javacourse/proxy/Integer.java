@@ -8,7 +8,7 @@ import java.math.BigInteger;
  * @version 1.1 20 May 2013
  * @author Stella Djulgerova
  */
-public class Integer implements IntegerTmpl {
+public class Integer implements IntegerImpl {
 
 	private int result;
 
