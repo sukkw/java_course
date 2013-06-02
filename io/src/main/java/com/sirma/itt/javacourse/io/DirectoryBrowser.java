@@ -11,7 +11,8 @@ import java.io.File;
 public class DirectoryBrowser {
 
 	/**
-	 * Print content of a directory
+	 * Print content of a directory.
+	 * 
 	 * @param path - full path of the directory or file
 	 */
 	public void listContent(String path) {

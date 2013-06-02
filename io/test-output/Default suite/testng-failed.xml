@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sirma.itt.javacourse.io.SerializerTest">
+      <class name="com.sirma.itt.javacourse.io.ConsoleReaderTest">
         <methods>
-          <include name="testGetObject" invocation-numbers="0"/>
+          <include name="validate" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.sirma.itt.javacourse.io.SerializerTest -->
+      </class> <!-- com.sirma.itt.javacourse.io.ConsoleReaderTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

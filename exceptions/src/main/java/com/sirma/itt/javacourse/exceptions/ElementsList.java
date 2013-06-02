@@ -26,7 +26,7 @@ public class ElementsList {
 	/**
 	 * Check if the stack is empty.
 	 * 
-	 * @return true if it is empty
+	 * @return true if stack is empty
 	 */
 	private boolean isEmpty() {
 		return top == null;
@@ -35,16 +35,13 @@ public class ElementsList {
 	/**
 	 * Check if stack is full.
 	 * 
-	 * @return true if stack is empty or not full
+	 * @return true if stack is full
 	 */
-	public boolean notFull() {
+	public boolean isFull() {
 
-		if (isEmpty()) {
-			return true;
-		} else if (count < SIZE) {
+		if (count == SIZE) {
 			return true;
 		}
-
 		return false;
 	}
 
@@ -57,15 +54,15 @@ public class ElementsList {
 	public void add(Object obj) throws ListException {
 
 		TypeStack newStack = new TypeStack();
-
-		if (notFull()) {
+		
+		if (isFull()) {
+			throw new ListException(
+					"You can't add more elements!");
+		} else {
 			count++;
 			newStack.data = obj;
 			newStack.previous = top;
 			top = newStack;
-		} else {
-			throw new ListException(
-					"You can't add more elements!");
 		}
 	}
 

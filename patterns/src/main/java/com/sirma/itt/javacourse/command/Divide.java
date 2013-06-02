@@ -29,7 +29,7 @@ public class Divide implements Command {
 		if(secondNumber != 0) {
 			System.out.println("Result: " + (firstNumber / secondNumber));
 		} else {
-			System.out.println("Error: Division by zero" );
+			System.err.println("Error: Division by zero" );
 		}
 	}
 }

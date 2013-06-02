@@ -4,6 +4,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+/**
+ * Transfer small portion of bytes from one stream to another.
+ * 
+ * @version 1.1 01 May 2013
+ * @author Stella Djulgerova
+ */
 public class TransferObject {
 
 	// class private members

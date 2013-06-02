@@ -20,6 +20,11 @@ public class ClassManipulator {
 	 */
 	public void getMethodsInfo(Object classInstance) {
 
+		if(classInstance == null ) {
+			System.out.println("Invalid params");
+			return;
+		}
+		
 		Class classToReflect = classInstance.getClass();
 
 		getConstructorsInfo(classToReflect);
@@ -34,6 +39,11 @@ public class ClassManipulator {
 	 */
 	public Field[] getFieldsInfo(Object classInstance) {
 
+		if(classInstance == null ) {
+			System.out.println("Invalid params. Can not get fields info");
+			return null;
+		}
+		
 		Class classToReflect = classInstance.getClass();
 
 		Field[] fields = classToReflect.getDeclaredFields();
@@ -74,6 +84,11 @@ public class ClassManipulator {
 	 */
 	public Constructor[] getConstructorsInfo(Class classToReflect) {
 
+		if(classToReflect == null ) {
+			System.out.println("Invalid params. Can not get constructors info");
+			return null;
+		}
+		
 		Constructor[] constructors = classToReflect.getConstructors();
 
 		for (Constructor construct : constructors) {
@@ -98,6 +113,12 @@ public class ClassManipulator {
 	 * @return array with all class methods
 	 */
 	public Method[] getMethodsInfo(Class classToReflect) {
+		
+		if(classToReflect == null ) {
+			System.out.println("Invalid params. Can not get methods info");
+			return null;
+		}
+		
 		Method[] methods = classToReflect.getDeclaredMethods();
 		// Method[] methods = classToReflect.getMethods();
 

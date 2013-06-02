@@ -60,8 +60,12 @@ public class ExceptionsMessageManagerRun {
 				System.out.println(excManager.getMessage());
 				break;
 			case "4":
+				try {
 				System.out.println(ExceptionsMessageManager
-						.getMessages(excManager.getMessage()));
+						.getMessages((excManager.getMessage())));
+				} catch (NullPointerException e) {
+					System.err.println("Invalid message combination!");
+				}
 				break;
 			default:
 				break;

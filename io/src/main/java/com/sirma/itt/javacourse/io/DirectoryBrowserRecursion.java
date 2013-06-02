@@ -2,7 +2,14 @@ package com.sirma.itt.javacourse.io;
 
 import java.io.File;
 
+/**
+ * Browse directory and print content.
+ * 
+ * @version 1.1 01 May 2013
+ * @author Stella Djulgerova
+ */
 public class DirectoryBrowserRecursion {
+	
 	/**
 	 * Print content of a directory using recursion
 	 * 

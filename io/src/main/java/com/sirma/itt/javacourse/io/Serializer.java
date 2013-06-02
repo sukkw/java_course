@@ -30,6 +30,8 @@ public class Serializer {
 			fileOut.close();
 		} catch (IOException e) {
 			System.out.println("File can not be created. Please try again");
+		} catch (NullPointerException e) {
+			System.out.println("File can not be created. Please try again");
 		}
 	}
 
@@ -50,12 +52,15 @@ public class Serializer {
 			in.close();
 			fileIn.close();
 		} catch (IOException i) {
-			System.out.println("File can not be find. Please try again");
+			System.out.println("File can not be found. Please try again");
 			return null;
 		} catch (ClassNotFoundException c) {
 			System.out.println("Class not found.");
 			return null;
+		} catch (NullPointerException e) {
+			System.out.println("File can not be found. Please try again");
 		}
+		
 		return object;
 	}
 }

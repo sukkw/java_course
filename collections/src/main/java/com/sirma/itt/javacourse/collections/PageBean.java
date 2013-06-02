@@ -20,11 +20,17 @@ public class PageBean {
 
 	/**
 	 * Constructor.
-	 * 
+	 * 0
 	 * @param pageSize - number of elements to be shown
 	 * @param textLines - list with text lines
 	 */
 	public PageBean(int pageSize, List<String> textLines) {
+		
+		if(textLines == null) {
+			System.out.println("No text selected. Please try again.");
+			System.exit(0);
+		}
+		
 		this.pageSize = pageSize;
 		this.textLines = textLines;
 	}

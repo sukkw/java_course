@@ -22,7 +22,8 @@ public class PageBeanRun {
 	public static void main(String[] args) {
 
 		// read from text file and put lines into list
-		Path path = Paths.get("info.txt");
+		String fileName = "info.txt";
+		Path path = Paths.get(fileName);
 		List<String> lines = new ArrayList<String>();
 		String line = null;
 		String repeat;
@@ -70,8 +71,10 @@ public class PageBeanRun {
 	 * @param string - List with strings to be print
 	 */
 	public static void print(List<String> string) {
-		for(int i=0; i<string.size(); i++) {
-			System.out.println(string.get(i));
+		if(string != null) {
+			for(int i=0; i<string.size(); i++) {
+				System.out.println(string.get(i));
+			}
 		}
 	}
 }

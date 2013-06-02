@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.bulder;
 
+import java.util.logging.Logger;
+
 /**
  * Create different GSMs using GSMBuilder interface.
  * 
@@ -8,12 +10,17 @@ package com.sirma.itt.javacourse.bulder;
  */
 public class GSMMaker {
 	private GSMBuilder gsmBuilder;
+	private Logger log  = Logger.getLogger("GSMMaker");
 	
 	/**
 	 * Constructor.
 	 * @param gsmBuilder - type of GSM
 	 */
 	public GSMMaker(GSMBuilder gsmBuilder) {
+		if(gsmBuilder == null) {
+			log.warning("Wrong argumant :: nill pointer exception");
+			System.exit(0);
+		}
 		this.gsmBuilder = gsmBuilder;
 	}
 	

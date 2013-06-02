@@ -22,7 +22,7 @@ public class EmailValidatorRun {
 			String regExPattern = 
 				"[A-Za-z]+([A-Za-z0-9-.])+@[A-Za-z]+([A-Za-z0-9-.])+(.[A-Za-z]{2,})";
 		 
-			EmailValidator validator = new EmailValidator(regExPattern);
+			EmailValidator validator = new EmailValidator(null);
 
 			String email = "te.s99st.t-s.@dsda.sdss.sdasd.dd";
 
@@ -32,6 +32,8 @@ public class EmailValidatorRun {
 				System.out.println("Invalid email");
 			}
 		} catch (PatternSyntaxException e) {
+			System.out.println("Error in reg ex pattern");
+		} catch (NullPointerException e) {
 			System.out.println("Error in reg ex pattern");
 		}
 

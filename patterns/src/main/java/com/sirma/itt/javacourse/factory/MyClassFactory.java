@@ -22,7 +22,11 @@ public class MyClassFactory {
 		try {
 			classToReflect = Class.forName(className);
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			System.out.println("Can not create instance!");
+			return null;
+		} catch (NullPointerException e) {
+			System.out.println("Can not create instance!");
+			return null;
 		}
 		
 		ClassCreator classCreator = new ClassCreator();

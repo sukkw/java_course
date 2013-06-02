@@ -26,6 +26,12 @@ public class ExceptionsMessageManager {
 	 * @param exceptions - map containing all possible exceptions
 	 */
 	public ExceptionsMessageManager(Map<String, String> exceptions) {
+		
+		if(exceptions == null) {
+			System.out.println("Wrong messages map");
+			System.exit(0);
+		}
+		
 		this.exceptions = exceptions;
 	}
 
@@ -38,14 +44,23 @@ public class ExceptionsMessageManager {
 	 */
 	public void addExceptionMessage(String mess) throws InvalidValueException {
 
+		StringBuilder buildMsg = new StringBuilder();
+		
 		if (!notInString(mess)) {
 			return;
 		}
 
 		if (exceptions.containsValue(mess)) {
 
-			message = ((message != "") ? (message += separator + mess)
-					: (message = mess));
+			if(message != "") {
+				buildMsg.append(message);
+				buildMsg.append(separator);
+				buildMsg.append(mess);
+			} else {
+				buildMsg.append(mess);
+			}
+			
+			message = buildMsg.toString();
 		} else {
 			 throw new InvalidValueException("There's no such exception in the table!");
 		}
@@ -59,17 +74,25 @@ public class ExceptionsMessageManager {
 	 * @throws InvalidValueException 
 	 */
 	public void addExceptionMessageUsingCode(String messageCode) throws InvalidValueException {
-		String stringToAdd = "";
-
+		String mess = "";
+		StringBuilder buildMsg = new StringBuilder();
+		
 		if (exceptions.containsKey(messageCode)) {
-			stringToAdd = exceptions.get(messageCode);
+			mess = exceptions.get(messageCode);
 			
-			if (!notInString(stringToAdd)) {
+			if (!notInString(mess)) {
 				return;
 			}
 			
-			message = ((message != "") ? (message += separator + stringToAdd)
-					: (message = stringToAdd));
+			if(message != "") {
+				buildMsg.append(message);
+				buildMsg.append(separator);
+				buildMsg.append(mess);
+			} else {
+				buildMsg.append(mess);
+			}
+			
+			message = buildMsg.toString();
 		} else { 
 			throw new InvalidValueException("There's no such exception in the table!");
 		}

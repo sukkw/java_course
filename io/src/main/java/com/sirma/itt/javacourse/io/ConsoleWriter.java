@@ -40,6 +40,7 @@ public class ConsoleWriter {
 			System.out.println("Data was added.");
 		} catch (IOException e) {
 			System.out.println("Can not write data! please try again.");
+			return;
 		}
 	}
 	
@@ -62,6 +63,8 @@ public class ConsoleWriter {
 		} catch (IOException e) {
 			System.out.println("Wrong path please try again.");
 		} catch (InvalidPathException e) {
+			System.out.println("Wrong path please try again.");
+		} catch (NullPointerException e) {
 			System.out.println("Wrong path please try again.");
 		}
 		return isCreated;

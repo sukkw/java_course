@@ -53,6 +53,9 @@ public class Dice {
 	 * @return - list with positions
 	 */
 	public List<Integer> getCombination(String combinationKey) {
+		if(combinationKey == null) {
+			return null;
+		}
 		return statisticTable.get(combinationKey);
 	}
 }

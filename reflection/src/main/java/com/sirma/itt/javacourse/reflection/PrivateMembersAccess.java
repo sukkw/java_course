@@ -22,12 +22,16 @@ public class PrivateMembersAccess {
 	 * @param values - value for each parameter (or null)
 	 */
 	public void createInstance(String className, Class[] params, Object[] values) {
-
+		
 		Class classToReflect = null;
 		try {
 			classToReflect = Class.forName(className);
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			System.out.println("Invalid class name");
+			return;
+		} catch (NullPointerException e) {
+			System.out.println("Invalid class name");
+			return;
 		}
 
 		Object instance = creator.makeInstance(classToReflect, params, values);

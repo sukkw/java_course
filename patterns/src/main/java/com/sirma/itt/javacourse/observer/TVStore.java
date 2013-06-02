@@ -32,6 +32,12 @@ public class TVStore extends Observable {
 	 * @param tv  product.
 	 */
 	public void add(String mark) {
+		
+		if(mark == null) {
+			System.err.println("Invalid mark!");
+			return;
+		}
+		
 		if(inStock.containsKey(mark)) {
 			Vector<TV> v = inStock.get(mark);
 			v.addElement(new TV(mark));
@@ -49,6 +55,12 @@ public class TVStore extends Observable {
 	 * @param model product id.
 	 */
 	public void sell(String mark) {
+		
+		if(mark == null) {
+			System.err.println("Invalid mark!");
+			return;
+		}
+		
 		TV sold = null;
 		if(inStock.containsKey(mark)) {
 			Vector<TV> pieces = inStock.get(mark);

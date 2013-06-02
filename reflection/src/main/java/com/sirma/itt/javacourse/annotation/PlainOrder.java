@@ -19,7 +19,7 @@ public class PlainOrder {
 	public Plane[] orderInstances(Plane[] instances) {
 
 		try {
-			Arrays.sort(instances, PlaneAnnotationComparator);
+			Arrays.sort(instances, planeAnnotationComparator);
 		} catch (NullPointerException e) {
 			System.out.println("Some of the instances you" +
 					" try to compare have no PlaneAnnotation");
@@ -36,7 +36,7 @@ public class PlainOrder {
 	/**
 	 * Compare different instances using annotation.
 	 */
-	public static Comparator<Plane> PlaneAnnotationComparator = new Comparator<Plane>() {
+	public static Comparator<Plane> planeAnnotationComparator = new Comparator<Plane>() {
 
 		/**
 		 * Compare one instance to another.

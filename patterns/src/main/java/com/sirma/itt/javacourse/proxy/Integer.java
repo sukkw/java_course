@@ -1,7 +1,5 @@
 package com.sirma.itt.javacourse.proxy;
 
-import java.math.BigInteger;
-
 /**
  * Original Integer class.
  * 

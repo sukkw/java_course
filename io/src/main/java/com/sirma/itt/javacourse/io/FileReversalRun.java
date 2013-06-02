@@ -14,12 +14,16 @@ public class FileReversalRun {
 	public static void main(String[] args) {
 
 		FileReversal fileReversal = new FileReversal();
+		String fileName = "testFile.txt";
+		
 		try {
-			fileReversal.reverse("testFile.txt");
-		}
-		catch (IOException e) {
+			fileReversal.reverse(fileName);
+			System.out.println(" File " + fileName + " was reversed ");
+		} catch (IOException e) {
 			System.out.println("Invalid path or file");
 		} catch (InvalidPathException e) {
+			System.out.println("Invalid path or file");
+		} catch (NullPointerException e) {
 			System.out.println("Invalid path or file");
 		}
 	}

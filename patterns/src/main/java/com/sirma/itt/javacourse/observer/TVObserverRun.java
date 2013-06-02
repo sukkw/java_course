@@ -33,8 +33,9 @@ public class TVObserverRun {
 				store.add(mark);
 				break;
 			case "2":
-				System.out.println("Model: ");
-				store.sell(input.nextLine());
+				System.out.println("Mark: ");
+				mark = input.nextLine();
+				store.sell(mark);
 				break;
 			case "3":
 				store.showStock();
