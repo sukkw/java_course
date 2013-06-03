@@ -18,10 +18,11 @@ public class GreedyRegExRun {
 	public static void main(String[] args) {
 
 		// string for format
-		String stringToFormat = "<x><b></b><x>Hello world</x>" 
+		String input = "<x><b></b><x>Hello world</x>" 
 				+ "<b>sdfsdf</b><x>Good "
 				+ "morning</x><x>69</x><x>sdfsdfsdf</x>" 
 				+ "</x>";
+		String output = "";
 
 		// regular expression pattern
 		// String greedyRegEx = "(<x>).*?(</x>)";
@@ -29,10 +30,12 @@ public class GreedyRegExRun {
 
 		try {
 			GreedyRegEx greedy = new GreedyRegEx(negatedRegEx);
-			stringToFormat = greedy.format(stringToFormat);
-			System.out.println(stringToFormat);
+			output = greedy.format(input);
+			System.out.println(output);
 		} catch (PatternSyntaxException e) {
 			System.out.println("Error in reg ex pattern");
+		} catch (NullPointerException e) {
+			System.out.println("Input variable can not be formated");
 		}
 	}
 }

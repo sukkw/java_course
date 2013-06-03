@@ -145,7 +145,7 @@ public class ClassManipulator {
 	 * 
 	 * @param modifier - modifier as integer value
 	 */
-	private int getModifier(int modifier) {
+	private void getModifier(int modifier) {
 		if (Modifier.isPublic(modifier)) {
 			System.out.println("Modifier type: Public");
 		} else if (Modifier.isPrivate(modifier)) {
@@ -153,7 +153,6 @@ public class ClassManipulator {
 		} else if (Modifier.isProtected(modifier)) {
 			System.out.println("Modifier type: Protected");
 		}
-		return modifier;
 	}
 
 	/**

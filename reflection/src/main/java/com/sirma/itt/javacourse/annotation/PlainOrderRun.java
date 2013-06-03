@@ -19,5 +19,10 @@ public class PlainOrderRun {
 		
 		PlainOrder plainOrder = new PlainOrder();
 		plainOrder.orderInstances(instances);
+		
+		int i = 0;
+		for (Object a : instances) {
+			System.out.println("Instnce " + ++i + " : " + a.toString());
+		}
 	}
 }

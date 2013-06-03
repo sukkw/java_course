@@ -23,7 +23,7 @@ public class ConsoleReaderTest {
 		return new Object[][] { { "70", "70"}};
 	}
 
-	/**7
+	/**
 	 * Test calculate method.
 	 * 
 	 * @param string - string for validation

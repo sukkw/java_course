@@ -13,9 +13,10 @@ public class GreedyRegEx {
 
 	// class private members
 	private Pattern pattern;
+	private String output;
 	
 	/**
-	 * Class default constructor.
+	 * Class constructor.
 	 */
 	public GreedyRegEx(String regExPattern) {
 		pattern = Pattern.compile(regExPattern);
@@ -24,16 +25,16 @@ public class GreedyRegEx {
 	/**
 	 * Replace characters in string with another string.
 	 * 
-	 * @param stringToFormat - string to be formated
+	 * @param input - string to be formated
 	 * @return formated string
 	 */
-	public String format(String stringToFormat) {
+	public String format(String input) {
 		
-		Matcher regexMatcher = pattern.matcher(stringToFormat);
+		Matcher regexMatcher = pattern.matcher(input);
 		
 		while (regexMatcher.find()) {
-			stringToFormat = stringToFormat.replaceAll(regexMatcher.group(), "<x/>");
+			output = input.replaceAll(regexMatcher.group(), "<x/>");
 		}
-		return stringToFormat;
+		return output;
 	}
 }

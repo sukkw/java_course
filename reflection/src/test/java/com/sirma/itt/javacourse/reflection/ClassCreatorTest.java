@@ -43,6 +43,7 @@ public class ClassCreatorTest {
 			classToReflect = Class.forName(className);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			return;
 		}
 		
 		Object result = creator.makeInstance(classToReflect, params, values);

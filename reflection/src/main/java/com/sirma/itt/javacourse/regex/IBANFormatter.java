@@ -13,9 +13,10 @@ public class IBANFormatter {
 
 	// class private members
 	private Pattern pattern;
-
+	private String output;
+	
 	// part of valid IBAN to replace
-	private final String REPLACE_PATTERN = "(BG)[0-9]{2}\\s*[A-Z]{4}\\s*[0-9]{4}";
+	private final String REGEX_PATTERN = "(BG)[0-9]{2}\\s*[A-Z]{4}\\s*[0-9]{4}";
 
 	/**
 	 * Class default constructor.
@@ -27,15 +28,15 @@ public class IBANFormatter {
 	/**
 	 * Replace first part of valid IBAN number with ****.
 	 * 
-	 * @param stringToFormat - string to be formated
+	 * @param input - string to be formated
 	 * @return formated string
 	 */
-	public String format(String stringToFormat) {
+	public String format(String input) {
 		
-		Matcher regexMatcher = pattern.matcher(stringToFormat);
+		Matcher regexMatcher = pattern.matcher(input);
 		while (regexMatcher.find()) {
-			stringToFormat = stringToFormat.replaceAll(regexMatcher.group(), regexMatcher.group().replaceAll(REPLACE_PATTERN, "****"));
+			output = input.replaceAll(regexMatcher.group(), regexMatcher.group().replaceAll(REGEX_PATTERN, "****"));
 		}
-		return stringToFormat;
+		return output;
 	}
 }

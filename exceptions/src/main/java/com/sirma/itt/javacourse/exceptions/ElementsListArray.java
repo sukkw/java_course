@@ -35,11 +35,10 @@ public class ElementsListArray {
 		
 		if(elements.length <= last) {
 			throw new ListException("Dobavqneto e nevuzmojno!");
+		} else {
+			elements[last] = obj;
+			last++;
 		}
-		
-		elements[last] = obj;
-		last++;
-		System.out.println("Dobavqneto e uspeshno!");
 
 		return elements;
 	}
@@ -54,11 +53,10 @@ public class ElementsListArray {
 		
 		if(last <= 0) {
 			throw new ListException("Iztrivaneto e nevuzmojno!");
+		} else {
+			last--;
+			elements[last] = null;	
 		}
-
-		last--;
-		elements[last] = null;	
-		System.out.println("Iztrivaneto e uspeshno!");
 		
 		return elements;
 	}
@@ -81,44 +79,5 @@ public class ElementsListArray {
 			}
 		}
 
-	}
-
-	/**
-	 * Read string from console and do action.
-	 */
-	public void read() {
-		boolean checker = true;
-		do {
-			Scanner input = new Scanner(System.in);
-			String str;
-			System.out.print("A(dd) / D(elete) / P(rint) / E(xit)");
-			str = input.next();
-
-			switch (str) {
-
-				case "A":
-					try {
-						add("test");
-					} catch (ListException e) {
-						e.printStackTrace();
-					}
-					break;
-				case "D":
-					try {
-						remove();
-					} catch (ListException e) {
-						e.printStackTrace();
-					}
-					break;
-				case "P":
-					printAllElements();
-					break;
-				case "E":
-					checker = false;
-					break;
-				default:
-					break;
-			}
-		} while (checker);
 	}
 }

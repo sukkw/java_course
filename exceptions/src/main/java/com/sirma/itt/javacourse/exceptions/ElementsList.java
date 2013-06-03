@@ -56,8 +56,7 @@ public class ElementsList {
 		TypeStack newStack = new TypeStack();
 		
 		if (isFull()) {
-			throw new ListException(
-					"You can't add more elements!");
+			throw new ListException("You can't add more elements!");
 		} else {
 			count++;
 			newStack.data = obj;

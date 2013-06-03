@@ -48,6 +48,8 @@ public class TransferObject {
 		int stop  = (offset + numberOfBytes) - 1;	
 		
 		try {	
+			// read InputStream from start position(offset) to end position
+			// and write to OutputStream
 			while(( ch = in.read()) != -1 ) {	
 				if((count >= start)&&(count <= stop)) {
 					out.write(ch);				

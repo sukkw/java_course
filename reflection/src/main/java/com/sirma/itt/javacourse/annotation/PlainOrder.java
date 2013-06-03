@@ -23,12 +23,7 @@ public class PlainOrder {
 		} catch (NullPointerException e) {
 			System.out.println("Some of the instances you" +
 					" try to compare have no PlaneAnnotation");
-			return null;
-		}
-
-		int i = 0;
-		for (Object a : instances) {
-			System.out.println("Instnce " + ++i + " : " + a.toString());
+			System.exit(0);
 		}
 		return instances;
 	}
