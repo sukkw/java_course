@@ -2,6 +2,8 @@ package com.sirma.itt.javacourse.observer;
 
 import java.util.Scanner;
 
+import com.sirma.itt.javacourse.io.ConsoleReader;
+
 /**
  * Observer design pattern run class.
  * 
@@ -29,12 +31,12 @@ public class TVObserverRun {
 
 			case "1":
 				System.out.println("Mark: ");
-				mark = input.nextLine();
+				mark = ConsoleReader.readString();
 				store.add(mark);
 				break;
 			case "2":
 				System.out.println("Mark: ");
-				mark = input.nextLine();
+				mark = ConsoleReader.readString();
 				store.sell(mark);
 				break;
 			case "3":

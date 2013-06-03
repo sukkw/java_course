@@ -17,6 +17,10 @@ public class MyClassFactory {
 	 */
 	public static MyClass createInstance(String className) {
 		
+		if(className == null) {
+			return null;
+		}
+		
 		// try to get class from name
 		Class classToReflect = null;
 		try {
@@ -24,13 +28,10 @@ public class MyClassFactory {
 		} catch (ClassNotFoundException e) {
 			System.out.println("Can not create instance!");
 			return null;
-		} catch (NullPointerException e) {
-			System.out.println("Can not create instance!");
-			return null;
 		}
 		
 		ClassCreator classCreator = new ClassCreator();
-		return (MyClass) classCreator.makeInstance(classToReflect, null, null);
+		return  classCreator.makeInstance(classToReflect, null, null);
 	}
 	
 	

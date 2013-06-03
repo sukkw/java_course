@@ -4,6 +4,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Observable;
 import java.util.Vector;
+import java.util.logging.Logger;
 
 /**
  * TV store class. Add new product in store. 
@@ -17,6 +18,7 @@ public class TVStore extends Observable {
 
 	// class private members
 	private Hashtable<String, Vector<TV>> inStock;
+	private Logger log  = Logger.getLogger("TVStore");
 	
 	/**
 	 * Constructor. Register observer.
@@ -34,7 +36,7 @@ public class TVStore extends Observable {
 	public void add(String mark) {
 		
 		if(mark == null) {
-			System.err.println("Invalid mark!");
+			log.warning("Invalid mark!");
 			return;
 		}
 		
@@ -57,7 +59,7 @@ public class TVStore extends Observable {
 	public void sell(String mark) {
 		
 		if(mark == null) {
-			System.err.println("Invalid mark!");
+			log.warning("Invalid mark!");
 			return;
 		}
 		

@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.logging.Logger;
 
 /**
  * Read text from console and write it in text file.
@@ -19,22 +20,23 @@ public class ConsoleWriter {
 
 	// char set encoding
 	private final static Charset ENCODING = StandardCharsets.UTF_8;
+	private Logger log  = Logger.getLogger("ConsoleWriter");
 
 	/**
 	 * Read lines of text from console and write it to file.
 	 * 
 	 */
 	public void writeToFile(String fileName) {
-
+		
 		// create file if not exist
 		if (!createFile(fileName)) {
-			System.exit(0);
+			return;
 		}
 
 		try {
 			writeBufferedText(readText(), fileName);
 		} catch (IOException e) {
-			System.out.println("Can not write data! please try again.");
+			log.warning("Can not write data! please try again.");
 			return;
 		}
 	}
@@ -47,6 +49,11 @@ public class ConsoleWriter {
 	private boolean createFile(String fileName) {
 		boolean isCreated = false;
 
+		if(fileName == null) {
+			log.warning("Wrong argument :: Wrong file name");
+			return false;
+		}
+		
 		try {
 			Path path = Paths.get(fileName);
 			if (Files.exists(path)) {
@@ -59,9 +66,7 @@ public class ConsoleWriter {
 			System.out.println("Wrong path please try again.");
 		} catch (InvalidPathException e) {
 			System.out.println("Wrong path please try again.");
-		} catch (NullPointerException e) {
-			System.out.println("Wrong path please try again.");
-		}
+		} 
 		return isCreated;
 	}
 
@@ -94,11 +99,15 @@ public class ConsoleWriter {
 	 * @param fileName - file name
 	 * @throws IOException
 	 */
-	public void writeBufferedText(String text, String fileName)
-			throws IOException {
-		Path path = Paths.get(fileName);
-		try (BufferedWriter writer = Files.newBufferedWriter(path, ENCODING)) {
-			writer.write(text);
+	public void writeBufferedText(String text, String fileName) throws IOException {
+		
+		if(text != null && fileName != null) {
+			Path path = Paths.get(fileName);
+			try (BufferedWriter writer = Files.newBufferedWriter(path, ENCODING)) {
+				writer.write(text);
+			}
+		} else {
+			log.warning("Wrong arguments :: Empty text or wrong file name");
 		}
 	}
 }

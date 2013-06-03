@@ -26,6 +26,10 @@ public class FileReversal {
 	 */
 	public void reverse(String fileName) throws IOException {
 
+		if(fileName == null) {
+			return;
+		}
+		
 		Path path = Paths.get(fileName);
 		StringBuffer buffer = new StringBuffer();
 		ConsoleWriter writer = new ConsoleWriter();

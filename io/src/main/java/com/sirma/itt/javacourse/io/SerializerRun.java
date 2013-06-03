@@ -24,7 +24,7 @@ public class SerializerRun {
 
 		Serializer serializer = new Serializer();
 		serializer.saveObject("serialize.ser", serializedObject);
-		DataClass deserializedObject = (DataClass) serializer.getObject("serialize.ser");
+		DataClass deserializedObject = serializer.getObject("serialize.ser");
 
 		System.out.println("Deserialized DataClass: ");
 		System.out.println("Name: " + deserializedObject.getName());

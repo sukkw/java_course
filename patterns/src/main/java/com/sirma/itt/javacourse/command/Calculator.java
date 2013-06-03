@@ -2,6 +2,8 @@ package com.sirma.itt.javacourse.command;
 
 import java.util.Scanner;
 
+import com.sirma.itt.javacourse.io.ConsoleReader;
+
 /**
  * Calculator run class.
  * 
@@ -12,7 +14,6 @@ public class Calculator {
 	
 	// class private members
 	private CalculatorInvoker invoker;
-	private Scanner in;
 	private int firstNumber;
 	private int secondNumber;
 	private char operator;
@@ -21,7 +22,6 @@ public class Calculator {
 	 * Constructor.
 	 */
 	public Calculator() {
-		in = new Scanner(System.in);
 		invoker = new CalculatorInvoker();
 	}
 	
@@ -34,14 +34,14 @@ public class Calculator {
 		try {
 			while(!"y".equals(ch)) {
 				System.out.println("First number: ");
-					firstNumber = Integer.parseInt(in.nextLine());
+					firstNumber = ConsoleReader.readInt();
 				System.out.println(" + - * / ^ ");
-					operator = (in.nextLine()).charAt(0);
+					operator = ConsoleReader.readChar();
 				System.out.println("Second number: ");
-					secondNumber = Integer.parseInt(in.nextLine());
+					secondNumber = ConsoleReader.readInt();
 				callCommand();
 				System.out.println("Do you want to quit?  (y/n) ");
-					ch = in.nextLine();
+					ch = ConsoleReader.readString();
 			}
 		} catch (NumberFormatException e) {
 			System.out.println("Wrong data format!");
@@ -75,5 +75,4 @@ public class Calculator {
 		default : System.out.println("Wrong operator!");
 		}
 	}
-
 }

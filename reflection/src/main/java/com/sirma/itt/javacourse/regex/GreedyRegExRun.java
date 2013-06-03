@@ -29,13 +29,11 @@ public class GreedyRegExRun {
 		String negatedRegEx = "(<x>)[^(</x>)]*(</x>)";
 
 		try {
-			GreedyRegEx greedy = new GreedyRegEx(negatedRegEx);
+			GreedyRegEx greedy = new GreedyRegEx(null);
 			output = greedy.format(input);
 			System.out.println(output);
 		} catch (PatternSyntaxException e) {
 			System.out.println("Error in reg ex pattern");
-		} catch (NullPointerException e) {
-			System.out.println("Input variable can not be formated");
 		}
 	}
 }

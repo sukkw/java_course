@@ -15,7 +15,7 @@ public class PlainOrderRun {
 	public static void main(String[] args) {
 		
 		Plane[] instances = { new Bomber(), new Airliner(), new Fighter(),
-				new TransportAircraft() };
+				new TransportAircraft()};
 		
 		PlainOrder plainOrder = new PlainOrder();
 		plainOrder.orderInstances(instances);

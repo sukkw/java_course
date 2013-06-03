@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.io;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -13,8 +15,8 @@ import java.io.OutputStream;
 public class TransferObject {
 
 	// class private members
-	private InputStream in; 
-	private OutputStream out;
+	private BufferedInputStream in; 
+	private BufferedOutputStream out;
 	
 	/**
 	 * Constructor.
@@ -22,14 +24,10 @@ public class TransferObject {
 	 * @param out - output stream
 	 */
 	public TransferObject(InputStream in, OutputStream out) {
-		
-		if(in == null || out == null) {
-			System.out.println(" Invalid Stream ");
-			System.exit(0);
+		if(in != null && out != null) {
+			this.in = new BufferedInputStream(in);;
+			this.out = new BufferedOutputStream(out);
 		}
-		
-		this.in = in;
-		this.out = out;
 	}
 	
 	/**
@@ -40,28 +38,22 @@ public class TransferObject {
 	 * @throws IOException 
 	 */
 	public int transfer(int numberOfBytes, int offset) throws IOException {
+			
+		if(in == null || out == null) {
+			return 0;
+		}
 		
-		int ch;								
-		int count = 0;								
-		int writtenBytes = 0;							
-		int start = offset;					
-		int stop  = (offset + numberOfBytes) - 1;	
-		
+		int transferedBytes;																				
+		byte[] data = new byte[1024];
 		try {	
-			// read InputStream from start position(offset) to end position
-			// and write to OutputStream
-			while(( ch = in.read()) != -1 ) {	
-				if((count >= start)&&(count <= stop)) {
-					out.write(ch);				
-					writtenBytes++;
-				}
-				count++;
-			}
+			in.skip(offset);
+			transferedBytes = in.read(data, (int) in.skip(offset), numberOfBytes);	
+			out.write(data, offset, numberOfBytes);				
 		}
 		finally {
 			in.close();						
 			out.close();						
 		}
-		return writtenBytes;	
+		return transferedBytes;	
 	}
 }

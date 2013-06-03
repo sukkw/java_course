@@ -16,6 +16,5 @@ public class ClassManipulatorRun {
 		ClassManipulator manipulator = new ClassManipulator();
 		manipulator.getMethodsInfo(client);
 		manipulator.getFieldsInfo(client);
-		
 	}
 }

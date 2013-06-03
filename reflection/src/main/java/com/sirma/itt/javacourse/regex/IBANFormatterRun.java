@@ -44,8 +44,6 @@ public class IBANFormatterRun {
 
 		} catch (PatternSyntaxException e) {
 			System.out.println("Error in reg ex pattern");
-		} catch (NullPointerException e) {
-			System.out.println("Input variable can not be formated");
 		}
 	}
 }

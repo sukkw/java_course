@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.fluent;
 
+import com.sirma.itt.javacourse.regex.EmailValidator;
+
 /**
  * Mail run class.
  * 
@@ -10,15 +12,16 @@ public class MailRun {
 
 	/**
 	 * Class main method
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+		
 		// create e-mail using fluent interface concept
 		Mail mail = new Mail("sdjulgerova@gmail.com")
 			.addReciver("sdjulgerova@abv.bg")
 			.addSubject("JustATest")
-			.addCC("eli_mar22@abv.bg")
+			.addCC("eli-mar22@abv.bg")
 			.addAttachment("1")
 			.addAttachment("2")
 			.addAttachment("3");

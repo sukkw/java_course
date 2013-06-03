@@ -16,6 +16,5 @@ public class CalculatorRun {
 		
 		Calculator consoleCalculator = new Calculator();
 		consoleCalculator.console();
-		
 	}
 }

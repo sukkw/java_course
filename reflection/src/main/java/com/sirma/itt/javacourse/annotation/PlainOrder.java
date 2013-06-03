@@ -17,14 +17,7 @@ public class PlainOrder {
 	 * @return - array with ordered instances
 	 */
 	public Plane[] orderInstances(Plane[] instances) {
-
-		try {
-			Arrays.sort(instances, planeAnnotationComparator);
-		} catch (NullPointerException e) {
-			System.out.println("Some of the instances you" +
-					" try to compare have no PlaneAnnotation");
-			System.exit(0);
-		}
+		Arrays.sort(instances, planeAnnotationComparator);
 		return instances;
 	}
 
@@ -41,6 +34,12 @@ public class PlainOrder {
 		 * @return - result after comparison
 		 */
 		public int compare(Plane firstInstance, Plane secondInstance) {
+			
+			// check if instances to compare are not null
+			if(firstInstance == null || secondInstance ==null) {
+				return 0;
+			}
+			
 			Class fiClass = firstInstance.getClass();
 			PlaneAnnotation fiAnnotation = (PlaneAnnotation) fiClass
 					.getAnnotation(PlaneAnnotation.class);
@@ -49,6 +48,11 @@ public class PlainOrder {
 			PlaneAnnotation siAnnotation = (PlaneAnnotation) siClass
 					.getAnnotation(PlaneAnnotation.class);
 
+			// check if each instance have such annotation
+			if(fiAnnotation == null || siAnnotation == null) {
+				return 0;
+			}
+			
 			int anno1 = fiAnnotation.value();
 			int anno2 = siAnnotation.value();
 

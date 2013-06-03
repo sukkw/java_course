@@ -42,13 +42,14 @@ public class Serializer {
 	 * @return - deserialized object
 	 * @throws IOException
 	 */
-	public Object getObject(String path) {
+	@SuppressWarnings("unchecked")
+	public <E> E getObject(String path) {
 
 		Object object = null;
 		try {
 			FileInputStream fileIn = new FileInputStream(path);
 			ObjectInputStream in = new ObjectInputStream(fileIn);
-			object = (Object) in.readObject();
+			object = in.readObject();
 			in.close();
 			fileIn.close();
 		} catch (IOException i) {
@@ -61,6 +62,6 @@ public class Serializer {
 			System.out.println("File can not be found. Please try again");
 		}
 		
-		return object;
+		return (E) object;
 	}
 }

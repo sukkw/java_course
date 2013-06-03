@@ -61,17 +61,16 @@ public class ClassManipulator {
 				
 				// set access to false and protect field
 				field.setAccessible(false);
+
+				if (value != null) {
+					System.out.println("Parameter value: " + value);
+				}
+				System.out.println();
 			} catch (IllegalArgumentException e) {
 				e.printStackTrace();
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 			}
-
-			if (value != null) {
-				System.out.println("Parameter value: " + value);
-			}
-
-			System.out.println();
 		}
 		return fields;
 	}

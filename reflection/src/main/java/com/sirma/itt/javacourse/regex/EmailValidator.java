@@ -20,6 +20,9 @@ public class EmailValidator {
 	 * Class default constructor.
 	 */
 	public EmailValidator(String regExPattern) {
+		if(regExPattern == null) {
+			return;
+		}
 		pattern = Pattern.compile(regExPattern);
 	}
  
@@ -30,6 +33,9 @@ public class EmailValidator {
 	 * @return true valid email or false invalid email
 	 */
 	public boolean validate(String email) {
+		if (pattern == null || email == null) {
+			return false;
+		}
 		matcher = pattern.matcher(email);
 		return matcher.matches();
 	}

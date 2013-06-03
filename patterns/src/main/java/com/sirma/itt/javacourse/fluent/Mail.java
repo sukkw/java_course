@@ -3,6 +3,8 @@ package com.sirma.itt.javacourse.fluent;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sirma.itt.javacourse.regex.EmailValidator;
+
 /**
  * Create base structure of e-mail using Fluent Interface concept.
  * 
@@ -18,6 +20,11 @@ public class Mail {
     private String content = "";
     private String CC = "";
     private List<String> attachments;
+	// valid email regular expression pattern
+	String regExPattern = 
+					"[A-Za-z]+([A-Za-z0-9-.])+@[A-Za-z]+([A-Za-z0-9-.])+(.[A-Za-z]{2,})";
+			 
+	EmailValidator validate = new EmailValidator(regExPattern);
 
     /**
      * Constructor. Make field "from" mandatory for each email
@@ -25,7 +32,9 @@ public class Mail {
      * @param from - sender e-mail
      */
     public Mail(String from) {
-    	this.from = from;
+    	if(validate.validate(from)) {
+        	this.from = from;
+    	}
     	attachments = new ArrayList<String>();
     }
 
@@ -37,7 +46,9 @@ public class Mail {
      */
     public Mail addReciver(String to)
     {
-        this.to = to;
+    	if(validate.validate(to)) {
+    		this.to = to;
+    	}
         return this;
     }
 
@@ -73,7 +84,9 @@ public class Mail {
      */
     public Mail addCC(String CC)
     {
-        this.CC = CC;
+    	if(validate.validate(CC)) {
+    		this.CC = CC;
+    	}
         return this;
     }
 

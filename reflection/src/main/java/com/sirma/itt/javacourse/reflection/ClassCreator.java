@@ -20,6 +20,11 @@ public class ClassCreator {
 	 */
 	public void makeInstance(String className, Class[] params, Object[] values) {
 
+		if(className == null) {
+			System.out.println("Invalid class name");
+			return;
+		}
+		
 		// try to get class from name
 		Class classToReflect = null;
 		try {
@@ -27,11 +32,7 @@ public class ClassCreator {
 		} catch (ClassNotFoundException e) {
 			System.out.println("Invalid class name");
 			return;
-		} catch (NullPointerException e) {
-			System.out.println("Invalid class name");
-			return;
 		}
-		
 		makeInstance(classToReflect, params, values);
 		
 		System.out.println("Class: " + classToReflect.getName());
@@ -52,12 +53,17 @@ public class ClassCreator {
 	 * @param values - value for each parameter (or null)
 	 * @return class instance
 	 */
-	public Object makeInstance(Class classToReflect, Class[] params, Object[] values) {
+	public <E> E makeInstance(Class classToReflect, Class[] params, Object[] values) {
+		
+		if(classToReflect == null) {
+			return null;
+		}
+		
 		Constructor constructor = null;
-		Object classInstance = null;
+		E classInstance = null;
 		try {
 			constructor = classToReflect.getConstructor(params);
-			classInstance = constructor.newInstance(values);
+			classInstance = (E) constructor.newInstance(values);
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {

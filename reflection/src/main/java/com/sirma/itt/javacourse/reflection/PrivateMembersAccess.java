@@ -2,6 +2,7 @@ package com.sirma.itt.javacourse.reflection;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.logging.Logger;
 
 /**
  * Make instance of class using reflection and access all private fields and methods.
@@ -13,7 +14,8 @@ public class PrivateMembersAccess {
 
 	ClassCreator creator = new ClassCreator();
 	ClassManipulator manipulator = new ClassManipulator();
-
+	private Logger log  = Logger.getLogger("PrivateMembersAccess");
+	
 	/**
 	 * Create instance of class using reflection.
 	 * 
@@ -23,14 +25,16 @@ public class PrivateMembersAccess {
 	 */
 	public void createInstance(String className, Class[] params, Object[] values) {
 		
+		if(className == null) {
+			log.warning("Invalid class name.");
+			return;
+		}
+		
 		Class classToReflect = null;
 		try {
 			classToReflect = Class.forName(className);
 		} catch (ClassNotFoundException e) {
-			System.out.println("Invalid class name");
-			return;
-		} catch (NullPointerException e) {
-			System.out.println("Invalid class name");
+			log.warning("Invalid class name");
 			return;
 		}
 
@@ -42,7 +46,7 @@ public class PrivateMembersAccess {
 		String methodName = "calculateOrderVal";
 		Class[] methodParams = null;
 		Object[] methodValues = null;
-		callPrivateMethods(classToReflect, instance, methodName, methodParams, methodValues);
+		callPrivateMethods(null, instance, methodName, methodParams, methodValues);
 
 		methodName = "orderInfo";
 		methodParams = new Class[] { int.class, String.class };
@@ -61,7 +65,13 @@ public class PrivateMembersAccess {
 	 */
 	public void callPrivateMethods(Class classToReflect, Object instance, String name,
 			Class[] params, Object[] values) {
+		
+		if(classToReflect == null || instance == null) {
+			log.warning("Invalid class.");
+			return;
+		}
 		Method method = null;
+		
 		try {
 			method = classToReflect.getDeclaredMethod(name, params);
 			method.setAccessible(true);

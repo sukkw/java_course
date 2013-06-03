@@ -18,12 +18,9 @@ public class FileReversalRun {
 		
 		try {
 			fileReversal.reverse(fileName);
-			System.out.println(" File " + fileName + " was reversed ");
 		} catch (IOException e) {
 			System.out.println("Invalid path or file");
 		} catch (InvalidPathException e) {
-			System.out.println("Invalid path or file");
-		} catch (NullPointerException e) {
 			System.out.println("Invalid path or file");
 		}
 	}

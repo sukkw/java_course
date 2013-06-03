@@ -19,6 +19,9 @@ public class GreedyRegEx {
 	 * Class constructor.
 	 */
 	public GreedyRegEx(String regExPattern) {
+		if(regExPattern == null) {
+			return;
+		}
 		pattern = Pattern.compile(regExPattern);
 	}
 	
@@ -30,6 +33,9 @@ public class GreedyRegEx {
 	 */
 	public String format(String input) {
 		
+		if (pattern == null || input == null) {
+			return "Error in reg ex or input text";
+		}
 		Matcher regexMatcher = pattern.matcher(input);
 		
 		while (regexMatcher.find()) {

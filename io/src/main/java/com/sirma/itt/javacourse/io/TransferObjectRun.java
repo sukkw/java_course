@@ -23,9 +23,16 @@ public class TransferObjectRun {
 		try {
 			InputStream in = new FileInputStream("testFile.txt");
 			OutputStream out = new FileOutputStream("testTransfer.txt");
+			
 			TransferObject transfer = new TransferObject(in, out);
 			int transferedBytes = transfer.transfer(12, 7);
-			System.out.println(transferedBytes + " bytes was transfered succesfully");
+			
+			if(transferedBytes > 0) {
+				System.out.println(transferedBytes + " bytes was transfered");
+			} else {
+				System.out.println("0 bytes was transfered");
+			}
+			
 		} catch (IOException e) {
 			System.out.println("Can not transfer bytes");
 		} catch (IndexOutOfBoundsException e) {

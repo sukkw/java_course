@@ -22,6 +22,9 @@ public class IBANFormatter {
 	 * Class default constructor.
 	 */
 	public IBANFormatter(String regExPattern) {
+		if(regExPattern == null) {
+			return;
+		}
 		pattern = Pattern.compile(regExPattern);
 	}
 	
@@ -33,7 +36,11 @@ public class IBANFormatter {
 	 */
 	public String format(String input) {
 		
+		if (pattern == null || input == null) {
+			return "Error in reg ex or input text";
+		}
 		Matcher regexMatcher = pattern.matcher(input);
+		
 		while (regexMatcher.find()) {
 			output = input.replaceAll(regexMatcher.group(), regexMatcher.group().replaceAll(REGEX_PATTERN, "****"));
 		}

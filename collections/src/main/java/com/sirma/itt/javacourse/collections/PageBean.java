@@ -20,7 +20,7 @@ public class PageBean {
 
 	/**
 	 * Constructor.
-	 * 0
+	 * 
 	 * @param pageSize - number of elements to be shown
 	 * @param textLines - list with text lines
 	 */
@@ -28,7 +28,7 @@ public class PageBean {
 		
 		if(textLines == null) {
 			System.out.println("No text selected. Please try again.");
-			System.exit(0);
+			//System.exit(0);
 		}
 		
 		this.pageSize = pageSize;
@@ -116,6 +116,10 @@ public class PageBean {
 	 * Get all elements from first page and print it on the screen.
 	 */
 	public List<String> firstPage() {
+		if(textLines == null) {
+			
+			return null;
+		}
 		currentPage = 0;
 		return list = textLines.subList(0, pageSize);
 	}
