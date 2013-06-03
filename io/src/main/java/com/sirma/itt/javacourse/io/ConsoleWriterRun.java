@@ -23,5 +23,6 @@ public class ConsoleWriterRun {
 		System.out.println("Enter path to the file : ");
 		String fileName = input.nextLine() + ".txt";
 		writer.writeToFile(fileName);
+		System.out.println("Data was added.");
 	}
 }

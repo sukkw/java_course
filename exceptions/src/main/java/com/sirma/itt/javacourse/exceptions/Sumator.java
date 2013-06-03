@@ -17,7 +17,7 @@ public class Sumator {
 	 * 
 	 * @return entered string
 	 */
-	public String read() {
+	public String input() {
 
 		String str;
 		Scanner input = new Scanner(System.in);
@@ -27,8 +27,6 @@ public class Sumator {
 
 		return str;
 	}
-	
-
 
 	/**
 	 * Calculate value of two strings as number.

@@ -15,7 +15,7 @@ public class ArraysRun {
 	 */
 	public static void main(String[] arr) {
 		Arrays arrs = new Arrays();
-		int[] array = Helper.loadAray();
+		int[] array = Helper.loadAray(5);
 		Helper.printArray(array);
 		System.out.println(" Sumata na chislata v masiva e: " + arrs.sumArray(array));
 		System.out.println(" Naj-malkiq element v masiva e: " + arrs.getMinElement(array));

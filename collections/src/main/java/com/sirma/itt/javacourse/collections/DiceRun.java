@@ -21,7 +21,7 @@ public class DiceRun {
 	public static void main(String[] args) {
 
 		Dice dices = new Dice();
-		dices.throwDices();
+		dices.throwDices(100);
 		int firstDice = 0;
 		int secondDice = 0;
 		List<Integer> positionsList = new ArrayList<Integer>();
@@ -29,9 +29,9 @@ public class DiceRun {
 		// user is asked to enter valid combination
 		do {
 			try {
-				System.out.println("First  dice : ");
+				System.out.println("First  dice (number between 1 and 6): ");
 				firstDice = ConsoleReader.readInt();
-				System.out.println("Second dice : ");
+				System.out.println("Second dice (number between 1 and 6): ");
 				secondDice = ConsoleReader.readInt();
 			} catch (NumberFormatException e) {
 				System.out.println("Invalid integer format");

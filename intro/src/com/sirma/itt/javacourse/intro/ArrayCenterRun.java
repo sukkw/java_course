@@ -14,7 +14,7 @@ public class ArrayCenterRun {
 	 * @param arr
 	 */
 	public static void main(String[] args) {
-		int[] array = Helper.loadAray();
+		int[] array = Helper.loadAray(5);
 		Helper.printArray(array);
 		ArrayCenter arr = new ArrayCenter();
 		System.out.println(" Centura na tejesta na masiva e:  " + arr.center(array));

@@ -59,7 +59,7 @@ public class ConsoleReaderTest {
 	 */
 	@Test(dataProvider = "validStringData")
 	public void testReadString(String valid) {
-		System.out.println("S");
+		System.out.println("Enter string");
 		String enteredString = ConsoleReader.readString();
 		Assert.assertEquals(enteredString, valid);
 	}
@@ -71,7 +71,7 @@ public class ConsoleReaderTest {
 	 */
 	@Test(dataProvider = "validIntData")
 	public void testReadInt(int valid) {
-		System.out.println("I");
+		System.out.println("Enter integer");
 		int enteredInt = ConsoleReader.readInt();
 		Assert.assertEquals(enteredInt, valid);
 	}
@@ -83,7 +83,7 @@ public class ConsoleReaderTest {
 	 */
 	@Test(dataProvider = "validFloatData")
 	public void testReadFloat(float valid) {
-		System.out.println("F");
+		System.out.println("Enter float");
 		float enteredFloat = ConsoleReader.readFloat();
 		Assert.assertEquals(enteredFloat, valid);
 	}
@@ -95,7 +95,7 @@ public class ConsoleReaderTest {
 	 */
 	@Test(dataProvider = "validCharData")
 	public void validate(char valid) {
-		System.out.println("C");
+		System.out.println("Enter char");
 		char enteredChar = ConsoleReader.readChar();
 		Assert.assertEquals(enteredChar, valid);
 	}

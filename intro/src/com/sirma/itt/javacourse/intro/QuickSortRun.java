@@ -14,8 +14,7 @@ public class QuickSortRun {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] array = Helper.loadAray();
-
+		int[] array = Helper.loadAray(5);
 		QuickSort sort = new QuickSort();
 		Helper.printArray(array);
 		sort.sort(array, 0, array.length - 1);

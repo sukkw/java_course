@@ -152,7 +152,6 @@ public class PageBeanTest {
 		Assert.assertTrue(result.equals(valid));
 	}
 	
-	
 	/**
 	 * Test get next page method.
 	 * 
@@ -161,11 +160,12 @@ public class PageBeanTest {
 	@Test(dataProvider = "validNPData")
 	public void testNext(List<String> valid) {
 		
-		Field field;
 		try {
-			field = pages.getClass().getDeclaredField("currentPage");
+			Field field = pages.getClass().getDeclaredField("currentPage");
 			field.setAccessible(true);
 			field.set(pages, 2);
+			List<String> result = pages.next();
+			Assert.assertTrue(result.equals(valid));
 		} catch (NoSuchFieldException e1) {
 			e1.printStackTrace();
 		} catch (SecurityException e1) {
@@ -175,9 +175,6 @@ public class PageBeanTest {
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
-		
-		List<String> result = pages.next();
-		Assert.assertTrue(result.equals(valid));
 	}
 	
 	/**
@@ -193,6 +190,9 @@ public class PageBeanTest {
 			field = pages.getClass().getDeclaredField("currentPage");
 			field.setAccessible(true);
 			field.set(pages, 3);
+			
+			List<String> result = pages.previous();
+			Assert.assertTrue(result.equals(valid));
 		} catch (NoSuchFieldException e1) {
 			e1.printStackTrace();
 		} catch (SecurityException e1) {
@@ -202,8 +202,5 @@ public class PageBeanTest {
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
-		
-		List<String> result = pages.previous();
-		Assert.assertTrue(result.equals(valid));
 	}
 }

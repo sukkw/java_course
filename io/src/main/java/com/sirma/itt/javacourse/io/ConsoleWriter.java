@@ -8,9 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * Read text from console and write it in text file.
@@ -20,9 +17,8 @@ import java.util.Scanner;
  */
 public class ConsoleWriter {
 
-	// class private members
+	// char set encoding
 	private final static Charset ENCODING = StandardCharsets.UTF_8;
-	private Scanner input = new Scanner(System.in);
 
 	/**
 	 * Read lines of text from console and write it to file.
@@ -30,14 +26,13 @@ public class ConsoleWriter {
 	 */
 	public void writeToFile(String fileName) {
 
+		// create file if not exist
 		if (!createFile(fileName)) {
-			return;
+			System.exit(0);
 		}
 
-		List<String> lines = readText();
 		try {
-			writeText(lines, fileName);
-			System.out.println("Data was added.");
+			writeBufferedText(readText(), fileName);
 		} catch (IOException e) {
 			System.out.println("Can not write data! please try again.");
 			return;
@@ -73,50 +68,37 @@ public class ConsoleWriter {
 	/**
 	 * Read text from console.
 	 * 
-	 * @return - list with entered lines
+	 * @return - entered lines
 	 */
-	private List<String> readText() {
+	private String readText() {
 
-		String textLine;
-		List<String> lines = new ArrayList<String>();
+		String textLine = "";
+		StringBuilder buildText = new StringBuilder();
 
 		System.out.println("Enter lines of text.");
 		System.out.println("Enter '.' to quit.");
 
-		do {
-			textLine = input.nextLine();
-			lines.add(textLine);
-		} while (!textLine.equals("."));
-
-		lines.remove(lines.size() - 1);
-		return lines;
-	}
-
-	/**
-	 * Write text to file
-	 * @param lines - lines to be written
-	 * @param fileName - file name
-	 * @throws IOException
-	 */
-	public void writeText(List<String> lines, String fileName) throws IOException {
-		Path path = Paths.get(fileName);
-		Files.write(path, lines, ENCODING);
+        while ( ! ".".equals(textLine) ) {   
+        	textLine = ConsoleReader.readString();    
+        	if( ".".equals(textLine) ) continue;    
+        	buildText.append(textLine);
+			buildText.append("\n");
+        }  
+		textLine = buildText.toString();
+		return textLine;
 	}
 
 	/**
 	 * Write text to file using buffer
-	 * @param lines - lines to be written
+	 * @param text - text to be written
 	 * @param fileName - file name
 	 * @throws IOException
 	 */
-	public void writeBufferedText(List<String> lines, String fileName)
+	public void writeBufferedText(String text, String fileName)
 			throws IOException {
 		Path path = Paths.get(fileName);
 		try (BufferedWriter writer = Files.newBufferedWriter(path, ENCODING)) {
- 			for (String line : lines) {
-				writer.write(line);
-				writer.newLine();
-			}
+			writer.write(text);
 		}
 	}
 }

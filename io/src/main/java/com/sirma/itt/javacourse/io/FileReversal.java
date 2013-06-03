@@ -7,8 +7,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList; 
-import java.util.List;
 
 /**
  * Read from text file. Reverse the content and write it to the file
@@ -30,9 +28,8 @@ public class FileReversal {
 
 		Path path = Paths.get(fileName);
 		StringBuffer buffer = new StringBuffer();
-		List<String> lines = new ArrayList<String>();
 		ConsoleWriter writer = new ConsoleWriter();
-		String line = null;
+		String line = "";
 		
 		try (BufferedReader reader = Files.newBufferedReader(path, ENCODING)) {
 			
@@ -41,8 +38,7 @@ public class FileReversal {
 				buffer.append("\n");
 			}
 			buffer = buffer.reverse();
-			lines.add(buffer.substring(1, buffer.length()));
-			writer.writeBufferedText(lines, fileName);
+			writer.writeBufferedText(buffer.substring(1, buffer.length()), fileName);
 		}
 	}
 }

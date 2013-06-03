@@ -14,8 +14,7 @@ public class ArrayReverseRun {
 	 * @param arr
 	 */
 	public static void main(String[] arr) {
-
-		int[] array = Helper.loadAray();
+		int[] array = Helper.loadAray(5);
 		ArrayReverse arrRev = new ArrayReverse();
 		Helper.printArray(array);
 		arrRev.reverse(array);

@@ -11,22 +11,19 @@ import java.util.Random;
 public class Helper {
 
 	/**
-	 * Load random values in array with size of 5 elements.
+	 * Load random values in array.
 	 * 
 	 * @return array of integers
 	 */
-	public static int[] loadAray() {
+	public static int[] loadAray(int arraySize) {
 		// declares an array of integers
-		int[] array;
-
-		// allocates memory for 5 integers
-		array = new int[5];
+		int[] array  = new int[arraySize];
 
 		// call java class Random to generate numbers
 		Random randomGenerator = new Random();
 
 		// put random numbers in array
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < arraySize; i++) {
 			array[i] = randomGenerator.nextInt(100);
 		}
 		return array;

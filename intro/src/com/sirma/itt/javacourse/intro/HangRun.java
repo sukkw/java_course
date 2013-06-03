@@ -15,6 +15,6 @@ public class HangRun {
 	 */
 	public static void main(String[] arr) {
 		Hang hang = new Hang();
-		hang.start("summer");
+		hang.start("summer", 5);
 	}
 }

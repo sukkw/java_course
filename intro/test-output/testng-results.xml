@@ -2,60 +2,60 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="63" started-at="2013-04-25T09:32:26Z" finished-at="2013-04-25T09:32:26Z">
+  <suite name="Default suite" duration-ms="78" started-at="2013-06-03T08:20:35Z" finished-at="2013-06-03T08:20:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="63" started-at="2013-04-25T09:32:26Z" finished-at="2013-04-25T09:32:26Z">
-      <class name="com.sirma.itt.javacourse.intro.ArrayCenterTest">
-        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayCenterTest@26f144]" name="calculateTast" duration-ms="15" started-at="2013-04-25T12:32:26Z" data-provider="validData" finished-at="2013-04-25T12:32:26Z">
+    <test name="Default test" duration-ms="78" started-at="2013-06-03T08:20:35Z" finished-at="2013-06-03T08:20:35Z">
+      <class name="com.sirma.itt.javacourse.intro.ArrayReverseTest">
+        <test-method status="PASS" signature="reverseTest([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1d2aa14]" name="reverseTest" duration-ms="31" started-at="2013-06-03T11:20:35Z" data-provider="validData" finished-at="2013-06-03T11:20:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@1bc2e06]]>
+                <![CDATA[[Ljava.lang.Integer;@14d8c01]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[4]]>
+                <![CDATA[[Ljava.lang.Integer;@22a6bb]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- calculateTast -->
-        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayCenterTest@26f144]" name="calculateTast" duration-ms="0" started-at="2013-04-25T12:32:26Z" data-provider="validData" finished-at="2013-04-25T12:32:26Z">
+        </test-method> <!-- reverseTest -->
+        <test-method status="PASS" signature="reverseTest([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1d2aa14]" name="reverseTest" duration-ms="0" started-at="2013-06-03T11:20:35Z" data-provider="validData" finished-at="2013-06-03T11:20:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@17193fc]]>
+                <![CDATA[[Ljava.lang.Integer;@f0756d]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[9]]>
+                <![CDATA[[Ljava.lang.Integer;@ad4bb0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- calculateTast -->
-        <test-method status="PASS" signature="calculateTast([Ljava.lang.Integer;, int)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayCenterTest@26f144]" name="calculateTast" duration-ms="0" started-at="2013-04-25T12:32:26Z" data-provider="validData" finished-at="2013-04-25T12:32:26Z">
+        </test-method> <!-- reverseTest -->
+        <test-method status="PASS" signature="reverseTest([Ljava.lang.Integer;, [Ljava.lang.Integer;)[pri:0, instance:com.sirma.itt.javacourse.intro.ArrayReverseTest@1d2aa14]" name="reverseTest" duration-ms="0" started-at="2013-06-03T11:20:35Z" data-provider="validData" finished-at="2013-06-03T11:20:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@1aa8b42]]>
+                <![CDATA[[Ljava.lang.Integer;@144426c]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[[Ljava.lang.Integer;@64f150]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- calculateTast -->
-      </class> <!-- com.sirma.itt.javacourse.intro.ArrayCenterTest -->
+        </test-method> <!-- reverseTest -->
+      </class> <!-- com.sirma.itt.javacourse.intro.ArrayReverseTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -33,5 +33,4 @@ public class RandomString {
 
 		return randomStr.toString();
 	}
-
 }

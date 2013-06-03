@@ -1,7 +1,8 @@
 package com.sirma.itt.javacourse.intro;
 
 /**
- * Print array. Find the minimal element of array. Find the sum of array elements
+ * Print array. Find the minimal element of array. 
+ * Find the sum of array elements.
  * 
  * @version 1.1 08 April 2013
  * @author Stella Djulgerova
@@ -39,5 +40,4 @@ public class Arrays {
 
 		return min;
 	}
-
 }

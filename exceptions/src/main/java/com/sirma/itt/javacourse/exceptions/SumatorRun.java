@@ -17,8 +17,8 @@ public class SumatorRun {
 
 		Sumator sumator = new Sumator();
 
-		String firstNumber = sumator.read();
-		String secondNumber = sumator.read();
+		String firstNumber = sumator.input();
+		String secondNumber = sumator.input();
 
 		try {
 			System.out.println("Sum of numbers is: "

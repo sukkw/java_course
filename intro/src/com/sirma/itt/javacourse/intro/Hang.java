@@ -15,19 +15,16 @@ public class Hang {
 	 * 
 	 * @param word - the hidden word which player must find
 	 */
-	public void start(String word) {
+	public void start(String word, int numberOfTries) {
 
 		//generate temporary word visible to player
-		String tempWord = "";
+		StringBuilder buildTempWord = new StringBuilder();
 		for (int i = 0; i < word.length(); i++) {
-			tempWord += "-";
+			buildTempWord.append("-");
 		}
-
-		// Max allowed tries are 5
-		final int ERROR_COUNTER = 5;
-
+		String tempWord = buildTempWord.toString();
+		
 		char enterdChar;
-
 		int count = 0;
 		int rightCount = 0;
 
@@ -51,7 +48,7 @@ public class Hang {
 				count++;
 			}
 
-		} while (rightCount < word.length() && count < ERROR_COUNTER);
+		} while (rightCount < word.length() && count < numberOfTries);
 
 		if (word.equalsIgnoreCase(tempWord)) {
 			System.out.println("Dumata e vqrna.");
@@ -89,5 +86,4 @@ public class Hang {
 	public String replaceCharAt(String str, int pos, char ch) {
 		return str.substring(0, pos) + ch + str.substring(pos + 1);
 	}
-
 }

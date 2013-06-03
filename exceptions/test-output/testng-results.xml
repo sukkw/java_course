@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6156" started-at="2013-05-09T05:36:31Z" finished-at="2013-05-09T05:36:37Z">
+  <suite name="Default suite" duration-ms="11125" started-at="2013-06-03T08:11:21Z" finished-at="2013-06-03T08:11:32Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6156" started-at="2013-05-09T05:36:31Z" finished-at="2013-05-09T05:36:37Z">
+    <test name="Default test" duration-ms="11125" started-at="2013-06-03T08:11:21Z" finished-at="2013-06-03T08:11:32Z">
       <class name="com.sirma.itt.javacourse.exceptions.ConsoleReaderTest">
-        <test-method status="PASS" signature="validate(java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.exceptions.ConsoleReaderTest@d52411]" name="validate" duration-ms="6140" started-at="2013-05-09T08:36:31Z" data-provider="validData" finished-at="2013-05-09T08:36:37Z">
+        <test-method status="PASS" signature="validate(java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.exceptions.ConsoleReaderTest@15e3b92]" name="validate" duration-ms="11078" started-at="2013-06-03T11:11:21Z" data-provider="validData" finished-at="2013-06-03T11:11:32Z">
           <params>
             <param index="0">
               <value>

@@ -14,21 +14,20 @@ import java.util.List;
 public class Dice {
 
 	// class private members
-	private final int NUMBER_OF_THROWS = 100;
 	private Hashtable<String, List<Integer>> statisticTable = new Hashtable<String, List<Integer>>();
 
 	/**
 	 * Throw dices. Generate hashTable key from thrown combinations and
 	 * save the combination and the position of combination
 	 */
-	public void throwDices() {
+	public void throwDices(int numberOfThrows) {
 		
 		int firstDice = 0;
 		int secondDice = 0;
 		String combinationKey;
 		List<Integer> positionsList = new ArrayList<Integer>();
 
-		for (int i = 0; i < NUMBER_OF_THROWS; i++) {
+		for (int i = 0; i < numberOfThrows; i++) {
 
 			firstDice = 1 + (int) (Math.random() * 6);
 			secondDice = 1 + (int) (Math.random() * 6);

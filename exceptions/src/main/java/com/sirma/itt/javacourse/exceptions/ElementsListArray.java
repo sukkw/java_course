@@ -1,7 +1,5 @@
 package com.sirma.itt.javacourse.exceptions;
 
-import java.util.Scanner;
-
 /**
  * Add, delete and print array elements.
  * 
@@ -78,6 +76,5 @@ public class ElementsListArray {
 				System.out.println(ele);
 			}
 		}
-
 	}
 }
