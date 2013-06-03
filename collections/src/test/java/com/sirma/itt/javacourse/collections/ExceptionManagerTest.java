@@ -98,7 +98,7 @@ public class ExceptionManagerTest {
 	public void testAddExceptionMessageUsingCode(String message, String valid) {
 
 		try {
-			excManager.addExceptionMessageUsingCode(message);
+			excManager.addExceptionMessageCode(message);
 			Assert.assertEquals(excManager.getMessage(), valid);
 			
 		} catch (InvalidValueException e) {

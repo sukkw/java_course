@@ -29,7 +29,6 @@ public class ExceptionsMessageManager {
 		
 		if(exceptions == null) {
 			System.out.println("Wrong messages map");
-			System.exit(0);
 		}
 		
 		this.exceptions = exceptions;
@@ -73,7 +72,7 @@ public class ExceptionsMessageManager {
 	 * @param messageCode - searched code
 	 * @throws InvalidValueException 
 	 */
-	public void addExceptionMessageUsingCode(String messageCode) throws InvalidValueException {
+	public void addExceptionMessageCode(String messageCode) throws InvalidValueException {
 		String mess = "";
 		StringBuilder buildMsg = new StringBuilder();
 		

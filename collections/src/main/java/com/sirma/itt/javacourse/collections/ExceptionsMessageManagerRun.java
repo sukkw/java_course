@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import com.sirma.itt.javacourse.io.ConsoleReader;
+
 /**
  * ExceptionsMessageManager run class. 
  * Allows user to chose action and print results on screen.
@@ -21,7 +23,6 @@ public class ExceptionsMessageManagerRun {
 
 		Map<String, String> exceptions = new HashMap<String, String>();
 		String repeat;
-		Scanner input = new Scanner(System.in);
 
 		// map is filled with different exceptions
 		exceptions.put("Exception1", "Invalid Debit Card Number");
@@ -36,14 +37,14 @@ public class ExceptionsMessageManagerRun {
 		do {
 			System.out
 					.println(" 1-AddMessage / 2-AddCode / 3-GetMessage / 4-GetMessages / 5-Exit");
-			repeat = input.nextLine();
+			repeat = ConsoleReader.readString();
 
 			switch (repeat) {
 
 			case "1":
 				System.out.println("Enter Exception Message: ");
 				try {
-					excManager.addExceptionMessage(input.nextLine());
+					excManager.addExceptionMessage(ConsoleReader.readString());
 				} catch (InvalidValueException e) {
                     System.err.println(e.getMessage());
                 }
@@ -51,7 +52,7 @@ public class ExceptionsMessageManagerRun {
 			case "2":
 				System.out.println("Enter Exception Key: ");
 				try {
-					excManager.addExceptionMessageUsingCode(input.nextLine());
+					excManager.addExceptionMessageCode(ConsoleReader.readString());
 				} catch (InvalidValueException e) {
 					System.err.println(e.getMessage());
 				}

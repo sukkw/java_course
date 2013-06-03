@@ -28,7 +28,6 @@ public class PageBean {
 		
 		if(textLines == null) {
 			System.out.println("No text selected. Please try again.");
-			//System.exit(0);
 		}
 		
 		this.pageSize = pageSize;
