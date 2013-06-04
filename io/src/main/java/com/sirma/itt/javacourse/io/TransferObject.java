@@ -46,7 +46,6 @@ public class TransferObject {
 		int transferedBytes;																				
 		byte[] data = new byte[1024];
 		try {	
-			in.skip(offset);
 			transferedBytes = in.read(data, (int) in.skip(offset), numberOfBytes);	
 			out.write(data, offset, numberOfBytes);				
 		}
