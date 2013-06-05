@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Elements list run class.
  * 
- * @version 1.1 25 April 2013
+ * @version 1.1 05 Jun 2013
  * @author Stella Djulgerova
  */
 public class ElementsListRun {

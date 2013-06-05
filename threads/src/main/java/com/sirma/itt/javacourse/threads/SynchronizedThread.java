@@ -1,43 +1,61 @@
 package com.sirma.itt.javacourse.threads;
 
+import java.util.logging.Logger;
+
+/**
+ * SynchronizedThread class. Create and starts thread. 
+ * Increase value of the counter with 1 each second while the thread is running.
+ * Threads are running one after another.
+ * 
+ * @version 1.1 05 Jun 2013
+ * @author Stella Djulgerova
+ */
 public class SynchronizedThread implements Runnable {
 
-	private SynchronizedCounter counter;
+	// class private members
+	private SynchronizedCounter synchConter;
 	private int maxCounterValue;
 	private String name;
 	private Thread thread;
 	private int count;
-	private String runnigThreadName = "Thread1";
-
-	public SynchronizedThread(int maxCounterValue, SynchronizedCounter counter,
+	private static Logger LOGGER = Logger.getLogger("SynchronizedThread");
+	
+	/**
+	 * Constructor. Create thread with given name and start it.
+	 * Initialize all variables.
+	 * 
+	 * @param maxCounterValue - max allowed counter value
+	 * @param synchConter - synchronization object
+	 * @param threadName - thread name
+	 */
+	public SynchronizedThread(int maxCounterValue, SynchronizedCounter synchConter,
 			String name) {
 		
-		this.counter = counter;
+		if(name == null || synchConter == null) {
+			LOGGER.warning("Invalid params!");
+			return;
+		}
+		
+		this.synchConter = synchConter;
 		this.maxCounterValue = maxCounterValue;
 		this.name = name;
 		thread = new Thread(this, name);
 		thread.start();
 	}
 
+	/**
+	 * Increments counter with 1 each second until max allowed counter value
+	 * is reached. Synchronize threads to work one after another.
+	 */
 	public void run() {
 		while(count < maxCounterValue) {
-			//System.out.println(thread.getName() + " > "+counter);
-			//counter.printCounter(count, thread.getName());
-			
-			if(!runnigThreadName.equals(thread.getName())){
-				try {
-					wait();
-				} catch (InterruptedException e) {}
+			try {
+				thread.sleep(500);
+				synchConter.synchronize(count, thread.getName());
+				count++;
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-			System.out.println(thread.getName() + " > "+counter);
-			if(runnigThreadName.equals("Thread1"))
-				runnigThreadName = "Thread2";
-			else
-				runnigThreadName = "Thread1";
-			notifyAll();
-			
-			count++;
 		}
 	}
-
 }
