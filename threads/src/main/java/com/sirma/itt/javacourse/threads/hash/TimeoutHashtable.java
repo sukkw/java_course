@@ -7,35 +7,63 @@ import java.util.Set;
 
 public class TimeoutHashtable {
 
-	Hashtable table;
+	Hashtable<String, Object> table;
+	Hashtable<String, Object> timeout;
+	private int time;
+	private boolean used;
 
 	public TimeoutHashtable() {
-		table = new Hashtable();
-		table.put("key1", "value1");
+		table = new Hashtable<String, Object>();
+		timeout = new Hashtable<String, Object>();
+/*		table.put("key1", "value1");
 		table.put("key2", "value2");
 		table.put("key3", "value3");
-		//System.out.print("Constructor");
+		System.out.print("Constructor");*/
 	}
-
-	public String add(String data) {
+	
+	public synchronized Object put(String key, Object value) {
+		if(table.containsKey(key)) {
+			table.put(key, value);
+			used = true;
+			Timeout timer = (Timeout) timeout.get(key);
+			timer.notify();	
+		} else {
+			table.put(key, value);
+			Timeout timer = new Timeout(this, key);
+			timeout.put(key,timer);
+			used = false;
+		}
+		
 		return null;
-	}
-
-	public Object put(String key, Object value) {
-		table.put(key, value);
-		return null;
-
 	}
 
 	public Object get(String key) {
-		// table.get(key);
-		return table.get(key).toString();
+		
+		Object obj;							
+					
+			if(table.containsKey(key)){	
+				obj = table.get(key);
+				used = true;
+				Timeout timer = (Timeout) timeout.get(key);
+				timer.notify();						
+			} else {							
+				obj = null;						
+			}			
 
+		return obj;
 	}
 
 	public Object remove(String key) {
-		// table.get(key);
-		return table.get(key).toString();
+		Object obj;
+		if(table.containsKey(key)) {
+			obj = table.remove(key);
+			timeout.remove(key);
+			System.out.println("Key " + key + " expired.");	
+		} else {
+			obj = null;
+		}
+	
+		return obj;
 	}
 
 	public String showElements() {
@@ -51,6 +79,13 @@ public class TimeoutHashtable {
 			System.out.println("The table is empty!\n");
 		}
 		return null;
+	}
 
+	public boolean isUsed() {
+		return used;
+	}
+	
+	public void setUsed(boolean used) {
+		this.used = used;
 	}
 }
