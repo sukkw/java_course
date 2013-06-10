@@ -1,6 +1,5 @@
 package com.sirma.itt.javacourse.threads.synch;
 
-
 /**
  * SynchronizedStack class. Creates stack. 
  * Add and remove elements to stack. Detect if stack is empty or full.

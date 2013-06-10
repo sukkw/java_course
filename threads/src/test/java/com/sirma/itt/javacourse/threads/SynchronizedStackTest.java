@@ -1,6 +1,5 @@
 package com.sirma.itt.javacourse.threads;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -19,8 +18,8 @@ public class SynchronizedStackTest {
 	 */
 	@DataProvider
 	public Object[][] validAddData() {
-		return new Object[][] { { new Object[] { 1, 2, null, null, null }, 8,
-				new Object[] { 1, 2, 8, null, null } }
+		return new Object[][] { { new Object[] { 4, 9, null, null, null }, 8,
+				new Object[] { 4, 9, 8, null, null } }
 
 		};
 	}
@@ -32,7 +31,7 @@ public class SynchronizedStackTest {
 	 */
 	@DataProvider
 	public Object[][] validRemoveData() {
-		return new Object[][] { { new Object[] { 1, 2, 12, 6, null }, 
+		return new Object[][] { { new Object[] { 4, 9, 12, 5, null }, 
 				new Object[] { 1, 2, 12, null, null } }
 
 		};
@@ -47,14 +46,7 @@ public class SynchronizedStackTest {
 	 */
 	@Test(dataProvider = "validAddData")
 	public void add(Object[] elList, Object elToAdd, Object[] valid) {
-		ElementsListArray list = new ElementsListArray(elList);
-		Object[] result;
-		try {
-			result = list.add(elToAdd);
-			Assert.assertEquals(result, valid);
-		} catch (ListException e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	/**
@@ -65,13 +57,6 @@ public class SynchronizedStackTest {
 	 */
 	@Test(dataProvider = "validRemoveData")
 	public void remove(Object[] elList, Object[] valid) {
-		ElementsListArray list = new ElementsListArray(elList);
-		Object[] result;
-		try {
-			result = list.remove();
-			Assert.assertEquals(result, valid);
-		} catch (ListException e) {
-			e.printStackTrace();
-		}
+
 	}
 }

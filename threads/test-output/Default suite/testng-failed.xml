@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sirma.itt.javacourse.threads.CounterTest">
+      <class name="com.sirma.itt.javacourse.threads.TimeoutHashtableTest">
         <methods>
-          <include name="getNumber" invocation-numbers="0"/>
+          <include name="put" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.sirma.itt.javacourse.threads.CounterTest -->
+      </class> <!-- com.sirma.itt.javacourse.threads.TimeoutHashtableTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
