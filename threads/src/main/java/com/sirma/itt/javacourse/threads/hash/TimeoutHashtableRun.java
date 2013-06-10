@@ -2,8 +2,18 @@ package com.sirma.itt.javacourse.threads.hash;
 
 import com.sirma.itt.javacourse.io.ConsoleReader;
 
+/**
+* TimeoutHashtable run class. 
+*
+* @version 1.1 09 Jun 2013
+* @author Stella Djulgerova
+*/
 public class TimeoutHashtableRun {
 
+	/**
+	 * Class main method. Allow user to chose between different options.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		TimeoutHashtable timeoutTable = new TimeoutHashtable();
@@ -12,7 +22,7 @@ public class TimeoutHashtableRun {
 		String value;
 		
 		do {
-			System.out.println(" P(ut) / G(et) / S(how) / E(xit)");
+			System.out.println(" P(ut) / G(et) / S(how) / R(emove) / E(xit)");
 			String choice = ConsoleReader.readString();
 			
 			switch (choice) {
@@ -30,6 +40,11 @@ public class TimeoutHashtableRun {
 				break;
 			case "S":
 				timeoutTable.showElements();
+				break;
+			case "R":
+				System.out.println("Enter key: ");
+				key = ConsoleReader.readString();
+				timeoutTable.remove(key);
 				break;
 			case "E":
 				checker = false;

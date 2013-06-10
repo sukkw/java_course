@@ -50,7 +50,7 @@ public class SynchronizedThread implements Runnable {
 	public void run() {
 		while(count < maxCounterValue) {
 			try {
-				thread.sleep(500);
+				thread.sleep(1000);
 				synchConter.synchronize(count, thread.getName());
 				count++;
 			} catch (InterruptedException e) {

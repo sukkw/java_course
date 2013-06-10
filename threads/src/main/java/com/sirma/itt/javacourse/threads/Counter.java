@@ -38,7 +38,7 @@ public class Counter implements Runnable {
 	 * Returns the value of the counter.
 	 * @return - value of the counter.
 	 */
-	public long getNumber() {
+	public int getNumber() {
 		return count;
 	}
 	
@@ -57,4 +57,3 @@ public class Counter implements Runnable {
 		}
 	}
 }
-

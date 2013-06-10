@@ -14,7 +14,7 @@ public class IntegerFactory {
 	 * Creates instances of the proxy.
 	 * @return created instance.
 	 */
-	public static IntegerImpl createInstance() {	 
+	public static MathOperations createInstance() {	 
 		return new IntegerProxy();
 	}
 }

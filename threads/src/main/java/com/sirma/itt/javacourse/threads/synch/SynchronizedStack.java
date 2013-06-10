@@ -81,7 +81,6 @@ public class SynchronizedStack {
 		System.out.println(Thread.currentThread().getName() + " added : " + obj);
 
 		notifyAll();
-
 	}
 
 	/**

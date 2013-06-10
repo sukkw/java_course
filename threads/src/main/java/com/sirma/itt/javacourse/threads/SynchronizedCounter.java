@@ -19,8 +19,13 @@ public class SynchronizedCounter {
 	 */
 	synchronized public void synchronize(int count, String name) {
 		
+		if(name == null ) {
+			System.out.println("Invalid params!");
+			return;
+		}
+		
 		// if first thread is running let it wait
-		if(!runnigThreadName.equals(name)){
+		while(!runnigThreadName.equals(name)){
 			try {
 				wait();
 			} catch (InterruptedException e) {}
@@ -34,6 +39,6 @@ public class SynchronizedCounter {
 		}
 		
 		System.out.println(name + " ---> "+ count);
-		notifyAll();
+		notify();
 	}
 }

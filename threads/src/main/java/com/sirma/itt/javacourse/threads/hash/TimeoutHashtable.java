@@ -5,38 +5,53 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+/**
+* TimeoutHashtable class. Creates hashtable.
+* Add and remove elements from hashtable. Get element from hashtable and print 
+* all not expired elemnts on screen.
+*
+* @version 1.1 09 Jun 2013
+* @author Stella Djulgerova
+*/
 public class TimeoutHashtable {
 
-	Hashtable<String, Object> table;
-	Hashtable<String, Object> timeout;
-	private int time;
+	// class private members
+	private Hashtable<String, Object> table;
+	private Hashtable<String, Object> timeout;
 	private boolean used;
 
+	/**
+	 * Constructor. Create two hashtables.
+	 */
 	public TimeoutHashtable() {
-		table = new Hashtable<String, Object>();
-		timeout = new Hashtable<String, Object>();
-/*		table.put("key1", "value1");
-		table.put("key2", "value2");
-		table.put("key3", "value3");
-		System.out.print("Constructor");*/
+		table = new Hashtable<String, Object>(5);
+		timeout = new Hashtable<String, Object>(5);
 	}
 	
-	public synchronized Object put(String key, Object value) {
+	/**
+	 * Put element in hashtebale.
+	 * @param key - table key
+	 * @param value - value
+	 */
+	public void put(String key, Object value) {
 		if(table.containsKey(key)) {
 			table.put(key, value);
 			used = true;
 			Timeout timer = (Timeout) timeout.get(key);
-			timer.notify();	
+			timer.notifyThread();	
 		} else {
 			table.put(key, value);
 			Timeout timer = new Timeout(this, key);
 			timeout.put(key,timer);
 			used = false;
 		}
-		
-		return null;
 	}
 
+	/**
+	 * Get element from hashtable.
+	 * @param key - element key
+	 * @return element at given position or null if not exist
+	 */
 	public Object get(String key) {
 		
 		Object obj;							
@@ -45,7 +60,7 @@ public class TimeoutHashtable {
 				obj = table.get(key);
 				used = true;
 				Timeout timer = (Timeout) timeout.get(key);
-				timer.notify();						
+				timer.notifyThread();					
 			} else {							
 				obj = null;						
 			}			
@@ -53,6 +68,11 @@ public class TimeoutHashtable {
 		return obj;
 	}
 
+	/**
+	 * Remove element from hashtable.
+	 * @param key - element key
+	 * @return removed object or null if not exist
+	 */
 	public Object remove(String key) {
 		Object obj;
 		if(table.containsKey(key)) {
@@ -66,7 +86,10 @@ public class TimeoutHashtable {
 		return obj;
 	}
 
-	public String showElements() {
+	/**
+	 * Print all table elements on screen.
+	 */
+	public void showElements() {
 
 		if (!table.isEmpty()) {
 			Set set = table.entrySet();
@@ -78,13 +101,20 @@ public class TimeoutHashtable {
 		} else {
 			System.out.println("The table is empty!\n");
 		}
-		return null;
 	}
 
+	/**
+	 * Check if element is recent in use.
+	 * @return true if element has been used in last 10 seconds. False if not
+	 */
 	public boolean isUsed() {
 		return used;
 	}
 	
+	/**
+	 * Set element used value.
+	 * @param used
+	 */
 	public void setUsed(boolean used) {
 		this.used = used;
 	}

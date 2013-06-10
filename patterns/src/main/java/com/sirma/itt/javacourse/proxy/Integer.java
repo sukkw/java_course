@@ -6,7 +6,7 @@ package com.sirma.itt.javacourse.proxy;
  * @version 1.1 20 May 2013
  * @author Stella Djulgerova
  */
-public class Integer implements IntegerImpl {
+public class Integer implements MathOperations {
 
 	private int result;
 

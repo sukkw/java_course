@@ -1,7 +1,5 @@
 package com.sirma.itt.javacourse.fluent;
 
-import com.sirma.itt.javacourse.regex.EmailValidator;
-
 /**
  * Mail run class.
  * 

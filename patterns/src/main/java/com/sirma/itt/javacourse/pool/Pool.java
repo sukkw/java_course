@@ -43,7 +43,7 @@ public class Pool {
 	 * @return object to be used
 	 * @throws PoolException
 	 */
-	public Object acquire() throws PoolException {
+	public <E> E acquire() throws PoolException {
 		Object object;
 		if (instancesList.isEmpty()) {
 			throw new PoolException("Pool is empty");
@@ -51,7 +51,7 @@ public class Pool {
 			System.out.println("Object " + instancesList.size() + " acquired...");
 			object = (Object) instancesList.remove(instancesList.size() - 1);
 		}
-		return object;
+		return (E) object;
 	}
 
 	/**

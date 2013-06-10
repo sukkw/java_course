@@ -40,5 +40,4 @@ public class SoldOut {
 			System.out.println("Model " + suppliedTV + " in Stock again!");
 		}
 	}
-
 }

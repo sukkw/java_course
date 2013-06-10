@@ -6,7 +6,7 @@ package com.sirma.itt.javacourse.proxy;
  * @version 1.1 20 May 2013
  * @author Stella Djulgerova
  */
-public interface IntegerImpl {
+public interface MathOperations {
 
 	int add(int firstNumber, int secondNumber);
 	int subtract(int firstNumber, int secondNumber);

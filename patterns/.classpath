@@ -24,5 +24,6 @@
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/reflection"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/io"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
