@@ -18,7 +18,7 @@ public class SynchronizedThread implements Runnable {
 	private String name;
 	private Thread thread;
 	private int count;
-	private static Logger LOGGER = Logger.getLogger("SynchronizedThread");
+	private Logger LOGGER = Logger.getLogger("SynchronizedThread");
 	
 	/**
 	 * Constructor. Create thread with given name and start it.

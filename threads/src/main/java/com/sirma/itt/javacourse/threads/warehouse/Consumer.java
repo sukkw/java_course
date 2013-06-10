@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.threads.warehouse;
 
+import java.util.logging.Logger;
+
 /**
  * Consumer thread. Try to get stocks from warehouse 
  * and sleeps for specified time.
@@ -13,6 +15,7 @@ class Consumer extends Thread {
 	private int time;
 	private Thread thread;
 	private Warehouse warehouse;
+	private Logger log  = Logger.getLogger("Consumer");
 
 	/**
 	 * Constructor. Initialize all variables and starts thread.
@@ -22,6 +25,12 @@ class Consumer extends Thread {
 	 * @param warehouse - reference to warehouse
 	 */
 	public Consumer(int time, String name, Warehouse warehouse) {
+		
+		if(name == null || warehouse == null) {
+			log.warning("Invalid params");
+			return;
+		}
+		
 		this.time = time;
 		this.warehouse = warehouse;
 		thread = new Thread(this, name);

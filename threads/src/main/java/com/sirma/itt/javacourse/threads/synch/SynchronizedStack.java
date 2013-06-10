@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.threads.synch;
 
+import java.util.logging.Logger;
+
 /**
  * SynchronizedStack class. Creates stack. 
  * Add and remove elements to stack. Detect if stack is empty or full.
@@ -20,6 +22,7 @@ public class SynchronizedStack {
 	private TypeStack top;
 	private int count = TypeStack.count;
 	private static int SIZE = 5;
+	private Logger log  = Logger.getLogger("SynchronizedStack");
 
 	/**
 	 * Check if the stack is empty.
@@ -49,6 +52,11 @@ public class SynchronizedStack {
 	 * @param obj - data to be added
 	 */
 	public void createAddThread(Object obj) {
+		
+		if(obj == null) {
+			log.warning("Invalid params");
+			return;
+		}
 		AddThread addThread = new AddThread(this, obj);
 	}
 

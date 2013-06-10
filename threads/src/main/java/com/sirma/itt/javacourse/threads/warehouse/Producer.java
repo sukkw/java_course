@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.threads.warehouse;
 
+import java.util.logging.Logger;
+
 /**
  * Producer thread. Try to put stocks to warehouse and sleeps for specified
  * time.
@@ -13,6 +15,7 @@ class Producer extends Thread {
 	private int time;
 	private Thread thread;
 	private Warehouse warehouse;
+	private Logger log  = Logger.getLogger("Producer");
 
 	/**
 	 * Constructor. Initialize all variables and starts thread.
@@ -22,6 +25,12 @@ class Producer extends Thread {
 	 * @param warehouse - reference to warehouse
 	 */
 	public Producer(int time, String name, Warehouse warehouse) {
+		
+		if(name == null || warehouse == null) {
+			log.warning("Invalid params");
+			return;
+		}
+		
 		this.time = time;
 		this.warehouse = warehouse;
 		thread = new Thread(this, name);

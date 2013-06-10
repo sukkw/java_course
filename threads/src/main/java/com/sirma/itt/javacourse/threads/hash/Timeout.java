@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.threads.hash;
 
+import java.util.logging.Logger;
+
 /**
 * Timeout thread. Check if element of hashtable is recently in use
 * and sleep for 10 seconds.
@@ -12,6 +14,7 @@ public class Timeout implements Runnable {
 	// class private members
 	private Thread thread;
 	private TimeoutHashtable table;
+	private Logger log  = Logger.getLogger("Timeout");
 
 	/**
 	 * Constructor. Initialize all variables and start thread.
@@ -19,6 +22,12 @@ public class Timeout implements Runnable {
 	 * @param name - thread name
 	 */
 	public Timeout(TimeoutHashtable table, String name) {
+		
+		if(name == null || table == null) {
+			log.warning("Invalid params");
+			return;
+		}
+		
 		thread = new Thread(this, name);
 		thread.start();
 		this.table = table;
