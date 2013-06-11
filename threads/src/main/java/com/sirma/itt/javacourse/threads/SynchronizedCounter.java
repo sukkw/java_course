@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  * @version 1.1 05 Jun 2013
  * @author Stella Djulgerova
  */
-public class SynchronizedThread implements Runnable {
+public class SynchronizedCounter implements Runnable {
 
 	// class private members
 	private int maxCounterValue;
@@ -27,7 +27,7 @@ public class SynchronizedThread implements Runnable {
 	 * @param synchConter - synchronization object
 	 * @param threadName - thread name
 	 */
-	public SynchronizedThread(int maxCounterValue, String name) {
+	public SynchronizedCounter(int maxCounterValue, String name) {
 
 		if (name == null) {
 			LOGGER.warning("Invalid params!");
