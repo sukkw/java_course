@@ -3,9 +3,9 @@ package com.sirma.itt.javacourse.threads;
 import java.util.logging.Logger;
 
 /**
- * SynchronizedThread class. Create and starts thread. 
- * Increase value of the counter with 1 each second while the thread is running.
- * Threads are running one after another.
+ * SynchronizedThread class. Create and starts thread. Increase value of the
+ * counter with 1 each second while the thread is running. Threads are running
+ * one after another.
  * 
  * @version 1.1 05 Jun 2013
  * @author Stella Djulgerova
@@ -13,30 +13,28 @@ import java.util.logging.Logger;
 public class SynchronizedThread implements Runnable {
 
 	// class private members
-	private SynchronizedCounter synchConter;
+	private static Object object = new Object();
 	private int maxCounterValue;
 	private String name;
 	private Thread thread;
-	private int count;
+	private int counter;
 	private Logger LOGGER = Logger.getLogger("SynchronizedThread");
-	
+
 	/**
-	 * Constructor. Create thread with given name and start it.
-	 * Initialize all variables.
+	 * Constructor. Create thread with given name and start it. Initialize all
+	 * variables.
 	 * 
 	 * @param maxCounterValue - max allowed counter value
 	 * @param synchConter - synchronization object
 	 * @param threadName - thread name
 	 */
-	public SynchronizedThread(int maxCounterValue, SynchronizedCounter synchConter,
-			String name) {
-		
-		if(name == null || synchConter == null) {
+	public SynchronizedThread(int maxCounterValue, String name) {
+
+		if (name == null) {
 			LOGGER.warning("Invalid params!");
 			return;
 		}
-		
-		this.synchConter = synchConter;
+
 		this.maxCounterValue = maxCounterValue;
 		this.name = name;
 		thread = new Thread(this, name);
@@ -44,30 +42,31 @@ public class SynchronizedThread implements Runnable {
 	}
 
 	/**
-	 * Increments counter with 1 each second until max allowed counter value
-	 * is reached. Synchronize threads to work one after another.
+	 * Run thread and call counter.
 	 */
 	public void run() {
-		while(count < maxCounterValue) {
-			try {
-				thread.sleep(1000);
-				synchConter.synchronize(count, runningThread(), thread.getName());
-				count++;
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
+		counter();
 	}
-	
+
 	/**
-	 * Detect currently running thread
-	 * @return true if thread one is running and false if thread two is running
+	 * Increments counter with 1 each second until max allowed counter value is
+	 * reached. Synchronize threads to work one after another.
 	 */
-	private boolean runningThread() {
-		if(thread.getName().equals("Thread1")){
-			return true;
-		}else {
-			return false;
+	private void counter() {
+
+		while (counter < maxCounterValue) {
+			synchronized (object) {
+				try {
+					Thread.sleep(500);
+					System.out.println(Thread.currentThread().getName()
+							+ " ----> " + counter);
+					object.notify();
+					object.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			counter++;
 		}
 	}
 }

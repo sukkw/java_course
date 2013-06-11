@@ -15,9 +15,7 @@ public class SynchronizedCounterRun {
 	 */
 	public static void main(String[] args) {
 
-		SynchronizedCounter synchConter = new SynchronizedCounter();
-
-		SynchronizedThread ct1 = new SynchronizedThread(10, synchConter, "Thread1");
-		SynchronizedThread ct2 = new SynchronizedThread(10, synchConter, "Thread2");
+		SynchronizedThread ct1 = new SynchronizedThread(10, "Thread1");
+		SynchronizedThread ct2 = new SynchronizedThread(10, "Thread2");
 	}
 }
