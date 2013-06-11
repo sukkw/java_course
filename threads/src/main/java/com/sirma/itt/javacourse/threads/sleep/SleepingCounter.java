@@ -1,4 +1,4 @@
-package com.sirma.itt.javacourse.threads;
+package com.sirma.itt.javacourse.threads.sleep;
 
 /**
  * TwoThreadsCounter class. Create and starts thread. 
@@ -7,13 +7,12 @@ package com.sirma.itt.javacourse.threads;
  * @version 1.1 04 Jun 2013
  * @author Stella Djulgerova
  */
-public class SleepingCounter implements Runnable {
+public class SleepingCounter extends Thread {
 
 	// this flag will be raised when threads have to stop.
 	private static boolean stop;
 	
-	private Thread thread;
-	private int count;
+	private int counter;
 	private int maxCounterValue;
 	
 	/**
@@ -21,17 +20,9 @@ public class SleepingCounter implements Runnable {
 	 * Set max allowed counter value.
 	 * 
 	 * @param maxCounterValue - max allowed counter value
-	 * @param name - thread name
 	 */
-	public SleepingCounter(int maxCounterValue, String name) {
-		
-		if(name == null) {
-			return;
-		}
-		
+	public SleepingCounter(int maxCounterValue) {
 		this.maxCounterValue = maxCounterValue;
-		thread = new Thread(this, name);
-		thread.start();
 	}
 	
 	/**
@@ -40,15 +31,15 @@ public class SleepingCounter implements Runnable {
 	 */
 	public void run() {
 		
-		while (count < maxCounterValue) {
+		while (counter < maxCounterValue) {
 			try {
-				thread.sleep(1000);
-				System.out.println("----> " + thread.getName() + " " + count);
-				count++;
+				Thread.sleep(500);
+				System.out.println(this.getName() + " ---> " + counter);
+				counter++;
 			} catch (InterruptedException e) {
 				return;
 			}
-			if ( count == maxCounterValue ) {
+			if ( counter == maxCounterValue ) {
 				stop = true;
 			}
 			if (stop) return;

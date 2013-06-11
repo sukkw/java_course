@@ -9,27 +9,18 @@ import java.util.logging.Logger;
 * @version 1.1 09 Jun 2013
 * @author Stella Djulgerova
 */
-public class Timeout implements Runnable {
+public class Timeout extends Thread {
 
 	// class private members
 	private Thread thread;
 	private TimeoutHashtable table;
-	private Logger log  = Logger.getLogger("Timeout");
 
 	/**
 	 * Constructor. Initialize all variables and start thread.
 	 * @param table - hashtable with elements
 	 * @param name - thread name
 	 */
-	public Timeout(TimeoutHashtable table, String name) {
-		
-		if(name == null || table == null) {
-			log.warning("Invalid params");
-			return;
-		}
-		
-		thread = new Thread(this, name);
-		thread.start();
+	public Timeout(TimeoutHashtable table) {
 		this.table = table;
 	}
 	

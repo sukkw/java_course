@@ -1,4 +1,4 @@
-package com.sirma.itt.javacourse.threads.synch;
+package com.sirma.itt.javacourse.threads.synchstack;
 
 
 /**

@@ -1,5 +1,6 @@
-package com.sirma.itt.javacourse.threads.synch;
+package com.sirma.itt.javacourse.threads.synchstack;
 
+import java.util.Hashtable;
 import java.util.logging.Logger;
 
 /**

@@ -1,4 +1,4 @@
-package com.sirma.itt.javacourse.threads;
+package com.sirma.itt.javacourse.threads.counter;
 
 import com.sirma.itt.javacourse.io.ConsoleReader;
 
@@ -17,11 +17,12 @@ public class CounterRun {
 	 */
 	public static void main(String[] args) {
 		
-		int maxCounterValue = 86400;
-		Counter c = new Counter(maxCounterValue);
+		long maxCounterValue = 2000000000;
+		Counter counter = new Counter(maxCounterValue);
+		counter.start();
 		System.out.println("Counter is started...");
 		ConsoleReader.readString();			
-		c.getThread().interrupt();
-		System.out.println("Counter is stopped to : " + c.getNumber());
+		counter.stopCounter();
+		System.out.println("Counter is stopped to : " + counter.getValue());
 	}
 }

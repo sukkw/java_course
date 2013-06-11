@@ -1,4 +1,4 @@
-package com.sirma.itt.javacourse.threads;
+package com.sirma.itt.javacourse.threads.synchcount;
 
 import java.util.logging.Logger;
 
@@ -10,34 +10,20 @@ import java.util.logging.Logger;
  * @version 1.1 05 Jun 2013
  * @author Stella Djulgerova
  */
-public class SynchronizedCounter implements Runnable {
+public class SynchronizedCounter extends Thread {
 
 	// class private members
 	private int maxCounterValue;
-	private String name;
-	private static Thread thread;
 	private int counter;
-	private Logger LOGGER = Logger.getLogger("SynchronizedThread");
 
 	/**
 	 * Constructor. Create thread with given name and start it. Initialize all
 	 * variables.
 	 * 
 	 * @param maxCounterValue - max allowed counter value
-	 * @param synchConter - synchronization object
-	 * @param threadName - thread name
 	 */
-	public SynchronizedCounter(int maxCounterValue, String name) {
-
-		if (name == null) {
-			LOGGER.warning("Invalid params!");
-			return;
-		}
-
+	public SynchronizedCounter(int maxCounterValue) {
 		this.maxCounterValue = maxCounterValue;
-		this.name = name;
-		thread = new Thread(this, name);
-		thread.start();
 	}
 
 	/**
@@ -54,18 +40,22 @@ public class SynchronizedCounter implements Runnable {
 	private void counter() {
 
 		while (counter < maxCounterValue) {
-			synchronized (thread) {
+			synchronized (getClass()) {
 				try {
-					thread.sleep(500);
-					System.out.println(Thread.currentThread().getName()
-							+ " ----> " + counter);
-					thread.notify();
-					thread.wait();
+					Thread.sleep(500);
+					print();
+					notifyAll();
+					wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 			counter++;
 		}
+	}
+
+	protected void print() {
+		System.out.println(Thread.currentThread().getName()
+				+ " ----> " + counter);
 	}
 }
