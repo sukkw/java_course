@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.threads;
 
 /**
- * SynchronizedCounter class. Call wait and notifyAll methods to
+ * SynchronizedCounter class. Call wait and notify methods to
  * make two threads run one after another.
  * 
  * @version 1.1 05 Jun 2013
@@ -9,36 +9,36 @@ package com.sirma.itt.javacourse.threads;
  */
 public class SynchronizedCounter {
 	
-	// keep the name of currently running thread
-	private String runnigThreadName = "Thread1";
+	// detect which thread is last run
+	private boolean lastRun;
 	
 	/**
 	 * Synchronize work of two threads.
 	 * 
 	 * @param name - currently running thread name
 	 */
-	synchronized public void synchronize(int count, String name) {
+	synchronized public void synchronize(int count, boolean runningThread, String threadName) {
 		
-		if(name == null ) {
+		if(threadName == null ) {
 			System.out.println("Invalid params!");
 			return;
 		}
 		
 		// if first thread is running let it wait
-		while(!runnigThreadName.equals(name)){
+		while(lastRun == runningThread){
 			try {
 				wait();
 			} catch (InterruptedException e) {}
 		}
 		
-		// change current thread name
-		if(runnigThreadName.equals("Thread1")){
-			runnigThreadName = "Thread2";
+		// change current thread state
+		if(lastRun){
+			lastRun= false;
 		}else {
-			runnigThreadName = "Thread1";
+			lastRun=true;
 		}
 		
-		System.out.println(name + " ---> "+ count);
+		System.out.println(threadName + " ---> "+ count);
 		notify();
 	}
 }

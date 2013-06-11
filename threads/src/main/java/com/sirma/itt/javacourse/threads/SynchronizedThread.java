@@ -51,11 +51,23 @@ public class SynchronizedThread implements Runnable {
 		while(count < maxCounterValue) {
 			try {
 				thread.sleep(1000);
-				synchConter.synchronize(count, thread.getName());
+				synchConter.synchronize(count, runningThread(), thread.getName());
 				count++;
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	/**
+	 * Detect currently running thread
+	 * @return true if thread one is running and false if thread two is running
+	 */
+	private boolean runningThread() {
+		if(thread.getName().equals("Thread1")){
+			return true;
+		}else {
+			return false;
 		}
 	}
 }
