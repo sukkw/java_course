@@ -13,10 +13,9 @@ import java.util.logging.Logger;
 public class SynchronizedThread implements Runnable {
 
 	// class private members
-	private static Object object = new Object();
 	private int maxCounterValue;
 	private String name;
-	private Thread thread;
+	private static Thread thread;
 	private int counter;
 	private Logger LOGGER = Logger.getLogger("SynchronizedThread");
 
@@ -55,13 +54,13 @@ public class SynchronizedThread implements Runnable {
 	private void counter() {
 
 		while (counter < maxCounterValue) {
-			synchronized (object) {
+			synchronized (thread) {
 				try {
-					Thread.sleep(500);
+					thread.sleep(500);
 					System.out.println(Thread.currentThread().getName()
 							+ " ----> " + counter);
-					object.notify();
-					object.wait();
+					thread.notify();
+					thread.wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
