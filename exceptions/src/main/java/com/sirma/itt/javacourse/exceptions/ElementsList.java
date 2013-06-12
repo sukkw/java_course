@@ -16,11 +16,11 @@ public class ElementsList {
 
 		public Object data;
 		public TypeStack previous;
-		static int count = 0;
+		public static int count = 0;
 	}
 
 	private TypeStack top;
-	private int count = TypeStack.count;
+	public static volatile int count = TypeStack.count;
 	static int SIZE = 5;
 
 	/**
@@ -28,7 +28,7 @@ public class ElementsList {
 	 * 
 	 * @return true if stack is empty
 	 */
-	private boolean isEmpty() {
+	public boolean isEmpty() {
 		return top == null;
 	}
 

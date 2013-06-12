@@ -1,6 +1,5 @@
 package com.sirma.itt.javacourse.threads.synchstack;
 
-
 /**
  * AddThread class. Create and starts thread which add element to stack.
  * 

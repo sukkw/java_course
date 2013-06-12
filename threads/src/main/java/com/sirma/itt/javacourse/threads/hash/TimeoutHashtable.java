@@ -18,6 +18,7 @@ public class TimeoutHashtable {
 	// class private members
 	private Hashtable<String, Object> table;
 	private Hashtable<String, Object> timeout;
+	private int expiredTime = 10;
 	private boolean used;
 
 	/**
@@ -41,7 +42,7 @@ public class TimeoutHashtable {
 			timer.notifyThread();	
 		} else {
 			table.put(key, value);
-			Timeout timer = new Timeout(this);
+			Timeout timer = new Timeout(this, expiredTime);
 			timer.setName(key);
 			timer.start();
 			timeout.put(key,timer);

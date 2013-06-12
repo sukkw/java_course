@@ -1,6 +1,5 @@
 package com.sirma.itt.javacourse.threads.synchcount;
 
-
 /**
  * SynchronizedCounter run class. Starts threads.
  * 
@@ -16,11 +15,11 @@ public class SynchronizedCounterRun {
 	 */
 	public static void main(String[] args) {
 
-		SynchronizedCounter threadOne = new SynchronizedCounter(10);
+		SynchronizedCounter threadOne = new SynchronizedCounter(1000);
 		threadOne.setName("ThreadOne");
 		threadOne.start();
 		
-		SynchronizedCounter threadTwo = new SynchronizedCounter(10);
+		SynchronizedCounter threadTwo = new SynchronizedCounter(1000);
 		threadTwo.setName("ThreadTwo");
 		threadTwo.start();
 	}

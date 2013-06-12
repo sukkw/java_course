@@ -1,7 +1,5 @@
 package com.sirma.itt.javacourse.threads.warehouse;
 
-import java.util.logging.Logger;
-
 /**
  * Consumer thread. Try to get stocks from warehouse 
  * and sleeps for specified time.
@@ -19,7 +17,6 @@ class Consumer extends Thread {
 	 * Constructor. Initialize all variables.
 	 * 
 	 * @param time - how long thread has to sleep after add attempt.
-	 * @param name - thread name
 	 * @param warehouse - reference to warehouse
 	 */
 	public Consumer(int time, Warehouse warehouse) {		
@@ -31,9 +28,8 @@ class Consumer extends Thread {
 	 * Try to get from warehouse and sleeps.
 	 */
 	public void run() {
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 10; i++) {
 			try {
-				System.out.println("Loop " + i + " Consumer # " + this.getName());
 				warehouse.getStock((int) (1 + (Math.random() * 10)));
 				sleep(time * 1000);
 			} catch (InterruptedException e) {

@@ -1,9 +1,9 @@
 package com.sirma.itt.javacourse.threads.synchcount;
 
 /**
- * SynchronizedThread class. Create and starts thread. Increase value of the
- * counter with 1 each second while the thread is running. Threads are running
- * one after another.
+ * SynchronizedThread class. Increase value of the
+ * counter with 1 each second while the thread is running. 
+ * Threads are running one after another.
  * 
  * @version 1.1 05 Jun 2013
  * @author Stella Djulgerova
@@ -11,9 +11,8 @@ package com.sirma.itt.javacourse.threads.synchcount;
 public class SynchronizedCounter extends Thread {
 
 	// class private members
-	private int maxCounterValue;
+	private static Integer maxCounterValue;
 	private int counter;
-	private static Object object = new Object();
 
 	/**
 	 * Constructor.
@@ -22,7 +21,7 @@ public class SynchronizedCounter extends Thread {
 	 * @param maxCounterValue - max allowed counter value
 	 */
 	public SynchronizedCounter(int maxCounterValue) {
-		this.maxCounterValue = maxCounterValue;
+		SynchronizedCounter.maxCounterValue = maxCounterValue;
 	}
 
 	/**
@@ -31,12 +30,11 @@ public class SynchronizedCounter extends Thread {
 	 */
 	public void run() {
 		while (counter < maxCounterValue) {
-			synchronized (object) {
+			synchronized (maxCounterValue) {
 				try {
-					Thread.sleep(500);
 					print();
-					object.notify();
-					object.wait();
+					maxCounterValue.notify();
+					maxCounterValue.wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -49,7 +47,6 @@ public class SynchronizedCounter extends Thread {
 	 * Print information about currently running thread
 	 */
 	protected void print() {
-		System.out.println(Thread.currentThread().getName()
-				+ " ----> " + counter);
+		System.out.println(Thread.currentThread().getName() + " ---> " + counter);
 	}
 }

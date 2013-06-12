@@ -1,5 +1,6 @@
 package com.sirma.itt.javacourse.threads.synchstack;
 
+import com.sirma.itt.javacourse.exceptions.ElementsList;
 import com.sirma.itt.javacourse.io.ConsoleReader;
 
 /**
@@ -16,7 +17,7 @@ public class SynchronizedStackRun {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SynchronizedStack stack = new SynchronizedStack();
+		SynchronizedStack stack = new SynchronizedStack(new ElementsList());
 		boolean checker = true;
 
 		do {
@@ -28,13 +29,13 @@ public class SynchronizedStackRun {
 
 			case "A":
 				System.out.println("Enter line of text: ");
-				stack.createAddThread(ConsoleReader.readString());
+				stack.addThread(ConsoleReader.readString());
 				break;
 			case "D":
-				stack.createRemoveThread();
+				stack.removeThread();
 				break;
 			case "P":
-				stack.printAllElements();
+				stack.print();
 				break;
 			case "E":
 				checker = false;

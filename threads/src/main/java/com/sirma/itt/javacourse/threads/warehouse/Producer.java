@@ -17,7 +17,6 @@ class Producer extends Thread {
 	 * Constructor. Initialize all variables.
 	 * 
 	 * @param time - how long thread has to sleep after add attempt.
-	 * @param name - thread name
 	 * @param warehouse - reference to warehouse
 	 */
 	public Producer(int time, Warehouse warehouse) {
@@ -29,10 +28,8 @@ class Producer extends Thread {
 	 * Try to add to warehouse and sleeps.
 	 */
 	public void run() {
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 10; i++) {
 			try {
-				System.out.println("Loop " + i + " Producer # "
-						+ this.getName());
 				warehouse.putStock((int) (1 + (Math.random() * 10)));
 				sleep(time * 1000);
 			} catch (InterruptedException e) {

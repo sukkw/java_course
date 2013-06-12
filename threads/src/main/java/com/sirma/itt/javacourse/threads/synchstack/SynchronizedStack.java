@@ -1,64 +1,42 @@
 package com.sirma.itt.javacourse.threads.synchstack;
 
-import java.util.logging.Logger;
+import com.sirma.itt.javacourse.exceptions.ElementsList;
+import com.sirma.itt.javacourse.exceptions.ListException;
 
 /**
- * SynchronizedStack class. Creates stack. 
- * Add and remove elements to stack. Detect if stack is empty or full.
+ * SynchronizedStack class. Creates stack. Add and remove elements to stack.
+ * Detect if stack is empty or full.
  * 
  * @version 1.1 05 Jun 2013
  * @author Stella Djulgerova
  */
 public class SynchronizedStack {
 
-	// inner class
-	private static class TypeStack {
-		
-		public Object data;
-		public TypeStack previous;
-		static int count = 0;
-	}
-
-	private TypeStack top;
-	private int count = TypeStack.count;
-	private static int SIZE = 5;
-	private Logger log  = Logger.getLogger("SynchronizedStack");
+	private ElementsList stack;
 
 	/**
-	 * Check if the stack is empty.
-	 * 
-	 * @return true if stack is empty
+	 * Constructor. Initialize variables
+	 * @param stack - base stack
 	 */
-	private boolean isEmpty() {
-		return top == null;
+	public SynchronizedStack(ElementsList stack) {
+		this.stack = stack;
 	}
 
 	/**
-	 * Check if stack is full.
-	 * 
-	 * @return true if stack is full
+	 * Starts thread trying to add element to stack
+	 * @param obj
 	 */
-	public boolean isFull() {
-
-		if (count == SIZE) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Create new thread to add element in stack.
-	 * 
-	 * @param obj - data to be added
-	 */
-	public void createAddThread(Object obj) {
-		
-		if(obj == null) {
-			log.warning("Invalid params");
-			return;
-		}
+	public void addThread(Object obj) {
 		AddThread addThread = new AddThread(this, obj);
 		addThread.start();
+	}
+
+	/**
+	 * Starts thread trying to remove element from stack
+	 */
+	public void removeThread() {
+		RemoveThread removeThread = new RemoveThread(this);
+		removeThread.start();
 	}
 
 	/**
@@ -66,37 +44,27 @@ public class SynchronizedStack {
 	 * 
 	 * @param obj - data to be inserted.
 	 */
-	public synchronized void add(Object obj) {
-
-		TypeStack newStack = new TypeStack();
+	public void add(Object obj) {
 
 		// if stack is full thread have to wait
-		while (isFull()) {
+		synchronized (this) {
+			while (stack.isFull()) {
+				try {
+					System.out.println("Stack is Full " + Thread.currentThread().getName() + " is waiting!");
+					wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+
 			try {
-				System.out.println("Stack is Full " + 
-						Thread.currentThread().getName()
-						+ " is waiting!");
-				wait();
-			} catch (InterruptedException e) {
+				stack.add(obj);
+			} catch (ListException e) {
 				e.printStackTrace();
 			}
+			notify();
 		}
-		count++;
-		newStack.data = obj;
-		newStack.previous = top;
-		top = newStack;
-
 		System.out.println(Thread.currentThread().getName() + " added : " + obj);
-
-		notifyAll();
-	}
-
-	/**
-	 * Create new thread to remove element from stack.
-	 */
-	public void createRemoveThread() {
-		RemoveThread removeThread = new RemoveThread(this);
-		removeThread.start();
 	}
 
 	/**
@@ -104,49 +72,31 @@ public class SynchronizedStack {
 	 * 
 	 * @return removed element
 	 */
-	public synchronized Object remove() {
+	public Object remove() {
 
+		Object removed;
 		// if stack is empty thread have to wait
-		while (isEmpty()) {
-			try {
-				System.out.println("Stack is Full " + 
-						Thread.currentThread().getName()+ 
-						" is waiting!");
-				wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		synchronized (this) {
+			while (stack.isEmpty()) {
+				try {
+					System.out.println("Stack is Empty " + Thread.currentThread().getName() + " is waiting!");
+					wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
+			removed = stack.remove();
+			notify();
 		}
-		TypeStack newstack = top;
-		top = top.previous;
-		System.out.println(Thread.currentThread().getName()+ " removed : "+newstack.data);
-		count--;
-		notifyAll();
 
-		return newstack.data;
+		System.out.println(Thread.currentThread().getName() + " removed : " + removed);
+		return removed;
 	}
 
 	/**
-	 * printAllElements wrap method.
+	 * print all elements in stack.
 	 */
-	public void printAllElements() {
-		if (isEmpty()) {
-			System.out.println("empty");
-			return;
-		}
-		printAllElements(top);
-	}
-
-	/**
-	 * Prints all element of the list.
-	 * 
-	 * @param obj - top of the list
-	 */
-	private void printAllElements(TypeStack obj) {
-		TypeStack curr = obj;
-		if (curr != null) {
-			System.out.println(curr.data);
-			printAllElements(curr.previous);
-		}
+	public void print() {
+		stack.printAllElements();
 	}
 }
