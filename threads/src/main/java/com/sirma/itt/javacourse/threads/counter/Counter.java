@@ -15,7 +15,6 @@ public class Counter extends Thread {
 
 	/**
 	 * Constructor. Set max allowed value of counter.
-	 * Create and starts thread.
 	 * 
 	 * @param maxCounterValue - max allowed counter value
 	 */

@@ -13,28 +13,18 @@ class Consumer extends Thread {
 
 	// class private members
 	private int time;
-	private Thread thread;
 	private Warehouse warehouse;
-	private Logger log  = Logger.getLogger("Consumer");
 
 	/**
-	 * Constructor. Initialize all variables and starts thread.
+	 * Constructor. Initialize all variables.
 	 * 
 	 * @param time - how long thread has to sleep after add attempt.
 	 * @param name - thread name
 	 * @param warehouse - reference to warehouse
 	 */
-	public Consumer(int time, String name, Warehouse warehouse) {
-		
-		if(name == null || warehouse == null) {
-			log.warning("Invalid params");
-			return;
-		}
-		
+	public Consumer(int time, Warehouse warehouse) {		
 		this.time = time;
 		this.warehouse = warehouse;
-		thread = new Thread(this, name);
-		thread.start();
 	}
 
 	/**
@@ -43,7 +33,7 @@ class Consumer extends Thread {
 	public void run() {
 		for (int i = 0; i < 7; i++) {
 			try {
-				System.out.println("Loop " + i + " Consumer # " + thread.getName());
+				System.out.println("Loop " + i + " Consumer # " + this.getName());
 				warehouse.getStock((int) (1 + (Math.random() * 10)));
 				sleep(time * 1000);
 			} catch (InterruptedException e) {

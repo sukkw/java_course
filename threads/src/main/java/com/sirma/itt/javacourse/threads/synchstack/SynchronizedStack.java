@@ -1,6 +1,5 @@
 package com.sirma.itt.javacourse.threads.synchstack;
 
-import java.util.Hashtable;
 import java.util.logging.Logger;
 
 /**
@@ -59,6 +58,7 @@ public class SynchronizedStack {
 			return;
 		}
 		AddThread addThread = new AddThread(this, obj);
+		addThread.start();
 	}
 
 	/**
@@ -96,6 +96,7 @@ public class SynchronizedStack {
 	 */
 	public void createRemoveThread() {
 		RemoveThread removeThread = new RemoveThread(this);
+		removeThread.start();
 	}
 
 	/**

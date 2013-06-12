@@ -9,7 +9,7 @@ public class WaitingCounter extends Thread {
 	private int maxCounterValue;
 	
 	/**
-	 * Constructor. Create thread and start it.
+	 * Constructor.
 	 * Set max allowed counter value.
 	 * 
 	 * @param maxCounterValue - max allowed counter value

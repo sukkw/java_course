@@ -13,7 +13,8 @@ public class Timeout extends Thread {
 	private TimeoutHashtable table;
 
 	/**
-	 * Constructor. Initialize all variables and start thread.
+	 * Constructor. Initialize all variables.
+	 * 
 	 * @param table - hashtable with elements
 	 * @param name - thread name
 	 */

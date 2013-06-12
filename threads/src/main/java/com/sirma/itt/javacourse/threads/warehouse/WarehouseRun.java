@@ -16,13 +16,28 @@ public class WarehouseRun {
 	public static void main(String[] args) {
 
 		Warehouse warehouse = new Warehouse();
-		Producer producerOne = new Producer(4, "Producer1", warehouse);
-		Producer producerTwo = new Producer(5, "Producer2", warehouse);
-		Producer producerThree = new Producer(3, "Producer3", warehouse);
+		
+		// initialize and starts producers
+		Producer producerOne = new Producer(4, warehouse);
+		producerOne.setName("Producer1");
+		producerOne.start();
+		Producer producerTwo = new Producer(5, warehouse);
+		producerTwo.setName("Producer2");
+		producerTwo.start();
+		Producer producerThree = new Producer(3, warehouse);
+		producerThree.setName("Producer3");
+		producerThree.start();
 
-		Consumer consumerOne = new Consumer(5, "Consumer1", warehouse);
-		Consumer consumerTwo = new Consumer(3, "Consumer2", warehouse);
-		Consumer consumerThree = new Consumer(4, "Consumer3", warehouse);
+		// initialize and starts consumers
+		Consumer consumerOne = new Consumer(5, warehouse);
+		consumerOne.setName("Consumer1");
+		consumerOne.start();
+		Consumer consumerTwo = new Consumer(3, warehouse);
+		consumerTwo.setName("Consumer2");
+		consumerTwo.start();
+		Consumer consumerThree = new Consumer(4, warehouse);
+		consumerThree.setName("Consumer3");
+		consumerThree.start();
 
 	}
 }

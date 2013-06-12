@@ -7,22 +7,19 @@ package com.sirma.itt.javacourse.threads.synchstack;
  * @version 1.1 05 Jun 2013
  * @author Stella Djulgerova
  */
-public class AddThread implements Runnable {
+public class AddThread extends Thread {
 
 	// class private members
-	private Thread thread;
 	private SynchronizedStack stack;
 	private Object data;
 	
 	/**
-	 * Constructor. Create and start thread.
+	 * Constructor.
 	 * Initialize all variables.
 	 */
 	public AddThread(SynchronizedStack stack, Object data) {
 		this.stack = stack;
 		this.data = data;
-		thread = new Thread(this);
-		thread.start();
 	}
 	
 	/**

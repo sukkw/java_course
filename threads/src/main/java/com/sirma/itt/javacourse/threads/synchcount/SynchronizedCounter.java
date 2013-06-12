@@ -16,8 +16,8 @@ public class SynchronizedCounter extends Thread {
 	private static Object object = new Object();
 
 	/**
-	 * Constructor. Create thread with given name and start it. Initialize all
-	 * variables.
+	 * Constructor.
+	 * Initialize all variables.
 	 * 
 	 * @param maxCounterValue - max allowed counter value
 	 */
