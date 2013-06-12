@@ -1,6 +1,6 @@
 package com.sirma.itt.javacourse.threads.sleep;
 
-public class WaitingCounter  extends Thread {
+public class WaitingCounter extends Thread {
 
 	// this flag will be raised when threads have to stop.
 	private static boolean stop;

@@ -41,7 +41,9 @@ public class TimeoutHashtable {
 			timer.notifyThread();	
 		} else {
 			table.put(key, value);
-			Timeout timer = new Timeout(this, key);
+			Timeout timer = new Timeout(this);
+			timer.setName(key);
+			timer.start();
 			timeout.put(key,timer);
 			used = false;
 		}

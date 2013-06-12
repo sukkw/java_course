@@ -21,7 +21,7 @@ public class SynchronizedCounterRun {
 		threadOne.start();
 		
 		SynchronizedCounter threadTwo = new SynchronizedCounter(10);
-		threadOne.setName("ThreadOne");
-		threadOne.start();
+		threadTwo.setName("ThreadTwo");
+		threadTwo.start();
 	}
 }

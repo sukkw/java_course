@@ -1,7 +1,5 @@
 package com.sirma.itt.javacourse.threads.hash;
 
-import java.util.logging.Logger;
-
 /**
 * Timeout thread. Check if element of hashtable is recently in use
 * and sleep for 10 seconds.
@@ -12,7 +10,6 @@ import java.util.logging.Logger;
 public class Timeout extends Thread {
 
 	// class private members
-	private Thread thread;
 	private TimeoutHashtable table;
 
 	/**
@@ -47,8 +44,7 @@ public class Timeout extends Thread {
 				table.setUsed(false);
 			}
 		}
-		
-		table.remove(thread.getName());
+		table.remove(this.getName());
 
 		return;	
 	}

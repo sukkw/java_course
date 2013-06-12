@@ -33,7 +33,7 @@ public class SleepingCounter extends Thread {
 		
 		while (counter < maxCounterValue) {
 			try {
-				Thread.sleep(500);
+				Thread.sleep(1000);
 				System.out.println(this.getName() + " ---> " + counter);
 				counter++;
 			} catch (InterruptedException e) {
