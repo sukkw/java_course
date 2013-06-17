@@ -23,5 +23,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/io"/>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/Java/jdk1.7.0_17"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

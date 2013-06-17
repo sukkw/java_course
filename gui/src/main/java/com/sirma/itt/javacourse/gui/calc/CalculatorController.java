@@ -4,15 +4,15 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
-* Calculator controller. Communicate with model and view.
-*
-* @version 1.1 14 Jun 2013
-* @author Stella Djulgerova
-*/
+ * Calculator controller. Communicate with model and view.
+ *
+ * @version 1.1 14 Jun 2013
+ * @author Stella Djulgerova
+ */
 public class CalculatorController {
 
 	// class private members
-	private CalculatorModel model;
+	private Calculator model;
 	private CalculatorView view;
 
 	/**
@@ -20,7 +20,7 @@ public class CalculatorController {
 	 * @param model - calculator model
 	 * @param view - calculator view
 	 */
-	public CalculatorController(CalculatorModel model, CalculatorView view) {
+	public CalculatorController(Calculator model, CalculatorView view) {
 		this.model = model;
 		this.view = view;
 

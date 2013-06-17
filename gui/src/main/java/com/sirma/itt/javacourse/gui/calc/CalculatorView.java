@@ -9,11 +9,11 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 
 /**
-* Calculator view. Creates GUI.
-*
-* @version 1.1 14 Jun 2013
-* @author Stella Djulgerova
-*/
+ * Calculator view. Creates GUI.
+ *
+ * @version 1.1 14 Jun 2013
+ * @author Stella Djulgerova
+ */
 public class CalculatorView extends JFrame {
     
 	private static final long serialVersionUID = -7911217837565168277L;
