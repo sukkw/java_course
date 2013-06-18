@@ -1,4 +1,4 @@
-package com.sirma.itt.javacourse.timer;
+package com.sirma.itt.javacourse.threads.timer;
 
 import java.util.Hashtable;
 import java.util.Iterator;

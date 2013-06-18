@@ -7,77 +7,75 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
- * Server view. Creates GUI.
+ * Client view. Creates GUI.
  *
  * @version 1.1 17 June 2013
  * @author Stella Djulgerova
  */
 public class ClientView extends JFrame {
 
-	// class private members
-	private static final long serialVersionUID = -1L;
+	private static final long serialVersionUID = -6588131873294178420L;
 	private JTextArea messageArea;
-	private JButton btnStop;
 	private JScrollPane scroll;
+	private JButton btnConnect;
 	
-	/**
-	 * Constructor. 
-	 * Initialize all graphic components and show it on screen.
-	 */
 	public ClientView() {
-		
+
 		messageArea = new JTextArea(15, 20);
 		scroll = new JScrollPane(messageArea);
 	    scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
 		messageArea.setEnabled(false);
-		messageArea.setDisabledTextColor(new Color(0,0,0));
+		messageArea.setDisabledTextColor(new Color(0, 0, 0));
 		
-		btnStop = new JButton("Stop");
+		btnConnect = new JButton("Connect");
+		btnConnect.setActionCommand("connect");
 		
-		setTitle("Server");
+		setTitle("Client");
 		setSize(200, 100);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		getContentPane().add(scroll, BorderLayout.NORTH);
-		getContentPane().add(btnStop, BorderLayout.SOUTH);
-		
+		getContentPane().add(btnConnect, BorderLayout.SOUTH);
+
 		pack();
 		setVisible(true);
-		setLocation(400, 100);
+		setLocation(400, 350);
 	}
-
+	
+	public void addListeners(ActionListener listener) {
+		btnConnect.addActionListener(listener);
+	}
+	
+	/**
+	 * Enables the connect button if needed.
+	 */
+	public void enableConnectButton() {
+		btnConnect.setEnabled(true);
+	}
+	
+	/**
+	 * Enables the connect button if needed.
+	 */
+	public void disableConnectButton() {
+		btnConnect.setEnabled(false);
+	}
+	
 	/**
 	 * Show message in text area.
 	 * @param msg - message to be shown
 	 */
-	public void showMessage(String message) {
-		messageArea.append(message + "\n");
+	public void showMessage(String msg) {
+		messageArea.append(msg + "\n");
 	}
-	
+
 	/**
 	 * Show error message.
 	 * @param msg - message to be shown
 	 */
 	public void showError(String msg) {
-		JOptionPane.showMessageDialog(this, msg,
-				"Server error", JOptionPane.ERROR_MESSAGE);
-	}
-	
-	/**
-	 * Add action listener to stop button.
-	 * @param listener - action listener
-	 */
-	public void addListener(ActionListener listener) {
-		btnStop.addActionListener(listener);
-	}
-	
-	/**
-	 * Get stop button
-	 * @return - stop button
-	 */
-	public JButton getBtnStop() {
-		return btnStop;
+		JOptionPane.showMessageDialog(this, msg, "Error",
+					JOptionPane.ERROR_MESSAGE);
 	}
 }

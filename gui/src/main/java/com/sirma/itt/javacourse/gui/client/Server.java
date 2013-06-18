@@ -2,7 +2,9 @@ package com.sirma.itt.javacourse.gui.client;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -10,8 +12,8 @@ import java.net.Socket;
 import java.util.Date;
 
 /**
- * Client class. Starts client using Socket and tries to connect to server. If
- * successfully connected shows message received from server.
+ * Server class. 
+ * Starts server using ServerSocket and wait for client to join.
  * 
  * @version 1.1 17 June 2013
  * @author Stella Djulgerova
@@ -25,7 +27,7 @@ public class Server implements ActionListener {
 	private PrintWriter printWriter;
 
 	/**
-	 * Constructor. Get reference to the view.
+	 * Constructor. Get reference to the view. Starts server.
 	 * 
 	 * @param view - server GUI
 	 */
@@ -75,7 +77,7 @@ public class Server implements ActionListener {
 	/**
 	 *  Wait for connection with client and send message each 5 seconds.
 	 */
-	private synchronized void sendMessage() {
+	private void sendMessage() {
 
 		if (serverSocket != null) {
 			try {
@@ -83,9 +85,9 @@ public class Server implements ActionListener {
 				socket = serverSocket.accept();
 				view.showMessage("Client join...");
 				while (serverSocket != null) {
-					wait(5000);
-					printWriter = new PrintWriter(socket.getOutputStream(),
-							true);
+					Thread.sleep(5000);
+					printWriter = new PrintWriter(new BufferedWriter(
+						new OutputStreamWriter(socket.getOutputStream())),true);
 					Date date = new Date();
 					printWriter.println("Hello " + date.toString());
 					view.showMessage("Message sent...");

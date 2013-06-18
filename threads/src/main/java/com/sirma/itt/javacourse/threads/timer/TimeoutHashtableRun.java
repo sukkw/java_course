@@ -1,4 +1,4 @@
-package com.sirma.itt.javacourse.timer;
+package com.sirma.itt.javacourse.threads.timer;
 
 import com.sirma.itt.javacourse.io.ConsoleReader;
 

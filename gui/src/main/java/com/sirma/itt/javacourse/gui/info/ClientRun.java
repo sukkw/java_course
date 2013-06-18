@@ -1,8 +1,5 @@
 package com.sirma.itt.javacourse.gui.info;
 
-import com.sirma.itt.javacourse.gui.client.Client;
-import com.sirma.itt.javacourse.gui.client.ClientView;
-
 /**
  * Client run class. Creates view and starts client.
  *

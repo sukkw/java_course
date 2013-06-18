@@ -1,8 +1,5 @@
 package com.sirma.itt.javacourse.gui.info;
 
-import com.sirma.itt.javacourse.gui.client.Server;
-import com.sirma.itt.javacourse.gui.client.ServerView;
-
 /**
  * Server run class. Creates view and starts server.
  *
