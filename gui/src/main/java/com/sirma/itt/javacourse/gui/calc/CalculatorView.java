@@ -11,7 +11,7 @@ import javax.swing.*;
 /**
  * Calculator view. Creates GUI.
  *
- * @version 1.1 14 Jun 2013
+ * @version 1.1 14 June 2013
  * @author Stella Djulgerova
  */
 public class CalculatorView extends JFrame {
@@ -115,6 +115,7 @@ public class CalculatorView extends JFrame {
         this.setLocation(500, 300);
         
         this.setTitle("Calculator");
+        setVisible(true);
         
         // The window closing event should be in Controller ??
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -147,10 +148,10 @@ public class CalculatorView extends JFrame {
 	}
 
     /**
-     * Get display text field.
+     * Set result in display text field.
      * @return - display text field
      */
-	public JTextField getTxtDisplay() {
-		return txtDisplay;
+	public void display(String result) {
+		txtDisplay.setText(result);
 	}
 }

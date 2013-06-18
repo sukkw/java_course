@@ -41,13 +41,22 @@ public class TransferObject {
 			
 		if(in == null || out == null) {
 			return 0;
-		}
+		}																			
 		
-		int transferedBytes;																				
-		byte[] data = new byte[1024];
-		try {	
-			transferedBytes = in.read(data, (int) in.skip(offset), numberOfBytes);	
-			out.write(data, offset, numberOfBytes);				
+		int ch;										
+		int count = 0;								
+		int transferedBytes = 0;											
+		int stopWrite  = offset+numberOfBytes-1;	
+		
+		try {
+			in.skip(offset);	
+			while(( ch = in.read()) != -1) {		
+				if(count <= stopWrite) {
+					out.write(ch);				
+					transferedBytes++;
+				}
+				count++;
+			}
 		}
 		finally {
 			in.close();						

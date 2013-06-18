@@ -49,7 +49,7 @@ public class CalculatorController {
 			case "8":
 			case "9":
 				result = model.generateNumber(clickedButton); 
-			    view.getTxtDisplay().setText(result);
+			    view.display(result);
 			    break; 
 			case "+":
 			case "-":
@@ -59,23 +59,23 @@ public class CalculatorController {
 			    break; 
 			case "=":
 				result = model.calculate();
-				view.getTxtDisplay().setText(result);
+				view.display(result);
 			    break; 
 			case "C":
 				model.clear();
-				view.getTxtDisplay().setText("0");
+				view.display("0");
 			    break; 
 			case "Backspace":
 				result = model.clearLastDigit(); 
-				view.getTxtDisplay().setText(result);
+				view.display(result);
 			    break; 
 			case ".":
 				result = model.setDot(); 
-				view.getTxtDisplay().setText(result);
+				view.display(result);
 			    break; 
 			case "-/+":
 				result = model.setSign();
-				view.getTxtDisplay().setText(result);
+				view.display(result);
 			    break; 
 			}
 		}

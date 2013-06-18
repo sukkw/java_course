@@ -1,4 +1,4 @@
-package com.sirema.itt.javacourse.gui.multy;
+package com.sirma.itt.javacourse.gui.multy;
 
 import java.net.*;
 
