@@ -18,7 +18,7 @@ public class TimeoutHashtable {
 	// class private members
 	private Hashtable<String, Object> table;
 	private Hashtable<String, Object> timeout;
-	private int expiredTime = 10;
+	private int expiredTime = 10000;
 	private boolean used;
 
 	/**

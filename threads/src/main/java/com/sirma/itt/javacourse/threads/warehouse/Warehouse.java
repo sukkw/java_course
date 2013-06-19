@@ -10,7 +10,7 @@ public class Warehouse {
 
 	// class private members
 	private final int MAX_ALLOWED_PRODUCTION = 30;
-	private static volatile int productionCounter;
+	private int productionCounter;
 
 	/**
 	 * Get specified quantity from warehouse. If warehouse is empty thread is

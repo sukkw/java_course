@@ -15,11 +15,11 @@ public class WaitingCounterRun {
 	 */
 	public static void main(String[] args) {
 
-		WaitingCounter threadOne = new WaitingCounter(20);
+		WaitingCounter threadOne = new WaitingCounter(20, 1000);
 		threadOne.setName("ThreadOne");
 		threadOne.start();
 		
-		WaitingCounter threadTwo = new WaitingCounter(20);
+		WaitingCounter threadTwo = new WaitingCounter(20, 1000);
 		threadTwo.setName("ThreadTwo");
 		threadTwo.start();
 	}

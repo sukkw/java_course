@@ -37,7 +37,7 @@ public class DownloadAgent {
 		File out = null;
 		URL url = null;
 		File sourceFileName = null;
-		URLConnection sourceConn = null;
+		URLConnection connection = null;
 		
 		try {
 			if (sPath.isFile()) { 
@@ -45,15 +45,15 @@ public class DownloadAgent {
 				sourcePath = "file:/" + sourcePath;
 			}
 			url = new URL(sourcePath);
-			sourceConn = url.openConnection();
+			connection = url.openConnection();
 			
-			String theUrl = url.toString();
-			String file = theUrl.substring(theUrl.lastIndexOf("/") + 1);
+			String urlToString = url.toString();
+			String file = urlToString.substring(urlToString.lastIndexOf("/") + 1);
 			sourceFileName = new File(file);
 			
 			out = view.chooseDirectoryToSave(sourceFileName, sourcePath);
 			
-			thread = new FileTransferThread(sourceConn, out, view);
+			thread = new FileTransferThread(connection, out, view);
 			thread.start();
 			
 		} catch (MalformedURLException e1) {

@@ -39,12 +39,12 @@ public class SemaphoreCounter  extends Thread {
         for (int i = 0; i < maxCounterValue; i++) {
             try {
 				ins.acquire();
+	            print();
+	            outs.release();  // allow another thread to run
+	            counter ++;
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} 
-            print();
-            outs.release();  // allow another thread to run
-            counter ++;
         }
     }
     

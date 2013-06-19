@@ -16,7 +16,7 @@ public class TimeoutHashtableRun {
 	 */
 	public static void main(String[] args) {
 		
-		TimeoutHashtable timeoutTable = new TimeoutHashtable(10);
+		TimeoutHashtable timeoutTable = new TimeoutHashtable(10000);
 		boolean checker = true;
 		String key;
 		String value;

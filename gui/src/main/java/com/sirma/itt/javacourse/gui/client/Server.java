@@ -47,7 +47,7 @@ public class Server implements ActionListener {
 				serverSocket = new ServerSocket(i, 0,InetAddress.getLocalHost());
 				return;
 			} catch (IOException e1) {
-				view.showError("Can't open socket!");
+				view.showError("Can't create socket!");
 			}
 		}
 	}

@@ -5,7 +5,7 @@ import java.util.TimerTask;
 /**
  * HashtableTimer class. Remove expired elements.
  * 
- * @version 1.1 12 Jun 2013
+ * @version 1.1 12 June 2013
  * @author Stella Djulgerova
  */
 public class HashtableTimer extends TimerTask {

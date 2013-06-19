@@ -15,11 +15,11 @@ public class SleepigCounterRun {
 	 */
 	public static void main(String[] args) {
 
-		SleepingCounter threadOne = new SleepingCounter(20);
+		SleepingCounter threadOne = new SleepingCounter(20, 1000);
 		threadOne.setName("ThreadOne");
 		threadOne.start();
 		
-		SleepingCounter threadTwo = new SleepingCounter(20);
+		SleepingCounter threadTwo = new SleepingCounter(20, 1000);
 		threadTwo.setName("ThreadTwo");
 		threadTwo.start();
 	}

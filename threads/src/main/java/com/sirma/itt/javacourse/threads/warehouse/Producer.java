@@ -31,7 +31,7 @@ class Producer extends Thread {
 		for (int i = 0; i < 10; i++) {
 			try {
 				warehouse.putStock((int) (1 + (Math.random() * 10)));
-				sleep(time * 1000);
+				sleep(time);
 			} catch (InterruptedException e) {
 			}
 		}

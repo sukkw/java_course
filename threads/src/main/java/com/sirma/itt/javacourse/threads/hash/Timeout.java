@@ -39,7 +39,7 @@ public class Timeout extends Thread {
 		while (!table.isUsed()) {
 			synchronized (this) {
 				try {
-					wait(time * 1000);
+					wait(time);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

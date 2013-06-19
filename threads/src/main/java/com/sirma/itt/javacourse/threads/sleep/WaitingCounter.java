@@ -7,14 +7,16 @@ public class WaitingCounter extends Thread {
 
 	private int counter;
 	private int maxCounterValue;
+	private int waitTime;
 
 	/**
 	 * Constructor. Set max allowed counter value.
 	 * 
 	 * @param maxCounterValue - max allowed counter value
 	 */
-	public WaitingCounter(int maxCounterValue) {
+	public WaitingCounter(int maxCounterValue, int waitTime) {
 		this.maxCounterValue = maxCounterValue;
+		this.waitTime = waitTime;
 	}
 
 	/**
@@ -26,7 +28,7 @@ public class WaitingCounter extends Thread {
 		while (counter < maxCounterValue) {
 			synchronized (this) {
 				try {
-					wait(1000);
+					wait(waitTime);
 					System.out.println(this.getName() + " ---> " + counter);
 					counter++;
 				} catch (InterruptedException e) {

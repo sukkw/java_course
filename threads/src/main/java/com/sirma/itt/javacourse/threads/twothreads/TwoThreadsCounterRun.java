@@ -15,7 +15,7 @@ public class TwoThreadsCounterRun {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		TwoThreadsCounter threadOne = new TwoThreadsCounter(990);
+		TwoThreadsCounter threadOne = new TwoThreadsCounter(300);
 		threadOne.setName("ThreadOne");
 		threadOne.start();
 

@@ -18,26 +18,25 @@ public class WarehouseRun {
 		Warehouse warehouse = new Warehouse();
 		
 		// initialize and starts producers
-		Producer producerOne = new Producer(4, warehouse);
+		Producer producerOne = new Producer(4000, warehouse);
 		producerOne.setName("Producer1");
 		producerOne.start();
-		Producer producerTwo = new Producer(5, warehouse);
+		Producer producerTwo = new Producer(5000, warehouse);
 		producerTwo.setName("Producer2");
 		producerTwo.start();
-		Producer producerThree = new Producer(3, warehouse);
+		Producer producerThree = new Producer(3000, warehouse);
 		producerThree.setName("Producer3");
 		producerThree.start();
 
 		// initialize and starts consumers
-		Consumer consumerOne = new Consumer(5, warehouse);
+		Consumer consumerOne = new Consumer(5000, warehouse);
 		consumerOne.setName("Consumer1");
 		consumerOne.start();
-		Consumer consumerTwo = new Consumer(3, warehouse);
+		Consumer consumerTwo = new Consumer(3000, warehouse);
 		consumerTwo.setName("Consumer2");
 		consumerTwo.start();
-		Consumer consumerThree = new Consumer(4, warehouse);
+		Consumer consumerThree = new Consumer(4000, warehouse);
 		consumerThree.setName("Consumer3");
 		consumerThree.start();
-
 	}
 }

@@ -31,7 +31,7 @@ class Consumer extends Thread {
 		for (int i = 0; i < 10; i++) {
 			try {
 				warehouse.getStock((int) (1 + (Math.random() * 10)));
-				sleep(time * 1000);
+				sleep(time);
 			} catch (InterruptedException e) {
 			}
 		}

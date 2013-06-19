@@ -14,6 +14,7 @@ public class SleepingCounter extends Thread {
 	
 	private int counter;
 	private int maxCounterValue;
+	private int sleepTime;
 	
 	/**
 	 * Constructor.
@@ -21,8 +22,9 @@ public class SleepingCounter extends Thread {
 	 * 
 	 * @param maxCounterValue - max allowed counter value
 	 */
-	public SleepingCounter(int maxCounterValue) {
+	public SleepingCounter(int maxCounterValue, int sleepTime) {
 		this.maxCounterValue = maxCounterValue;
+		this.sleepTime = sleepTime;
 	}
 	
 	/**
@@ -33,16 +35,16 @@ public class SleepingCounter extends Thread {
 		
 		while (counter < maxCounterValue) {
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(sleepTime);
 				System.out.println(this.getName() + " ---> " + counter);
 				counter++;
+				if ( counter == maxCounterValue ) {
+					stop = true;
+				}
+				if (stop) return;
 			} catch (InterruptedException e) {
 				return;
 			}
-			if ( counter == maxCounterValue ) {
-				stop = true;
-			}
-			if (stop) return;
 		}
 	}
 }

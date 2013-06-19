@@ -33,7 +33,7 @@ public class SynchronizedCounter extends Thread {
 			synchronized (maxCounterValue) {
 				try {
 					print();
-					maxCounterValue.notify();
+					maxCounterValue.notifyAll();
 					maxCounterValue.wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();

@@ -46,7 +46,7 @@ public class TimeoutHashtable {
 		elementsHashtable.put(key, value);
 
 		timer = new Timer();
-		timer.schedule(new HashtableTimer(this, key), expireTime * 1000);
+		timer.schedule(new HashtableTimer(this, key), expireTime);
 		timersHashtable.put(key, timer);
 	}
 
@@ -68,7 +68,7 @@ public class TimeoutHashtable {
 			timer.cancel();
 
 			timer = new Timer();
-			timer.schedule(new HashtableTimer(this, key), expireTime * 1000);
+			timer.schedule(new HashtableTimer(this, key), expireTime);
 			timersHashtable.put(key, timer);
 		}
 		return obj;

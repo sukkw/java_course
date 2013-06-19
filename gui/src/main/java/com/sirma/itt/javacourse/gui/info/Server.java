@@ -94,6 +94,7 @@ public class Server {
 	 * Stop server and notifies the connected clients.
 	 */
 	public void stopServer() {
+		view.showMessage("Server Stopped...");
 		message = "disconnected";
 		new InfoThread(clients, message);
 		try {
@@ -117,7 +118,7 @@ public class Server {
 				view.showError("Error closing sockets!");
 			}
 		}
-		view.showMessage("Server Stopped...");
+		//view.setEnabled(false);
 	}
 	
 	// Inner class. Create listener

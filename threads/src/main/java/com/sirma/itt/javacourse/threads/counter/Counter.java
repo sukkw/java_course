@@ -12,6 +12,8 @@ public class Counter extends Thread {
 	// class private members
 	private long maxCounterValue;
 	private long counter;
+	
+	private boolean stopped;
 
 	/**
 	 * Constructor. Set max allowed value of counter.
@@ -35,16 +37,23 @@ public class Counter extends Thread {
 	 * interrupted or max allowed value of counter is reached.
 	 */
 	public void run() {
-		while(counter < maxCounterValue) {
+		while(counter < maxCounterValue && !isStopped()) {
 			counter++;	
 		}
 	}
 	
 	/**
-	 * Increments counter until this thread is 
-	 * interrupted or max allowed value of counter is reached.
+	 * Stop counter thread.
 	 */
-	public void stopCounter() {
-		this.interrupt();
+	public synchronized void stopCounter() {
+		//this.interrupt();
+		stopped = true;
+	}
+	
+	/**
+	 * Detect if thread have to stop.
+	 */
+	public boolean isStopped() {
+		return stopped;
 	}
 }

@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.threads.synchstack;
 
+import java.util.UUID;
+
 import com.sirma.itt.javacourse.exceptions.ElementsList;
 import com.sirma.itt.javacourse.io.ConsoleReader;
 
