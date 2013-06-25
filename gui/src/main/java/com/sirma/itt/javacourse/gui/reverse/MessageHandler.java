@@ -75,8 +75,8 @@ public class MessageHandler extends Thread {
 					writeReversedMessage(clientMessage);
 				}
 			}
+			close();
 		} catch (IOException e) {
-			view.showError("IO error!");
 		}
 	}
 

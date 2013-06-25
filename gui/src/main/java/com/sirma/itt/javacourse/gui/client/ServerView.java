@@ -34,6 +34,7 @@ public class ServerView extends JFrame {
 		messageArea.setDisabledTextColor(new Color(0,0,0));
 		
 		btnStop = new JButton("Stop");
+		btnStop.setActionCommand("stop");
 		
 		setTitle("Server");
 		setSize(200, 100);
@@ -74,10 +75,9 @@ public class ServerView extends JFrame {
 	}
 	
 	/**
-	 * Get stop button
-	 * @return - stop button
+	 * Disable stop button
 	 */
-	public JButton getBtnStop() {
-		return btnStop;
+	public void disableStopButton() {
+		btnStop.setEnabled(false);
 	}
 }

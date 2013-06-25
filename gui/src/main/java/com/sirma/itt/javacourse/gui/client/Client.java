@@ -69,7 +69,6 @@ public class Client {
 
 				view.showMessage("Message received...");
 				view.showMessage(msg);
-				System.out.println(msg);
 			}
 		} catch (IOException e) {
 			view.showError("Can't read from socket!");

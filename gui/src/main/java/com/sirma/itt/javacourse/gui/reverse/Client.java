@@ -49,6 +49,11 @@ public class Client extends Thread {
 						socket.getInputStream()));
 				writer = new PrintWriter(new BufferedWriter(
 						new OutputStreamWriter(socket.getOutputStream())), true);
+				String message = reader.readLine();
+				if(message == null) {
+					view.showMessage("No server ");
+					return false;
+				}
 				view.showMessage("Server message >>> " + reader.readLine());
 
 				view.resetMsgField(true);

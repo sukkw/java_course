@@ -18,7 +18,7 @@ import java.util.Date;
  * @version 1.1 17 June 2013
  * @author Stella Djulgerova
  */
-public class Server implements ActionListener {
+public class Server {
 
 	// class private members
 	private ServerView view;
@@ -33,7 +33,7 @@ public class Server implements ActionListener {
 	 */
 	public Server(ServerView view) {
 		this.view = view;
-		view.addListener(this);
+		view.addListener(new Listener());
 		startServer();
 		sendMessage();
 	}
@@ -51,29 +51,7 @@ public class Server implements ActionListener {
 			}
 		}
 	}
-
-	/**
-	 * Detect if button stop is pressed and take action
-	 */
-	public void actionPerformed(ActionEvent event) {
-
-		if (event.getSource() == view.getBtnStop()) {
-			if (printWriter != null)
-				printWriter.close();
-			try {
-				if (socket != null)
-					socket.close();
-				if (serverSocket != null)
-					serverSocket.close();
-				view.showMessage("Server stopped!");
-				view.getBtnStop().setEnabled(false);
-			} catch (IOException e) {
-				view.showError("Error in closing sockets!");
-			}
-			//view.dispose();
-		}
-	}
- 
+	
 	/**
 	 *  Wait for connection with client and send message each 5 seconds.
 	 */
@@ -95,6 +73,31 @@ public class Server implements ActionListener {
 			} catch (IOException e) {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
+			}
+		}
+	}
+	
+	// Inner class. Create listener
+	class Listener implements ActionListener {
+		
+		/**
+		 * Detect if button stop is pressed and take action
+		 */
+		public void actionPerformed(ActionEvent event) {
+			if (event.getActionCommand() == "stop") {
+				if (printWriter != null)
+					printWriter.close();
+				try {
+					if (socket != null)
+						socket.close();
+					if (serverSocket != null)
+						serverSocket.close();
+					view.showMessage("Server stopped!");
+					view.disableStopButton();
+				} catch (IOException e) {
+					view.showError("Error in closing sockets!");
+				}
+				//view.dispose();
 			}
 		}
 	}

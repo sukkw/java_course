@@ -72,16 +72,17 @@ public class CalculatorView extends JFrame {
         btnThree.setName("3");
         btnSubtract.setName("-");
         btnZero.setName("0");
+
         btnMinus.setName("-/+");
         btnPoint.setName(".");
         btnAdd.setName("+");
         
         JPanel pnlDisplay = new JPanel();
-        pnlDisplay.setLayout(new GridLayout(1,2));
+        pnlDisplay.setLayout(new GridLayout(1,2,3,3));
         pnlDisplay.add(txtDisplay);
         
         JPanel pnlButtons = new JPanel();
-        pnlButtons.setLayout(new GridLayout(5,3));
+        pnlButtons.setLayout(new GridLayout(5,3,5,5));
         
         // add elements to panel
         pnlButtons.add(new JLabel(""));

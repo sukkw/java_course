@@ -31,8 +31,7 @@ public class Server {
 	/**
 	 * Constructor. Get reference to the view.
 	 * 
-	 * @param view
-	 *            - server GUI
+	 * @param view - server GUI
 	 */
 	public Server(ServerView view) {
 		this.view = view;
@@ -47,8 +46,7 @@ public class Server {
 				server = new ServerSocket(i, 0, InetAddress.getLocalHost());
 				if (server != null) {
 					view.showMessage("Server is started");
-					clients = Collections
-							.synchronizedList(new ArrayList<MessageHandler>());
+					clients = Collections.synchronizedList(new ArrayList<MessageHandler>());
 					acceptClients();
 				} else {
 					view.enableStartButton();
@@ -78,7 +76,6 @@ public class Server {
 				msgHandler.start();
 				clients.add(msgHandler);
 			} catch (SocketException e) {
-				view.showError("Can't connect to server!");
 				break;
 			} catch (IOException e) {
 				view.showError("Can't connect to server!");
@@ -93,6 +90,7 @@ public class Server {
 	public void stopServer() {
 		if (clients.size() != 0) {
 			disconnectClients();
+			
 		}
 
 		if (writer != null)
