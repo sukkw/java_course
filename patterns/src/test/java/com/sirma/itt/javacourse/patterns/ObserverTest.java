@@ -1,4 +1,4 @@
-package com.sirma.itt.javacoure.singleton;
+package com.sirma.itt.javacourse.patterns;
 
 import java.util.Hashtable;
 

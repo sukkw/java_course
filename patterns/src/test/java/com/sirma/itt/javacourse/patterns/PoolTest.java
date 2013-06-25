@@ -1,4 +1,4 @@
-package com.sirma.itt.javacoure.singleton;
+package com.sirma.itt.javacourse.patterns;
 
 import java.lang.reflect.Field;
 import java.util.List;

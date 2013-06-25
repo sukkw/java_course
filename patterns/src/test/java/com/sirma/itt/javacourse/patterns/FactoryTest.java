@@ -1,4 +1,4 @@
-package com.sirma.itt.javacoure.singleton;
+package com.sirma.itt.javacourse.patterns;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;

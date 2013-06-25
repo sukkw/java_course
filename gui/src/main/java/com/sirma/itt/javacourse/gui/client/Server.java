@@ -25,6 +25,7 @@ public class Server {
 	private ServerSocket serverSocket;
 	private Socket socket;
 	private PrintWriter printWriter;
+	private String message;
 
 	/**
 	 * Constructor. Get reference to the view. Starts server.
@@ -67,7 +68,8 @@ public class Server {
 					printWriter = new PrintWriter(new BufferedWriter(
 						new OutputStreamWriter(socket.getOutputStream())),true);
 					Date date = new Date();
-					printWriter.println("Hello " + date.toString());
+					message = date.toString();
+					printWriter.println("Hello " + message);
 					view.showMessage("Message sent...");
 				}
 			} catch (IOException e) {

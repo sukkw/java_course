@@ -8,20 +8,36 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+/**
+ * MessageHandler class. Read client message and write it reversed.
+ *
+ * @version 1.1 19 June 2013
+ * @author Stella Djulgerova
+ */
 public class MessageHandler extends Thread {
 
+	// class private members
 	private Socket client;
 	private PrintWriter printWriter;
 	private BufferedReader reader;
 	private StringBuffer msgBuilder;
 	private ServerView view;
 
+	/**
+	 * Constructor. Initialize variables.
+	 * 
+	 * @param client - client
+	 * @param view - GUI
+	 */
 	public MessageHandler(Socket client, ServerView view) {
 		this.view = view;
 		this.client = client;
 		createStreams();
 	}
 
+	/**
+	 * Open needed streams.
+	 */
 	private void createStreams() {
 		try {
 			printWriter = new PrintWriter(new BufferedWriter(

@@ -20,6 +20,7 @@ public class Client {
 	private ClientView view;
 	private Socket socket;
 	private BufferedReader reader;
+	private String message;
 
 	/**
 	 * Constructor. Get reference to the view.
@@ -58,9 +59,9 @@ public class Client {
 			while (socket != null) {
 				reader = new BufferedReader(new InputStreamReader(
 						socket.getInputStream()));
-				String msg = reader.readLine();
+				message = reader.readLine();
 
-				if (msg == null) {
+				if (message == null) {
 					reader.close();
 					socket.close();
 					view.showMessage("Disconnected...");
@@ -68,7 +69,7 @@ public class Client {
 				}
 
 				view.showMessage("Message received...");
-				view.showMessage(msg);
+				view.showMessage(message);
 			}
 		} catch (IOException e) {
 			view.showError("Can't read from socket!");
