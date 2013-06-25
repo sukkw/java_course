@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sirma.itt.javacourse.gui.CalculatorTest">
+      <class name="com.sirma.itt.javacourse.gui.TransmitterTest">
         <methods>
-          <include name="nodTest" invocation-numbers="0 1 2"/>
+          <include name="sendReceiveTest"/>
+          <include name="startSockets"/>
         </methods>
-      </class> <!-- com.sirma.itt.javacourse.gui.CalculatorTest -->
+      </class> <!-- com.sirma.itt.javacourse.gui.TransmitterTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

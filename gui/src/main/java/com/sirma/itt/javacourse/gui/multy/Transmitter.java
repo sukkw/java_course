@@ -18,6 +18,7 @@ public class Transmitter {
 	private TransmitterView view;
 	private Mediator mediator;
 	private DatagramSocket socket = null;
+	private String message;
 	
 	/**
 	 * Constructor. Initialize variables and starts to transmit.
@@ -46,13 +47,12 @@ public class Transmitter {
 	    try {
 	      socket = new DatagramSocket();
 	      long counter = 0;
-	      String msg;
 	 
 	      while (true) {
 	    	channel = mediator.getChannel();
-	        msg = "This is multicast message # " + counter + " at channel " + channel;
+	    	message = "This is multicast message # " + counter + " at channel " + channel;
 	        counter++;
-	        outBuf = msg.getBytes();
+	        outBuf = message.getBytes();
 	 
 	        //Send to multicast IP address and port
 	        InetAddress address = InetAddress.getByName(channel);
@@ -60,15 +60,12 @@ public class Transmitter {
 	 
 	        socket.send(outPacket);
 	 
-	        view.showMessage("Server sends : " + msg);
-	        try {
-	          Thread.sleep(1000);
-	        } catch (InterruptedException ie) {
-	        }
+	        view.showMessage("Server sends : " + message);
+	        Thread.sleep(1000);
 	      }
 	    } catch (IOException ioe) {
-	 
-	    }
+	    } catch (InterruptedException ie) {
+        }
 	    
 	}
 	

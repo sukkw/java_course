@@ -18,6 +18,7 @@ public class Receiver extends Thread {
 	// class private members
 	private ReceiverView view;
 	private MulticastSocket socket = null;
+	private String message;
 	
 	/**
 	 * Constructor. Get reference to the view.
@@ -52,8 +53,8 @@ public class Receiver extends Thread {
 	        inPacket = new DatagramPacket(inBuf, inBuf.length);
 	        
 	        socket.receive(inPacket);
-	        String msg = new String(inBuf, 0, inPacket.getLength());
-	        view.showMessage("Receive message : " + msg);
+	        message = new String(inBuf, 0, inPacket.getLength());
+	        view.showMessage("Receive message : " + message);
 	      }
 	    } catch (IOException ioe) {
 	    }
