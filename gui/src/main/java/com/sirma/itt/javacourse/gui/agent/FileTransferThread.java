@@ -73,14 +73,14 @@ public class FileTransferThread extends Thread {
 			}
 
 			if (bytes == transferedBytes) {
-				view.showWarning("Download is completed!", 2);
+				view.showMessage("Download is completed!", 2);
 				view.hideProgressBar();
 			} else {
-				view.showWarning("Download isn't completed!", 1);
+				view.showMessage("Download isn't completed!", 1);
 				view.hideProgressBar();
 			}
 		} catch (IOException e) {
-			view.showWarning("Download failed!", 1);
+			view.showMessage("Download failed!", 1);
 			view.hideProgressBar();
 		} finally {
 			try {

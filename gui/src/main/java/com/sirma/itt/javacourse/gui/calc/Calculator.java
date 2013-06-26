@@ -1,7 +1,8 @@
 package com.sirma.itt.javacourse.gui.calc;
 
 /**
- * Calculator model. Communicate with model and view.
+ * Calculator class. Generate numbers and perform all needed calculation
+ * operation.
  *
  * @version 1.1 14 Jun 2013
  * @author Stella Djulgerova

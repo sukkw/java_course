@@ -146,9 +146,8 @@ public class DownloadAgentView extends JFrame implements MouseListener, KeyListe
 		File outputPath = null;
 		int returnVal = fileChooser.showSaveDialog(DownloadAgentView.this);
 		if ((returnVal == JFileChooser.APPROVE_OPTION)) {
-			String destination = fileChooser.getCurrentDirectory() + "\\" + file.toString();
+			String destination = fileChooser.getCurrentDirectory() + "\\" + fileChooser.getSelectedFile().getName();
 			outputPath = new File(destination);
-			
 		}
 		return outputPath;
 	}
@@ -159,7 +158,7 @@ public class DownloadAgentView extends JFrame implements MouseListener, KeyListe
 	 * @param msg -  message that should be displayed.
 	 * @param type - type of the window to be shown.
 	 */
-	public void showWarning(String msg, int type) {
+	public void showMessage(String msg, int type) {
 		switch (type) {
 		case 1:
 			JOptionPane.showMessageDialog(this, msg, "Warning", JOptionPane.WARNING_MESSAGE);

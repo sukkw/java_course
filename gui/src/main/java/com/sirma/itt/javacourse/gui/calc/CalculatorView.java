@@ -22,7 +22,7 @@ public class CalculatorView extends JFrame {
     private JTextField txtDisplay = new JTextField();
 
     private JButton btnClear = new JButton("C");
-    private JButton btnBackspace = new JButton("Backspace");
+    private JButton btnBackspace = new JButton("B");
     private JButton btnCalculate = new JButton("=");
     
     private JButton btnSeven = new JButton("7");
@@ -46,7 +46,7 @@ public class CalculatorView extends JFrame {
     private JButton btnAdd = new JButton("+");
 
     /**
-     * Constructor. Initialize all components and show it on screen
+     * Constructor. Initialize all components and show it on screen.
      */
     public CalculatorView() {
 
@@ -78,7 +78,7 @@ public class CalculatorView extends JFrame {
         btnAdd.setName("+");
         
         JPanel pnlDisplay = new JPanel();
-        pnlDisplay.setLayout(new GridLayout(1,2,3,3));
+        pnlDisplay.setLayout(new GridLayout(1,2));
         pnlDisplay.add(txtDisplay);
         
         JPanel pnlButtons = new JPanel();
@@ -114,7 +114,7 @@ public class CalculatorView extends JFrame {
         this.pack();
         this.setResizable(false);
         this.setLocation(500, 300);
-        
+        this.setSize(220,205);
         this.setTitle("Calculator");
         setVisible(true);
         

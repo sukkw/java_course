@@ -14,6 +14,7 @@ import java.net.URLConnection;
  */
 public class DownloadAgent {
 
+	// class private members
 	private FileTransferThread thread;
 	private DownloadAgentView view;
 	
@@ -57,7 +58,7 @@ public class DownloadAgent {
 			thread.start();
 			
 		} catch (MalformedURLException e1) {
-			view.showWarning("Invalid URL or filepath!", 1);
+			view.showMessage("Invalid URL or filepath!", 1);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

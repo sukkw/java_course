@@ -45,7 +45,7 @@ public class Client extends Thread {
 				// create input stream to read from server
 				reader = new BufferedReader(new InputStreamReader(
 						socket.getInputStream()));
-				view.showMessage("Server message " + reader.readLine());
+				view.showMessage("Server message: " + reader.readLine());
 				return;
 			} catch (UnknownHostException e1) {
 				view.showError("Can't find server!");
@@ -59,7 +59,7 @@ public class Client extends Thread {
 	 * Receive messages from server and print it on screen.
 	 * If server is closed throws NoSocketException and close client.
 	 */
-	public void run() throws NoSocketException {
+	public void run() {
 		startClient();
 		if (socket != null) {
 			String s = null;
@@ -72,7 +72,7 @@ public class Client extends Thread {
 						view.showError("The server was stopped!");
 						break;
 					} else {
-						view.showMessage("Server message " + s);
+						view.showMessage("Server message: " + s);
 					}
 				}
 			} catch (IOException e) {

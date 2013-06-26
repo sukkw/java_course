@@ -35,7 +35,7 @@ public class TransmitterView extends JFrame {
 		btnStop = new JButton("Stop");
 		btnStop.setActionCommand("stop");
 
-		setTitle("Server");
+		setTitle("Transmitter");
 		setSize(200, 100);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

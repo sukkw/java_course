@@ -90,7 +90,6 @@ public class Server {
 	public void stopServer() {
 		if (clients.size() != 0) {
 			disconnectClients();
-			
 		}
 
 		if (writer != null)
@@ -102,9 +101,7 @@ public class Server {
 					client.close();
 				if (server != null)
 					server.close();
-				writer = null;
-				client = null;
-				server = null;
+
 				view.showMessage("Server Stopped");
 			} catch (IOException e) {
 				view.showError("Error in closing sockets!");
@@ -116,14 +113,9 @@ public class Server {
 	 * Disconnect all clients
 	 */
 	private void disconnectClients() {
-		for (int i = 0; i < clients.size(); i++) {
-			MessageHandler msgHandler = clients.remove(i);
-
-			try {
-				msgHandler.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		for (int i =0; i <clients.size() ; i++) {
+			MessageHandler msgHandler = clients.remove(i);	
+			msgHandler.setStopped(true);
 		}
 		clients = null;
 	}

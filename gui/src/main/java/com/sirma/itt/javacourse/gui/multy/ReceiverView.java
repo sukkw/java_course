@@ -35,7 +35,7 @@ public class ReceiverView extends JFrame {
 		btnStop = new JButton("Stop");
 		btnStop.setActionCommand("stop");
 		
-		setTitle("Client");
+		setTitle("Receiver");
 		setSize(200, 100);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

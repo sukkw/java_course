@@ -54,7 +54,7 @@ public class Client extends Thread {
 					view.showMessage("No server ");
 					return false;
 				}
-				view.showMessage("Server message >>> " + reader.readLine());
+				view.showMessage("Server message >>> " + message);
 
 				view.resetMsgField(true);
 				return true;
@@ -67,6 +67,60 @@ public class Client extends Thread {
 		return false;
 	}
 
+	/**
+	 * Read messages.
+	 */
+	public synchronized void run() {
+		if (connect()) {
+			String reversedMessage = null; 
+											
+			try {
+				while (true) {
+					
+					if ((message == null) || ("".equals(message))) { 				
+						try {
+							wait(); 
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
+					if (".".equals(message)) { 
+						view.showError("You are disconnected...");
+						writer.println(message); 
+						break;
+					} else {
+						writer.println(message); 
+						reversedMessage = reader.readLine(); 
+
+						if (("disconnected".equals(reversedMessage))
+								|| (reversedMessage == null)) {
+							view.showError("Server is disconnected!");
+							throw new NoSocketException("Can't find server!");
+						}
+						view.showMessage("The reverse of [ " + message + " ] is [ "
+								+ reversedMessage + " ]");
+					}
+					message = null;
+				}
+			} catch (IOException e) {
+				view.showError("Disconnected!");
+			} finally {
+				view.resetMsgField(false);
+				try {
+					if (reader != null)
+						reader.close();
+					if (socket != null)
+						socket.close();
+					view.setVisible(false);
+					view.dispose();
+					view = null;
+				} catch (IOException e) {
+					view.showError("Error closing stream/socket!");
+				}
+			}
+		}
+	}
+	
 	/**
 	 * Get message entered by user.
 	 * @param message - message
@@ -99,56 +153,5 @@ public class Client extends Thread {
 	 */
 	public String restoreFromMemento(Memento memento) {
 		return memento.getSavedMessage();  
-	}
-
-	/**
-	 * 
-	 */
-	public synchronized void run() {
-		if (connect()) {
-			String reversedMessage = null; 
-											
-			try {
-				while (true) {
-					if ((message == null) || ("".equals(message))) { 				
-						try {
-							wait(); 
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
-					if (".".equals(message)) { 
-						view.showError("You are disconnected...");
-						break;
-					} else {
-						writer.println(message); 
-						reversedMessage = reader.readLine(); 
-
-						if (("disconnected".equals(reversedMessage))
-								|| (reversedMessage == null)) {
-							throw new NoSocketException("Can't find server!");
-						}
-						view.showMessage("The reverse of [ " + message + " ] is [ "
-								+ reversedMessage + " ]");
-					}
-					message = null;
-				}
-			} catch (IOException e) {
-				view.showError("Disconnected!");
-			} finally {
-				view.resetMsgField(false);
-				try {
-					if (reader != null)
-						reader.close();
-					if (socket != null)
-						socket.close();
-					view.setVisible(false);
-					view.dispose();
-					view = null;
-				} catch (IOException e) {
-					view.showError("Error closing stream/socket!");
-				}
-			}
-		}
 	}
 }

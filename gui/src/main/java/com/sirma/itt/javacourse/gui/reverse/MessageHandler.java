@@ -22,6 +22,7 @@ public class MessageHandler extends Thread {
 	private BufferedReader reader;
 	private StringBuffer msgBuilder;
 	private ServerView view;
+	private boolean stopped;
 
 	/**
 	 * Constructor. Initialize variables.
@@ -66,6 +67,9 @@ public class MessageHandler extends Thread {
 	 * @param message
 	 */
 	private void writeReversedMessage(String message) {
+		if(message == null) {
+			return;
+		}
 		msgBuilder = new StringBuffer(message);
 		msgBuilder.reverse();
 		printWriter.println(msgBuilder.toString());
@@ -80,6 +84,9 @@ public class MessageHandler extends Thread {
 		try {
 			while (true) {
 				clientMessage = readClientMessage();
+				if(isStopped()) {
+					break;
+				}
 				if (".".equals(clientMessage)) {
 					view.showMessage("Client " + client.hashCode()
 							+ " disconnected...");
@@ -105,5 +112,13 @@ public class MessageHandler extends Thread {
 		reader.close();
 		printWriter.close();
 		client.close();
+	}
+
+	public boolean isStopped() {
+		return stopped;
+	}
+
+	public void setStopped(boolean stopped) {
+		this.stopped = stopped;
 	}
 }

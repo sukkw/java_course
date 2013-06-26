@@ -8,8 +8,8 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * Client class. Starts client using Socket and tries to connect to server. 
- * If successfully connected shows message received from server.
+ * Client class. Starts client using Socket and tries to connect to server. If
+ * successfully connected shows message received from server.
  * 
  * @version 1.1 17 June 2013
  * @author Stella Djulgerova
@@ -25,12 +25,13 @@ public class Client {
 	/**
 	 * Constructor. Get reference to the view.
 	 * 
-	 * @param view - client GUI
+	 * @param view
+	 *            - client GUI
 	 */
 	public Client(ClientView view) {
 		this.view = view;
 		startClient();
-		receiveMessage();
+		readMessage();
 	}
 
 	/**
@@ -52,25 +53,23 @@ public class Client {
 	/**
 	 * Receive message from server and print it on screen.
 	 */
-	private void receiveMessage() {
-
+	public void readMessage() {
 		try {
-			view.showMessage("Connected...");
-			while (socket != null) {
-				reader = new BufferedReader(new InputStreamReader(
-						socket.getInputStream()));
-				message = reader.readLine();
+			reader = new BufferedReader(new InputStreamReader(
+					socket.getInputStream()));
+			message = reader.readLine();
 
-				if (message == null) {
-					reader.close();
-					socket.close();
-					view.showMessage("Disconnected...");
-					return;
-				}
-
+			if (socket != null && message != null) {
+				view.showMessage("Connected...");
 				view.showMessage("Message received...");
 				view.showMessage(message);
+			} else {
+				view.showMessage("No server found...");
 			}
+
+			view.showMessage("Disconnected...");
+			reader.close();
+			socket.close();
 		} catch (IOException e) {
 			view.showError("Can't read from socket!");
 		}

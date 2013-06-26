@@ -92,7 +92,7 @@ public class ClientView extends JFrame implements ActionListener,
 	}
 
 	/**
-	 * 
+	 * Execute different operation depending on user choice.
 	 */
 	public void actionPerformed(ActionEvent event) {
 		if (event.getActionCommand() == "connect") {
@@ -168,8 +168,7 @@ public class ClientView extends JFrame implements ActionListener,
 	/**
 	 * Show error message.
 	 * 
-	 * @param msg
-	 *            - message to be shown
+	 * @param msg - message to be shown
 	 */
 	public void showError(String msg) {
 		JOptionPane.showMessageDialog(this, msg, "Error",
@@ -182,9 +181,6 @@ public class ClientView extends JFrame implements ActionListener,
 		}
 	}
 
-	public void changedUpdate(DocumentEvent arg0) {
-	}
-
-	public void removeUpdate(DocumentEvent arg0) {
-	}
+	public void changedUpdate(DocumentEvent arg0) {}
+	public void removeUpdate(DocumentEvent arg0) {}
 }
