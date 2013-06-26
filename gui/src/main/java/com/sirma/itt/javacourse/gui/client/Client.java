@@ -3,9 +3,10 @@ package com.sirma.itt.javacourse.gui.client;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+
+import com.sirma.itt.javacourse.gui.config.Config;
 
 /**
  * Client class. Starts client using Socket and tries to connect to server. If
@@ -38,9 +39,9 @@ public class Client {
 	 * Find available port and starts client.
 	 */
 	private void startClient() {
-		for (int i = 7000; i < 7020; i++) {
+		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
 			try {
-				socket = new Socket(InetAddress.getLocalHost(), i);
+				socket = new Socket(Config.HOST, i);
 				return;
 			} catch (UnknownHostException e1) {
 				view.showError("Can't find server!");

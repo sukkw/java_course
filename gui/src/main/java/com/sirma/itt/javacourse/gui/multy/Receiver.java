@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 
+import com.sirma.itt.javacourse.gui.config.Config;
+
 /**
  * Receiver class. Starts receiver who listen from server messages at
  * specified channel.
@@ -34,26 +36,23 @@ public class Receiver extends Thread {
 	 * Creates socket and join multicast group 
 	 */
 	public void run() {
-		DatagramPacket inPacket = null;
-	    byte[] inBuf = new byte[256];
-	    String channel1 = "235.0.0.1";
-	    String channel2 = "235.255.0.1";
-	    int port = 7000;
+		DatagramPacket packet = null;
+	    byte[] input = new byte[Config.BUF_SIZE];
 
 	    try {
 	      //Prepare to join multicast group
-	      socket = new MulticastSocket(port);
-	      InetAddress address = InetAddress.getByName(channel1);
+	      socket = new MulticastSocket(Config.MIN_PORT);
+	      InetAddress address = InetAddress.getByName(Config.CHANNEL1);
 	      socket.joinGroup(address);
 	      
-	      InetAddress address2 = InetAddress.getByName(channel2);
+	      InetAddress address2 = InetAddress.getByName(Config.CHANNEL2);
 	      socket.joinGroup(address2);
 	 
 	      while (true) {
-	        inPacket = new DatagramPacket(inBuf, inBuf.length);
+	    	  packet = new DatagramPacket(input, input.length);
 	        
-	        socket.receive(inPacket);
-	        message = new String(inBuf, 0, inPacket.getLength());
+	        socket.receive(packet);
+	        message = new String(input, 0, packet.getLength());
 	        view.showMessage("Receive message : " + message);
 	      }
 	    } catch (IOException ioe) {

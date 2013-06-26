@@ -1,5 +1,7 @@
 package com.sirma.itt.javacourse.gui.multy;
 
+import com.sirma.itt.javacourse.gui.config.Config;
+
 /**
  * Mediator class. Determine which channel to be used
  * for transmit message.
@@ -19,9 +21,9 @@ public class Mediator {
 		int channelNumber = (int) (Math.random() * 2);
 
 		if(channelNumber == 0) {
-			channel = "235.0.0.1";
+			channel = Config.CHANNEL1;
 		} else {
-			channel = "235.255.0.1";
+			channel = Config.CHANNEL2;
 		}
 		return channel;
 	}

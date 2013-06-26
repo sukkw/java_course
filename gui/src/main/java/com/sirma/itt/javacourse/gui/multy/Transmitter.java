@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.*;
 
+import com.sirma.itt.javacourse.gui.config.Config;
+
 /**
  * Transmitter class. Starts transmitter who sends message
  * each second.
@@ -40,8 +42,7 @@ public class Transmitter {
 	public void startTransmiter() {
 
 	    DatagramPacket outPacket = null;
-	    byte[] outBuf;
-	    int port = 7000;
+	    byte[] output;
 	    String channel;
 	 
 	    try {
@@ -52,16 +53,16 @@ public class Transmitter {
 	    	channel = mediator.getChannel();
 	    	message = "This is multicast message # " + counter + " at channel " + channel;
 	        counter++;
-	        outBuf = message.getBytes();
+	        output = message.getBytes();
 	 
 	        //Send to multicast IP address and port
 	        InetAddress address = InetAddress.getByName(channel);
-	        outPacket = new DatagramPacket(outBuf, outBuf.length, address, port);
+	        outPacket = new DatagramPacket(output, output.length, address, Config.MIN_PORT);
 	 
 	        socket.send(outPacket);
 	 
 	        view.showMessage("Server sends : " + message);
-	        Thread.sleep(1000);
+	        Thread.sleep(Config.WAITING_TIME);
 	      }
 	    } catch (IOException ioe) {
 	    } catch (InterruptedException ie) {

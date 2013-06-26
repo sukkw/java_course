@@ -5,9 +5,10 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+
+import com.sirma.itt.javacourse.gui.config.Config;
 
 /**
  * Client class. Starts client using Socket and tries to connect to server. 
@@ -38,9 +39,9 @@ public class Client extends Thread {
 	 */
 	public void startClient() {
 
-		for (int i = 7000; i < 7020; i++) {
+		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
 			try {
-				socket = new Socket(InetAddress.getLocalHost(), i);
+				socket = new Socket(Config.HOST, i);
 				view.showMessage("Connected to server...");
 				// create input stream to read from server
 				reader = new BufferedReader(new InputStreamReader(

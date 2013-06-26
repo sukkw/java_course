@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.net.InetAddress;
 import java.net.Socket;
 
+import com.sirma.itt.javacourse.gui.config.Config;
 import com.sirma.itt.javacourse.gui.info.NoSocketException;
 
 /**
@@ -41,9 +41,9 @@ public class Client extends Thread {
 	 * Find available port and create socket.
 	 */
 	public boolean connect() {
-		for (int i = 7000; i < 7020; i++) {
+		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
 			try {
-				socket = new Socket(InetAddress.getLocalHost(), i);
+				socket = new Socket(Config.HOST, i);
 
 				reader = new BufferedReader(new InputStreamReader(
 						socket.getInputStream()));

@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.sirma.itt.javacourse.gui.config.Config;
+
 /**
  * Server class. 
  * Starts server using ServerSocket and wait for client to join.
@@ -47,9 +49,9 @@ public class Server {
 	 * Find available port and starts server.
 	 */
 	public void startServer() {
-		for (int i = 7000; i < 7020; i++) {
+		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
 			try {
-				serverSocket = new ServerSocket(i, 0,InetAddress.getLocalHost());
+				serverSocket = new ServerSocket(i, 0,InetAddress.getByName(Config.HOST));
 				view.showMessage("Server Strted at port " + i);
 				return;
 			} catch (IOException e1) {
