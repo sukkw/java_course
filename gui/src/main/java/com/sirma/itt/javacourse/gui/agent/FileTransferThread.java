@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URLConnection;
 
+import com.sirma.itt.javacourse.gui.config.Config;
+
 /**
  * FileTransferThread class. Transfer file and show result continuously on
  * progress bar.
@@ -73,14 +75,14 @@ public class FileTransferThread extends Thread {
 			}
 
 			if (bytes == transferedBytes) {
-				view.showMessage("Download is completed!", 2);
+				view.showMessage("Download is completed!", Config.INFO);
 				view.hideProgressBar();
 			} else {
-				view.showMessage("Download isn't completed!", 1);
+				view.showMessage("Download isn't completed!", Config.WARNING);
 				view.hideProgressBar();
 			}
 		} catch (IOException e) {
-			view.showMessage("Download failed!", 1);
+			view.showMessage("Download failed!", Config.INFO);
 			view.hideProgressBar();
 		} finally {
 			try {

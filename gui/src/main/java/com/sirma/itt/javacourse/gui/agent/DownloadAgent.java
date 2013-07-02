@@ -6,6 +6,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import com.sirma.itt.javacourse.gui.config.Config;
+
 /**
  * DownloadAgent class. Creates URL connection.
  * 
@@ -58,7 +60,7 @@ public class DownloadAgent {
 			thread.start();
 			
 		} catch (MalformedURLException e1) {
-			view.showMessage("Invalid URL or filepath!", 1);
+			view.showMessage("Invalid URL or filepath!", Config.INFO);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

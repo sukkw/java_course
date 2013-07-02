@@ -9,4 +9,7 @@ public class Config {
 	
 	public static final String CHANNEL1 = "235.0.0.1";
 	public static final String CHANNEL2 = "235.255.0.1";	
+	
+	public static final int WARNING = 1;
+	public static final int INFO = 2;
 }
