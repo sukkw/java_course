@@ -9,7 +9,7 @@ import com.sirma.itt.javacourse.gui.config.Config;
  * @version 1.1 25 June 2013
  * @author Stella Djulgerova
  */
-public class Mediator {
+public class ChannelsSwitcher {
 	
 	/**
 	 * Generate random number and choose channel.

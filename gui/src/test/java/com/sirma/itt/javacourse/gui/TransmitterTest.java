@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import com.sirma.itt.javacourse.gui.multy.Mediator;
+import com.sirma.itt.javacourse.gui.multy.ChannelsSwitcher;
 import com.sirma.itt.javacourse.gui.multy.Receiver;
 import com.sirma.itt.javacourse.gui.multy.ReceiverView;
 import com.sirma.itt.javacourse.gui.multy.Transmitter;
@@ -27,7 +27,7 @@ public class TransmitterTest {
 		receiver = new Receiver(new ReceiverView());
 		receiver.start();
 		
-		transmitter = new Transmitter(new TransmitterView(), new Mediator());
+		transmitter = new Transmitter(new TransmitterView(), new ChannelsSwitcher());
 	}
 	
 	/**

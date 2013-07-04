@@ -13,6 +13,6 @@ public class TransmitterRun {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new Transmitter(new TransmitterView(), new Mediator());
+		new Transmitter(new TransmitterView(), new ChannelsSwitcher());
 	}
 }

@@ -18,7 +18,7 @@ public class Transmitter {
 
 	// class private members
 	private TransmitterView view;
-	private Mediator mediator;
+	private ChannelsSwitcher mediator;
 	private DatagramSocket socket = null;
 	private String message;
 	
@@ -28,7 +28,7 @@ public class Transmitter {
 	 * @param view - transmitter GUI
 	 * @param mediator - transmitter mediator
 	 */
-	public Transmitter(TransmitterView view , Mediator mediator) {
+	public Transmitter(TransmitterView view , ChannelsSwitcher mediator) {
 		this.view = view;
 		this.mediator = mediator;
 		view.setListeners(new Listener());
