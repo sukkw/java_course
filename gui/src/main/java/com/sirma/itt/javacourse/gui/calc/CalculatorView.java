@@ -57,7 +57,7 @@ public class CalculatorView extends JFrame {
 
     	// set components names
         btnClear.setName("C");
-        btnBackspace.setName("Backspace");
+        btnBackspace.setName("B");
         btnCalculate.setName("=");
         btnSeven.setName("7");
         btnEigth.setName("8");
@@ -73,8 +73,8 @@ public class CalculatorView extends JFrame {
         btnSubtract.setName("-");
         btnZero.setName("0");
 
-        btnMinus.setName("-/+");
-        btnPoint.setName(".");
+        btnMinus.setName("S");
+        btnPoint.setName("D");
         btnAdd.setName("+");
         
         JPanel pnlDisplay = new JPanel();

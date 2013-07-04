@@ -35,48 +35,35 @@ public class CalculatorController {
 		 */
 		public void mouseClicked(MouseEvent event) {
 			String clickedButton = event.getComponent().getName();
+			int key = clickedButton.charAt(0);
 			String result;
-			
-			switch (clickedButton) {
-			case "0":
-			case "1":
-			case "2":
-			case "3":
-			case "4":
-			case "5":
-			case "6":
-			case "7":
-			case "8":
-			case "9":
+
+			if(key > 47 && key < 58) {
 				result = model.generateNumber(clickedButton); 
 			    view.display(result);
-			    break; 
-			case "+":
-			case "-":
-			case "*":
-			case "/":
+			}
+			if(key > 41 && key < 48) {
 				model.setOperator(clickedButton);
-			    break; 
-			case "=":
+			}
+			if(key == 61) {
 				result = model.calculate();
 				view.display(result);
-			    break; 
-			case "C":
+			}
+			if(key == 67) {
 				model.clear();
 				view.display("0");
-			    break; 
-			case "Backspace":
+			}
+			if(key == 66) {
 				result = model.clearLastDigit(); 
 				view.display(result);
-			    break; 
-			case ".":
+			}
+			if(key == 68) {
 				result = model.setDot(); 
 				view.display(result);
-			    break; 
-			case "-/+":
+			}
+			if(key == 83) {
 				result = model.setSign();
 				view.display(result);
-			    break; 
 			}
 		}
 	}
