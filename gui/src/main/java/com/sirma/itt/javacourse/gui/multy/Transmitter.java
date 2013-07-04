@@ -67,7 +67,6 @@ public class Transmitter {
 	    } catch (IOException ioe) {
 	    } catch (InterruptedException ie) {
         }
-	    
 	}
 	
 	// Inner class. Create listener

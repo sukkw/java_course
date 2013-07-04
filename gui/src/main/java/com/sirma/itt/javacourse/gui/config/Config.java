@@ -1,5 +1,11 @@
 package com.sirma.itt.javacourse.gui.config;
 
+/**
+ * Class with all constants needed for clients/servers.
+ *
+ * @version 1.1 17 June 2013
+ * @author Stella Djulgerova
+ */
 public class Config {
 	public static final int MIN_PORT = 7000;
 	public static final int MAX_PORT = 7020;
@@ -12,4 +18,6 @@ public class Config {
 	
 	public static final int WARNING = 1;
 	public static final int INFO = 2;
+	
+	public static final int MAX_SIZE = 5;
 }

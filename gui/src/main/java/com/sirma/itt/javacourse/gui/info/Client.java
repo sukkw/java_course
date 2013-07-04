@@ -84,9 +84,7 @@ public class Client extends Thread {
 						reader.close();
 					if (socket != null)
 						socket.close();
-					view.setVisible(false);
 					view.dispose();
-					view = null;
 				} catch (IOException e) {
 					view.showError("Error in closing!");
 				}

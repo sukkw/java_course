@@ -1,12 +1,12 @@
 package com.sirma.itt.javacourse.gui.calc;
 
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  * Calculator controller. Communicate with model and view.
  *
- * @version 1.1 14 Jun 2013
+ * @version 1.1 14 June 2013
  * @author Stella Djulgerova
  */
 public class CalculatorController {
@@ -28,7 +28,7 @@ public class CalculatorController {
 	}
 
 	// Inner class. Create listener
-	class CalculationListener implements MouseListener {
+	class CalculationListener extends MouseAdapter {
 
 		/**
 		 * Take action when mouse is clicked
@@ -79,10 +79,5 @@ public class CalculatorController {
 			    break; 
 			}
 		}
-
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseReleased(MouseEvent e) {}
 	}
 }

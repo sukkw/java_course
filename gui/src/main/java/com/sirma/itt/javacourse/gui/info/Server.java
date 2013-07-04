@@ -113,9 +113,6 @@ public class Server {
 					connectedClient.close();
 				if (serverSocket != null)
 					serverSocket.close();
-				printWriter = null;
-				connectedClient = null;
-				serverSocket = null;
 			} catch (IOException e) {
 				view.showError("Error closing sockets!");
 			}

@@ -36,14 +36,14 @@ public class DownloadAgent {
 	 */
 	public void downloadFile(String sourcePath) {
 		
-		File sPath = new File(sourcePath);
+		File path = new File(sourcePath);
 		File out = null;
 		URL url = null;
 		File sourceFileName = null;
 		URLConnection connection = null;
 		
 		try {
-			if (sPath.isFile()) { 
+			if (path.isFile()) { 
 				sourcePath = sourcePath.replaceAll("\\\\", "/");
 				sourcePath = "file:/" + sourcePath;
 			}

@@ -82,6 +82,7 @@ public class FileTransferThread extends Thread {
 				view.hideProgressBar();
 			}
 		} catch (IOException e) {
+			e.printStackTrace();
 			view.showMessage("Download failed!", Config.INFO);
 			view.hideProgressBar();
 		} finally {

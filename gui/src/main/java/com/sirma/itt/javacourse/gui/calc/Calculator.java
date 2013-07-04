@@ -1,16 +1,17 @@
 package com.sirma.itt.javacourse.gui.calc;
 
+import com.sirma.itt.javacourse.gui.config.Config;
+
 /**
  * Calculator class. Generate numbers and perform all needed calculation
  * operation.
  *
- * @version 1.1 14 Jun 2013
+ * @version 1.1 14 June 2013
  * @author Stella Djulgerova
  */
 public class Calculator {
 
 	// class private members
-	private final int MAX_SIZE = 5;
 	private StringBuilder firstNumber = new StringBuilder();
 	private StringBuilder secondNumber = new StringBuilder();
 
@@ -39,7 +40,7 @@ public class Calculator {
 	 */
 	public String generateNumber(String value) {
 
-		if (getOperand().length() == MAX_SIZE) {
+		if (getOperand().length() == Config.MAX_SIZE) {
 			return getOperand().toString();
 		}
 		
@@ -67,7 +68,7 @@ public class Calculator {
 	 * @return - operand
 	 */
 	public String setDot() {
-		if (getOperand().length() == MAX_SIZE) {
+		if (getOperand().length() == Config.MAX_SIZE) {
 			return getOperand().toString();
 		}
 		
@@ -89,7 +90,7 @@ public class Calculator {
 	 */
 	public String setSign() {
 
-		if (getOperand().length() == MAX_SIZE) {
+		if (getOperand().length() == Config.MAX_SIZE) {
 			return getOperand().toString();
 		}
 		

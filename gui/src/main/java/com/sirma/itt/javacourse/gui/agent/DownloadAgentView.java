@@ -27,7 +27,7 @@ import javax.swing.border.Border;
  * @version 1.1 16 June 2013
  * @author Stella Djulgerova
  */
-public class DownloadAgentView extends JFrame implements MouseListener, KeyListener {
+public class DownloadAgentView extends JFrame implements MouseListener {
 
 	private static final long serialVersionUID = 1L;
 
@@ -58,8 +58,6 @@ public class DownloadAgentView extends JFrame implements MouseListener, KeyListe
 
 		btnDownload.addMouseListener(this);
 		txtPath.addMouseListener(this);
-		txtPath.addKeyListener(this);
-
 		btnCancel.addMouseListener(this);
 
 		JPanel pnlProgress = new JPanel();
@@ -93,32 +91,6 @@ public class DownloadAgentView extends JFrame implements MouseListener, KeyListe
 	 * Detect if mouse is pressed.
 	 */
 	public void mousePressed(MouseEvent event) {
-		option(event);
-	}
-	
-	public void mouseClicked(MouseEvent arg0) {}
-	public void mouseEntered(MouseEvent arg0) {}
-	public void mouseExited(MouseEvent arg0) {}
-	public void mouseReleased(MouseEvent arg0) {}
-
-	/**
-	 * Detect if key Enter is pressed.
-	 */
-	public void keyPressed(KeyEvent event) {
-		if (event.getKeyCode() == 10) {
-			option(event);
-		}
-	}
-	
-	public void keyReleased(KeyEvent arg0) {}
-	public void keyTyped(KeyEvent arg0) {}
-	
-	/**
-	 * Take action according to the user choice.
-	 * 
-	 * @param event - The event.
-	 */
-	private void option(ComponentEvent event) {
 		downloadAgent = new DownloadAgent(this);
 
 		switch (event.getComponent().getName()) {
@@ -134,6 +106,11 @@ public class DownloadAgentView extends JFrame implements MouseListener, KeyListe
 			break;
 		}
 	}
+	
+	public void mouseClicked(MouseEvent arg0) {}
+	public void mouseEntered(MouseEvent arg0) {}
+	public void mouseExited(MouseEvent arg0) {}
+	public void mouseReleased(MouseEvent arg0) {}
 
 	/**
 	 * Show the fileChooser and let user to choose directory.

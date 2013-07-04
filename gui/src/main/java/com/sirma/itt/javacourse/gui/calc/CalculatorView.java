@@ -106,6 +106,9 @@ public class CalculatorView extends JFrame {
         pnlButtons.add(btnPoint);
         pnlButtons.add(btnAdd);
         
+        pnlDisplay.setBorder(BorderFactory.createLineBorder(pnlButtons.getBackground(),5));
+        pnlButtons.setBorder(BorderFactory.createLineBorder(pnlButtons.getBackground(),5));
+        
         Container pane = this.getContentPane();
         pane.add(pnlDisplay,  BorderLayout.NORTH);
         pane.add(pnlButtons, BorderLayout.SOUTH);
@@ -114,7 +117,7 @@ public class CalculatorView extends JFrame {
         this.pack();
         this.setResizable(false);
         this.setLocation(500, 300);
-        this.setSize(220,205);
+        this.setSize(225,217);
         this.setTitle("Calculator");
         setVisible(true);
         
