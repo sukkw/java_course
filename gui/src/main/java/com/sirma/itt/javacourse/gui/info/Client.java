@@ -39,11 +39,11 @@ public class Client extends Thread {
 	 */
 	public void startClient() {
 
-		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
+		for (int port = Config.MIN_PORT; port < Config.MAX_PORT; port++) {
 			try {
-				socket = new Socket(Config.HOST, i);
+				socket = new Socket(Config.HOST, port);
 				view.showMessage("Connected to server...");
-				// create input stream to read from server
+				
 				reader = new BufferedReader(new InputStreamReader(
 						socket.getInputStream()));
 				view.showMessage("Server message: " + reader.readLine());
@@ -63,17 +63,17 @@ public class Client extends Thread {
 	public void run() {
 		startClient();
 		if (socket != null) {
-			String s = null;
+			String message = null;
 			try {
 				while (true) {
-					s = reader.readLine();
-					if (s == null) {
+					message = reader.readLine();
+					if (message == null) {
 						throw new NoSocketException("Server stopped!");
-					} else if ("disconnected".equals(s)) {
+					} else if ("disconnected".equals(message)) {
 						view.showError("The server was stopped!");
 						break;
 					} else {
-						view.showMessage("Server message: " + s);
+						view.showMessage("Server message: " + message);
 					}
 				}
 			} catch (IOException e) {
@@ -101,7 +101,7 @@ public class Client extends Thread {
 		public void actionPerformed(ActionEvent event) {
 			if (event.getActionCommand() == "connect") {
 				start();
-				view.disableConnectButton();
+				view.getConnectButton().setEnabled(false);
 			}
 		}
 	}

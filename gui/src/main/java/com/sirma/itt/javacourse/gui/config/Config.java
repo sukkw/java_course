@@ -19,5 +19,5 @@ public class Config {
 	public static final int WARNING = 1;
 	public static final int INFO = 2;
 	
-	public static final int MAX_SIZE = 5;
+	public static final int MAX_SIZE = 10;
 }

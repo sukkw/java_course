@@ -5,7 +5,7 @@ import com.sirma.itt.javacourse.gui.config.Config;
 /**
  * Calculator class. Generate numbers and perform all needed calculation
  * operation.
- *
+ * 
  * @version 1.1 14 June 2013
  * @author Stella Djulgerova
  */
@@ -35,7 +35,8 @@ public class Calculator {
 	/**
 	 * Concatenate entered chars in one string.
 	 * 
-	 * @param value - entered char
+	 * @param value
+	 *            - entered char
 	 * @return - operand
 	 */
 	public String generateNumber(String value) {
@@ -43,7 +44,7 @@ public class Calculator {
 		if (getOperand().length() == Config.MAX_SIZE) {
 			return getOperand().toString();
 		}
-		
+
 		if ("0".equals(value) && getOperand().length() == 0) {
 			return "0";
 		}
@@ -54,10 +55,12 @@ public class Calculator {
 	/**
 	 * Set operation chosen by user.
 	 * 
-	 * @param value - entered operator
+	 * @param value
+	 *            - entered operator
 	 */
 	public void setOperator(String value) {
-		if (!"".equals(firstNumber.toString()) && "".equals(secondNumber.toString())) {
+		if (!"".equals(firstNumber.toString())
+				&& "".equals(secondNumber.toString())) {
 			operator = value;
 		}
 	}
@@ -71,7 +74,7 @@ public class Calculator {
 		if (getOperand().length() == Config.MAX_SIZE) {
 			return getOperand().toString();
 		}
-		
+
 		if (getOperand().length() == 0) {
 			return "0";
 		}
@@ -93,7 +96,7 @@ public class Calculator {
 		if (getOperand().length() == Config.MAX_SIZE) {
 			return getOperand().toString();
 		}
-		
+
 		if (getOperand().length() == 0) {
 			return "0";
 		}
@@ -108,31 +111,47 @@ public class Calculator {
 	}
 
 	/**
-	 * Execute choosen buy user operation and return result.
+	 * Execute chosen buy user operation and return result.
 	 * 
 	 * @return - result after calculation
 	 */
 	public String calculate() {
-		if ("".equals(operator)) {
-			if(getOperand().length() == 0) { clear(); return "0"; }
-			result = getOperand().toString();
+		
+		if("".equals(firstNumber.toString()) || "".equals(secondNumber.toString())) {
+			clear();
+			return "0";
 		}
 		
+		if ("".equals(operator)) {
+			if (getOperand().length() == 0) {
+				clear();
+				return "0";
+			}
+			result = getOperand().toString();
+		}
+
 		if ("+".equals(operator)) {
-			result = Double.toString(Double.parseDouble(firstNumber.toString()) + Double.parseDouble(secondNumber.toString()));
+			result = Double.toString(Double.parseDouble(firstNumber.toString())
+					+ Double.parseDouble(secondNumber.toString()));
 		}
 
 		if ("-".equals(operator)) {
-			result = Double.toString(Double.parseDouble(firstNumber.toString()) - Double.parseDouble(secondNumber.toString()));
+			result = Double.toString(Double.parseDouble(firstNumber.toString())
+					- Double.parseDouble(secondNumber.toString()));
 		}
 
 		if ("*".equals(operator)) {
-			result = Double.toString(Double.parseDouble(firstNumber.toString()) * Double.parseDouble(secondNumber.toString()));
+			result = Double.toString(Double.parseDouble(firstNumber.toString())
+					* Double.parseDouble(secondNumber.toString()));
 		}
 
 		if ("/".equals(operator)) {
-			if ("0".equals(secondNumber.toString())) { clear(); return "Division by zero"; }
-			result = Double.toString(Double.parseDouble(firstNumber.toString()) / Double.parseDouble(secondNumber.toString()));
+			if ("0".equals(secondNumber.toString())) {
+				clear();
+				return "Division by zero";
+			}
+			result = Double.toString(Double.parseDouble(firstNumber.toString())
+					/ Double.parseDouble(secondNumber.toString()));
 		}
 
 		clear();
@@ -143,12 +162,12 @@ public class Calculator {
 	 * Clear display and all variables.
 	 */
 	public void clear() {
-		firstNumber.setLength(0); 
+		firstNumber.setLength(0);
 		secondNumber.setLength(0);
 		operator = "";
 		sign = false;
 	}
-	
+
 	/**
 	 * Remove useless zero digits from result.
 	 * 
@@ -156,14 +175,14 @@ public class Calculator {
 	 */
 	public String filter(String result) {
 		if (result.indexOf(".") != -1) {
-            while (result.endsWith("0")) {
-                result = result.substring(0, result.length() - 1);
-                if (result.endsWith(".")) {
-                    result = result.substring(0, result.length() - 1);
-                    break;
-                }
-            }
-        }
+			while (result.endsWith("0")) {
+				result = result.substring(0, result.length() - 1);
+				if (result.endsWith(".")) {
+					result = result.substring(0, result.length() - 1);
+					break;
+				}
+			}
+		}
 		return result;
 	}
 

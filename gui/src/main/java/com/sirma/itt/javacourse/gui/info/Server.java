@@ -49,10 +49,10 @@ public class Server {
 	 * Find available port and starts server.
 	 */
 	public void startServer() {
-		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
+		for (int port = Config.MIN_PORT; port < Config.MAX_PORT; port++) {
 			try {
-				serverSocket = new ServerSocket(i, 0,InetAddress.getByName(Config.HOST));
-				view.showMessage("Server Strted at port " + i);
+				serverSocket = new ServerSocket(port, 0,InetAddress.getByName(Config.HOST));
+				view.showMessage("Server Strted at port " + port);
 				return;
 			} catch (IOException e1) {
 				view.showError("Can't open socket!");
@@ -117,7 +117,6 @@ public class Server {
 				view.showError("Error closing sockets!");
 			}
 		}
-		//view.setEnabled(false);
 	}
 	
 	// Inner class. Create listener
@@ -129,7 +128,7 @@ public class Server {
 		public void actionPerformed(ActionEvent event) {
 			if (event.getActionCommand() == "stop") {
 				stopServer();
-				view.disableStop();
+				view.getStopButton().setEnabled(false);
 			}
 		}
 	}

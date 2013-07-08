@@ -43,9 +43,9 @@ public class Server {
 	 * Find available port and starts server.
 	 */
 	public void startServer() {
-		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
+		for (int port = Config.MIN_PORT; port < Config.MAX_PORT; port++) {
 			try {
-				server = new ServerSocket(i, 0, InetAddress.getByName(Config.HOST));
+				server = new ServerSocket(port, 0, InetAddress.getByName(Config.HOST));
 				if (server != null) {
 					view.showMessage("Server is started");
 					clients = Collections.synchronizedList(new ArrayList<MessageHandler>());

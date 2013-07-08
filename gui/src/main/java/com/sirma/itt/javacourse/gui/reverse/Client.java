@@ -41,9 +41,9 @@ public class Client extends Thread {
 	 * Find available port and create socket.
 	 */
 	public boolean connect() {
-		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
+		for (int port = Config.MIN_PORT; port < Config.MAX_PORT; port++) {
 			try {
-				socket = new Socket(Config.HOST, i);
+				socket = new Socket(Config.HOST, port);
 
 				reader = new BufferedReader(new InputStreamReader(
 						socket.getInputStream()));

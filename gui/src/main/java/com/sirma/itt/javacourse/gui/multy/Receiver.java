@@ -68,7 +68,7 @@ public class Receiver extends Thread {
 		public void actionPerformed(ActionEvent event) {
 			if (event.getActionCommand() == "connect") {
 				start();
-				view.disableConnectButton();
+				view.getConnectButton().setEnabled(false);
 			}
 			
 			if (event.getActionCommand() == "stop") {

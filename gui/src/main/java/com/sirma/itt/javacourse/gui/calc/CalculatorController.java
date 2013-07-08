@@ -38,13 +38,16 @@ public class CalculatorController {
 			int key = clickedButton.charAt(0);
 			String result;
 
+			// digits 0-9
 			if(key > 47 && key < 58) {
 				result = model.generateNumber(clickedButton); 
 			    view.display(result);
 			}
+			// operators -, +, *, /
 			if(key > 41 && key < 48) {
 				model.setOperator(clickedButton);
 			}
+			// operator =
 			if(key == 61) {
 				result = model.calculate();
 				view.display(result);

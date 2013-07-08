@@ -2,6 +2,8 @@ package com.sirma.itt.javacourse.gui.agent;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
@@ -51,17 +53,19 @@ public class DownloadAgentView extends JFrame implements MouseListener {
 		txtPath.setName("path");
 
 		JPanel pnlDownload = new JPanel();
-		pnlDownload.setLayout(new GridLayout(2, 2));
-		pnlDownload.add(txtPath);
+		pnlDownload.setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		c.ipadx = 300;
+		c.ipady = 8;
+		pnlDownload.add(txtPath, c);
 		pnlDownload.add(btnDownload);
-		pnlDownload.add(new JSeparator());
 
 		btnDownload.addMouseListener(this);
 		txtPath.addMouseListener(this);
 		btnCancel.addMouseListener(this);
 
 		JPanel pnlProgress = new JPanel();
-		pnlProgress.setLayout(new GridLayout(1, 2));
+		pnlProgress.setLayout(new GridBagLayout());
 
 		Border border = BorderFactory.createTitledBorder("Download progress...");
 		progressBar.setBorder(border);
@@ -70,8 +74,9 @@ public class DownloadAgentView extends JFrame implements MouseListener {
 		btnCancel.setName("cancel");
 		btnCancel.setText("Cancel");
 		btnCancel.setVisible(false);
-
-		pnlProgress.add(progressBar);
+		c.ipady = 2;
+		c.ipadx = 285;
+		pnlProgress.add(progressBar, c);
 		pnlProgress.add(btnCancel);
 
 		Container pane = this.getContentPane();
@@ -79,9 +84,8 @@ public class DownloadAgentView extends JFrame implements MouseListener {
 		pane.add(pnlProgress, BorderLayout.SOUTH);
 
 		setResizable(false);
-		this.setSize(400, 130);
+		this.setSize(400, 110);
 		setLocation(350, 200);
-		pack();
 		setVisible(true);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

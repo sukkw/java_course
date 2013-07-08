@@ -60,8 +60,8 @@ public class ServerView extends JFrame {
 	/**
 	 * Disable stop button
 	 */
-	public void disableStop() {
-		btnStop.setEnabled(false);
+	public JButton getStopButton() {
+		return btnStop;
 	}
 
 	/**

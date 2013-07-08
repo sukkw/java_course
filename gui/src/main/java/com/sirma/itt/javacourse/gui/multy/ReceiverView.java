@@ -57,8 +57,8 @@ public class ReceiverView extends JFrame {
 	/**
 	 * Enables the connect button if needed.
 	 */
-	public void disableConnectButton() {
-		btnConnect.setEnabled(false);
+	public JButton getConnectButton() {
+		return btnConnect;
 	}
 	
 	/**

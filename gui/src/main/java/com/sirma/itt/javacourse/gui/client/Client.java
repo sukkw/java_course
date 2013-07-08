@@ -39,9 +39,9 @@ public class Client {
 	 * Find available port and starts client.
 	 */
 	private void startClient() {
-		for (int i = Config.MIN_PORT; i < Config.MAX_PORT; i++) {
+		for (int port = Config.MIN_PORT; port < Config.MAX_PORT; port++) {
 			try {
-				socket = new Socket(Config.HOST, i);
+				socket = new Socket(Config.HOST, port);
 				return;
 			} catch (UnknownHostException e1) {
 				view.showError("Can't find server!");
