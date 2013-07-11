@@ -27,7 +27,6 @@ public class InfoThread extends Thread {
 	public InfoThread(List<Socket> clientsList, String message) {
 		this.clientsList = clientsList;
 		this.message = message;	
-		start();
 	}
 	
 	/**

@@ -85,7 +85,8 @@ public class Server {
 			}
 			
 			message = "Client " + clientsNumber + " is connected...";
-			new InfoThread(clients, message);
+			InfoThread infoThread = new InfoThread(clients, message);
+			infoThread.start();
 			clients.add(connectedClient);
 			
 			clientsNumber++;					

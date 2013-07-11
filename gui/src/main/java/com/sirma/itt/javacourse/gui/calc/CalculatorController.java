@@ -52,18 +52,22 @@ public class CalculatorController {
 				result = model.calculate();
 				view.display(result);
 			}
+			// char C (used to represent clear operation)
 			if(key == 67) {
 				model.clear();
 				view.display("0");
 			}
+			// char B (used to represent Backspace operation)
 			if(key == 66) {
 				result = model.clearLastDigit(); 
 				view.display(result);
 			}
+			// Char D (used to represent .)
 			if(key == 68) {
 				result = model.setDot(); 
 				view.display(result);
 			}
+			// Char S (used to represent +/-)
 			if(key == 83) {
 				result = model.setSign();
 				view.display(result);
