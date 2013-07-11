@@ -1,16 +1,12 @@
 package com.sirma.itt.javacourse.gui.reverse;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Vector;
 
 import com.sirma.itt.javacourse.gui.config.Config;
 
@@ -28,7 +24,7 @@ public class Server {
 	private Socket client;
 	private PrintWriter writer;
 	private MessageHandler msgHandler;
-	private List<MessageHandler> clients;
+	private Vector<MessageHandler> clients;
 
 	/**
 	 * Constructor. Get reference to the view.
@@ -48,7 +44,7 @@ public class Server {
 				server = new ServerSocket(port, 0, InetAddress.getByName(Config.HOST));
 				if (server != null) {
 					view.showMessage("Server is started");
-					clients = Collections.synchronizedList(new ArrayList<MessageHandler>());
+					clients = new Vector<MessageHandler>();
 					acceptClients();
 				} else {
 					view.enableStartButton();
@@ -68,11 +64,10 @@ public class Server {
 		while (true) {
 			try {
 				client = server.accept();
-				view.showMessage("Client " + client.hashCode() + " accepted...");
+				view.showMessage("Client " + client.getInetAddress() + " accepted...");
 
-				writer = new PrintWriter(new BufferedWriter(
-						new OutputStreamWriter(client.getOutputStream())), true);
-				writer.println("Wellcome Client " + client.hashCode());
+				writer = new PrintWriter(client.getOutputStream(), true);
+				writer.println("Wellcome Client " + client.getInetAddress());
 
 				msgHandler = new MessageHandler(client, view);
 				msgHandler.start();

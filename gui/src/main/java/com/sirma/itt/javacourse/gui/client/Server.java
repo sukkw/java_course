@@ -2,17 +2,15 @@ package com.sirma.itt.javacourse.gui.client;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.sirma.itt.javacourse.gui.config.Config;
-import com.sirma.itt.javacourse.gui.info.InfoThread;
 
 /**
  * Server class. Starts server using ServerSocket and wait for client to join.
@@ -62,18 +60,17 @@ public class Server {
 	private void sendMessage() {
 
 		if (serverSocket != null) {
-			view.showMessage("Server started...");
+			view.showMessage("Server started.");
 			while (true) {
 				try {
 					socket = serverSocket.accept();
-					view.showMessage("Client join...");
-					printWriter = new PrintWriter(new BufferedWriter(
-							new OutputStreamWriter(socket.getOutputStream())),
+					view.showMessage("New client connected.");
+					printWriter = new PrintWriter(socket.getOutputStream(),
 							true);
 					Date date = new Date();
-					message = date.toString();
+					message = new SimpleDateFormat("yyyy-MM-dd").format(date);
 					printWriter.println("Hello " + message);
-					view.showMessage("Message sent...");
+					view.showMessage("Message sent.");
 				} catch (IOException e) {
 				}
 			}
@@ -97,7 +94,7 @@ public class Server {
 			view.showError("Error in closing sockets!");
 		}
 	}
-	
+
 	// Inner class. Create listener
 	class Listener implements ActionListener {
 
