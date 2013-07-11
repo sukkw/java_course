@@ -64,7 +64,7 @@ public class Server {
 			while (true) {
 				try {
 					socket = serverSocket.accept();
-					view.showMessage("New client connected.");
+					view.showMessage("New client " + socket.getInetAddress() + " connected.");
 					printWriter = new PrintWriter(socket.getOutputStream(),
 							true);
 					Date date = new Date();

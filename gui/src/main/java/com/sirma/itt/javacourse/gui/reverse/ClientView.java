@@ -103,7 +103,7 @@ public class ClientView extends JFrame implements ActionListener,
 		if (event.getActionCommand() == "send") {
 			client.setMessage(txtMessage.getText());
 
-			caretaker.addMemento(client.storeInMemento(txtMessage.getText()));
+			caretaker.addMemento(client.store(txtMessage.getText()));
 
 			savedMessages++;
 			currentMessage++;
@@ -117,7 +117,7 @@ public class ClientView extends JFrame implements ActionListener,
 			if (currentMessage >= 1) {
 				currentMessage--;
 
-				txtMessage.setText(client.restoreFromMemento(caretaker
+				txtMessage.setText(client.restore(caretaker
 						.getMemento(currentMessage)));
 
 				btnNext.setEnabled(true);
@@ -129,7 +129,7 @@ public class ClientView extends JFrame implements ActionListener,
 			if ((savedMessages - 1) > currentMessage) {
 				currentMessage++;
 
-				txtMessage.setText(client.restoreFromMemento(caretaker
+				txtMessage.setText(client.restore(caretaker
 						.getMemento(currentMessage)));
 
 				btnPrevious.setEnabled(true);

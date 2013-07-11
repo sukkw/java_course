@@ -142,7 +142,7 @@ public class Client extends Thread {
 	 * @param message - message
 	 * @return - memento object
 	 */
-	public Memento storeInMemento(String message) { 
+	public Memento store(String message) { 
 	    return new Memento(message); 
 	}
 
@@ -151,7 +151,7 @@ public class Client extends Thread {
 	 * @param memento
 	 * @return
 	 */
-	public String restoreFromMemento(Memento memento) {
+	public String restore(Memento memento) {
 		return memento.getSavedMessage();  
 	}
 }
