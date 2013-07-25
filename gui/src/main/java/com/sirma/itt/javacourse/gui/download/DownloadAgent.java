@@ -17,11 +17,12 @@ public class DownloadAgent {
 	// class private members
 	private DownloadTask task;
 	private DownloadAgentView view;
-	
+
 	/**
 	 * Constructor. Get reference to the view.
 	 * 
-	 * @param view -  GUI object.
+	 * @param view
+	 *            - GUI object.
 	 */
 	public DownloadAgent(DownloadAgentView view) {
 		this.view = view;
@@ -30,38 +31,50 @@ public class DownloadAgent {
 	/**
 	 * Creates an URLConnection to the source.
 	 * 
-	 * @param sourcePath - path to the file.
+	 * @param sourcePath
+	 *            - path to the file.
 	 */
 	public void downloadFile(String sourcePath) {
-		
+
 		File path = new File(sourcePath);
 		File out = null;
 		URL url = null;
 		File sourceFileName = null;
 		URLConnection connection = null;
-		
+
 		try {
-			if (path.isFile()) { 
+			if (path.isFile()) {
 				sourcePath = sourcePath.replaceAll("\\\\", "/");
 				sourcePath = "file:/" + sourcePath;
 			}
 			url = new URL(sourcePath);
 			connection = url.openConnection();
-			
+
 			String urlToString = url.toString();
-			String file = urlToString.substring(urlToString.lastIndexOf("/") + 1);
+			String file = urlToString
+					.substring(urlToString.lastIndexOf("/") + 1);
 			sourceFileName = new File(file);
-			
+
 			out = view.chooseDirectoryToSave(sourceFileName, sourcePath);
-			
+
 			task = new DownloadTask(connection, out, view);
 			task.addPropertyChangeListener(view);
-			task.execute();
 			
+
 		} catch (MalformedURLException e1) {
 			view.showMessage("Invalid URL or filepath!", 1);
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	public void start() {
+		task.execute();
+	}
+	
+	public void cancel() {
+		if (task != null) {
+			task.cancel(true);
 		}
 	}
 }

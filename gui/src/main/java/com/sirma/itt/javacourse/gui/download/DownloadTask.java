@@ -5,16 +5,16 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.URLConnection;
 
 import javax.swing.SwingWorker;
 
 class DownloadTask extends SwingWorker<Void, Void> {
 
-
 	// detect if file download is canceled by user
 	public static boolean canceled = false;
-
+	
 	// class private members
 	private BufferedInputStream in;
 	private BufferedOutputStream out;
@@ -28,10 +28,10 @@ class DownloadTask extends SwingWorker<Void, Void> {
 		this.connection = connection;
 		this.outputDir = outputDir;
 	}
-	
+
 	public Void doInBackground() {
-		int bytes = connection.getContentLength();
-		int transferedBytes = 0;
+		BigInteger bytes = new BigInteger(Integer.toString(connection
+				.getContentLength()));
 		int ch;
 		int count = 0;
 		setProgress(0);
@@ -40,27 +40,35 @@ class DownloadTask extends SwingWorker<Void, Void> {
 			in = new BufferedInputStream(connection.getInputStream());
 			out = new BufferedOutputStream(new FileOutputStream(outputDir));
 
-			int stopWrite = bytes - 1;
-			
-			while ((ch = in.read()) != -1) {
+			byte[] buffer = new byte[10240];
+			int size = 0;
+			BigInteger transferedBytes = new BigInteger("0");
+
+			while ((size = in.read(buffer)) > 0) {
+/*				if (isCancelled()) {
+					in.close();
+					out.close();
+					break;
+				}*/
+
 				if (canceled) {
 					in.close();
 					out.close();
-					canceled = false;
 					this.cancel(true);
+					canceled = false;
 					break;
 				}
-
-				if (count <= stopWrite) {
-					out.write(ch);
-					transferedBytes++;
-					System.out.println("transfered " + transferedBytes + " all "+ bytes + " % : " + (float)transferedBytes*100/bytes);
-					setProgress((transferedBytes*100/bytes));
-				}
-				count++;
+				
+				out.write(buffer, 0, size);
+				transferedBytes = transferedBytes.add(new BigInteger(Integer
+						.toString(size)));
+				int progress = transferedBytes
+						.multiply(BigInteger.valueOf(100)).divide(bytes)
+						.intValue();
+				setProgress(progress);
 			}
 
-			if (bytes == transferedBytes) {
+			if (bytes.equals(transferedBytes)) {
 				view.showMessage("Download is completed!", 1);
 				view.hideProgressBar();
 			} else {
@@ -73,14 +81,15 @@ class DownloadTask extends SwingWorker<Void, Void> {
 			view.hideProgressBar();
 		} finally {
 			try {
-				if(in != null) 
-				in.close();
-				if(out != null)
-				out.close();
+				if (in != null)
+					in.close();
+				if (out != null)
+					out.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
+
 		return null;
 	}
 }

@@ -31,8 +31,7 @@ public class Server {
 	/**
 	 * Constructor. Get reference to the view. Starts server.
 	 * 
-	 * @param view
-	 *            - server GUI
+	 * @param view - server GUI
 	 */
 	public Server(ServerView view) {
 		this.view = view;
@@ -83,8 +82,8 @@ public class Server {
 			message = "Client " + clientsNumber + " is connected...";
 			InfoThread infoThread = new InfoThread(clients, message);
 			infoThread.start();
-			clients.add(connectedClient);
 
+			clients.add(connectedClient);
 			clientsNumber++;
 		}
 	}

@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -40,6 +41,7 @@ public class DownloadAgentView extends JFrame implements MouseListener {
 	private JTextField txtPath = new JTextField("Enter file path...");
 	private JButton btnDownload = new JButton("Download");
 	private DownloadAgent downloadAgent;
+	private JPanel pnlProgress;
 
 	/**
 	 * Constructor. Initialize all components and show it on screen.
@@ -53,41 +55,69 @@ public class DownloadAgentView extends JFrame implements MouseListener {
 		txtPath.setName("path");
 
 		JPanel pnlDownload = new JPanel();
-		pnlDownload.setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		c.ipadx = 300;
-		c.ipady = 8;
-		pnlDownload.add(txtPath, c);
-		pnlDownload.add(btnDownload);
+		
+		// Layout for download panel
+		GridBagLayout consoleLayout = new GridBagLayout();
+		consoleLayout.rowWeights = new double[] { 0 };
+		consoleLayout.rowHeights = new int[] { 20 };
+		consoleLayout.columnWeights = new double[] { 0.1, 0.1 };
+		consoleLayout.columnWidths = new int[] { 300, 50 };
+		pnlDownload.setLayout(consoleLayout);
+		
+		pnlDownload.add(txtPath, new GridBagConstraints(0, 0, 1, 1, 0.0,
+				0.0, GridBagConstraints.CENTER,
+				GridBagConstraints.HORIZONTAL, new Insets(10, 10, 10, 10), 0,
+				7));
+
+		pnlDownload.add(btnDownload, new GridBagConstraints(1, 0, 1, 1, 0.0,
+				0.0, GridBagConstraints.CENTER,
+				GridBagConstraints.HORIZONTAL, new Insets(10, 0, 10, 10), 0,
+				0));
+
 
 		btnDownload.addMouseListener(this);
 		txtPath.addMouseListener(this);
 		btnCancel.addMouseListener(this);
 
-		JPanel pnlProgress = new JPanel();
-		pnlProgress.setLayout(new GridBagLayout());
+		pnlProgress = new JPanel();
+		
+		// Layout for progress panel
+		GridBagLayout progressLayout = new GridBagLayout();
+		progressLayout.rowWeights = new double[] { 0 };
+		progressLayout.rowHeights = new int[] { 20 };
+		progressLayout.columnWeights = new double[] { 0.1, 0.1 };
+		progressLayout.columnWidths = new int[] { 300, 50 };
+		pnlProgress.setLayout(progressLayout);
+		
+		pnlProgress.add(progressBar, new GridBagConstraints(0, 0, 1, 1, 0.0,
+				0.0, GridBagConstraints.CENTER,
+				GridBagConstraints.HORIZONTAL, new Insets(0, 8, 10, 11), 0,
+				0));
 
-		Border border = BorderFactory.createTitledBorder("Download progress...");
+		pnlProgress.add(btnCancel, new GridBagConstraints(1, 0, 1, 1, 0.0,
+				0.0, GridBagConstraints.SOUTHWEST,
+				GridBagConstraints.HORIZONTAL, new Insets(0, 0, 12, 10), 0,
+				0));
+
+		Border border = BorderFactory
+				.createTitledBorder("Download progress...");
 		progressBar.setBorder(border);
 		progressBar.setVisible(false);
 
 		btnCancel.setName("cancel");
 		btnCancel.setText("Cancel");
 		btnCancel.setVisible(false);
-		c.ipady = 2;
-		c.ipadx = 285;
-		pnlProgress.add(progressBar, c);
-		pnlProgress.add(btnCancel);
 
 		Container pane = this.getContentPane();
 		pane.add(pnlDownload, BorderLayout.NORTH);
 		pane.add(pnlProgress, BorderLayout.SOUTH);
-
+		pnlProgress.setVisible(false);
+		
 		setResizable(false);
-		this.setSize(400, 110);
 		setLocation(350, 200);
 		setVisible(true);
-
+		
+		pack();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
@@ -165,6 +195,8 @@ public class DownloadAgentView extends JFrame implements MouseListener {
 		progressBar.setValue(min);
 		progressBar.setVisible(true);
 		btnCancel.setVisible(true);
+		pnlProgress.setVisible(true);
+		pack();
 	}
 
 	/**
@@ -176,7 +208,9 @@ public class DownloadAgentView extends JFrame implements MouseListener {
 		txtPath.setEnabled(true);
 		progressBar.setVisible(false);
 		btnCancel.setVisible(false);
+		pnlProgress.setVisible(false);
 		txtPath.setText("Enter file path...");
+		pack();
 	}
 
 	/**

@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.gui.reverse;
 
 /**
- * Memento class. Create memento objects.
+ * Messenger class. Create memento pattern objects.
  *
  * @version 1.1 19 June 2013
  * @author Stella Djulgerova

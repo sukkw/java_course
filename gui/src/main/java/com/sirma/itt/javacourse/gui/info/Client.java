@@ -68,7 +68,9 @@ public class Client extends Thread {
 				while (true) {
 					message = reader.readLine();
 					if (message == null) {
+						view.showError("The server was stopped!");
 						throw new NoSocketException("Server stopped!");
+						
 					} else if ("disconnected".equals(message)) {
 						view.showError("The server was stopped!");
 						break;

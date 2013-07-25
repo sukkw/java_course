@@ -33,13 +33,15 @@ public class InfoThread extends Thread {
 	 * Notify all active clients when new one is join.
 	 */
 	public void run() {
-		for (int i = 0; i < clientsList.size(); i++) {
-			Socket client = (Socket) clientsList.get(i);
-			try {
-				PrintWriter printWriter = new PrintWriter(client.getOutputStream(), true);
-				printWriter.println(message);
-			} catch (IOException e) {
-				e.printStackTrace();
+		synchronized (clientsList) {
+			for (int i = 0; i < clientsList.size()-1; i++) {
+				Socket client = (Socket) clientsList.get(i);
+				try {
+					PrintWriter printWriter = new PrintWriter(client.getOutputStream(), true);
+					printWriter.println(message);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}

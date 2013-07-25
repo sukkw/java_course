@@ -109,9 +109,38 @@ public class MessageHandler extends Thread {
 	 * @throws IOException
 	 */
 	public void close() throws IOException {
-		reader.close();
+		closeReader();
+		closeWriter();
+		closeClient();
+	}
+	
+	/**
+	 * Close reader
+	 */
+	public void closeReader() {
+		try {
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Close writer
+	 */
+	public void closeWriter() {
 		printWriter.close();
-		client.close();
+	}
+	
+	/**
+	 * Close writer
+	 */
+	public void closeClient() {
+		try {
+			client.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean isStopped() {
