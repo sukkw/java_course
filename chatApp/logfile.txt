@@ -12,3 +12,4 @@
   <thread>12</thread>
   <message>Server's UI is loaded.</message>
 </record>
+</log>
