@@ -82,7 +82,7 @@ public class ChatFrame extends javax.swing.JFrame {
 	
 	public ChatFrame() {
 		initComponents();
-		this.setTitle("jMessenger");
+		
 		model.addElement("All");
 		clientsList.setSelectedIndex(0);
 
@@ -355,8 +355,11 @@ public class ChatFrame extends javax.swing.JFrame {
 		String target = clientsList.getSelectedValue().toString();
 
 		if (!msg.isEmpty() && !target.isEmpty()) {
-			sendMsgArea.setText("");
+			System.out.println("clear??");
+			
 			client.send(new Message("message", username, msg, target));
+			sendMsgArea.setText("");
+			sendMsgArea.requestFocus();
 		}
 	}
 
@@ -374,7 +377,7 @@ public class ChatFrame extends javax.swing.JFrame {
 		clientThread.start();
 
 		username = txtNick.getText();
-
+		setTitle(username);
 		if (!username.isEmpty()) {
 			client.send(new Message("signup", username, "", "SERVER"));
 		}
@@ -416,21 +419,6 @@ public class ChatFrame extends javax.swing.JFrame {
 		} else {
 			System.err.println("Couldn't find file: " + path);
 			return null;
-		}
-	}
-	
-	public void showWarning(String warningMessage, int msgType) {
-		switch (msgType) {
-		case 1:
-			JOptionPane.showMessageDialog(this, warningMessage, "Error",
-					JOptionPane.ERROR_MESSAGE);
-			log.warning(warningMessage);
-			break;
-		case 2:
-			JOptionPane.showMessageDialog(this, warningMessage, "Information",
-					JOptionPane.INFORMATION_MESSAGE);
-			log.info(warningMessage);
-			break;
 		}
 	}
 }

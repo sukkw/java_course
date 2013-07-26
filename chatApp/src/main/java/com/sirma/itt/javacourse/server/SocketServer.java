@@ -11,10 +11,12 @@ import java.io.*;
 import java.net.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.Vector;
 import java.util.logging.Logger;
 
 import com.sirma.itt.javacourse.common.LogFileHandler;
 import com.sirma.itt.javacourse.common.Message;
+import com.sirma.itt.javacourse.common.MessageDialog;
 import com.sirma.itt.javacourse.common.Validator;
 
 class ServerThread extends Thread {
@@ -48,7 +50,6 @@ class ServerThread extends Thread {
 		return ID;
 	}
 
-	@SuppressWarnings("deprecation")
 	public void run() {
 		ui.showMessage("Server Thread " + ID + " running.");
 		while (true) {
@@ -81,25 +82,23 @@ class ServerThread extends Thread {
 
 public class SocketServer implements Runnable {
 
-	public ServerThread clients[];
+	public Vector<ServerThread> clients;
 	public ServerSocket server = null;
 	public Thread thread = null;
-	public int clientCount = 0, port = 13000;
 	public ServerFrame ui;
 
 	private ResourceBundle bundle;
-	private Logger log = Logger.getLogger("ServerView");
+	private Logger log = Logger.getLogger("SocketServer");
 
 	public SocketServer(ServerFrame frame) {
 
-		clients = new ServerThread[50];
+		clients = new Vector<ServerThread>(50);
 		ui = frame;
 
 		ui.addServerMouseListener(new ServerMouseListener());
 		ui.addServerActionListener(new ServerActionPerformed());
 		ui.addWindowListener(new ServerWindowListener());
 		log.addHandler(LogFileHandler.getHandler());
-
 	}
 
 	public void run() {
@@ -123,8 +122,8 @@ public class SocketServer implements Runnable {
 					+ ", Port : " + server.getLocalPort());
 			start();
 		} catch (IOException ioe) {
+			MessageDialog.showMessage(ui, "port in use", 1);
 			ui.showMessage("Can not bind to port : " + port + "\nRetrying");
-
 		}
 	}
 
@@ -149,8 +148,8 @@ public class SocketServer implements Runnable {
 	}
 
 	private int findClient(int ID) {
-		for (int i = 0; i < clientCount; i++) {
-			if (clients[i].getID() == ID) {
+		for (int i = 0; i < clients.size(); i++) {
+			if (clients.get(i).getID() == ID) {
 				return i;
 			}
 		}
@@ -159,84 +158,94 @@ public class SocketServer implements Runnable {
 
 	public synchronized void handle(int ID, Message msg) {
 		if (msg.content.equals(".bye")) {
-			Announce("signout", "SERVER", msg.sender);
+			sendToAll("signout", "SERVER", msg.sender);
 			remove(ID);
 		}
 
 		else if (msg.type.equals("message")) {
 			if (msg.recipient.equals("All")) {
-				Announce("message", msg.sender, msg.content);
+				sendToAll("message", msg.sender, msg.content);
 			} else {
 				findUserThread(msg.recipient).send(
 						new Message(msg.type, msg.sender, msg.content,
 								msg.recipient));
-				clients[findClient(ID)].send(new Message(msg.type, msg.sender,
-						msg.content, msg.recipient));
+				clients.get(findClient(ID)).send(
+						new Message(msg.type, msg.sender, msg.content,
+								msg.recipient));
 			}
-		} 
-		else if (msg.type.equals("signup")) {
-			
+		} else if (msg.type.equals("signup")) {
+
 			if (findUserThread(msg.sender) == null) {
 				if (Validator.validate(msg.sender) == null) {
 
-					clients[findClient(ID)].username = msg.sender;
-					clients[findClient(ID)].send(new Message("signup",
-							"SERVER", "TRUE", msg.sender));
+					clients.get(findClient(ID)).username = msg.sender;
+					clients.get(findClient(ID))
+							.send(new Message("signup", "SERVER", "TRUE",
+									msg.sender));
 
-					Announce("newuser", "SERVER", msg.sender);
+					sendToAll("newuser", "SERVER", msg.sender);
+					announceNew("newuserz", "SERVER", msg.sender);
 					sendUserList(msg.sender);
 				} else {
-					clients[findClient(ID)].send(new Message("signup",
-							"SERVER", Validator.validate(msg.sender),
-							msg.sender));
+					clients.get(findClient(ID)).send(
+							new Message("signup", "SERVER", Validator
+									.validate(msg.sender), msg.sender));
+					
+					remove(ID);
 				}
 			} else {
-				clients[findClient(ID)].send(new Message("signup", "SERVER",
-						"Usename in use", msg.sender));
+				clients.get(findClient(ID)).send(
+						new Message("signup", "SERVER", "Usename in use",
+								msg.sender));
 
 			}
 		} else {
-			clients[findClient(ID)].send(new Message("unknown", "SERVER",
-					"TRUE", msg.sender));
+			clients.get(findClient(ID)).send(
+					new Message("unknown", "SERVER", "TRUE", msg.sender));
 		}
 	}
 
-	public void Announce(String type, String sender, String content) {
+	public void sendToAll(String type, String sender, String content) {
 		Message msg = new Message(type, sender, content, "All");
-		for (int i = 0; i < clientCount; i++) {
-			clients[i].send(msg);
+		for (int i = 0; i < clients.size(); i++) {
+			clients.get(i).send(msg);
+		}
+	}
+
+	// Can you make something smarter here??
+	public void announceNew(String type, String sender, String content) {
+		Message msg = new Message(type, sender, content, "All");
+
+		for (int i = 0; i < clients.size(); i++) {
+			if (!clients.get(i).username.equalsIgnoreCase(content)) {
+				clients.get(i).send(msg);
+			}
 		}
 	}
 
 	public void sendUserList(String toWhom) {
-		for (int i = 0; i < clientCount; i++) {
+		for (int i = 0; i < clients.size(); i++) {
 			findUserThread(toWhom).send(
-					new Message("newuser", "SERVER", clients[i].username,
+					new Message("newuser", "SERVER", clients.get(i).username,
 							toWhom));
 		}
 	}
 
 	public ServerThread findUserThread(String usr) {
-		for (int i = 0; i < clientCount; i++) {
-			if (clients[i].username.equalsIgnoreCase(usr)) {
-				return clients[i];
+		for (int i = 0; i < clients.size(); i++) {
+			if (clients.get(i).username.equalsIgnoreCase(usr)) {
+				return clients.get(i);
 			}
 		}
 		return null;
 	}
 
-	@SuppressWarnings("deprecation")
 	public synchronized void remove(int ID) {
 		int pos = findClient(ID);
+		System.out.println("remove? " + pos);
 		if (pos >= 0) {
-			ServerThread toTerminate = clients[pos];
+			ServerThread toTerminate = clients.remove(pos);
 			ui.showMessage("Removing client thread " + ID + " at " + pos);
-			if (pos < clientCount - 1) {
-				for (int i = pos + 1; i < clientCount; i++) {
-					clients[i - 1] = clients[i];
-				}
-			}
-			clientCount--;
 			try {
 				toTerminate.close();
 			} catch (IOException ioe) {
@@ -247,20 +256,17 @@ public class SocketServer implements Runnable {
 	}
 
 	private void addThread(Socket socket) {
-		if (clientCount < clients.length) {
+
+		try {
+			ServerThread newClient = new ServerThread(this, socket);
+			newClient.open();
+			newClient.start();
+			clients.add(newClient);
 			ui.showMessage("Client accepted: " + socket);
-			clients[clientCount] = new ServerThread(this, socket);
-			try {
-				clients[clientCount].open();
-				clients[clientCount].start();
-				clientCount++;
-			} catch (IOException ioe) {
-				ui.showMessage("Error opening thread: " + ioe);
-			}
-		} else {
-			ui.showMessage("Client refused: maximum " + clients.length
-					+ " reached.");
+		} catch (IOException ioe) {
+			ui.showMessage("Error opening thread: " + ioe);
 		}
+
 	}
 
 	// Inner class. Create listener
@@ -303,7 +309,7 @@ public class SocketServer implements Runnable {
 
 			if ("start".equals(ae.getActionCommand())) {
 				ui.disableStartButton();
-				
+
 				Integer portNumber = new Integer((String) ui.getPortsList()
 						.getSelectedItem());
 				connect(portNumber);

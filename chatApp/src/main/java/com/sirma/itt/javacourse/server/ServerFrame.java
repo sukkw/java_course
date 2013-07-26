@@ -1,7 +1,6 @@
 package com.sirma.itt.javacourse.server;
 
 import java.awt.BorderLayout;
-import java.awt.Cursor;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -22,7 +21,6 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -31,40 +29,46 @@ import javax.swing.border.BevelBorder;
 import com.sirma.itt.javacourse.common.LogFileHandler;
 import com.sirma.itt.javacourse.config.Config;
 
+/**
+ * This class creates server GUI.
+ * 
+ * @version 1.1 26 July 2013
+ * @author Stella Djulgerova
+ */
 public class ServerFrame extends JFrame {
 
 	private static final long serialVersionUID = 7372785543380113979L;
 
+	// GUI components
 	private JButton btnStart;
 	private JButton btnStop;
 	private JTextArea console;
-	private JScrollPane scroll;
+	private JScrollPane consoleScroll;
 	private JPanel consolePanel;
+
+	private JComboBox<String> portsList;
+	private JLabel flagLabel;
+	private JLabel langLabel;
+	private JPanel configPanel;
 
 	public SocketServer server;
 	public Thread serverThread;
-
-	private JComboBox<String> portsList;
-	private JPanel configPanel;
-	private JLabel flagLabel;
-	private JLabel langLabel;
-
+	
+	// language bundle and logger
 	private ResourceBundle bundle;
 	private Logger log = Logger.getLogger("ServerView");
 
+	/**
+	 * Constructor. Initialize all graphic components.
+	 */
 	public ServerFrame() {
-		initComponents();
-		console.setEditable(false);
-	}
-
-	private void initComponents() {
 
 		try {
 			// load language bundle and logger
 			bundle = ResourceBundle.getBundle(Config.LANG_BUNDLE);
 			log.addHandler(LogFileHandler.getHandler());
 
-			// Layout for console panel
+			// Create layout for console panel
 			consolePanel = new JPanel();
 			GridBagLayout consoleLayout = new GridBagLayout();
 			consoleLayout.rowWeights = new double[] { 0, 0 };
@@ -91,18 +95,20 @@ public class ServerFrame extends JFrame {
 					0));
 			btnStop.setEnabled(false);
 
-			// text area
+			// console text area
 			console = new JTextArea();
-			scroll = new JScrollPane(console);
-			consolePanel.add(scroll, new GridBagConstraints(0, 0, 5, 1, 0.0,
+			consoleScroll = new JScrollPane(console);
+			consolePanel.add(consoleScroll, new GridBagConstraints(0, 0, 5, 1, 0.0,
 					0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 					new Insets(5, 10, 0, 10), 0, 0));
 			console.setBorder(BorderFactory
 					.createBevelBorder(BevelBorder.LOWERED));
 			console.setEditable(false);
-			console.setFont(new java.awt.Font("Arial", 0, 10));
+			console.setFont(new java.awt.Font("Arial", 0, 13));
+			console.setEditable(false);
+			consoleScroll.setViewportView(console);
 
-			// Layout for config panel
+			// create layout for configuration panel
 			configPanel = new JPanel();
 			GridBagLayout configLayout = new GridBagLayout();
 			configLayout.rowWeights = new double[] { 0 };
@@ -112,9 +118,8 @@ public class ServerFrame extends JFrame {
 			configPanel.setLayout(configLayout);
 
 			// combo box to choose a port number
-			DefaultComboBoxModel<String> defaultComboBoxModel = new DefaultComboBoxModel<String>(
-					new String[] { "7000", "7001", "7002", "7003", "7004" });
-			ComboBoxModel<String> portsListModel = defaultComboBoxModel;
+			ComboBoxModel<String> portsListModel = new DefaultComboBoxModel<String>(
+					Config.PORTS);
 			portsList = new JComboBox<String>();
 
 			configPanel.add(portsList,
@@ -124,7 +129,7 @@ public class ServerFrame extends JFrame {
 									0), 0, 0));
 			portsList.setModel(portsListModel);
 
-			// label to choose different language
+			// label and small icon to choose different language
 			BufferedImage myPicture = ImageIO.read(getClass()
 					.getResourceAsStream(bundle.getString("flagIcon")));
 			flagLabel = new JLabel(new ImageIcon(myPicture));
@@ -144,19 +149,16 @@ public class ServerFrame extends JFrame {
 							GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0,
 									0), 0, 0));
 
+			// add configuration and console panels to frame
 			getContentPane().add(consolePanel, BorderLayout.CENTER);
 			getContentPane().add(configPanel, BorderLayout.NORTH);
 
 			setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 			setTitle("ChatServer");
 
-			console.setColumns(20);
-			console.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-			console.setRows(5);
-			scroll.setViewportView(console);
-
 			setResizable(false);
 			setLocation(400, 200);
+			setVisible(true);
 			pack();
 
 			log.info("Server's UI is loaded.");
@@ -168,35 +170,11 @@ public class ServerFrame extends JFrame {
 	}
 
 	/**
-	 * Shows warning or error messages according the parameters.
-	 * 
-	 * @param message
-	 *            - The message that should be displayed.
-	 * @param type
-	 *            - type of the window to be shown.
-	 */
-	public void showWarning(String message, int type) {
-		switch (type) {
-		case 1:
-			JOptionPane.showMessageDialog(this, message, "Error",
-					JOptionPane.ERROR_MESSAGE);
-			log.warning(message);
-			break;
-		case 2:
-			JOptionPane.showMessageDialog(this, message, "Information",
-					JOptionPane.INFORMATION_MESSAGE);
-			log.info(message);
-			break;
-		}
-	}
-
-	/**
 	 * Enables the start button.
 	 */
 	public void enableStartButton() {
 		btnStop.setEnabled(false);
 		btnStart.setEnabled(true);
-
 	}
 
 	/**
@@ -205,7 +183,6 @@ public class ServerFrame extends JFrame {
 	public void disableStartButton() {
 		btnStop.setEnabled(true);
 		btnStart.setEnabled(false);
-
 	}
 
 	/**
@@ -226,13 +203,13 @@ public class ServerFrame extends JFrame {
 	}
 
 	/**
-	 * Updates form view corresponding to the chosen language
+	 * Updates GUI corresponding to the chosen language
 	 * 
-	 * @param bundle
-	 *            - lang bundle
+	 * @param bundle - language bundle
 	 */
 	public void updateComponents(ResourceBundle bundle) {
 
+		// try to change language. If fail show error message.
 		try {
 			btnStop.setText(bundle.getString("stop"));
 			btnStart.setText(bundle.getString("start"));
@@ -251,8 +228,7 @@ public class ServerFrame extends JFrame {
 	/**
 	 * Add mouse listeners
 	 * 
-	 * @param listener
-	 *            - mouse listener
+	 * @param listener - mouse listener
 	 */
 	public void addServerMouseListener(MouseListener listener) {
 		flagLabel.addMouseListener(listener);
@@ -262,8 +238,7 @@ public class ServerFrame extends JFrame {
 	/**
 	 * Add action listener
 	 * 
-	 * @param listener
-	 *            - action listener
+	 * @param listener - action listener
 	 */
 	public void addServerActionListener(ActionListener listener) {
 		btnStart.addActionListener(listener);
@@ -273,7 +248,7 @@ public class ServerFrame extends JFrame {
 	/**
 	 * Get language label
 	 * 
-	 * @return - language label
+	 * @return language label
 	 */
 	public JLabel getLangLabel() {
 		return langLabel;
@@ -282,12 +257,17 @@ public class ServerFrame extends JFrame {
 	/**
 	 * get ports combo box
 	 * 
-	 * @return
+	 * @return ports list combo box
 	 */
 	public JComboBox<String> getPortsList() {
 		return portsList;
 	}
 
+	/**
+	 * Get configuration panel
+	 * 
+	 * @return
+	 */
 	public JPanel getConfigPanel() {
 		return configPanel;
 	}

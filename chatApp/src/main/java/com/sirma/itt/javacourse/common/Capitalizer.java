@@ -19,5 +19,10 @@ public class Capitalizer extends DocumentFilter {
 			text = text.substring(0, 1).toUpperCase() + text.substring(1);
 			fb.replace(offset, length, text, attr);
 		}
+		
+		// clear console if empty string is entered
+		if("".equals(text)) {
+			fb.replace(offset, length, text, attr);
+		}
 	}
 }
