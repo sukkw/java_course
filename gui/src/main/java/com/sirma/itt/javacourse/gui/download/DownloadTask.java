@@ -11,9 +11,6 @@ import java.net.URLConnection;
 import javax.swing.SwingWorker;
 
 class DownloadTask extends SwingWorker<Void, Void> {
-
-	// detect if file download is canceled by user
-	public static boolean canceled = false;
 	
 	// class private members
 	private BufferedInputStream in;
@@ -32,8 +29,7 @@ class DownloadTask extends SwingWorker<Void, Void> {
 	public Void doInBackground() {
 		BigInteger bytes = new BigInteger(Integer.toString(connection
 				.getContentLength()));
-		int ch;
-		int count = 0;
+
 		setProgress(0);
 
 		try {
@@ -45,17 +41,9 @@ class DownloadTask extends SwingWorker<Void, Void> {
 			BigInteger transferedBytes = new BigInteger("0");
 
 			while ((size = in.read(buffer)) > 0) {
-/*				if (isCancelled()) {
+				if (isCancelled()) {
 					in.close();
 					out.close();
-					break;
-				}*/
-
-				if (canceled) {
-					in.close();
-					out.close();
-					this.cancel(true);
-					canceled = false;
 					break;
 				}
 				

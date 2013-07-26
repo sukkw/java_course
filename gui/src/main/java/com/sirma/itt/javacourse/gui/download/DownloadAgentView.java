@@ -134,7 +134,6 @@ public class DownloadAgentView extends JFrame implements MouseListener,
 		case "download":
 			String sourcePath = txtPath.getText();
 			downloadAgent.downloadFile(sourcePath);
-			downloadAgent.start();
 			break;
 		case "cancel":
 			downloadAgent.cancel();
@@ -145,17 +144,13 @@ public class DownloadAgentView extends JFrame implements MouseListener,
 		}
 	}
 
-	public void mouseClicked(MouseEvent arg0) {
-	}
+	public void mouseClicked(MouseEvent arg0) {}
 
-	public void mouseEntered(MouseEvent arg0) {
-	}
+	public void mouseEntered(MouseEvent arg0) {}
 
-	public void mouseExited(MouseEvent arg0) {
-	}
+	public void mouseExited(MouseEvent arg0) {}
 
-	public void mouseReleased(MouseEvent arg0) {
-	}
+	public void mouseReleased(MouseEvent arg0) {}
 
 	/**
 	 * Show the fileChooser and let user to choose directory.
@@ -200,20 +195,13 @@ public class DownloadAgentView extends JFrame implements MouseListener,
 
 	/**
 	 * Show Progress bar on screen.
-	 * 
-	 * @param min
-	 *            - start value for the progress bar.
-	 * @param max
-	 *            - end value for the progress bar.
 	 */
-	public void showProgressBar(int min, int max) {
+	public void showProgressBar() {
 		btnDownload.removeMouseListener(this);
 		btnDownload.setEnabled(false);
 		txtPath.setEnabled(false);
-		progressBar.setMinimum(min);
-		progressBar.setMaximum(max);
-		progressBar.setValue(min);
 		progressBar.setVisible(true);
+		progressBar.setStringPainted(true);
 		btnCancel.setVisible(true);
 		pnlProgress.setVisible(true);
 		pack();
@@ -236,8 +224,7 @@ public class DownloadAgentView extends JFrame implements MouseListener,
 	/**
 	 * Update progress bar.
 	 * 
-	 * @param value
-	 *            - new value of progress bar
+	 * @param value - new value of progress bar
 	 */
 	public void updateBar(int value) {
 		progressBar.setValue(value);
@@ -246,14 +233,8 @@ public class DownloadAgentView extends JFrame implements MouseListener,
 
 	@Override
 	public void propertyChange(PropertyChangeEvent e) {
-
-		
 		if ("progress".equals(e.getPropertyName())) {
-			progressBar.setVisible(true);
-			progressBar.setStringPainted(true);
-			btnCancel.setVisible(true);
-			pnlProgress.setVisible(true);
-			pack();
+			showProgressBar();
 			int progress = (Integer) e.getNewValue();
 
 			progressBar.setValue(progress);

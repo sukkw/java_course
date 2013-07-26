@@ -21,8 +21,7 @@ public class DownloadAgent {
 	/**
 	 * Constructor. Get reference to the view.
 	 * 
-	 * @param view
-	 *            - GUI object.
+	 * @param view - GUI object.
 	 */
 	public DownloadAgent(DownloadAgentView view) {
 		this.view = view;
@@ -31,8 +30,7 @@ public class DownloadAgent {
 	/**
 	 * Creates an URLConnection to the source.
 	 * 
-	 * @param sourcePath
-	 *            - path to the file.
+	 * @param sourcePath - path to the file.
 	 */
 	public void downloadFile(String sourcePath) {
 
@@ -59,7 +57,7 @@ public class DownloadAgent {
 
 			task = new DownloadTask(connection, out, view);
 			task.addPropertyChangeListener(view);
-			
+			task.execute();
 
 		} catch (MalformedURLException e1) {
 			view.showMessage("Invalid URL or filepath!", 1);
@@ -68,10 +66,9 @@ public class DownloadAgent {
 		}
 	}
 
-	public void start() {
-		task.execute();
-	}
-	
+	/**
+	 * Stop download process
+	 */
 	public void cancel() {
 		if (task != null) {
 			task.cancel(true);
