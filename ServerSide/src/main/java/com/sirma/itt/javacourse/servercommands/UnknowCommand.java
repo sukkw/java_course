@@ -13,25 +13,25 @@ import com.sirma.itt.javacourse.server.ClientHandler;
 public class UnknowCommand extends Command {
 
 	// class private members
-	private ClientHandler clientManager;
-	private int ID;
+	private ClientHandler clientHandler;
+	private int id;
 
 	/**
 	 * Constructor. Initialize all needed variables.
 	 * 
-	 * @param ID - client ID
+	 * @param id - client ID
 	 * @param msg - client message
 	 */
-	public UnknowCommand(int ID) {
-		clientManager = ClientHandler.getInstance();
-		this.ID = ID;
+	public UnknowCommand(int id) {
+		clientHandler = ClientHandler.getInstance();
+		this.id = id;
 	}
 
 	/**
 	 * Execute command.
 	 */
 	public void execute() {
-		clientManager.getClientByID(ID).sendMessage(
+		clientHandler.getClientByID(id).sendMessage(
 				new Message(ServerMessages.UNKNOWN, "", "", ""));
 	}
 }

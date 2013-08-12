@@ -18,19 +18,19 @@ public class LoginCommand extends Command {
 
 	// class private members
 	private ClientHandler clientHandler;
-	private int ID;
+	private int id;
 	private Message msg;
 	private ResourceBundle bundle;
 
 	/**
 	 * Constructor. Initialize all needed variables.
 	 * 
-	 * @param ID - client ID
+	 * @param id - client ID
 	 * @param msg - client message
 	 */
-	public LoginCommand(int ID, Message msg) {
+	public LoginCommand(int id, Message msg) {
 		clientHandler = ClientHandler.getInstance();
-		this.ID = ID;
+		this.id = id;
 		this.msg = msg;
 		bundle = LangBundleHandler.getBundle();
 	}
@@ -42,7 +42,7 @@ public class LoginCommand extends Command {
 
 		// check is entered nickname empty
 		if("".equals(msg.sender)) {
-			clientHandler.getClientByID(ID).sendMessage(
+			clientHandler.getClientByID(id).sendMessage(
 					new Message(ServerMessages.LOGIN, ServerMessages.SERVER, "empty",
 							msg.sender));
 			return;
@@ -54,8 +54,8 @@ public class LoginCommand extends Command {
 			// check is entered by user nickname valid
 			if (Validator.validate(msg.sender) == null) {
 
-				clientHandler.getClientByID(ID).setUsername(msg.sender);
-				clientHandler.getClientByID(ID).sendMessage(
+				clientHandler.getClientByID(id).setUsername(msg.sender);
+				clientHandler.getClientByID(id).sendMessage(
 						new Message(ServerMessages.APPROVED, ServerMessages.SERVER,
 								msg.sender, msg.sender));
 				notifyObserver(bundle.getString("user") + msg.sender + " "
@@ -66,12 +66,12 @@ public class LoginCommand extends Command {
 				notifyObserver(bundle.getString("user_added"));
 				notifyObserver(bundle.getString("thread"));
 			} else {
-				clientHandler.getClientByID(ID).sendMessage(
+				clientHandler.getClientByID(id).sendMessage(
 						new Message(ServerMessages.LOGIN, ServerMessages.SERVER, Validator
 								.validate(msg.sender), msg.sender));
 			}
 		} else {
-			clientHandler.getClientByID(ID).sendMessage(
+			clientHandler.getClientByID(id).sendMessage(
 					new Message(ServerMessages.LOGIN, ServerMessages.SERVER, "in_use",
 							msg.sender));
 		}

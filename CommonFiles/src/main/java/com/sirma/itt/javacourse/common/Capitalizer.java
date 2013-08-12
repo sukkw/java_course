@@ -9,7 +9,7 @@ import javax.swing.text.DocumentFilter;
  * 
  * @version 1.1 30 July 2013
  * @author Stella Djulgerova
- */
+ */ 
 public class Capitalizer extends DocumentFilter {
 	
 	/**

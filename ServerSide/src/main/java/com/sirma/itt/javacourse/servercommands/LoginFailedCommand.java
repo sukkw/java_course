@@ -11,24 +11,24 @@ import com.sirma.itt.javacourse.server.ClientHandler;
 public class LoginFailedCommand extends Command {
 
 	// class private members
-	private ClientHandler clientManager;
-	private int ID;
+	private ClientHandler clientHandler;
+	private int id;
 	
 	/**
 	 * Constructor. Initialize all needed variables.
 	 * 
-	 * @param ID - client ID
+	 * @param id - client ID
 	 * @param msg - client message
 	 */
-	public LoginFailedCommand(int ID) {
-		clientManager = ClientHandler.getInstance();
-		this.ID = ID;
+	public LoginFailedCommand(int id) {
+		clientHandler = ClientHandler.getInstance();
+		this.id = id;
 	}
 	
 	/**
 	 * Execute command.
 	 */
 	public void execute() {
-		clientManager.removeClient(ID);
+		clientHandler.removeClient(id);
 	}
 }

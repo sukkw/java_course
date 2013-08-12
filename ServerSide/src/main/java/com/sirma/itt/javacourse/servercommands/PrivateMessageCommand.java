@@ -13,19 +13,19 @@ import com.sirma.itt.javacourse.server.ClientHandler;
 public class PrivateMessageCommand extends Command {
 
 	// class private members
-	private ClientHandler clientManager;
-	private int ID;
+	private ClientHandler clientHandler;
+	private int id;
 	private Message msg;
 	
 	/**
 	 * Constructor. Initialize all needed variables.
 	 * 
-	 * @param ID - client ID
+	 * @param id - client ID
 	 * @param msg - client message
 	 */
-	public PrivateMessageCommand(int ID, Message msg) {
-		clientManager = ClientHandler.getInstance();
-		this.ID = ID;
+	public PrivateMessageCommand(int id, Message msg) {
+		clientHandler = ClientHandler.getInstance();
+		this.id = id;
 		this.msg = msg;
 	}
 	
@@ -33,10 +33,10 @@ public class PrivateMessageCommand extends Command {
 	 * Execute command.
 	 */
 	public void execute() {
-		clientManager.getClientByName(msg.recipient).sendMessage(
+		clientHandler.getClientByName(msg.recipient).sendMessage(
 				new Message(ServerMessages.PRIVATE_MESSAGE, msg.sender, msg.content,
 						msg.recipient));
-		clientManager.getClientByID(ID).sendMessage(
+		clientHandler.getClientByID(id).sendMessage(
 				new Message(ServerMessages.PRIVATE_MESSAGE, msg.sender, msg.content,
 						msg.recipient));
 	}

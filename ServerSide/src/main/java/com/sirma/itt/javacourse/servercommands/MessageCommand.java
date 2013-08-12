@@ -13,7 +13,7 @@ import com.sirma.itt.javacourse.server.ClientHandler;
 public class MessageCommand extends Command {
 
 	// class private members
-	private ClientHandler clientManager;
+	private ClientHandler clientHandler;
 	private Message msg;
 	
 	/**
@@ -22,7 +22,7 @@ public class MessageCommand extends Command {
 	 * @param msg - client message
 	 */
 	public MessageCommand(Message msg) {
-		clientManager = ClientHandler.getInstance();
+		clientHandler = ClientHandler.getInstance();
 		this.msg = msg;
 	}
 	
@@ -30,6 +30,6 @@ public class MessageCommand extends Command {
 	 * Execute command.
 	 */
 	public void execute() {
-		clientManager.sendToAll(ServerMessages.MESSAGE, msg.sender, msg.content);
+		clientHandler.sendToAll(ServerMessages.MESSAGE, msg.sender, msg.content);
 	}
 }

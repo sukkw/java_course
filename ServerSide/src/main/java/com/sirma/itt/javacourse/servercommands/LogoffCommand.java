@@ -16,20 +16,20 @@ import com.sirma.itt.javacourse.server.ClientHandler;
 public class LogoffCommand extends Command {
 
 	// class private members
-	private ClientHandler clientManager;
-	private int ID;
+	private ClientHandler clientHandler;
+	private int id;
 	private Message msg;
 	private ResourceBundle bundle;
 	
 	/**
 	 * Constructor. Initialize all needed variables.
 	 * 
-	 * @param ID - client ID
+	 * @param id - client ID
 	 * @param msg - client message
 	 */
-	public LogoffCommand(int ID, Message msg) {
-		clientManager = ClientHandler.getInstance();
-		this.ID = ID;
+	public LogoffCommand(int id, Message msg) {
+		clientHandler = ClientHandler.getInstance();
+		this.id = id;
 		this.msg = msg;
 		bundle = LangBundleHandler.getBundle();
 	}
@@ -38,8 +38,8 @@ public class LogoffCommand extends Command {
 	 * Execute command.
 	 */
 	public void execute() {
-		clientManager.announce(ServerMessages.LOGOFF, ServerMessages.SERVER, msg.sender);
-		clientManager.removeClient(ID);
+		clientHandler.announce(ServerMessages.LOGOFF, ServerMessages.SERVER, msg.sender);
+		clientHandler.removeClient(id);
 		notifyObserver(msg.sender + " " + bundle.getString("logoff"));
 	}
 }
