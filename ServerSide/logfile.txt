@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2013-08-12T10:50:26</date>
+  <millis>1376293826566</millis>
+  <sequence>0</sequence>
+  <logger>ServerGUI</logger>
+  <level>INFO</level>
+  <class>com.sirma.itt.javacourse.server.ServerGUI</class>
+  <method>&lt;init&gt;</method>
+  <thread>12</thread>
+  <message>Server UI is loaded.</message>
+</record>
+</log>

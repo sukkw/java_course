@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2013-08-10T12:14:52</date>
+  <millis>1376118892341</millis>
+  <sequence>0</sequence>
+  <logger>ClientGUI</logger>
+  <level>INFO</level>
+  <class>com.sirma.itt.javacourse.client.ClientGUI</class>
+  <method>&lt;init&gt;</method>
+  <thread>12</thread>
+  <message>Client UI is loaded.</message>
+</record>
+</log>
