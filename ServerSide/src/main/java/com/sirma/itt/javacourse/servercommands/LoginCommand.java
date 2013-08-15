@@ -25,8 +25,10 @@ public class LoginCommand extends Command {
 	/**
 	 * Constructor. Initialize all needed variables.
 	 * 
-	 * @param id - client ID
-	 * @param msg - client message
+	 * @param id
+	 *            - client ID
+	 * @param msg
+	 *            - client message
 	 */
 	public LoginCommand(int id, Message msg) {
 		clientHandler = ClientHandler.getInstance();
@@ -41,10 +43,10 @@ public class LoginCommand extends Command {
 	public void execute() {
 
 		// check is entered nickname empty
-		if("".equals(msg.sender)) {
+		if ("".equals(msg.sender)) {
 			clientHandler.getClientByID(id).sendMessage(
-					new Message(ServerMessages.LOGIN, ServerMessages.SERVER, "empty",
-							msg.sender));
+					new Message(ServerMessages.LOGIN, ServerMessages.SERVER,
+							"empty", msg.sender));
 			return;
 		}
 
@@ -56,24 +58,28 @@ public class LoginCommand extends Command {
 
 				clientHandler.getClientByID(id).setUsername(msg.sender);
 				clientHandler.getClientByID(id).sendMessage(
-						new Message(ServerMessages.APPROVED, ServerMessages.SERVER,
-								msg.sender, msg.sender));
-				notifyObserver(bundle.getString("user") + msg.sender + " "
+						new Message(ServerMessages.APPROVED,
+								ServerMessages.SERVER, msg.sender, msg.sender));
+				notifyObserver(bundle.getString("user")
+						+ clientHandler.getClientByID(id).getID() + " / "
+						+ clientHandler.getClientByID(id).getIP() + " "
 						+ bundle.getString("logged"));
-				clientHandler.announce(ServerMessages.NEW_USER, ServerMessages.SERVER, msg.sender);
+				clientHandler.announce(ServerMessages.NEW_USER,
+						ServerMessages.SERVER, msg.sender);
 				notifyObserver(bundle.getString("notified"));
 				clientHandler.sendUserList(msg.sender);
 				notifyObserver(bundle.getString("user_added"));
 				notifyObserver(bundle.getString("thread"));
 			} else {
 				clientHandler.getClientByID(id).sendMessage(
-						new Message(ServerMessages.LOGIN, ServerMessages.SERVER, Validator
-								.validate(msg.sender), msg.sender));
+						new Message(ServerMessages.LOGIN,
+								ServerMessages.SERVER, Validator
+										.validate(msg.sender), msg.sender));
 			}
 		} else {
 			clientHandler.getClientByID(id).sendMessage(
-					new Message(ServerMessages.LOGIN, ServerMessages.SERVER, "in_use",
-							msg.sender));
+					new Message(ServerMessages.LOGIN, ServerMessages.SERVER,
+							"in_use", msg.sender));
 		}
 	}
 }

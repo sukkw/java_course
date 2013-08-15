@@ -32,6 +32,7 @@ public class Capitalizer extends DocumentFilter {
 		// if user paste text in the beginning of field fist letter is replaced
 		// with capital letter
 		if (offset == 0 && text.length() > 1) {
+			text = text.trim();
 			text = text.substring(0, 1).toUpperCase() + text.substring(1);
 			fb.replace(offset, length, text, attr);
 		}

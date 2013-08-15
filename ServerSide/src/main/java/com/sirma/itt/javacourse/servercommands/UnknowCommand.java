@@ -33,5 +33,6 @@ public class UnknowCommand extends Command {
 	public void execute() {
 		clientHandler.getClientByID(id).sendMessage(
 				new Message(ServerMessages.UNKNOWN, "", "", ""));
+		clientHandler.getClientByID(id).close();
 	}
 }

@@ -7,8 +7,11 @@ import java.util.logging.Logger;
 
 import com.sirma.itt.javacourse.common.LogFileHandler;
 import com.sirma.itt.javacourse.common.MessageDialog;
+import com.sirma.itt.javacourse.common.ServerMessages;
 import com.sirma.itt.javacourse.config.Config;
 import com.sirma.itt.javacourse.lang.LangBundleHandler;
+import com.sirma.itt.javacourse.servercommands.DisconnectedCommand;
+import com.sirma.itt.javacourse.servercommands.UnknowCommand;
 
 /**
  * This class takes care about main server functionality. 
@@ -86,6 +89,7 @@ public class ServerMainThread extends Thread {
 		isRunning = false;
 		try {
 			if (server != null) {
+				new DisconnectedCommand().execute();
 				server.close();
 				log.info(Config.SERVER_STOPPED);
 			}

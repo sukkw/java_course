@@ -1,5 +1,6 @@
 package com.sirma.itt.javacourse.server;
 
+import java.util.Iterator;
 import java.util.Vector;
 
 import com.sirma.itt.javacourse.common.Message;
@@ -100,6 +101,18 @@ public class ClientHandler {
 		if (pos >= 0) {
 			ClientData removeClient = clients.remove(pos);
 			removeClient.close();
+		}
+	}
+	
+	/**
+	 * Remove all clients from client list
+	 * @param ID - client ID
+	 */
+	public synchronized void removeAll() {
+		Iterator<ClientData> it = clients.iterator();
+		while (it.hasNext()) {
+			it.next();
+			it.remove();
 		}
 	}
 	

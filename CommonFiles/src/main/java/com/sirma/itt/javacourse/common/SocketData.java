@@ -3,6 +3,7 @@ package com.sirma.itt.javacourse.common;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
 
 import com.sirma.itt.javacourse.common.Message;
@@ -23,7 +24,7 @@ public class SocketData {
 	
 	// client socket and thread for send messages
 	private MessagesSendThread sendThread;
-	private Socket socket;
+	protected Socket socket;
 	
 	/**
 	 * Constructor. Initialize all needed variables and starts thread
@@ -35,6 +36,7 @@ public class SocketData {
 		this.socket = socket;
 		openIO();
 		sendThread = new MessagesSendThread(outputStream);
+		sendThread.setDaemon(false);
 		sendThread.start();
 	}
 
@@ -45,6 +47,15 @@ public class SocketData {
 	 */
 	public void sendMessage(Message message) {
 		sendThread.sendMessage(message);
+	}
+	
+	/**
+	 * Get client IP.
+	 * 
+	 * @param message - the message
+	 */
+	public InetAddress getIP() {
+		return socket.getInetAddress();
 	}
 
 	/**

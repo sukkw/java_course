@@ -46,7 +46,6 @@ public class MessagesSendThread extends Thread {
 				outputStream.writeObject(messgesQueue.take());
 				outputStream.flush();
 			} catch (IOException ex) {
-				ex.printStackTrace();
 			} catch (InterruptedException e) {
 				
 			}

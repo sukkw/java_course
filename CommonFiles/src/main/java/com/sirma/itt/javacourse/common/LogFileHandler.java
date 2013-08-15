@@ -3,6 +3,7 @@ package com.sirma.itt.javacourse.common;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
+import java.util.logging.SimpleFormatter;
 
 /**
  * This class creates file handler which is used for logger.
@@ -20,12 +21,18 @@ public class LogFileHandler {
 	 * @return file handler
 	 */
 	public static Handler getHandler() {
-		try {
-			handler = new FileHandler("logfile.txt");
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		synchronized (LogFileHandler.class) {
+			if(handler == null) {
+				try {
+					handler = new FileHandler("logfile.log");
+					SimpleFormatter formatter = new SimpleFormatter();  
+					handler.setFormatter(formatter);
+				} catch (SecurityException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} 
 		}
 		return handler;
 	}

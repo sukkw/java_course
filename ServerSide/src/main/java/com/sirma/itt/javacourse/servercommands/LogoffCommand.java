@@ -20,7 +20,7 @@ public class LogoffCommand extends Command {
 	private int id;
 	private Message msg;
 	private ResourceBundle bundle;
-	
+
 	/**
 	 * Constructor. Initialize all needed variables.
 	 * 
@@ -33,13 +33,18 @@ public class LogoffCommand extends Command {
 		this.msg = msg;
 		bundle = LangBundleHandler.getBundle();
 	}
-	
+
 	/**
 	 * Execute command.
 	 */
 	public void execute() {
-		clientHandler.announce(ServerMessages.LOGOFF, ServerMessages.SERVER, msg.sender);
+		clientHandler.announce(ServerMessages.LOGOFF, ServerMessages.SERVER,
+				msg.sender);
+		notifyObserver(bundle.getString("user")
+				+ clientHandler.getClientByID(id).getID() + " / "
+				+ clientHandler.getClientByID(id).getIP() + " " + " "
+				+ bundle.getString("logoff"));
 		clientHandler.removeClient(id);
-		notifyObserver(msg.sender + " " + bundle.getString("logoff"));
+		notifyObserver(bundle.getString("users_notified"));
 	}
 }

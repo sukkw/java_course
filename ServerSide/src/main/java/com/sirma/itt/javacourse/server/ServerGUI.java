@@ -133,9 +133,12 @@ public class ServerGUI extends JFrame implements Observer {
 			portsList.setModel(portsListModel);
 
 			// label and small icon to choose different language
-			BufferedImage myPicture = ImageIO.read(getClass()
+			BufferedImage flag = ImageIO.read(getClass()
 					.getResourceAsStream(bundle.getString("flagIcon")));
-			flagLabel = new JLabel(new ImageIcon(myPicture));
+			flagLabel = new JLabel(new ImageIcon(flag));
+			
+			//getResource("/images/icon.jpg") 
+			
 			langLabel = new JLabel(bundle.getString("changeLang"));
 			langLabel.setName(bundle.getString("lang"));
 			flagLabel.setName(bundle.getString("lang"));

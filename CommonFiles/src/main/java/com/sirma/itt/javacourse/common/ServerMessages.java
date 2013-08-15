@@ -18,4 +18,5 @@ public class ServerMessages {
 	public static final String NEW_USER = "NEW_USER";
 	public static final String CLIENTS_LIST = "CLIENTS_LIST";
 	public static final String CHAT = "CHAT";
+	public static final String DISCONNECTED = "DISCONNECTED";
 }
