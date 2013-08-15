@@ -1,0 +1,10 @@
+VIII 15, 2013 2:58:54 PM com.sirma.itt.javacourse.server.ServerGUI <init>
+INFO: Server UI is loaded.
+VIII 15, 2013 2:58:57 PM com.sirma.itt.javacourse.server.ServerMainThread startServer
+INFO: Server is started.
+VIII 15, 2013 3:03:17 PM com.sirma.itt.javacourse.server.ServerMainThread stopServer
+INFO: Server stopped
+VIII 15, 2013 3:03:17 PM com.sirma.itt.javacourse.server.ServerMainThread run
+WARNING: Connection attempt failed.
+VIII 15, 2013 3:03:17 PM com.sirma.itt.javacourse.server.Server$ServerWindowListener windowClosing
+INFO: Server console is closed.
