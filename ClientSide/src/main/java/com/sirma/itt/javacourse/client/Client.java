@@ -82,7 +82,7 @@ public class Client {
 					} catch (Exception e) {
 						socket = new Socket();
 						port++;
-						if (port == Config.MAX_PORT) {
+						if (port > Config.MAX_PORT) {
 							MessageDialog.showMessage(clientGUI,
 									bundle.getString("no_server"), 1);
 							socket = null;

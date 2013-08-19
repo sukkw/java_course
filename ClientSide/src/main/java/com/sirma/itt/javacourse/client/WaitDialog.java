@@ -68,7 +68,7 @@ public class WaitDialog {
 		dialog.getContentPane().setBackground(Color.WHITE);
 		dialog.getContentPane().add(headerLabel, BorderLayout.EAST);
 		dialog.getContentPane().add(imageLabel, BorderLayout.WEST);
-		dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		dialog.setSize(200, 150);
 		dialog.setVisible(true);
 	}
