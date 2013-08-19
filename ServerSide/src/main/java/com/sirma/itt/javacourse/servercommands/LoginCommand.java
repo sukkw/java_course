@@ -1,10 +1,13 @@
 package com.sirma.itt.javacourse.servercommands;
 
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
+import com.sirma.itt.javacourse.common.LogFileHandler;
 import com.sirma.itt.javacourse.common.Message;
 import com.sirma.itt.javacourse.common.ServerMessages;
 import com.sirma.itt.javacourse.common.Validator;
+import com.sirma.itt.javacourse.config.Config;
 import com.sirma.itt.javacourse.lang.LangBundleHandler;
 import com.sirma.itt.javacourse.server.ClientHandler;
 
@@ -21,14 +24,13 @@ public class LoginCommand extends Command {
 	private int id;
 	private Message msg;
 	private ResourceBundle bundle;
+	private Logger log = Logger.getLogger(Config.LOGIN);
 
 	/**
 	 * Constructor. Initialize all needed variables.
 	 * 
-	 * @param id
-	 *            - client ID
-	 * @param msg
-	 *            - client message
+	 * @param id - client ID
+	 * @param msg - client message
 	 */
 	public LoginCommand(int id, Message msg) {
 		clientHandler = ClientHandler.getInstance();
@@ -55,7 +57,7 @@ public class LoginCommand extends Command {
 
 			// check is entered by user nickname valid
 			if (Validator.validate(msg.sender) == null) {
-
+				
 				clientHandler.getClientByID(id).setUsername(msg.sender);
 				clientHandler.getClientByID(id).sendMessage(
 						new Message(ServerMessages.APPROVED,
@@ -64,12 +66,18 @@ public class LoginCommand extends Command {
 						+ clientHandler.getClientByID(id).getID() + " / "
 						+ clientHandler.getClientByID(id).getIP() + " "
 						+ bundle.getString("logged"));
+				
+				log.addHandler(LogFileHandler.getHandler());
+				log.info(Config.NEW_USER + clientHandler.getClientByID(id).getIP());
+				log.removeHandler(LogFileHandler.getHandler());
+				
 				clientHandler.announce(ServerMessages.NEW_USER,
 						ServerMessages.SERVER, msg.sender);
 				notifyObserver(bundle.getString("notified"));
 				clientHandler.sendUserList(msg.sender);
 				notifyObserver(bundle.getString("user_added"));
 				notifyObserver(bundle.getString("thread"));
+
 			} else {
 				clientHandler.getClientByID(id).sendMessage(
 						new Message(ServerMessages.LOGIN,

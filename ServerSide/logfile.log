@@ -1,10 +1,20 @@
-VIII 15, 2013 2:58:54 PM com.sirma.itt.javacourse.server.ServerGUI <init>
+VIII 19, 2013 11:17:52 AM com.sirma.itt.javacourse.server.ServerGUI <init>
 INFO: Server UI is loaded.
-VIII 15, 2013 2:58:57 PM com.sirma.itt.javacourse.server.ServerMainThread startServer
+VIII 19, 2013 11:17:53 AM com.sirma.itt.javacourse.server.ServerMainThread startServer
 INFO: Server is started.
-VIII 15, 2013 3:03:17 PM com.sirma.itt.javacourse.server.ServerMainThread stopServer
+VIII 19, 2013 11:18:08 AM com.sirma.itt.javacourse.servercommands.LoginCommand execute
+INFO: New user connected./127.0.0.1
+VIII 19, 2013 11:18:25 AM com.sirma.itt.javacourse.servercommands.LoginCommand execute
+INFO: New user connected./127.0.0.1
+VIII 19, 2013 11:18:30 AM com.sirma.itt.javacourse.servercommands.LogoffCommand execute
+INFO: User disconnected./127.0.0.1
+VIII 19, 2013 11:18:32 AM com.sirma.itt.javacourse.servercommands.LogoffCommand execute
+INFO: User disconnected./127.0.0.1
+VIII 19, 2013 11:18:43 AM com.sirma.itt.javacourse.server.ServerMainThread stopServer
 INFO: Server stopped
-VIII 15, 2013 3:03:17 PM com.sirma.itt.javacourse.server.ServerMainThread run
+VIII 19, 2013 11:18:43 AM com.sirma.itt.javacourse.server.ServerMainThread run
 WARNING: Connection attempt failed.
-VIII 15, 2013 3:03:17 PM com.sirma.itt.javacourse.server.Server$ServerWindowListener windowClosing
+VIII 19, 2013 11:18:44 AM com.sirma.itt.javacourse.server.ServerMainThread stopServer
+INFO: Server stopped
+VIII 19, 2013 11:18:44 AM com.sirma.itt.javacourse.server.Server$ServerWindowListener windowClosing
 INFO: Server console is closed.

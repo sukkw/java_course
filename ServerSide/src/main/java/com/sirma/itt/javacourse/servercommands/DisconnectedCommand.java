@@ -1,6 +1,5 @@
 package com.sirma.itt.javacourse.servercommands;
 
-import com.sirma.itt.javacourse.common.Message;
 import com.sirma.itt.javacourse.common.ServerMessages;
 import com.sirma.itt.javacourse.server.ClientHandler;
 
@@ -17,8 +16,6 @@ public class DisconnectedCommand extends Command {
 
 	/**
 	 * Constructor. Initialize all needed variables.
-	 * 
-	 * @param id - client ID
 	 */
 	public DisconnectedCommand() {
 		clientHandler = ClientHandler.getInstance();

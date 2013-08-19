@@ -15,11 +15,6 @@ public class Validator {
 	 * @return - error if exist
 	 */
 	public static String validate(String nickname) {
-	
-		// nick name can not be empty
-		if("".equals(nickname)) {
-			return "empty";
-		}
 		
 		// nick name can not be more than 15 symbols long
 		if(nickname.length() > 15) {

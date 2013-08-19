@@ -30,5 +30,8 @@ public class Config {
 	public static final String PORT_IN_USE = "Try to connect to unavailable port.";
 	public static final String SERVER_STOPPED = "Server stopped";
 	public static final String STOP_ERROR = "Error while stopping server.";
-	
+	public static final String NEW_USER = "New user connected.";
+	public static final String USER_QUIT = "User disconnected.";
+	public static final String LOGIN = "LoginCommand";
+	public static final String LOGOFF = "LogoffCommand";
 }
