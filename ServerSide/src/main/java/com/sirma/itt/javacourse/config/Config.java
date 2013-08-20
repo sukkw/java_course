@@ -16,9 +16,7 @@ public class Config {
 			"7007", "7008", "7009", "7010", "7011", "7012", "7013", 
 			"7014", "7015", "7016", "7017", "7018", "7019", "7020", 
 			"7021", "7022", "7023", "7024", "7025" };
-	public static final String SERVER_FRAME = "ServerGUI";
-	public static final String SERVER = "Server";
-	public static final String SERVER_MAIN = "ServerMainThread";
+
 	public static final String SERVER_UI_LOADED = "Server UI is loaded.";
 	public static final String SERVER_UI_ERROR = "Error in loading UI. ";
 	public static final String DATE_FORMAT = "hh:mm:ss";
@@ -32,6 +30,5 @@ public class Config {
 	public static final String STOP_ERROR = "Error while stopping server.";
 	public static final String NEW_USER = "New user connected.";
 	public static final String USER_QUIT = "User disconnected.";
-	public static final String LOGIN = "LoginCommand";
-	public static final String LOGOFF = "LogoffCommand";
+
 }

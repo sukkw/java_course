@@ -13,7 +13,6 @@ import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -29,7 +28,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.BevelBorder;
 
-import com.sirma.itt.javacourse.common.LogFileHandler;
+import org.apache.log4j.Logger;
+
 import com.sirma.itt.javacourse.config.Config;
 import com.sirma.itt.javacourse.lang.LangBundleHandler;
 
@@ -57,7 +57,7 @@ public class ServerGUI extends JFrame implements Observer {
 	
 	// language bundle and logger
 	private ResourceBundle bundle;
-	private Logger log = Logger.getLogger(Config.SERVER_FRAME);
+	private Logger log = Logger.getLogger(ServerGUI.class.getName());
 
 	/**
 	 * Constructor. Initialize all graphic components.
@@ -68,7 +68,6 @@ public class ServerGUI extends JFrame implements Observer {
 			// load language bundle and logger
 			LangBundleHandler.setLocale(Locale.US);
 			bundle = LangBundleHandler.getBundle();
-			log.addHandler(LogFileHandler.getHandler());
 
 			// Create layout for console panel
 			consolePanel = new JPanel();
@@ -170,7 +169,7 @@ public class ServerGUI extends JFrame implements Observer {
 			log.info(Config.SERVER_UI_LOADED);
 
 		} catch (Exception e) {
-			log.warning(Config.SERVER_UI_ERROR + e.getMessage());
+			log.warn(Config.SERVER_UI_ERROR + e.getMessage());
 		}
 	}
 

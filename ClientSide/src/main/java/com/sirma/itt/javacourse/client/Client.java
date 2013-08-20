@@ -7,18 +7,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 import javax.swing.SwingWorker;
 
 import com.sirma.itt.javacourse.common.ClientMessages;
-import com.sirma.itt.javacourse.common.LogFileHandler;
 import com.sirma.itt.javacourse.common.Message;
 import com.sirma.itt.javacourse.common.MessageDialog;
 import com.sirma.itt.javacourse.config.Config;

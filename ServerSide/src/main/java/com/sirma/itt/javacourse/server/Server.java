@@ -8,9 +8,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Locale;
-import java.util.logging.Logger;
 
-import com.sirma.itt.javacourse.common.LogFileHandler;
+import org.apache.log4j.Logger;
+
 import com.sirma.itt.javacourse.config.Config;
 import com.sirma.itt.javacourse.lang.LangBundleHandler;
 
@@ -27,7 +27,7 @@ public class Server {
 	// class private members
 	private ServerMainThread mainThread;
 	private ServerGUI serverGUI;
-	private Logger log = Logger.getLogger(Config.SERVER);
+	private Logger log = Logger.getLogger(Server.class.getName());
 
 	/*
 	 * Constructor. Add all needed listeners to server GUI.
@@ -38,7 +38,6 @@ public class Server {
 		this.serverGUI.addServerMouseListener(new ServerMouseListener());
 		this.serverGUI.addServerActionListener(new ServerActionPerformed());
 		this.serverGUI.addWindowListener(new ServerWindowListener());
-		log.addHandler(LogFileHandler.getHandler());
 	}
 
 	/**

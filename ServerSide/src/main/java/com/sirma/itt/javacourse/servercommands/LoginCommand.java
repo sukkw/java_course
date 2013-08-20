@@ -1,9 +1,8 @@
 package com.sirma.itt.javacourse.servercommands;
-
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
-import com.sirma.itt.javacourse.common.LogFileHandler;
+import org.apache.log4j.Logger;
+
 import com.sirma.itt.javacourse.common.Message;
 import com.sirma.itt.javacourse.common.ServerMessages;
 import com.sirma.itt.javacourse.common.Validator;
@@ -24,7 +23,7 @@ public class LoginCommand extends Command {
 	private int id;
 	private Message msg;
 	private ResourceBundle bundle;
-	private Logger log = Logger.getLogger(Config.LOGIN);
+	private Logger log = Logger.getLogger(LoginCommand.class.getName());
 
 	/**
 	 * Constructor. Initialize all needed variables.
@@ -67,9 +66,7 @@ public class LoginCommand extends Command {
 						+ clientHandler.getClientByID(id).getIP() + " "
 						+ bundle.getString("logged"));
 				
-				log.addHandler(LogFileHandler.getHandler());
 				log.info(Config.NEW_USER + clientHandler.getClientByID(id).getIP());
-				log.removeHandler(LogFileHandler.getHandler());
 				
 				clientHandler.announce(ServerMessages.NEW_USER,
 						ServerMessages.SERVER, msg.sender);

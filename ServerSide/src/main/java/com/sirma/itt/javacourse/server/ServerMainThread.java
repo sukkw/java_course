@@ -3,9 +3,9 @@ package com.sirma.itt.javacourse.server;
 import java.io.*;
 import java.net.*;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
-import com.sirma.itt.javacourse.common.LogFileHandler;
+import org.apache.log4j.Logger;
+
 import com.sirma.itt.javacourse.common.MessageDialog;
 import com.sirma.itt.javacourse.config.Config;
 import com.sirma.itt.javacourse.lang.LangBundleHandler;
@@ -31,7 +31,7 @@ public class ServerMainThread extends Thread {
 	
 	// language bundle and logger
 	private ResourceBundle bundle;
-	private Logger log = Logger.getLogger(Config.SERVER_MAIN);
+	private Logger log = Logger.getLogger(ServerMainThread.class.getName());
 
 	/**
 	 * Constructor. Initialize variables.
@@ -42,7 +42,6 @@ public class ServerMainThread extends Thread {
 		this.serverGUI = serverGUI;
 		this.port = port;
 		this.bundle = LangBundleHandler.getBundle();
-		log.addHandler(LogFileHandler.getHandler());
 	}
 
 	/**
@@ -54,7 +53,7 @@ public class ServerMainThread extends Thread {
 			try {
 				acceptClient(server.accept());
 			} catch (Exception e) {
-				log.warning(Config.CONNECTION_FAILED);
+				log.warn(Config.CONNECTION_FAILED);
 			}
 		}
 	}
@@ -76,7 +75,7 @@ public class ServerMainThread extends Thread {
 			isRunning = true;
 		} catch (IOException ioe) {
 			MessageDialog.showMessage(serverGUI, bundle.getString("port_in_use"), 1);
-			log.warning(Config.PORT_IN_USE);
+			log.warn(Config.PORT_IN_USE);
 		}
 	}
 
@@ -93,7 +92,7 @@ public class ServerMainThread extends Thread {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-			log.warning(Config.STOP_ERROR);
+			log.warn(Config.STOP_ERROR);
 		}
 	}
 

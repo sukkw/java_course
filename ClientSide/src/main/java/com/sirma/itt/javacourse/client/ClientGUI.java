@@ -11,7 +11,6 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -38,9 +37,7 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyledDocument;
 
 import com.sirma.itt.javacourse.common.Capitalizer;
-import com.sirma.itt.javacourse.common.LogFileHandler;
 import com.sirma.itt.javacourse.common.Message;
-import com.sirma.itt.javacourse.config.Config;
 import com.sirma.itt.javacourse.decorators.CustomMsgDecorator;
 import com.sirma.itt.javacourse.decorators.DecoratorFactory;
 import com.sirma.itt.javacourse.decorators.ICustomMsgDecorator;

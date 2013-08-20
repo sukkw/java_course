@@ -1,9 +1,9 @@
 package com.sirma.itt.javacourse.servercommands;
 
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
-import com.sirma.itt.javacourse.common.LogFileHandler;
+import org.apache.log4j.Logger;
+
 import com.sirma.itt.javacourse.common.Message;
 import com.sirma.itt.javacourse.common.ServerMessages;
 import com.sirma.itt.javacourse.config.Config;
@@ -23,7 +23,7 @@ public class LogoffCommand extends Command {
 	private int id;
 	private Message msg;
 	private ResourceBundle bundle;
-	private Logger log = Logger.getLogger(Config.LOGOFF);
+	private Logger log = Logger.getLogger(LogoffCommand.class.getName());
 
 	/**
 	 * Constructor. Initialize all needed variables.
@@ -48,11 +48,9 @@ public class LogoffCommand extends Command {
 				+ clientHandler.getClientByID(id).getID() + " / "
 				+ clientHandler.getClientByID(id).getIP() + " " + " "
 				+ bundle.getString("logoff"));
-		
-		log.addHandler(LogFileHandler.getHandler());
+
 		log.info(Config.USER_QUIT + clientHandler.getClientByID(id).getIP());
-		log.removeHandler(LogFileHandler.getHandler());
-		
+
 		clientHandler.removeClient(id);
 		notifyObserver(bundle.getString("users_notified"));
 	}
