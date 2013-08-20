@@ -53,7 +53,6 @@ public class ServerMainThread extends Thread {
 			try {
 				acceptClient(server.accept());
 			} catch (Exception e) {
-				log.warn(Config.CONNECTION_FAILED);
 			}
 		}
 	}

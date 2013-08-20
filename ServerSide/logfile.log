@@ -1,8 +1,0 @@
-2013-08-20-AWT-EventQueue-0--INFO -com.sirma.itt.javacourse.server.ServerGUI:Server UI is loaded.
-2013-08-20-Thread-3--INFO -com.sirma.itt.javacourse.server.ServerMainThread:Server is started.
-2013-08-20-Thread-3--WARN -com.sirma.itt.javacourse.server.ServerMainThread:Connection attempt failed.
-2013-08-20-AWT-EventQueue-0--INFO -com.sirma.itt.javacourse.server.ServerMainThread:Server stopped
-2013-08-20-Thread-4--INFO -com.sirma.itt.javacourse.server.ServerMainThread:Server is started.
-2013-08-20-AWT-EventQueue-0--INFO -com.sirma.itt.javacourse.server.ServerMainThread:Server stopped
-2013-08-20-Thread-4--WARN -com.sirma.itt.javacourse.server.ServerMainThread:Connection attempt failed.
-2013-08-20-AWT-EventQueue-0--INFO -com.sirma.itt.javacourse.server.Server:Server console is closed.
