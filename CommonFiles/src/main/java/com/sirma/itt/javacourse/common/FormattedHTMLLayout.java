@@ -10,7 +10,7 @@ import org.apache.log4j.spi.LoggingEvent;
 
 public class FormattedHTMLLayout extends HTMLLayout {
 
-	private static final String rxTimestamp = "\\s*<\\s*tr\\s*>\\s*<\\s*td\\s*>\\s*(\\d*)\\s*<\\s*/td\\s*>";
+	private String rxTimestamp = "\\s*<\\s*tr\\s*>\\s*<\\s*td\\s*>\\s*(\\d*)\\s*<\\s*/td\\s*>";
 	private String timestampFormat = "yyyy-MM-dd HH:mm:ss";
 	private SimpleDateFormat sdf = new SimpleDateFormat(timestampFormat);
 

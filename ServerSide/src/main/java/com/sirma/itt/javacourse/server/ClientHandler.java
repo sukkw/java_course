@@ -51,13 +51,15 @@ public class ClientHandler {
 	 * @param ID - client ID
 	 * @return - position in the vector
 	 */
-	public synchronized int findClient(int ID) {
-		for (int i = 0; i < clients.size(); i++) {
-			if (clients.get(i).getID() == ID) {
-				return i;
+	public int findClient(int ID) {
+		synchronized (clients) {
+			for (int i = 0; i < clients.size(); i++) {
+				if (clients.get(i).getID() == ID) {
+					return i;
+				}
 			}
+			return -1;
 		}
-		return -1;
 	}
 
 	/**
@@ -65,8 +67,10 @@ public class ClientHandler {
 	 * @param ID - client ID
 	 * @return client
 	 */
-	public synchronized ClientData getClientByID(int ID) {
-		return clients.get(findClient(ID));
+	public ClientData getClientByID(int ID) {
+		synchronized (clients) {
+			return clients.get(findClient(ID));
+		}
 	}
 	
 	/**
@@ -74,33 +78,39 @@ public class ClientHandler {
 	 * @param nickname - client unique nickname
 	 * @return client
 	 */
-	public synchronized ClientData getClientByName(String nickname) {
-		for (int i = 0; i < clients.size(); i++) {
-			if (clients.get(i).getUsername().equalsIgnoreCase(nickname)) {
-				return clients.get(i);
+	public ClientData getClientByName(String nickname) {
+		synchronized (clients) {
+			for (int i = 0; i < clients.size(); i++) {
+				if (clients.get(i).getUsername().equalsIgnoreCase(nickname)) {
+					return clients.get(i);
+				}
 			}
+			return null;
 		}
-		return null;
 	}
 	
 	/**
 	 * Add new client to the clients list
 	 * @param client - new client
 	 */
-	public synchronized void addClient(ClientData client) {
-		clients.add(client);
-		client.sendMessage(new Message("", "", ServerMessages.CHAT, ""));
+	public void addClient(ClientData client) {
+		synchronized (clients) {
+			clients.add(client);
+			client.sendMessage(new Message("", "", ServerMessages.CHAT, ""));
+		}
 	}
 	
 	/**
 	 * Remove client from client list
 	 * @param ID - client ID
 	 */
-	public synchronized void removeClient(int ID) {
-		int pos = findClient(ID);
-		if (pos >= 0) {
-			ClientData removeClient = clients.remove(pos);
-			removeClient.close();
+	public void removeClient(int ID) {
+		synchronized (clients) {
+			int pos = findClient(ID);
+			if (pos >= 0) {
+				ClientData removeClient = clients.remove(pos);
+				removeClient.close();
+			}
 		}
 	}
 	
@@ -108,11 +118,13 @@ public class ClientHandler {
 	 * Remove all clients from client list
 	 * @param ID - client ID
 	 */
-	public synchronized void removeAll() {
-		Iterator<ClientData> it = clients.iterator();
-		while (it.hasNext()) {
-			it.next();
-			it.remove();
+	public void removeAll() {
+		synchronized (clients) {
+			Iterator<ClientData> it = clients.iterator();
+			while (it.hasNext()) {
+				it.next();
+				it.remove();
+			}
 		}
 	}
 	
@@ -122,10 +134,12 @@ public class ClientHandler {
 	 * @param sender - message sender
 	 * @param content - message content
 	 */
-	public synchronized void sendToAll(String type, String sender, String content) {
-		Message msg = new Message(type, sender, content, "");
-		for (int i = 0; i < clients.size(); i++) {
-			clients.get(i).sendMessage(msg);
+	public void sendToAll(String type, String sender, String content) {
+		synchronized (clients) {
+			Message msg = new Message(type, sender, content, "");
+			for (int i = 0; i < clients.size(); i++) {
+				clients.get(i).sendMessage(msg);
+			}
 		}
 	}
 
@@ -135,12 +149,14 @@ public class ClientHandler {
 	 * @param sender - message sender
 	 * @param content - message content
 	 */
-	public synchronized void announce(String type, String sender, String content) {
-		Message msg = new Message(type, sender, content, content);
-
-		for (int i = 0; i < clients.size(); i++) {
-			if (!clients.get(i).getUsername().equalsIgnoreCase(content)) {
-				clients.get(i).sendMessage(msg);
+	public void announce(String type, String sender, String content) {
+		synchronized (clients) {
+			Message msg = new Message(type, sender, content, content);
+	
+			for (int i = 0; i < clients.size(); i++) {
+				if (!clients.get(i).getUsername().equalsIgnoreCase(content)) {
+					clients.get(i).sendMessage(msg);
+				}
 			}
 		}
 	}
@@ -149,14 +165,16 @@ public class ClientHandler {
 	 * Send client list.
 	 * @param nickname - client nickname 
 	 */
-	public synchronized void sendUserList(String nickname) {
-		ClientData receiver = getClientByName(nickname);
-		
-		for (int i = 0; i < clients.size(); i++) {
-			if (!clients.get(i).getUsername().equalsIgnoreCase(nickname)) {
-				receiver.sendMessage(
-					new Message(ServerMessages.CLIENTS_LIST, ServerMessages.SERVER, clients.get(i).getUsername(),
-							nickname));
+	public void sendUserList(String nickname) {
+		synchronized (clients) {
+			ClientData receiver = getClientByName(nickname);
+			
+			for (int i = 0; i < clients.size(); i++) {
+				if (!clients.get(i).getUsername().equalsIgnoreCase(nickname)) {
+					receiver.sendMessage(
+						new Message(ServerMessages.CLIENTS_LIST, ServerMessages.SERVER, clients.get(i).getUsername(),
+								nickname));
+				}
 			}
 		}
 	} 

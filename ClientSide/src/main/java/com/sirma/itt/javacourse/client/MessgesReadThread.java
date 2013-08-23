@@ -47,7 +47,7 @@ public class MessgesReadThread extends Thread {
 	 * Take action depending on the server message
 	 * @param msg - server message
 	 */
-	public synchronized void handle(Message msg) {
+	public void handle(Message msg) {
 
 		// correct server is found
 		if(msg.content.equals(ServerMessages.CHAT)) {

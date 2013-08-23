@@ -48,7 +48,7 @@ public class MessagesReadThread extends Thread {
 	 * @param ID - client ID
 	 * @param msg
 	 */
-	public synchronized void handle(int ID, Message message) {
+	public void handle(int ID, Message message) {
 		CommandFactory commandFactory = new CommandFactory();
 		Command command = commandFactory.createCommand(ID, message);
 		command.addObserver(serverGUI);

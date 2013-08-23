@@ -58,7 +58,7 @@ public class ServerMainThread extends Thread {
 	}
 
 	/**
-	 * Starts server at chosen port.
+	 * Starts server at chosen port. 
 	 */
 	public void startServer(int port) {
 		try {
